@@ -130,19 +130,24 @@ export default function RoomDetail() {
                 </Carousel>
               </div>
 
-              {/* Amenities List */}
+              {/* Amenities List - Redesigned */}
               <div className="space-y-8">
                  <div className="flex items-center justify-between">
                    <h3 className="text-xs uppercase tracking-[0.3em] text-white/50">Olanaklar</h3>
                    <div className="h-[1px] flex-grow bg-white/10 ml-6"></div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12">
-                  {room.amenities.map((item, i) => (
-                    <div key={i} className="flex items-center gap-4 group border-b border-white/5 pb-4 hover:border-gold-500/50 transition-colors">
-                      <span className="text-gold-500 opacity-50 group-hover:opacity-100 transition-opacity"><Star size={12} /></span>
-                      <span className="text-white/70 font-light group-hover:text-white transition-colors">{item}</span>
-                    </div>
-                  ))}
+                
+                <div className="bg-white/5 border border-white/10 p-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {room.amenities.map((item, i) => (
+                      <div key={i} className="flex items-center gap-4 p-4 hover:bg-white/5 transition-colors border border-transparent hover:border-white/10 group">
+                        <div className="w-10 h-10 flex items-center justify-center bg-black border border-gold-500/30 text-gold-500 group-hover:scale-110 transition-transform">
+                           <Star size={16} strokeWidth={1.5} />
+                        </div>
+                        <span className="text-white/80 font-light tracking-wide text-sm group-hover:text-white transition-colors">{item}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
 

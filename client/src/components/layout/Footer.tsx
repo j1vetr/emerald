@@ -89,10 +89,16 @@ export function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-widest text-white/20">
-          <p>© 2025 Emerald Mansion. All Rights Reserved.</p>
+          <div className="flex flex-col md:flex-row gap-4 items-center">
+             <p>© 2025 Emerald Mansion. Tüm Hakları Saklıdır.</p>
+             <span className="hidden md:inline">•</span>
+             <p>
+               Tasarım & Geliştirme: <a href="https://toov.com.tr" target="_blank" rel="noopener noreferrer" className="text-gold-500 hover:text-white transition-colors">TOOV</a>
+             </p>
+          </div>
           <div className="flex gap-8">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <Link href="/gizlilik-politikasi" className="hover:text-white transition-colors cursor-pointer">Gizlilik Politikası</Link>
+            <Link href="/hizmet-kosullari" className="hover:text-white transition-colors cursor-pointer">Hizmet Koşulları</Link>
           </div>
         </div>
       </div>

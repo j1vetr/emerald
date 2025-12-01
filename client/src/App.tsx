@@ -12,6 +12,8 @@ import About from "@/pages/About";
 import Attractions from "@/pages/Attractions";
 import Gallery from "@/pages/Gallery";
 import Contact from "@/pages/Contact";
+import Privacy from "@/pages/Privacy";
+import Terms from "@/pages/Terms";
 
 function Router() {
   return (
@@ -23,6 +25,8 @@ function Router() {
       <Route path="/gezilecek-yerler" component={Attractions} />
       <Route path="/galeri" component={Gallery} />
       <Route path="/iletisim" component={Contact} />
+      <Route path="/gizlilik-politikasi" component={Privacy} />
+      <Route path="/hizmet-kosullari" component={Terms} />
       <Route component={NotFound} />
     </Switch>
   );

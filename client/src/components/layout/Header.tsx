@@ -1,9 +1,9 @@
 
 import { Link, useLocation } from "wouter";
 import { useState, useEffect } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { hotelInfo } from "@/lib/constants";
+import { hotelInfo, rooms } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -11,6 +11,7 @@ export function Header() {
   const [location] = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,8 +23,17 @@ export function Header() {
 
   const navLinks = [
     { href: "/", label: "Ana Sayfa" },
-    { href: "/odalar", label: "Odalar" },
+    { 
+      href: "/odalar", 
+      label: "Odalar",
+      hasSubmenu: true,
+      submenuItems: rooms.map(room => ({
+        href: `/odalar/${room.slug}`,
+        label: room.shortName
+      }))
+    },
     { href: "/hakkimizda", label: "Hakkımızda" },
+    { href: "/gezilecek-yerler", label: "Gezilecek Yerler" },
     { href: "/galeri", label: "Galeri" },
     { href: "/iletisim", label: "İletişim" },
   ];
@@ -68,18 +78,51 @@ export function Header() {
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-12">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className={cn(
-                    "text-xs font-medium tracking-[0.2em] uppercase transition-all duration-500 relative group cursor-pointer py-2",
-                    location === link.href
-                      ? "text-gold-500"
-                      : "text-white/70 hover:text-white"
-                  )}>
-                  {link.label}
-                  <span className={cn(
-                    "absolute bottom-0 left-0 w-0 h-[1px] bg-gold-500 transition-all duration-500 group-hover:w-full",
-                    location === link.href ? "w-full" : "w-0"
-                  )} />
-              </Link>
+              <div 
+                key={link.href} 
+                className="relative group"
+                onMouseEnter={() => setHoveredMenu(link.label)}
+                onMouseLeave={() => setHoveredMenu(null)}
+              >
+                <Link href={link.href} className={cn(
+                      "text-xs font-medium tracking-[0.2em] uppercase transition-all duration-500 relative cursor-pointer py-4 flex items-center gap-1",
+                      location === link.href
+                        ? "text-gold-500"
+                        : "text-white/70 hover:text-white"
+                    )}>
+                    {link.label}
+                    {link.hasSubmenu && <ChevronDown size={12} className="opacity-50" />}
+                    <span className={cn(
+                      "absolute bottom-2 left-0 w-0 h-[1px] bg-gold-500 transition-all duration-500 group-hover:w-full",
+                      location === link.href ? "w-full" : "w-0"
+                    )} />
+                </Link>
+
+                {/* Submenu */}
+                {link.hasSubmenu && (
+                  <AnimatePresence>
+                    {hoveredMenu === link.label && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute top-full left-1/2 -translate-x-1/2 w-64 pt-2"
+                      >
+                        <div className="bg-black/95 backdrop-blur-xl border border-white/10 p-2 shadow-2xl rounded-sm">
+                          {link.submenuItems?.map((subItem) => (
+                            <Link key={subItem.href} href={subItem.href} className="block">
+                              <div className="px-4 py-3 text-xs uppercase tracking-widest text-white/70 hover:text-gold-500 hover:bg-white/5 transition-colors cursor-pointer">
+                                {subItem.label}
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                )}
+              </div>
             ))}
             
             <div className="pl-8 border-l border-white/10">

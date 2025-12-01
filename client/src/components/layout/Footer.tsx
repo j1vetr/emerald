@@ -1,6 +1,5 @@
-
 import { Link } from "wouter";
-import { MapPin, Phone, Mail, Instagram, Facebook, Twitter, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Mail, Instagram, ArrowRight } from "lucide-react";
 import { hotelInfo } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
@@ -28,12 +27,6 @@ export function Footer() {
             <div className="flex gap-6 pt-4">
               <a href={hotelInfo.instagramUrl} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-black hover:bg-gold-500 hover:border-gold-500 transition-all duration-300">
                 <Instagram size={20} />
-              </a>
-              <a href="#" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-black hover:bg-gold-500 hover:border-gold-500 transition-all duration-300">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-black hover:bg-gold-500 hover:border-gold-500 transition-all duration-300">
-                <Twitter size={20} />
               </a>
             </div>
           </div>
@@ -67,8 +60,8 @@ export function Footer() {
             <div className="space-y-8">
                <div className="group">
                  <p className="text-white/40 text-xs uppercase mb-2">{t('footer.reservationLine')}</p>
-                 <a href="tel:+902121234567" className="font-serif text-2xl md:text-3xl text-white group-hover:text-gold-500 transition-colors block">
-                   +90 212 123 45 67
+                 <a href={`tel:${hotelInfo.phone.replace(/\s/g, '')}`} className="font-serif text-2xl md:text-3xl text-white group-hover:text-gold-500 transition-colors block">
+                   {hotelInfo.phone}
                  </a>
                </div>
                

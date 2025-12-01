@@ -3,14 +3,17 @@ import { useRoute, Link } from "wouter";
 import { Layout } from "@/components/layout/Layout";
 import { rooms, hotelInfo } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
-import { Check, Ruler, Users, Bed, ArrowRight, Calendar, Star } from "lucide-react";
+import { Check, Ruler, Users, Bed, ArrowRight, Calendar, Star, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import NotFound from "@/pages/not-found";
 import Autoplay from "embla-carousel-autoplay";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 
 export default function RoomDetail() {
   const [match, params] = useRoute("/odalar/:slug");
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   if (!match) return <NotFound />;
   
@@ -20,8 +23,79 @@ export default function RoomDetail() {
 
   const otherRooms = rooms.filter(r => r.id !== room.id).slice(0, 3);
 
+  const openLightbox = (index: number) => {
+    setCurrentImageIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+  };
+
+  const nextImage = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    setCurrentImageIndex((prev) => (prev + 1) % room.images.length);
+  };
+
+  const prevImage = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    setCurrentImageIndex((prev) => (prev - 1 + room.images.length) % room.images.length);
+  };
+
   return (
     <Layout>
+      <AnimatePresence>
+        {lightboxOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex items-center justify-center"
+            onClick={closeLightbox}
+          >
+            <button 
+              onClick={closeLightbox}
+              className="absolute top-8 right-8 text-white/50 hover:text-white transition-colors p-2 z-50"
+            >
+              <X size={40} />
+            </button>
+
+            <button 
+              onClick={prevImage}
+              className="absolute left-4 md:left-8 text-white/50 hover:text-white transition-colors p-2 z-50"
+            >
+              <ChevronLeft size={48} />
+            </button>
+
+            <motion.div 
+              key={currentImageIndex}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="relative max-w-7xl max-h-[90vh] w-full h-full flex items-center justify-center p-4"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img 
+                src={room.images[currentImageIndex].url} 
+                alt={room.images[currentImageIndex].alt} 
+                className="max-w-full max-h-full object-contain shadow-2xl"
+              />
+              <div className="absolute bottom-4 left-0 right-0 text-center text-white/70 text-sm">
+                {currentImageIndex + 1} / {room.images.length}
+              </div>
+            </motion.div>
+
+            <button 
+              onClick={nextImage}
+              className="absolute right-4 md:right-8 text-white/50 hover:text-white transition-colors p-2 z-50"
+            >
+              <ChevronRight size={48} />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Immersive Hero */}
       <div className="relative h-screen w-full overflow-hidden bg-black">
         <div className="absolute inset-0">
@@ -113,12 +187,18 @@ export default function RoomDetail() {
                   <CarouselContent>
                     {room.images.map((img, i) => (
                       <CarouselItem key={i} className="md:basis-2/3 pl-6">
-                        <div className="aspect-[16/10] overflow-hidden relative border border-white/10 group">
+                        <div 
+                          className="aspect-[16/10] overflow-hidden relative border border-white/10 group cursor-zoom-in"
+                          onClick={() => openLightbox(i)}
+                        >
                           <img 
                             src={img.url} 
                             alt={img.alt} 
                             className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-80 group-hover:opacity-100" 
                           />
+                          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/20">
+                            <span className="text-white/80 text-xs uppercase tracking-widest bg-black/50 px-4 py-2 backdrop-blur-sm border border-white/20">Büyüt</span>
+                          </div>
                         </div>
                       </CarouselItem>
                     ))}

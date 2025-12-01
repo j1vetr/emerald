@@ -40,15 +40,20 @@ export function Header() {
       >
         <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo Area */}
-          <Link href="/" className="relative z-50 group cursor-pointer">
-            <div className="flex flex-col items-center md:items-start">
-               {/* Logo Text Fallback if Image Fails or styling choice */}
-               <span className="font-serif text-2xl md:text-3xl text-white tracking-widest font-bold group-hover:text-gold-500 transition-colors duration-500">
-                 EMERALD
-               </span>
-               <span className="text-[0.6rem] uppercase tracking-[0.4em] text-gold-500 group-hover:text-white transition-colors duration-500">
-                 Mansion Istanbul
-               </span>
+          <Link href="/" className="relative z-50 group cursor-pointer flex items-center justify-center">
+            {/* Logo Container with Rotating Line */}
+            <div className="relative p-3 flex items-center justify-center">
+               {/* Rotating Line Ring */}
+               <div className="absolute inset-0 rounded-full border-[1px] border-transparent border-t-emerald-500 border-r-emerald-500/50 animate-spin duration-[3s] ease-linear" style={{ animationDuration: '3s' }}></div>
+               
+               {/* Reverse Rotating Inner Ring (Optional for more effect, or just stick to one) */}
+               <div className="absolute inset-[2px] rounded-full border-[1px] border-transparent border-b-emerald-800/50 animate-spin duration-[4s] ease-linear direction-reverse" style={{ animationDirection: 'reverse' }}></div>
+
+               <img 
+                 src="/assets/logo.svg" 
+                 alt="Emerald Mansion" 
+                 className="h-12 w-auto relative z-10 brightness-0 invert"
+               />
             </div>
           </Link>
 

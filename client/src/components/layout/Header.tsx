@@ -41,25 +41,25 @@ export function Header() {
         <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo Area */}
           <Link href="/" className="relative z-50 group cursor-pointer flex items-center justify-center">
-            <div className="relative flex items-center justify-center p-4">
+            <div className="relative flex items-center justify-center p-[2px] rounded-full overflow-hidden">
                {/* Rotating Border Effect - Conic Gradient */}
-               <div className="absolute inset-[12px] rounded-full overflow-hidden z-0">
+               <div className="absolute inset-0 z-0">
                    <motion.div 
                      className="absolute top-1/2 left-1/2 w-[200%] h-[200%] -translate-x-1/2 -translate-y-1/2"
                      style={{
-                       background: "conic-gradient(from 0deg, transparent 0%, transparent 85%, #D4AF37 100%)"
+                       background: "conic-gradient(from 0deg, transparent 0%, transparent 70%, #D4AF37 100%)"
                      }}
                      animate={{ rotate: 360 }}
-                     transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                     transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                    />
                </div>
 
                {/* Logo Container with Background */}
-               <div className="relative z-10 p-4 rounded-full bg-black/90 backdrop-blur-md border border-white/5 m-[2px]">
+               <div className="relative z-10 p-3 rounded-full bg-black/40 backdrop-blur-md">
                  <img 
                    src="/assets/logo.svg" 
                    alt="Emerald Mansion" 
-                   className="h-24 w-auto drop-shadow-xl transition-transform duration-500 group-hover:scale-105"
+                   className="h-16 w-auto drop-shadow-xl transition-transform duration-500 group-hover:scale-105"
                  />
                </div>
             </div>

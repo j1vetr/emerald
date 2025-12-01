@@ -1,0 +1,33 @@
+
+root@162-55-4-35:/var/www/emerald# cd /etc
+root@162-55-4-35:/etc# cd nginx
+root@162-55-4-35:/etc/nginx# cd sites-availables
+-bash: cd: sites-availables: No such file or directory
+root@162-55-4-35:/etc/nginx# cd sites-available
+root@162-55-4-35:/etc/nginx/sites-available# nano emerald.conf
+root@162-55-4-35:/etc/nginx/sites-available# sudo nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+root@162-55-4-35:/etc/nginx/sites-available# sudo certbot --nginx -d emerald.toov.com.tr
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+Could not read file: /etc/nginx/sites-enabled/besindegerim.com.conf due to invalid character. Only UTF-8 encoding is supported.
+Requesting a certificate for emerald.toov.com.tr
+Could not read file: /etc/nginx/sites-enabled/besindegerim.com.conf due to invalid character. Only UTF-8 encoding is supported.
+
+Successfully received certificate.
+Certificate is saved at: /etc/letsencrypt/live/emerald.toov.com.tr/fullchain.pem
+Key is saved at:         /etc/letsencrypt/live/emerald.toov.com.tr/privkey.pem
+This certificate expires on 2026-03-01.
+These files will be updated when the certificate renews.
+Certbot has set up a scheduled task to automatically renew this certificate in the background.
+
+Deploying certificate
+Could not read file: /etc/nginx/sites-enabled/besindegerim.com.conf due to invalid character. Only UTF-8 encoding is supported.
+Could not install certificate
+
+NEXT STEPS:
+- The certificate was saved, but could not be installed (installer: nginx). After fixing the error shown below, try installing it again by running:
+  certbot install --cert-name emerald.toov.com.tr
+
+Could not automatically find a matching server block for emerald.toov.com.tr. Set the `server_name` directive to use the Nginx installer.
+Ask for help or search for solutions at https://community.letsencrypt.org. See the logfile /var/log/letsencrypt/letsencrypt.log or re-run Certbot with -v for more details.

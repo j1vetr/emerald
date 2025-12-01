@@ -1,4 +1,3 @@
-
 import { Layout } from "@/components/layout/Layout";
 import { hotelInfo } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
@@ -7,15 +6,18 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function Contact() {
+  const { t } = useTranslation();
+
   return (
     <Layout>
       <div className="bg-black text-white pt-40 pb-24 text-center relative">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
         <div className="container mx-auto px-4 relative z-10">
-          <span className="text-gold-500 text-xs uppercase tracking-[0.4em] mb-6 block">Bize Ulaşın</span>
-          <h1 className="font-serif text-5xl md:text-7xl mb-6">İletişim</h1>
+          <span className="text-gold-500 text-xs uppercase tracking-[0.4em] mb-6 block">{t('contact.subtitle')}</span>
+          <h1 className="font-serif text-5xl md:text-7xl mb-6">{t('contact.title')}</h1>
         </div>
       </div>
 
@@ -30,28 +32,28 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="font-serif text-3xl text-white mb-10">Mesaj Gönderin</h2>
+              <h2 className="font-serif text-3xl text-white mb-10">{t('contact.sendHeading')}</h2>
               <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-2">
-                    <Label htmlFor="name" className="text-white/50 text-xs uppercase tracking-widest">Adınız Soyadınız</Label>
+                    <Label htmlFor="name" className="text-white/50 text-xs uppercase tracking-widest">{t('contact.name')}</Label>
                     <Input id="name" className="h-14 bg-white/5 border-white/10 focus:border-gold-500 text-white rounded-none" />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-white/50 text-xs uppercase tracking-widest">E-posta Adresiniz</Label>
+                    <Label htmlFor="email" className="text-white/50 text-xs uppercase tracking-widest">{t('contact.email')}</Label>
                     <Input id="email" type="email" className="h-14 bg-white/5 border-white/10 focus:border-gold-500 text-white rounded-none" />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="subject" className="text-white/50 text-xs uppercase tracking-widest">Konu</Label>
+                  <Label htmlFor="subject" className="text-white/50 text-xs uppercase tracking-widest">{t('contact.subject')}</Label>
                   <Input id="subject" className="h-14 bg-white/5 border-white/10 focus:border-gold-500 text-white rounded-none" />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="message" className="text-white/50 text-xs uppercase tracking-widest">Mesajınız</Label>
+                  <Label htmlFor="message" className="text-white/50 text-xs uppercase tracking-widest">{t('contact.message')}</Label>
                   <Textarea id="message" className="min-h-[150px] bg-white/5 border-white/10 focus:border-gold-500 text-white rounded-none resize-none" />
                 </div>
                 <Button className="w-full md:w-auto bg-gold-500 text-black hover:bg-white hover:text-black rounded-none px-12 h-14 text-xs uppercase tracking-[0.2em] font-bold">
-                  Gönder
+                  {t('contact.send')}
                 </Button>
               </form>
             </motion.div>
@@ -64,7 +66,7 @@ export default function Contact() {
               transition={{ duration: 0.8 }}
               className="space-y-12"
             >
-              <h2 className="font-serif text-3xl text-white mb-10">Bilgiler</h2>
+              <h2 className="font-serif text-3xl text-white mb-10">{t('contact.infoHeading')}</h2>
               
               <div className="space-y-8">
                 <div className="flex items-start gap-6">
@@ -72,7 +74,7 @@ export default function Contact() {
                       <MapPin size={20} />
                     </div>
                     <div>
-                      <h4 className="text-xs uppercase tracking-widest text-white/50 mb-2">Adres</h4>
+                      <h4 className="text-xs uppercase tracking-widest text-white/50 mb-2">{t('footer.address')}</h4>
                       <p className="text-white/80 leading-relaxed font-light">{hotelInfo.address}</p>
                     </div>
                 </div>
@@ -92,7 +94,7 @@ export default function Contact() {
                       <Mail size={20} />
                     </div>
                     <div>
-                      <h4 className="text-xs uppercase tracking-widest text-white/50 mb-2">E-posta</h4>
+                      <h4 className="text-xs uppercase tracking-widest text-white/50 mb-2">{t('footer.email')}</h4>
                       <p className="text-white/80 leading-relaxed font-light">{hotelInfo.email}</p>
                     </div>
                 </div>

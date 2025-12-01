@@ -1,17 +1,19 @@
 
 import { Link, useLocation } from "wouter";
 import { useState, useEffect } from "react";
-import { Menu, X, Phone, ChevronDown } from "lucide-react";
+import { Menu, X, Phone, ChevronDown, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { hotelInfo, rooms } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export function Header() {
   const [location] = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,21 +23,26 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const toggleLanguage = () => {
+    const newLang = i18n.language === 'tr' ? 'en' : 'tr';
+    i18n.changeLanguage(newLang);
+  };
+
   const navLinks = [
-    { href: "/", label: "Ana Sayfa" },
+    { href: "/", label: t('nav.home') },
     { 
       href: "/odalar", 
-      label: "Odalar",
+      label: t('nav.rooms'),
       hasSubmenu: true,
       submenuItems: rooms.map(room => ({
         href: `/odalar/${room.slug}`,
-        label: room.shortName
+        label: i18n.language === 'en' ? room.shortNameEn : room.shortName
       }))
     },
-    { href: "/hakkimizda", label: "Hakkımızda" },
-    { href: "/gezilecek-yerler", label: "Gezilecek Yerler" },
-    { href: "/galeri", label: "Galeri" },
-    { href: "/iletisim", label: "İletişim" },
+    { href: "/hakkimizda", label: t('nav.about') },
+    { href: "/gezilecek-yerler", label: t('nav.attractions') },
+    { href: "/galeri", label: t('nav.gallery') },
+    { href: "/iletisim", label: t('nav.contact') },
   ];
 
   return (
@@ -125,26 +132,43 @@ export function Header() {
               </div>
             ))}
             
-            <div className="pl-8 border-l border-white/10">
+            <div className="pl-8 border-l border-white/10 flex items-center gap-6">
+              <button 
+                onClick={toggleLanguage}
+                className="text-xs font-medium tracking-widest text-white/70 hover:text-gold-500 transition-colors uppercase flex items-center gap-2"
+              >
+                <Globe size={14} />
+                {i18n.language === 'tr' ? 'EN' : 'TR'}
+              </button>
+
               <Button 
                 asChild 
                 variant="outline"
                 className="bg-transparent border-gold-500/50 text-gold-400 hover:bg-gold-500 hover:text-black hover:border-gold-500 rounded-none px-8 py-6 text-xs uppercase tracking-widest transition-all duration-500"
               >
                 <a href={hotelInfo.bookingUrl} target="_blank" rel="noopener noreferrer">
-                  Rezervasyon
+                  {t('nav.bookNow')}
                 </a>
               </Button>
             </div>
           </nav>
 
           {/* Mobile Menu Toggle */}
-          <button
-            className="lg:hidden z-50 text-white p-2 hover:text-gold-500 transition-colors duration-300"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
+          <div className="lg:hidden flex items-center gap-6">
+            <button 
+              onClick={toggleLanguage}
+              className="text-xs font-bold tracking-widest text-white hover:text-gold-500 transition-colors uppercase"
+            >
+              {i18n.language === 'tr' ? 'EN' : 'TR'}
+            </button>
+            
+            <button
+              className="z-50 text-white p-2 hover:text-gold-500 transition-colors duration-300"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -190,7 +214,7 @@ export function Header() {
                   className="bg-gold-500 text-black hover:bg-white hover:text-black rounded-none px-12 py-8 text-lg font-serif"
                 >
                   <a href={hotelInfo.bookingUrl} target="_blank" rel="noopener noreferrer">
-                    Rezervasyon Yap
+                    {t('nav.bookNowAction')}
                   </a>
                 </Button>
               </motion.div>

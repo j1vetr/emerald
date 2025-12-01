@@ -1,4 +1,3 @@
-
 import { useRoute, Link } from "wouter";
 import { Layout } from "@/components/layout/Layout";
 import { rooms, hotelInfo } from "@/lib/constants";
@@ -9,11 +8,14 @@ import NotFound from "@/pages/not-found";
 import Autoplay from "embla-carousel-autoplay";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function RoomDetail() {
   const [match, params] = useRoute("/odalar/:slug");
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const { t, i18n } = useTranslation();
+  const isEn = i18n.language === 'en';
   
   if (!match) return <NotFound />;
   
@@ -45,17 +47,19 @@ export default function RoomDetail() {
   const getAmenityIcon = (amenity: string) => {
     const lower = amenity.toLowerCase();
     if (lower.includes("wifi")) return <Wifi size={32} strokeWidth={1} />;
-    if (lower.includes("klima")) return <Wind size={32} strokeWidth={1} />;
+    if (lower.includes("klima") || lower.includes("air")) return <Wind size={32} strokeWidth={1} />;
     if (lower.includes("minibar")) return <Wine size={32} strokeWidth={1} />;
-    if (lower.includes("kasa")) return <Lock size={32} strokeWidth={1} />;
+    if (lower.includes("kasa") || lower.includes("safe")) return <Lock size={32} strokeWidth={1} />;
     if (lower.includes("tv")) return <Tv size={32} strokeWidth={1} />;
-    if (lower.includes("banyo") || lower.includes("kurutma")) return <Sparkles size={32} strokeWidth={1} />;
-    if (lower.includes("kahve") || lower.includes("espresso")) return <Coffee size={32} strokeWidth={1} />;
-    if (lower.includes("oturma") || lower.includes("koltuk")) return <Armchair size={32} strokeWidth={1} />;
-    if (lower.includes("bornoz") || lower.includes("terlik")) return <Shirt size={32} strokeWidth={1} />;
-    if (lower.includes("çalışma") || lower.includes("masa")) return <Laptop size={32} strokeWidth={1} />;
+    if (lower.includes("banyo") || lower.includes("kurutma") || lower.includes("hair") || lower.includes("toiletries")) return <Sparkles size={32} strokeWidth={1} />;
+    if (lower.includes("kahve") || lower.includes("espresso") || lower.includes("coffee")) return <Coffee size={32} strokeWidth={1} />;
+    if (lower.includes("oturma") || lower.includes("koltuk") || lower.includes("sitting")) return <Armchair size={32} strokeWidth={1} />;
+    if (lower.includes("bornoz") || lower.includes("terlik") || lower.includes("robes")) return <Shirt size={32} strokeWidth={1} />;
+    if (lower.includes("çalışma") || lower.includes("masa") || lower.includes("work")) return <Laptop size={32} strokeWidth={1} />;
     return <Star size={32} strokeWidth={1} />;
   };
+
+  const displayAmenities = isEn ? room.amenitiesEn : room.amenities;
 
   return (
     <Layout>
@@ -120,7 +124,7 @@ export default function RoomDetail() {
              animate={{ scale: 1 }}
              transition={{ duration: 2, ease: "easeOut" }}
              src={room.coverImage} 
-             alt={room.name} 
+             alt={isEn ? room.nameEn : room.name} 
              className="w-full h-full object-cover opacity-80"
            />
         </div>
@@ -136,19 +140,19 @@ export default function RoomDetail() {
                  <span className="h-[1px] w-12 bg-gold-500"></span>
                  <span className="text-gold-500 text-sm uppercase tracking-[0.3em]">Emerald Collection</span>
                </div>
-               <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-white mb-8 leading-tight">{room.name}</h1>
+               <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-white mb-8 leading-tight">{isEn ? room.nameEn : room.name}</h1>
                <div className="flex flex-wrap gap-8 text-white/80 font-light tracking-wider text-sm border-t border-white/10 pt-8">
                   <div className="flex flex-col gap-1">
-                     <span className="text-xs text-white/40 uppercase">Boyut</span>
+                     <span className="text-xs text-white/40 uppercase">{t('rooms.size')}</span>
                      <span className="flex items-center gap-2"><Ruler size={14} className="text-gold-500"/> {room.size} m²</span>
                   </div>
                   <div className="flex flex-col gap-1">
-                     <span className="text-xs text-white/40 uppercase">Kapasite</span>
-                     <span className="flex items-center gap-2"><Users size={14} className="text-gold-500"/> Max {room.capacity.adults} Kişi</span>
+                     <span className="text-xs text-white/40 uppercase">{t('rooms.capacity')}</span>
+                     <span className="flex items-center gap-2"><Users size={14} className="text-gold-500"/> Max {room.capacity.adults} {t('rooms.person')}</span>
                   </div>
                   <div className="flex flex-col gap-1">
-                     <span className="text-xs text-white/40 uppercase">Yatak</span>
-                     <span className="flex items-center gap-2"><Bed size={14} className="text-gold-500"/> {room.bedType}</span>
+                     <span className="text-xs text-white/40 uppercase">{t('rooms.bed')}</span>
+                     <span className="flex items-center gap-2"><Bed size={14} className="text-gold-500"/> {isEn ? room.bedTypeEn : room.bedType}</span>
                   </div>
                </div>
              </motion.div>
@@ -164,7 +168,7 @@ export default function RoomDetail() {
                   className="bg-gold-500 text-black hover:bg-white hover:text-black h-16 px-10 rounded-none text-sm uppercase tracking-widest font-bold"
                 >
                   <a href={hotelInfo.bookingUrl} target="_blank" rel="noopener noreferrer">
-                    Rezervasyon Yap
+                    {t('nav.bookNowAction')}
                   </a>
                 </Button>
              </motion.div>
@@ -181,20 +185,20 @@ export default function RoomDetail() {
             <div className="lg:col-span-8 space-y-20">
               
               <div className="prose prose-invert prose-lg max-w-none">
-                <h2 className="font-serif text-4xl text-white mb-8">Deneyim</h2>
-                <p className="text-2xl font-serif text-gold-500/80 italic leading-relaxed mb-8">"{room.shortDescription}"</p>
-                <p className="text-white/60 font-light leading-loose">{room.description}</p>
+                <h2 className="font-serif text-4xl text-white mb-8">{t('roomDetail.experience')}</h2>
+                <p className="text-2xl font-serif text-gold-500/80 italic leading-relaxed mb-8">"{isEn ? room.shortDescriptionEn : room.shortDescription}"</p>
+                <p className="text-white/60 font-light leading-loose">{isEn ? room.descriptionEn : room.description}</p>
                 <p className="text-white/60 font-light leading-loose">
-                  Yüksek tavanlar, el işçiliği ahşap detaylar ve lüks kumaşlar... 
-                  Her anınızda kaliteyi hissetmeniz için tasarlandı. Modern dünyanın gereklilikleri ile 
-                  tarihin büyüleyici dokusu burada birleşiyor.
+                  {isEn 
+                    ? "High ceilings, handcrafted wooden details and luxurious fabrics... Designed for you to feel quality in every moment. The requirements of the modern world and the fascinating texture of history come together here."
+                    : "Yüksek tavanlar, el işçiliği ahşap detaylar ve lüks kumaşlar... Her anınızda kaliteyi hissetmeniz için tasarlandı. Modern dünyanın gereklilikleri ile tarihin büyüleyici dokusu burada birleşiyor."}
                 </p>
               </div>
 
               {/* Gallery */}
               <div className="space-y-8">
                 <div className="flex items-center justify-between">
-                   <h3 className="text-xs uppercase tracking-[0.3em] text-white/50">Görseller</h3>
+                   <h3 className="text-xs uppercase tracking-[0.3em] text-white/50">{t('roomDetail.gallery')}</h3>
                    <div className="h-[1px] flex-grow bg-white/10 ml-6"></div>
                 </div>
                 
@@ -212,7 +216,7 @@ export default function RoomDetail() {
                             className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-80 group-hover:opacity-100" 
                           />
                           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/20">
-                            <span className="text-white/80 text-xs uppercase tracking-widest bg-black/50 px-4 py-2 backdrop-blur-sm border border-white/20">Büyüt</span>
+                            <span className="text-white/80 text-xs uppercase tracking-widest bg-black/50 px-4 py-2 backdrop-blur-sm border border-white/20">{t('roomDetail.zoom')}</span>
                           </div>
                         </div>
                       </CarouselItem>
@@ -228,12 +232,12 @@ export default function RoomDetail() {
               {/* Amenities List - Redesigned */}
               <div className="space-y-8">
                  <div className="flex items-center justify-between">
-                   <h3 className="text-xs uppercase tracking-[0.3em] text-white/50">Olanaklar</h3>
+                   <h3 className="text-xs uppercase tracking-[0.3em] text-white/50">{t('rooms.amenities')}</h3>
                    <div className="h-[1px] flex-grow bg-white/10 ml-6"></div>
                 </div>
                 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {room.amenities.map((item, i) => (
+                  {displayAmenities.map((item, i) => (
                     <div key={i} className="group relative bg-white/[0.02] border border-white/10 hover:border-gold-500/50 p-6 flex flex-col items-center justify-center gap-4 aspect-square transition-all duration-500 hover:bg-white/[0.04] overflow-hidden">
                       
                       {/* Background Glow Effect */}
@@ -260,21 +264,21 @@ export default function RoomDetail() {
             <div className="lg:col-span-4">
               <div className="sticky top-32 space-y-8">
                 <div className="bg-emerald-950/30 border border-white/10 backdrop-blur-md p-8 md:p-10">
-                  <h3 className="font-serif text-3xl text-white mb-2">Rezervasyon</h3>
-                  <p className="text-white/50 text-sm font-light mb-8">Doğrudan rezervasyonlarda en iyi fiyat garantisi.</p>
+                  <h3 className="font-serif text-3xl text-white mb-2">{t('rooms.reservation')}</h3>
+                  <p className="text-white/50 text-sm font-light mb-8">{t('rooms.bestRate')}</p>
                   
                   <div className="space-y-6 mb-10">
                     <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                       <span className="text-xs uppercase tracking-wider text-gold-500">Giriş</span>
+                       <span className="text-xs uppercase tracking-wider text-gold-500">{t('rooms.checkIn')}</span>
                        <span className="font-serif text-lg text-white">14:00</span>
                     </div>
                     <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                       <span className="text-xs uppercase tracking-wider text-gold-500">Çıkış</span>
+                       <span className="text-xs uppercase tracking-wider text-gold-500">{t('rooms.checkOut')}</span>
                        <span className="font-serif text-lg text-white">12:00</span>
                     </div>
                     <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                       <span className="text-xs uppercase tracking-wider text-gold-500">İptal</span>
-                       <span className="font-serif text-lg text-white text-right text-sm">Esnek Koşullar</span>
+                       <span className="text-xs uppercase tracking-wider text-gold-500">{t('rooms.cancellation')}</span>
+                       <span className="font-serif text-lg text-white text-right text-sm">{t('rooms.flexible')}</span>
                     </div>
                   </div>
                   
@@ -283,14 +287,14 @@ export default function RoomDetail() {
                     className="w-full bg-gold-500 text-black hover:bg-white hover:text-black font-bold h-16 rounded-none text-sm uppercase tracking-widest transition-all duration-300"
                   >
                     <a href={hotelInfo.bookingUrl} target="_blank" rel="noopener noreferrer">
-                      Müsaitlik Kontrolü
+                      {t('roomDetail.checkAvailability')}
                     </a>
                   </Button>
                 </div>
 
                 {/* Need Help */}
                 <div className="text-center p-8 border border-white/5 bg-white/5">
-                   <p className="text-white/50 text-sm mb-4">Özel istekleriniz mi var?</p>
+                   <p className="text-white/50 text-sm mb-4">{t('rooms.needHelp')}</p>
                    <a href="tel:+902121234567" className="font-serif text-xl text-white hover:text-gold-500 transition-colors block mb-2">+90 212 123 45 67</a>
                    <a href={`mailto:${hotelInfo.email}`} className="text-sm text-white/40 hover:text-white transition-colors block">{hotelInfo.email}</a>
                 </div>
@@ -305,9 +309,9 @@ export default function RoomDetail() {
       <div className="bg-black py-32 border-t border-white/10">
         <div className="container mx-auto px-6">
           <div className="flex justify-between items-end mb-16">
-             <h3 className="font-serif text-4xl text-white">Diğer Seçenekler</h3>
+             <h3 className="font-serif text-4xl text-white">{t('rooms.otherOptions')}</h3>
              <Link href="/odalar" className="text-xs uppercase tracking-widest text-white/50 hover:text-gold-500 border-b border-transparent hover:border-gold-500 transition-all pb-1 cursor-pointer">
-               Tüm Odalar
+               {t('rooms.allRooms')}
              </Link>
           </div>
           
@@ -316,11 +320,11 @@ export default function RoomDetail() {
               <Link key={r.id} href={`/odalar/${r.slug}`} className="group block cursor-pointer">
                 <div className="aspect-[3/4] overflow-hidden relative mb-6 border border-white/10">
                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
-                   <img src={r.coverImage} alt={r.name} className="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" />
+                   <img src={r.coverImage} alt={isEn ? r.nameEn : r.name} className="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" />
                 </div>
-                <h4 className="font-serif text-2xl text-white mb-2 group-hover:text-gold-500 transition-colors">{r.shortName}</h4>
+                <h4 className="font-serif text-2xl text-white mb-2 group-hover:text-gold-500 transition-colors">{isEn ? r.shortNameEn : r.shortName}</h4>
                 <p className="text-xs uppercase tracking-widest text-white/40">
-                   {r.size} m² • {r.capacity.adults} Kişi
+                   {r.size} m² • {r.capacity.adults} {t('rooms.person')}
                 </p>
               </Link>
             ))}

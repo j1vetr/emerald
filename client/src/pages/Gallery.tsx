@@ -1,10 +1,11 @@
-
 import { Layout } from "@/components/layout/Layout";
 import { rooms } from "@/lib/constants";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function Gallery() {
+  const { t } = useTranslation();
   // Collect all unique images
   const allImages = [
     ...rooms.flatMap(r => r.images),
@@ -19,8 +20,8 @@ export default function Gallery() {
       <div className="bg-black text-white pt-40 pb-24 text-center relative">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
         <div className="container mx-auto px-4 relative z-10">
-          <span className="text-gold-500 text-xs uppercase tracking-[0.4em] mb-6 block">Portfolyo</span>
-          <h1 className="font-serif text-5xl md:text-7xl mb-6">Galeri</h1>
+          <span className="text-gold-500 text-xs uppercase tracking-[0.4em] mb-6 block">{t('gallery.portfolio')}</span>
+          <h1 className="font-serif text-5xl md:text-7xl mb-6">{t('gallery.title')}</h1>
         </div>
       </div>
 
@@ -44,7 +45,7 @@ export default function Gallery() {
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                       <span className="text-white font-serif italic text-lg border-b border-gold-500 pb-1">Görüntüle</span>
+                       <span className="text-white font-serif italic text-lg border-b border-gold-500 pb-1">{t('gallery.view')}</span>
                     </div>
                   </motion.div>
                 </DialogTrigger>

@@ -1,18 +1,20 @@
-
 import { Layout } from "@/components/layout/Layout";
 import { hotelInfo } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function About() {
+  const { t } = useTranslation();
+
   return (
     <Layout>
        <div className="bg-black text-white pt-40 pb-24 text-center relative">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
         <div className="container mx-auto px-4 relative z-10">
-           <span className="text-gold-500 text-xs uppercase tracking-[0.4em] mb-6 block">Hikayemiz</span>
-          <h1 className="font-serif text-5xl md:text-7xl mb-8">Hakkımızda</h1>
+           <span className="text-gold-500 text-xs uppercase tracking-[0.4em] mb-6 block">{t('about.story')}</span>
+          <h1 className="font-serif text-5xl md:text-7xl mb-8">{t('about.title')}</h1>
         </div>
       </div>
 
@@ -40,20 +42,15 @@ export default function About() {
 
              <div className="space-y-10">
                 <h2 className="font-serif text-4xl text-white leading-tight">
-                   İstanbul'un Kalbinde <br/> <span className="text-gold-500 italic">Bir Rüya.</span>
+                   {t('about.heroTitle')} <br/> <span className="text-gold-500 italic">{t('about.heroSubtitle')}</span>
                 </h2>
                 
                 <div className="space-y-6 text-white/60 font-light leading-loose text-lg">
                   <p>
-                    İstanbul'un tarihi yarımadası Sultanahmet'te yer alan Emerald Mansion, 
-                    köklü geçmişi modern bir lüks anlayışıyla harmanlayan, şehrin en özel butik otellerinden biridir.
-                    Tarihi dokuya sadık kalınarak restore edilen binamız, Osmanlı ve Selçuklu mimarisinin 
-                    zarif izlerini taşımaktadır.
+                    {t('about.text1')}
                   </p>
                   <p>
-                    2024 yılında kapılarını açan otelimiz, toplamda 16 özel odasıyla misafirlerine butik bir 
-                    konaklama deneyimi sunar. Her bir odamız, misafirlerimizin konforu düşünülerek 
-                    modern olanaklarla donatılmış, ancak ruhunu tarihten almıştır.
+                    {t('about.text2')}
                   </p>
                 </div>
 
@@ -71,15 +68,15 @@ export default function About() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">
                <div className="py-4">
                   <span className="block font-serif text-5xl text-gold-500 mb-4">16</span>
-                  <span className="text-xs uppercase tracking-[0.3em] text-white/60">Özel Süit</span>
+                  <span className="text-xs uppercase tracking-[0.3em] text-white/60">{t('about.suites')}</span>
                </div>
                <div className="py-4">
                   <span className="block font-serif text-5xl text-gold-500 mb-4">7/24</span>
-                  <span className="text-xs uppercase tracking-[0.3em] text-white/60">Concierge</span>
+                  <span className="text-xs uppercase tracking-[0.3em] text-white/60">{t('about.concierge')}</span>
                </div>
                <div className="py-4">
                   <span className="block font-serif text-5xl text-gold-500 mb-4">∞</span>
-                  <span className="text-xs uppercase tracking-[0.3em] text-white/60">Memnuniyet</span>
+                  <span className="text-xs uppercase tracking-[0.3em] text-white/60">{t('about.satisfaction')}</span>
                </div>
             </div>
          </div>

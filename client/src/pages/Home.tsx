@@ -1,12 +1,12 @@
-
 import { Link } from "wouter";
 import { ArrowRight, Wifi, Coffee, Car, Star, ChevronDown, Play } from "lucide-react";
 import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
-import { rooms } from "@/lib/constants";
+import { rooms, hotelInfo } from "@/lib/constants";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "react-i18next";
 
 // Animation Variants
 const fadeInUp: Variants = {
@@ -45,6 +45,7 @@ const RevealText = ({ text, className }: { text: string, className?: string }) =
 };
 
 export default function Home() {
+  const { t, i18n } = useTranslation();
   const featuredRooms = rooms.slice(0, 3);
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -54,6 +55,8 @@ export default function Home() {
   
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
+  const isEn = i18n.language === 'en';
 
   return (
     <Layout>
@@ -84,7 +87,7 @@ export default function Home() {
            >
              <motion.div variants={fadeInUp}>
                 <span className="border border-white/20 px-4 py-2 text-xs uppercase tracking-[0.3em] text-white/80 backdrop-blur-sm">
-                  The Historic Peninsula
+                  {t('home.heroSubtitle')}
                 </span>
              </motion.div>
              
@@ -114,7 +117,7 @@ export default function Home() {
                variants={fadeInUp}
                className="max-w-md mx-auto text-white/70 font-light leading-relaxed pt-8 border-t border-white/10 mt-8"
              >
-               İstanbul'un tarihi kalbinde, Osmanlı zarafeti ve modern lüksün kusursuz uyumu.
+               {t('home.heroDesc')}
              </motion.p>
            </motion.div>
         </div>
@@ -126,7 +129,7 @@ export default function Home() {
           transition={{ delay: 2, duration: 1 }}
           className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-white/50"
         >
-          <span className="text-[10px] uppercase tracking-widest">Keşfet</span>
+          <span className="text-[10px] uppercase tracking-widest">{t('home.exploreRooms')}</span>
           <ChevronDown className="animate-bounce w-4 h-4" />
         </motion.div>
       </section>
@@ -155,9 +158,8 @@ export default function Home() {
             
             <div className="order-1 lg:order-2 space-y-12">
               <h2 className="font-serif text-5xl md:text-7xl text-white leading-tight">
-                <RevealText text="Zamanın" /> <br />
-                <span className="text-gold-500 italic"><RevealText text="Ötesinde" /></span> <br />
-                <RevealText text="Bir Deneyim." />
+                <RevealText text={t('home.welcomeTitle')} /> <br />
+                <span className="text-gold-500 italic"><RevealText text={t('home.welcomeSubtitle')} /></span>
               </h2>
               
               <motion.p 
@@ -167,9 +169,17 @@ export default function Home() {
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="text-white/60 text-lg font-light leading-relaxed border-l border-gold-500 pl-8"
               >
-                Sultanahmet'in gölgesinde, tarihin fısıltılarını dinleyin. Emerald Mansion, 
-                sadece bir konaklama değil, İstanbul'un ruhuna yapılan bir yolculuktur. 
-                Her detayında sanat, her köşesinde huzur bulacaksınız.
+                {t('home.welcomeText1')}
+              </motion.p>
+              
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5, duration: 0.8 }}
+                className="text-white/60 font-light leading-relaxed"
+              >
+                {t('home.welcomeText2')}
               </motion.p>
 
               <motion.div 
@@ -181,11 +191,11 @@ export default function Home() {
               >
                  <div>
                    <span className="block text-3xl font-serif text-gold-500 mb-2">16</span>
-                   <span className="text-xs uppercase tracking-widest text-white/50">Özel Süit</span>
+                   <span className="text-xs uppercase tracking-widest text-white/50">{t('home.featuredRooms')}</span>
                  </div>
                  <div>
                    <span className="block text-3xl font-serif text-gold-500 mb-2">∞</span>
-                   <span className="text-xs uppercase tracking-widest text-white/50">Anı</span>
+                   <span className="text-xs uppercase tracking-widest text-white/50">{t('home.experience')}</span>
                  </div>
               </motion.div>
             </div>
@@ -197,12 +207,12 @@ export default function Home() {
       <section className="py-32 bg-black text-white relative border-t border-white/10">
         <div className="container mx-auto px-6 mb-20 flex items-end justify-between">
            <div className="space-y-4">
-             <span className="text-gold-500 text-xs uppercase tracking-[0.3em]">Konaklama</span>
-             <h2 className="font-serif text-5xl md:text-6xl">Süitler & Odalar</h2>
+             <span className="text-gold-500 text-xs uppercase tracking-[0.3em]">{t('nav.rooms')}</span>
+             <h2 className="font-serif text-5xl md:text-6xl">{t('footer.roomsAndSuites')}</h2>
            </div>
            <Link href="/odalar">
              <Button variant="outline" className="hidden md:flex border-white/20 text-white hover:bg-gold-500 hover:text-black hover:border-gold-500 rounded-none px-8 py-6 text-xs uppercase tracking-widest transition-all">
-               Tümünü İncele
+               {t('home.viewAllRooms')}
              </Button>
            </Link>
         </div>
@@ -223,13 +233,13 @@ export default function Home() {
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-all duration-700 z-10" />
                     <img 
                       src={room.coverImage} 
-                      alt={room.name} 
+                      alt={isEn ? room.nameEn : room.name} 
                       className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-80 group-hover:opacity-100"
                     />
                     
                     <div className="absolute bottom-0 left-0 right-0 p-8 z-20 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                       <span className="text-gold-500 text-xs uppercase tracking-widest mb-2 block opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">{room.size} m²</span>
-                      <h3 className="font-serif text-2xl md:text-3xl text-white mb-4 group-hover:text-gold-200 transition-colors">{room.shortName}</h3>
+                      <h3 className="font-serif text-2xl md:text-3xl text-white mb-4 group-hover:text-gold-200 transition-colors">{isEn ? room.shortNameEn : room.shortName}</h3>
                       <div className="w-full h-[1px] bg-white/20 group-hover:bg-gold-500 transition-colors duration-500 origin-left scale-x-0 group-hover:scale-x-100"></div>
                     </div>
                   </div>
@@ -240,7 +250,7 @@ export default function Home() {
           <div className="mt-12 md:hidden text-center">
              <Link href="/odalar">
               <Button variant="outline" className="w-full border-white/20 text-white hover:bg-gold-500 hover:text-black hover:border-gold-500 rounded-none px-8 py-6 text-xs uppercase tracking-widest transition-all">
-                Tümünü İncele
+                {t('home.viewAllRooms')}
               </Button>
             </Link>
           </div>
@@ -254,18 +264,18 @@ export default function Home() {
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-24">
-            <span className="text-gold-500 text-xs uppercase tracking-[0.3em] mb-6 block">Hizmetler</span>
+            <span className="text-gold-500 text-xs uppercase tracking-[0.3em] mb-6 block">{t('home.experience')}</span>
             <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight">
-              Konforunuz İçin <span className="italic text-white/50">Tasarlanmış</span> <br/> Ayrıcalıklar
+              {t('home.diningTitle')} & <span className="italic text-white/50">{t('home.conciergeTitle')}</span>
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
              {[
-                { title: "Gurme Kahvaltı", desc: "Organik ve yerel lezzetler.", icon: Coffee },
-                { title: "Yüksek Hız", desc: "Fiber internet altyapısı.", icon: Wifi },
-                { title: "VIP Transfer", desc: "Lüks araçlarla ulaşım.", icon: Car },
-                { title: "Concierge", desc: "Size özel şehir rehberliği.", icon: Star },
+                { title: t('home.diningTitle'), desc: t('home.diningDesc'), icon: Coffee },
+                { title: "Wi-Fi", desc: isEn ? "High speed internet." : "Yüksek Hızda İnternet.", icon: Wifi },
+                { title: t('home.transferTitle'), desc: t('home.transferDesc'), icon: Car },
+                { title: t('home.conciergeTitle'), desc: t('home.conciergeDesc'), icon: Star },
               ].map((item, i) => (
                 <motion.div 
                   key={i}
@@ -306,7 +316,7 @@ export default function Home() {
              transition={{ duration: 0.8 }}
              className="font-serif text-5xl md:text-7xl text-white mb-8"
            >
-             İstanbul Sizi Bekliyor
+             {t('home.locationSubtitle')}
            </motion.h2>
            <motion.div
              initial={{ opacity: 0, scale: 0.9 }}
@@ -318,8 +328,8 @@ export default function Home() {
                asChild 
                className="bg-gold-500 text-black hover:bg-white hover:text-black h-20 px-12 rounded-none text-lg uppercase tracking-[0.2em] font-bold transition-all duration-500"
              >
-               <a href="https://emerald-mansion.rezervasyonal.com" target="_blank">
-                 Rezervasyon Yap
+               <a href={hotelInfo.bookingUrl} target="_blank">
+                 {t('nav.bookNowAction')}
                </a>
              </Button>
            </motion.div>

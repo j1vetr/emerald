@@ -4,6 +4,8 @@ import { Footer } from "./Footer";
 import { WhatsAppButton } from "@/components/ui/whatsapp-button";
 import { CustomCursor } from "@/components/ui/custom-cursor";
 import { Preloader } from "@/components/ui/preloader";
+import { SmoothScroll } from "@/components/ui/smooth-scroll";
+import { StickyBookingBar } from "@/components/ui/sticky-booking-bar";
 import { useEffect } from "react";
 import { useLocation } from "wouter";
 
@@ -27,12 +29,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
     <div className="flex flex-col min-h-screen bg-background font-sans antialiased selection:bg-gold-500/30 cursor-none">
       <Preloader />
       <CustomCursor />
+      <SmoothScroll />
       <ScrollToTopWrapper />
       <Header />
       <main className="flex-grow pt-0">
         {children}
       </main>
       <WhatsAppButton />
+      <StickyBookingBar />
       <Footer />
     </div>
   );

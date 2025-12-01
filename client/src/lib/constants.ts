@@ -171,12 +171,18 @@ import topkapiPalace from '@assets/stock_images/topkapi_palace_istan_54d0f61b.jp
 import dolmabahcePalace from '@assets/stock_images/dolmabahce_palace_is_aa2d148d.jpg';
 import grandBazaar from '@assets/stock_images/grand_bazaar_istanbu_7aa32030.jpg';
 import istiklalStreet from '@assets/stock_images/istiklal_street_ista_0822a274.jpg';
+import spiceBazaar from '@assets/stock_images/spice_bazaar_istanbu_8eefd351.jpg';
 
 export const attractions = [
   {
     name: "Galata Kulesi",
     description: "1348 yılında Cenevizliler tarafından inşa edilen kule, İstanbul'un en ikonik simgelerinden biridir. Haliç ve Boğaz'ın panoramik manzarasını sunar.",
     image: galataTower
+  },
+  {
+    name: "Mısır Çarşısı",
+    description: "17. yüzyılda inşa edilen ve Eminönü'nde yer alan bu tarihi çarşı, egzotik baharat kokuları, renkli lokumları ve geleneksel atmosferiyle büyüleyicidir.",
+    image: spiceBazaar
   },
   {
     name: "Sultanahmet Camii",

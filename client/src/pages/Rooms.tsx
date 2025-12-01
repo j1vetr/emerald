@@ -21,17 +21,17 @@ export default function Rooms() {
           </p>
 
           {/* Quick Room Navigation */}
-          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
             {rooms.map((room) => (
               <button
                 key={room.id}
                 onClick={() => document.getElementById(room.id)?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
-                className="group flex items-center gap-3 bg-white/5 hover:bg-gold-500 border border-white/10 hover:border-gold-500 px-6 py-3 transition-all duration-300 cursor-pointer"
+                className="group w-full flex items-center justify-between bg-white/5 hover:bg-gold-500 border border-white/10 hover:border-gold-500 px-6 py-4 transition-all duration-300 cursor-pointer"
               >
-                <span className="text-sm font-serif text-white group-hover:text-black transition-colors">
+                <span className="text-sm font-serif text-white group-hover:text-black transition-colors text-left">
                   {room.shortName}
                 </span>
-                <span className="text-[10px] uppercase tracking-wider bg-black/30 text-white/70 px-2 py-1 rounded group-hover:text-white group-hover:bg-black/20 transition-colors">
+                <span className="text-[10px] uppercase tracking-wider bg-black/30 text-white/70 px-2 py-1 rounded group-hover:text-white group-hover:bg-black/20 transition-colors whitespace-nowrap">
                   {room.capacity.adults} Kişilik
                 </span>
               </button>

@@ -41,18 +41,29 @@ export function Header() {
         <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo Area */}
           <Link href="/" className="relative z-50 group cursor-pointer flex items-center justify-center">
-            {/* Logo Container with Rotating Line */}
-            <div className="relative p-3 flex items-center justify-center">
-               {/* Rotating Line Ring */}
-               <div className="absolute inset-0 rounded-full border-[1px] border-transparent border-t-emerald-500 border-r-emerald-500/50 animate-spin duration-[3s] ease-linear" style={{ animationDuration: '3s' }}></div>
+            <div className="relative w-20 h-20 flex items-center justify-center">
+               {/* Static Elegant Border Ring */}
+               <div className="absolute inset-0 rounded-full border border-white/5"></div>
                
-               {/* Reverse Rotating Inner Ring (Optional for more effect, or just stick to one) */}
-               <div className="absolute inset-[2px] rounded-full border-[1px] border-transparent border-b-emerald-800/50 animate-spin duration-[4s] ease-linear direction-reverse" style={{ animationDirection: 'reverse' }}></div>
+               {/* Rotating Gradient Line - Luxurious & Slow */}
+               <motion.div 
+                 className="absolute inset-0 rounded-full"
+                 style={{
+                   background: "conic-gradient(from 0deg, transparent 0%, transparent 70%, #D4AF37 100%)",
+                   maskImage: "radial-gradient(transparent 63%, black 64%)",
+                   WebkitMaskImage: "radial-gradient(transparent 63%, black 64%)"
+                 }}
+                 animate={{ rotate: 360 }}
+                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+               />
+
+               {/* Inner Glow (Optional) */}
+               <div className="absolute inset-0 rounded-full bg-emerald-500/5 blur-xl"></div>
 
                <img 
                  src="/assets/logo.svg" 
                  alt="Emerald Mansion" 
-                 className="h-12 w-auto relative z-10 brightness-0 invert"
+                 className="h-10 w-auto relative z-10 brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                />
             </div>
           </Link>

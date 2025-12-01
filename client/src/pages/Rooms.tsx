@@ -15,10 +15,28 @@ export default function Rooms() {
         <div className="container mx-auto px-4 relative z-10">
           <span className="text-gold-500 text-xs uppercase tracking-[0.4em] mb-6 block">Konaklama</span>
           <h1 className="font-serif text-5xl md:text-7xl mb-8 text-white">Süitler & Odalar</h1>
-          <p className="text-white/60 max-w-2xl mx-auto text-lg font-light leading-relaxed">
+          <p className="text-white/60 max-w-2xl mx-auto text-lg font-light leading-relaxed mb-12">
             Tarihi dokunun modern konforla buluştuğu, her biri özenle tasarlanmış 
             özel yaşam alanları.
           </p>
+
+          {/* Quick Room Navigation */}
+          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+            {rooms.map((room) => (
+              <button
+                key={room.id}
+                onClick={() => document.getElementById(room.id)?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
+                className="group flex items-center gap-3 bg-white/5 hover:bg-gold-500 border border-white/10 hover:border-gold-500 px-6 py-3 transition-all duration-300 cursor-pointer"
+              >
+                <span className="text-sm font-serif text-white group-hover:text-black transition-colors">
+                  {room.shortName}
+                </span>
+                <span className="text-[10px] uppercase tracking-wider bg-black/30 text-white/70 px-2 py-1 rounded group-hover:text-white group-hover:bg-black/20 transition-colors">
+                  {room.capacity.adults} Kişilik
+                </span>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -27,6 +45,7 @@ export default function Rooms() {
           <div className="space-y-24 pt-20">
             {rooms.map((room, index) => (
               <motion.div 
+                id={room.id}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}

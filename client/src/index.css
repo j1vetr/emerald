@@ -22,6 +22,20 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   
+  /* Custom Colors available as utilities (e.g. text-gold-500) */
+  --color-gold-100: hsl(40 20% 94%);
+  --color-gold-400: hsl(40 40% 70%);
+  --color-gold-500: hsl(40 50% 60%);
+  --color-gold-600: hsl(40 45% 50%);
+
+  --color-emerald-100: hsl(165 20% 96%);
+  --color-emerald-800: hsl(165 25% 25%);
+  --color-emerald-900: hsl(165 30% 18%);
+  --color-emerald-950: hsl(165 35% 12%);
+
+  --color-stone-100: hsl(40 10% 96%);
+  --color-stone-200: hsl(40 10% 92%);
+
   --font-sans: 'Montserrat', sans-serif;
   --font-serif: 'Playfair Display', serif;
   
@@ -31,60 +45,42 @@
 }
 
 :root {
-  /* Deep, Rich Luxury Palette */
-  --emerald-950: 165 35% 12%;  /* Darker, richer green base */
-  --emerald-900: 165 30% 18%;
-  --emerald-800: 165 25% 25%;
-  --emerald-100: 165 20% 96%;
-  
-  /* Muted Gold - More metallic/champagne, less yellow */
-  --gold-600: 40 45% 50%;
-  --gold-500: 40 50% 60%;
-  --gold-400: 40 40% 70%;
-  --gold-100: 40 20% 94%;
+  /* Theme Mapping using the values defined above or overrides */
+  --background: hsl(40 10% 96%); /* stone-100 */
+  --foreground: hsl(165 35% 12%); /* emerald-950 */
 
-  /* Sophisticated Neutrals */
-  --anthracite: 220 15% 10%;
-  --stone-100: 40 10% 96%;
-  --stone-200: 40 10% 92%;
-  --white: 0 0% 100%;
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(165 35% 12%);
 
-  /* Theme Mapping */
-  --background: var(--stone-100);
-  --foreground: var(--emerald-950);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(165 35% 12%);
 
-  --card: var(--white);
-  --card-foreground: var(--emerald-950);
+  --primary: hsl(165 35% 12%);
+  --primary-foreground: hsl(0 0% 100%);
 
-  --popover: var(--white);
-  --popover-foreground: var(--emerald-950);
+  --secondary: hsl(40 20% 94%);
+  --secondary-foreground: hsl(165 35% 12%);
 
-  --primary: var(--emerald-950);
-  --primary-foreground: var(--white);
+  --muted: hsl(40 10% 92%);
+  --muted-foreground: hsl(220 10% 40%);
 
-  --secondary: var(--gold-100);
-  --secondary-foreground: var(--emerald-950);
+  --accent: hsl(40 50% 60%); /* gold-500 */
+  --accent-foreground: hsl(165 35% 12%);
 
-  --muted: var(--stone-200);
-  --muted-foreground: 220 10% 40%;
+  --destructive: hsl(0 84.2% 60.2%);
+  --destructive-foreground: hsl(210 40% 98%);
 
-  --accent: var(--gold-500);
-  --accent-foreground: var(--emerald-950);
+  --border: hsl(40 10% 85%);
+  --input: hsl(40 10% 85%);
+  --ring: hsl(165 35% 12%);
 
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
-
-  --border: 40 10% 85%;
-  --input: 40 10% 85%;
-  --ring: var(--emerald-950);
-
-  --radius: 0; /* Strict square corners for premium feel */
+  --radius: 0;
 }
 
 .dark {
-  --background: var(--emerald-950);
-  --foreground: var(--gold-100);
-  /* ... dark mode mappings if needed later ... */
+  --background: hsl(165 35% 12%);
+  --foreground: hsl(40 20% 94%);
+  /* Add other dark mode overrides if needed */
 }
 
 @layer base {
@@ -98,21 +94,21 @@
     @apply font-serif tracking-tight;
   }
   
-  /* Smooth Scroll Behavior */
   html {
     scroll-behavior: smooth;
   }
 }
 
 @layer utilities {
+  /* We don't need .text-gold manual classes anymore if we defined --color-gold-500 in theme */
+  /* But keeping them just in case legacy code uses them without the palette */
   .text-gold {
-    color: hsl(var(--gold-500));
+    color: var(--color-gold-500);
   }
   .bg-gold {
-    background-color: hsl(var(--gold-500));
+    background-color: var(--color-gold-500);
   }
   
-  /* Luxury Typography Utilities */
   .display-1 {
     @apply font-serif text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tighter;
   }
@@ -123,7 +119,6 @@
     @apply font-sans text-xs md:text-sm tracking-[0.2em] uppercase text-gold-500 font-medium;
   }
   
-  /* Image Effects */
   .img-reveal {
     @apply overflow-hidden relative;
   }

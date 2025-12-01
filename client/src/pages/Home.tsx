@@ -1,12 +1,17 @@
 
 import { Link } from "wouter";
-import { ArrowRight, Wifi, Coffee, Car, Star, ChevronDown, Play } from "lucide-react";
+import { ArrowRight, Wifi, Coffee, Car, Star, ChevronDown, Play, MapPin, ShieldCheck, Clock, Utensils } from "lucide-react";
 import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import { rooms } from "@/lib/constants";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { cn } from "@/lib/utils";
+
+import breakfastImg from '@assets/stock_images/luxury_hotel_breakfa_ff9bf9f5.jpg';
+import transferImg from '@assets/stock_images/black_luxury_car_vip_8b65c7c6.jpg';
+import conciergeImg from '@assets/stock_images/luxury_hotel_concier_082cb4bf.jpg';
+import wifiImg from '@assets/stock_images/elegant_workspace_in_d5024015.jpg';
 
 // Animation Variants
 const fadeInUp: Variants = {
@@ -247,10 +252,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SERVICES - Minimal & Iconographic */}
-      <section className="py-32 bg-emerald-950 relative overflow-hidden">
+      {/* SERVICES - Redesigned: Expandable Luxury Cards */}
+      <section className="py-32 bg-black relative overflow-hidden">
         {/* Pattern overlay */}
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-24">
@@ -260,29 +265,132 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-             {[
-                { title: "Gurme Kahvaltı", desc: "Organik ve yerel lezzetler.", icon: Coffee },
-                { title: "Yüksek Hız", desc: "Fiber internet altyapısı.", icon: Wifi },
-                { title: "VIP Transfer", desc: "Lüks araçlarla ulaşım.", icon: Car },
-                { title: "Concierge", desc: "Size özel şehir rehberliği.", icon: Star },
-              ].map((item, i) => (
-                <motion.div 
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.6 }}
-                  className="p-8 border border-white/5 bg-white/5 hover:bg-white/10 hover:border-gold-500/30 transition-all duration-500 group"
-                >
-                  <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-gold-500 mb-6 group-hover:scale-110 transition-transform">
-                    <item.icon size={20} />
+          <div className="hidden lg:flex h-[600px] gap-4">
+            {[
+              { 
+                id: "01", 
+                title: "Gurme Kahvaltı", 
+                subtitle: "Güne Mükemmel Başlangıç",
+                desc: "Taze, organik ve yerel lezzetlerle hazırlanan, şefimizin özel sunumuyla zengin serpme kahvaltı deneyimi.", 
+                icon: Coffee,
+                image: breakfastImg 
+              },
+              { 
+                id: "02", 
+                title: "Business Lounge", 
+                subtitle: "Kesintisiz Bağlantı",
+                desc: "Yüksek hızlı fiber internet, sessiz çalışma alanları ve modern ofis imkanlarıyla iş dünyasından kopmayın.", 
+                icon: Wifi,
+                image: wifiImg
+              },
+              { 
+                id: "03", 
+                title: "VIP Transfer", 
+                subtitle: "Lüks Ulaşım",
+                desc: "Havalimanı ve şehir içi transferlerinizde son model lüks araçlarımızla konforlu ve güvenli seyahat.", 
+                icon: Car,
+                image: transferImg
+              },
+              { 
+                id: "04", 
+                title: "Concierge", 
+                subtitle: "Size Özel Asistan",
+                desc: "Restoran rezervasyonları, etkinlik biletleri ve özel turlar... İstanbul'u bir yerli gibi keşfetmeniz için yanınızdayız.", 
+                icon: Star,
+                image: conciergeImg
+              },
+            ].map((item, i) => (
+              <motion.div 
+                key={i}
+                className="relative flex-1 h-full overflow-hidden border border-white/10 group transition-all duration-700 ease-out hover:flex-[2.5]"
+              >
+                {/* Background Image */}
+                <div className="absolute inset-0">
+                   <div className="absolute inset-0 bg-black/60 group-hover:bg-black/30 transition-colors duration-700 z-10" />
+                   <img 
+                     src={item.image} 
+                     alt={item.title} 
+                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
+                   />
+                </div>
+
+                {/* Content */}
+                <div className="absolute inset-0 z-20 p-8 flex flex-col justify-between">
+                  <div className="flex justify-between items-start">
+                    <span className="text-3xl font-serif text-white/20 group-hover:text-gold-500 transition-colors duration-500">{item.id}</span>
+                    <div className="w-12 h-12 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white group-hover:bg-gold-500 group-hover:text-black transition-all duration-500">
+                      <item.icon size={20} />
+                    </div>
                   </div>
-                  <h4 className="font-serif text-xl text-white mb-3">{item.title}</h4>
-                  <p className="text-white/50 text-sm font-light">{item.desc}</p>
-                </motion.div>
-              ))}
+
+                  <div className="relative overflow-hidden">
+                    <h3 className="font-serif text-2xl text-white mb-2 whitespace-nowrap group-hover:text-3xl transition-all duration-500 origin-left">{item.title}</h3>
+                    <p className="text-gold-500 text-sm uppercase tracking-widest mb-4 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100">{item.subtitle}</p>
+                    <p className="text-white/80 font-light leading-relaxed opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-200 max-w-md">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Active Border */}
+                <div className="absolute inset-0 border border-gold-500/0 group-hover:border-gold-500/50 transition-colors duration-700 pointer-events-none"></div>
+              </motion.div>
+            ))}
           </div>
+
+          {/* Mobile Version (Vertical Stack) */}
+          <div className="flex flex-col gap-4 lg:hidden">
+             {[
+              { 
+                id: "01", 
+                title: "Gurme Kahvaltı", 
+                desc: "Organik ve yerel lezzetler.", 
+                icon: Coffee,
+                image: breakfastImg 
+              },
+              { 
+                id: "02", 
+                title: "Business Lounge", 
+                desc: "Yüksek hızlı fiber internet.", 
+                icon: Wifi,
+                image: wifiImg
+              },
+              { 
+                id: "03", 
+                title: "VIP Transfer", 
+                desc: "Lüks araçlarla ulaşım.", 
+                icon: Car,
+                image: transferImg
+              },
+              { 
+                id: "04", 
+                title: "Concierge", 
+                desc: "Size özel şehir rehberliği.", 
+                icon: Star,
+                image: conciergeImg
+              },
+            ].map((item, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="relative h-64 overflow-hidden border border-white/10"
+              >
+                 <img src={item.image} alt={item.title} className="absolute inset-0 w-full h-full object-cover opacity-40" />
+                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+                 <div className="absolute bottom-0 left-0 p-6 z-10">
+                    <div className="flex items-center gap-3 mb-2">
+                       <item.icon size={18} className="text-gold-500" />
+                       <span className="text-gold-500 text-xs uppercase tracking-widest">Hizmetler {item.id}</span>
+                    </div>
+                    <h3 className="font-serif text-2xl text-white mb-2">{item.title}</h3>
+                    <p className="text-white/60 text-sm">{item.desc}</p>
+                 </div>
+              </motion.div>
+            ))}
+          </div>
+
         </div>
       </section>
 

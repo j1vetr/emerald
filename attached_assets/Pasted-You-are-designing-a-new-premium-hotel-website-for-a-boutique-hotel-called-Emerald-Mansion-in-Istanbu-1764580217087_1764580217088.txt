@@ -1,0 +1,504 @@
+You are designing a new premium hotel website for a boutique hotel called Emerald Mansion in Istanbul (Sultanahmet).
+Your job: build a fully responsive, production-ready website in Turkish, with separate detailed pages for each room type, using the exact images and logo URLs provided below.
+
+1. GENERAL REQUIREMENTS
+
+Default language: Turkish (all UI texts, headings, buttons, labels, forms, etc. must be in Turkish).
+
+The site is for: Emerald Mansion – butik otel, Sultanahmet / İstanbul, tarihi yarımada.
+
+Tone: lüks, sıcak, samimi, güven veren, butik otel havası.
+
+Absolutely no lorem ipsum. Generate real, well-written Turkish copy for every section.
+
+The new site must not copy-paste existing texts from emeraldmansion.com.
+Instead, rewrite them in your own words while keeping the same meaning and positioning (historic building, Ottoman–Seljuk touches, central location, premium comfort, etc.).
+
+Create clean, modern, premium design:
+
+Bol beyaz alan, net hiyerarşi.
+
+Yumuşak animasyonlar (hover, fade-in vb.) ama abartma.
+
+Renk paleti: zümrüt yeşili tonları, koyu antrasit / lacivert ve beyaz. Altın/şampanya tonlarında ufak vurgular kullanılabilir.
+
+Tipografi: başlıklar daha karakterli, gövde metin sade ve okunaklı.
+
+Main navigation (desktop & mobile hamburger):
+
+Ana Sayfa
+
+Odalar
+
+Hakkımızda
+
+Gezilecek Yerler
+
+Galeri
+
+İletişim
+
+Sağ tarafta öne çıkan bir buton: “Rezervasyon Yap” (external link).
+
+Global elements:
+
+Sticky header (scroll’da hafif küçülen şık navbar).
+
+Footer’da adres, mail, linkler, logo ve telif bilgisi.
+
+Site genelinde bir “Rezervasyon Yap” CTA butonu (in header and in key sections), linking to:
+https://emerald-mansion.rezervasyonal.com
+
+Booking behavior:
+
+Any “Rezervasyon Yap” button must open the external booking system in a new tab:
+https://emerald-mansion.rezervasyonal.com
+
+2. LOGO
+
+Download and use this logo for the brand:
+
+Logo URL:
+https://emeraldmansion.com/wp-content/uploads/2025/02/Emerald-Logo_3.svg
+
+Usage:
+
+Top left in navbar (clicking it goes to home /).
+
+Larger version (or same) in footer.
+
+Use it also for favicon / social preview if needed.
+
+3. IMAGE MAPPING PER ROOM TYPE
+
+For each room page, you MUST use only its own image set below (plus you can reuse some general hotel images if you want).
+Download and use them as hero + gallery for that specific room page.
+
+3.1. Comfort Single
+
+Images for Comfort Single page:
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/2.kat_4-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/2.kat_3-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/04/IMG_1101-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/04/IMG_1105-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_17-576x1024.jpg.webp
+
+3.2. Comfort Double
+
+Images for Comfort Double page:
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/301_oda_2-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/301_oda_1_3-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/04/IMG_1101-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/04/IMG_1105-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_17-576x1024.jpg.webp
+
+3.3. Superior King Bed
+
+Images for Superior King Bed page:
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/303_oda_3-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/303_oda_2-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/04/IMG_1101-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/04/IMG_1105-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_13-683x1024.jpg.webp
+
+3.4. Junior Suite King Bed
+
+Images for Junior Suite King Bed page:
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/305_oda_1-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/304_oda_6-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/304_oda_1-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/304_oda_4-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/04/IMG_1101-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/04/IMG_1105-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_21-576x1024.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_19-576x1024.jpg.webp
+
+3.5. Junior Suite Twin Bed
+
+Images for Junior Suite Twin Bed page:
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/302_oda_4-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/302_oda_2-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/302_oda_6-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/04/IMG_1101-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/04/IMG_1105-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_20-576x1024.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_21-576x1024.jpg.webp
+
+3.6. Family Suite Connected
+
+Images for Family Suite Connected page:
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/2.kat_2_5-1-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/2.kat_2_3-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/2.kat_2_4-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/04/IMG_1101-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_20-576x1024.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/04/IMG_1105-1024x683.jpg.webp
+
+https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_13-683x1024.jpg.webp
+
+For all these images, download and serve them optimally (compressed, responsive sizes if possible).
+Use them as:
+
+Hero background or main hero images on room detail pages.
+
+Room page galleries (lightbox or slider).
+
+Some of the general hotel shots can also appear on Home / Galeri.
+
+4. SITE MAP & URL STRUCTURE (TURKISH SLUGS)
+
+Main Turkish slugs (do NOT use /rooms, /about etc.):
+
+Home (Ana Sayfa): /
+
+Odalar genel liste: /odalar
+
+Room detail pages (under /odalar):
+
+Comfort Single: /odalar/comfort-single
+
+Comfort Double: /odalar/comfort-double
+
+Superior King Bed: /odalar/superior-king-bed
+
+Junior Suite King Bed: /odalar/junior-suite-king-bed
+
+Junior Suite Twin Bed: /odalar/junior-suite-twin-bed
+
+Family Suite Connected: /odalar/family-suite-connected
+
+Hakkımızda: /hakkimizda
+
+Gezilecek Yerler: /gezilecek-yerler
+
+Galeri: /galeri
+
+İletişim: /iletisim
+
+You may adjust room slugs slightly if needed, but the parent must be /odalar, not /rooms.
+
+5. PAGE-BY-PAGE CONTENT & LAYOUT
+5.1. Ana Sayfa (/)
+
+Sections (in this order or similar):
+
+Hero Section
+
+Full-width, premium hero with background image from hotel interior or building.
+
+Copy (in Turkish) that conveys:
+
+Tarihi yarımadada, Sultanahmet’te butik otel.
+
+Osmanlı ve Selçuklu esintili tarihi bina + modern konfor.
+
+“En iyi fiyat garantisi” vurgusu.
+
+Elements:
+
+Ana başlık (H1) güçlü ve kısa.
+
+Alt başlık (H2/H3) açıklayıcı.
+
+Check-in/Check-out tarih seçimi ve yetişkin/çocuk sayısı için dummy form (gerçek rezervasyon yapmaz, sadece UI).
+
+“Rezervasyon Yap” butonu (link: https://emerald-mansion.rezervasyonal.com).
+
+Öne Çıkan Odalar
+
+3 veya 4 odanın kartı (küçük görsel, oda adı, m², kısa tanım, “Detayları Gör” linki).
+
+Kartlar room detail sayfalarına götürsün.
+
+Neden Emerald Mansion? / Tarih ve Konfor
+
+2 sütunlu layout:
+
+Sol: kısa metin (tarihi bina, konum, mimari dokunuşlar).
+
+Sağ: 2–3 küçük görsel (kolaj veya grid).
+
+Hizmetler / Olanaklar
+
+Grid yapısı:
+
+Oda Servisi
+
+Ücretsiz Wi-Fi
+
+Çamaşır Yıkama
+
+Havalimanı Transferi
+
+Kahvaltı / concierge / 7/24 resepsiyon gibi birkaç ekstra madde de ekleyebilirsin.
+
+Her kartta ikon + kısa açıklama.
+
+Konum & Tarihi Yarımada Vurgusu
+
+Emerald Mansion’ın Sultanahmet’te merkezi konumda olduğunu anlat.
+
+Yürüme mesafesinde yer alan noktalardan bahset (Ayasofya, Sultanahmet Camii, Kapalıçarşı, tramvay vb.).
+
+Google Maps embed ya da harita görseli için yer aç.
+
+Misafir Yorumları (Deneyimler)
+
+Slider veya kartlar:
+
+Ahmet (Türkiye), Anna (Almanya), Elif (Türkiye), Maria (İspanya), Berke (Almanya) gibi isimlerle 4–5 kısa yorum.
+
+Her yorumda 1–2 cümlelik gerçekçi Türkçe yorum.
+
+Instagram / Sosyal Medya Teaser
+
+“Bizi Instagram’da takip edin” alanı.
+
+3–6 kare (placeholder) fotoğraf grid’i; hover’da büyüme efekti.
+
+Altında buton: “Instagram’da Gör”.
+
+Footer
+
+Adres:
+
+Binbirdirek Mah. Boyacı Ahmet Sk. No: 8, Sultanahmet / Fatih / İstanbul
+
+E-posta: info@emeraldmansion.com
+
+Telif: © 2025 - Emerald Mansion. Tüm Hakları Saklıdır.
+
+Hızlı linkler: Ana sayfa, Odalar, Hakkımızda, Gezilecek Yerler, Galeri, İletişim, Rezervasyon butonu.
+
+5.2. Odalar Genel Sayfası (/odalar)
+
+Üstte kısa giriş: odaların tarihi dokuyu modern konforla birleştirdiği anlatılsın.
+
+Sonrasında 6 odanın kartı (grid):
+
+Fotoğraf (her oda için kendi setinden bir ana görsel kullan).
+
+Oda adı.
+
+m² bilgisi.
+
+3–5 maddelik bullet list: yatak tipi, akıllı TV, minibar, kasa, premium banyo malzemeleri vb.
+
+Buton: “Detayları Gör” → ilgili room detail sayfası.
+
+5.3. Oda Detay Sayfaları (/odalar/...)
+
+Her room detail page için yapı aynı olsun, ama içerik odanın özelliklerine göre özel yazılsın.
+
+Ortak yapı:
+
+Hero
+
+Büyük oda fotoğrafı (ilgili setten).
+
+Solda oda adı (H1), kısa açıklama.
+
+Sağda önemli öne çıkanlar:
+
+m²
+
+Yatak tipi
+
+Maksimum kişi
+
+“Rezervasyon Yap” butonu (link: https://emerald-mansion.rezervasyonal.com).
+
+Oda Açıklaması
+
+2–3 paragraf Türkçe metin:
+
+Odadan beklenen atmosfer, mimari detaylar (ahşap tavan süslemeleri, Osmanlı / Selçuklu esintileri).
+
+Hedef kitle (yalnız seyahat edenler, çiftler, aileler vb.).
+
+Konfor unsurları.
+
+Özellikler / Donanım Listesi
+
+İki sütunlu ikonlu liste:
+
+m²
+
+Yatak türü ve ölçüler
+
+Akıllı TV
+
+Klima
+
+Minibar
+
+Kasa
+
+Premium banyo malzemeleri
+
+Çalışma masası (varsa)
+
+Sofa bed (varsa)
+
+Makyaj masası ve ayna (varsa)
+
+Aile odalarında iki alan, ayrı klima, vb.
+
+Fotoğraf Galerisi
+
+Odanın kendine ait setindeki tüm fotoğrafları kullan.
+
+Lightbox veya slider ile açılabilen küçük grid.
+
+Öne Çıkan Notlar
+
+Küçük bir bilgi kutusu:
+
+Sigara politikası, maksimum kişi sayısı, çocuk / ilave yatak politika vb. için kısa notlar (sen üret).
+
+Diğer Odalar Bölümü
+
+Sayfanın altına 3 farklı oda kartı öner:
+
+Küçük görsel + “Bu odalara da göz atın” başlığı.
+
+Her oda için yazdığın metin, o odanın kısa tanımlarına ve temel özelliklerine (m², yatak tipi, çalışma masası, sofa bed, bağlantılı oda vb.) uygun olsun.
+
+5.4. Hakkımızda (/hakkimizda)
+
+Emerald Mansion’ın:
+
+İstanbul’un tarihi yarımadasında, Sultanahmet’te yer aldığını,
+
+Osmanlı ve Selçuklu mimarisinden ilham alan tarihi bir binada hizmet verdiğini,
+
+Modern konforu (akıllı TV, klima, minibar, ücretsiz Wi-Fi vb.) sunduğunu,
+
+2024’te kurulduğunu ve 16 odaya sahip olduğunu
+anlatan 3–4 paragraf.
+
+“Tarih ve konforun buluştuğu nokta” temasını güçlü şekilde hissettir.
+
+Küçük istatistik blokları:
+
+Kuruluş Yılı
+
+Oda Sayısı
+
+Sunulan hizmet sayısı
+
+Alt kısımda tekrar “Rezervasyon Yap” ve “Odaları Gör” butonları.
+
+5.5. Gezilecek Yerler (/gezilecek-yerler)
+
+Grid ya da liste halinde kartlar; her biri için 1 görsel + başlık + 1–2 paragraf:
+
+Galata Kulesi
+
+Sultanahmet Camii
+
+Yerebatan Sarnıcı
+
+Ayasofya Camii
+
+Topkapı Sarayı
+
+Dolmabahçe Sarayı
+
+Kapalı Çarşı
+
+İstiklal Caddesi
+
+Her kartta:
+
+Kısa tarih/özet (Türkçe).
+
+Ziyaretçinin ne hissedeceği / ne göreceği.
+
+Emerald Mansion’dan buralara kolay ulaşılabildiği vurgulansın.
+
+5.6. Galeri (/galeri)
+
+Tüm odalardan ve genel alanlardan seçilmiş fotoğraflar:
+
+Masonry veya regular grid layout.
+
+Kategori filtreleri (örn. “Odalar”, “Genel Alanlar”, “Tarihi Detaylar”).
+
+Lightbox ile büyük açılabilsin.
+
+5.7. İletişim (/iletisim)
+
+İçerik:
+
+Otelin tam adresi.
+
+E-posta: info@emeraldmansion.com
+
+Telefon için placeholder (örneğin “Telefon numarası burada gösterilecek”).
+
+WhatsApp için buton/ikon: “WhatsApp ile İletişim” (link placeholder).
+
+İletişim formu:
+
+Ad Soyad
+
+E-posta
+
+Telefon
+
+Giriş / Çıkış tarihi
+
+Mesaj
+
+Gönder butonu (form backend’e bağlanmak zorunda değil, ama arayüz tam olsun).
+
+Yan tarafta küçük konum haritası (Google Maps embed alanı veya harita görseli için placeholder).
+
+6. UX & POLISH
+
+Make the entire site fully responsive (desktop, tablet, mobile).
+
+Use smooth scrolling, subtle hover and scroll animations (fade-in, translate, slight zoom on images).
+
+Buttons and CTAs must have clear visual emphasis and consistent styling.
+
+Forms and inputs should have clear focus states and error states (even if no real validation is wired).
+
+Avoid clutter; prioritize clarity and elegance.

@@ -41,7 +41,7 @@ export function Header() {
         <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo Area */}
           <Link href="/" className="relative z-50 group cursor-pointer flex items-center justify-center">
-            <div className="relative w-20 h-20 flex items-center justify-center">
+            <div className="relative w-36 h-36 flex items-center justify-center">
                {/* Static Elegant Border Ring */}
                <div className="absolute inset-0 rounded-full border border-white/5"></div>
                
@@ -50,8 +50,8 @@ export function Header() {
                  className="absolute inset-0 rounded-full"
                  style={{
                    background: "conic-gradient(from 0deg, transparent 0%, transparent 70%, #D4AF37 100%)",
-                   maskImage: "radial-gradient(transparent 63%, black 64%)",
-                   WebkitMaskImage: "radial-gradient(transparent 63%, black 64%)"
+                   maskImage: "radial-gradient(transparent 65%, black 66%)",
+                   WebkitMaskImage: "radial-gradient(transparent 65%, black 66%)"
                  }}
                  animate={{ rotate: 360 }}
                  transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
@@ -63,7 +63,7 @@ export function Header() {
                <img 
                  src="/assets/logo.svg" 
                  alt="Emerald Mansion" 
-                 className="h-10 w-auto relative z-10 brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+                 className="h-16 w-auto relative z-10 brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                />
             </div>
           </Link>

@@ -1,10 +1,11 @@
 
 import { Link, useLocation } from "wouter";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { hotelInfo } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function Header() {
   const [location] = useLocation();
@@ -28,105 +29,135 @@ export function Header() {
   ];
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out",
-        isScrolled
-          ? "bg-emerald-950/90 backdrop-blur-md py-4 border-b border-white/5"
-          : "bg-transparent py-8"
-      )}
-    >
-      <div className="container mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="relative z-50 block group cursor-pointer">
-           <div className="flex items-center gap-3">
-             <img 
-               src="/assets/logo.svg" 
-               alt="Emerald Mansion Logo" 
-               className="h-10 md:h-12 w-auto brightness-0 invert transition-opacity duration-300" 
-             />
-             {/* Optional: Add Text Logo if image fails or for style 
-             <span className={cn("font-serif text-xl text-white tracking-widest", isScrolled ? "opacity-100" : "opacity-0 lg:opacity-100")}>
-               EMERALD
-             </span>
-             */}
-           </div>
-        </Link>
+    <>
+      <header
+        className={cn(
+          "fixed top-0 left-0 right-0 z-[60] transition-all duration-700 border-b",
+          isScrolled
+            ? "bg-black/80 backdrop-blur-md py-4 border-white/10"
+            : "bg-transparent py-8 border-transparent"
+        )}
+      >
+        <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
+          {/* Logo Area */}
+          <Link href="/" className="relative z-50 group cursor-pointer">
+            <div className="flex flex-col items-center md:items-start">
+               {/* Logo Text Fallback if Image Fails or styling choice */}
+               <span className="font-serif text-2xl md:text-3xl text-white tracking-widest font-bold group-hover:text-gold-500 transition-colors duration-500">
+                 EMERALD
+               </span>
+               <span className="text-[0.6rem] uppercase tracking-[0.4em] text-gold-500 group-hover:text-white transition-colors duration-500">
+                 Mansion Istanbul
+               </span>
+            </div>
+          </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-10">
-          {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className={cn(
-                  "text-xs font-medium tracking-[0.15em] uppercase transition-all duration-300 relative group cursor-pointer",
-                  location === link.href
-                    ? "text-gold-400"
-                    : "text-white/80 hover:text-white"
-                )}>
-                {link.label}
-                <span className={cn(
-                  "absolute -bottom-2 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-gold-400 transition-opacity duration-300",
-                  location === link.href ? "opacity-100" : "opacity-0 group-hover:opacity-100"
-                )} />
-            </Link>
-          ))}
-          
-          <div className="pl-6 border-l border-white/20">
-            <Button 
-              asChild 
-              className="bg-transparent border border-gold-500/30 text-gold-400 hover:bg-gold-500 hover:text-emerald-950 hover:border-gold-500 rounded-none px-6 py-5 text-xs uppercase tracking-widest transition-all duration-300"
-            >
-              <a href={hotelInfo.bookingUrl} target="_blank" rel="noopener noreferrer">
-                Rezervasyon
-              </a>
-            </Button>
-          </div>
-        </nav>
-
-        {/* Mobile Menu Toggle */}
-        <button
-          className="lg:hidden z-50 text-white p-2 hover:text-gold-400 transition-colors"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-
-        {/* Mobile Nav Overlay - Full Screen Luxury */}
-        <div
-          className={cn(
-            "fixed inset-0 bg-emerald-950 z-40 flex flex-col items-center justify-center transition-all duration-700 cubic-bezier(0.7, 0, 0.3, 1) lg:hidden",
-            isMobileMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
-          )}
-        >
-          <nav className="flex flex-col items-center gap-8">
-            {navLinks.map((link, i) => (
-              <Link key={link.href} href={link.href} onClick={() => setIsMobileMenuOpen(false)} className={cn(
-                    "text-3xl md:text-4xl font-serif transition-all duration-300 cursor-pointer hover:text-gold-400 hover:italic",
-                    location === link.href ? "text-gold-400 italic" : "text-white/90"
-                  )}
-                  style={{ transitionDelay: `${i * 50}ms` }}
-                  >
+          {/* Desktop Nav */}
+          <nav className="hidden lg:flex items-center gap-12">
+            {navLinks.map((link) => (
+              <Link key={link.href} href={link.href} className={cn(
+                    "text-xs font-medium tracking-[0.2em] uppercase transition-all duration-500 relative group cursor-pointer py-2",
+                    location === link.href
+                      ? "text-gold-500"
+                      : "text-white/70 hover:text-white"
+                  )}>
                   {link.label}
+                  <span className={cn(
+                    "absolute bottom-0 left-0 w-0 h-[1px] bg-gold-500 transition-all duration-500 group-hover:w-full",
+                    location === link.href ? "w-full" : "w-0"
+                  )} />
               </Link>
             ))}
             
-            <div className="w-12 h-[1px] bg-white/20 my-4"></div>
-            
-            <Button 
-              asChild 
-              size="lg"
-              className="bg-gold-500 text-emerald-950 hover:bg-white hover:text-emerald-950 rounded-none px-10 py-6 text-lg font-serif"
-            >
-              <a href={hotelInfo.bookingUrl} target="_blank" rel="noopener noreferrer">
-                Rezervasyon Yap
-              </a>
-            </Button>
+            <div className="pl-8 border-l border-white/10">
+              <Button 
+                asChild 
+                variant="outline"
+                className="bg-transparent border-gold-500/50 text-gold-400 hover:bg-gold-500 hover:text-black hover:border-gold-500 rounded-none px-8 py-6 text-xs uppercase tracking-widest transition-all duration-500"
+              >
+                <a href={hotelInfo.bookingUrl} target="_blank" rel="noopener noreferrer">
+                  Rezervasyon
+                </a>
+              </Button>
+            </div>
           </nav>
-          
-          <div className="absolute bottom-10 text-white/40 text-xs tracking-widest uppercase">
-            Emerald Mansion Istanbul
-          </div>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            className="lg:hidden z-50 text-white p-2 hover:text-gold-500 transition-colors duration-300"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
-      </div>
-    </header>
+      </header>
+
+      {/* Full Screen Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: "-100%" }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: "-100%" }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center lg:hidden"
+          >
+             {/* Background texture or image could go here */}
+             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+
+             <nav className="flex flex-col items-center gap-8 relative z-10">
+              {navLinks.map((link, i) => (
+                <motion.div
+                  key={link.href}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 + (i * 0.1), duration: 0.5 }}
+                >
+                  <Link href={link.href} onClick={() => setIsMobileMenuOpen(false)} className={cn(
+                        "text-4xl font-serif transition-all duration-300 cursor-pointer hover:text-gold-500 hover:italic block",
+                        location === link.href ? "text-gold-500 italic" : "text-white"
+                      )}>
+                      {link.label}
+                  </Link>
+                </motion.div>
+              ))}
+
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
+                className="mt-8"
+              >
+                <Button 
+                  asChild 
+                  size="lg"
+                  className="bg-gold-500 text-black hover:bg-white hover:text-black rounded-none px-12 py-8 text-lg font-serif"
+                >
+                  <a href={hotelInfo.bookingUrl} target="_blank" rel="noopener noreferrer">
+                    Rezervasyon Yap
+                  </a>
+                </Button>
+              </motion.div>
+            </nav>
+            
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1 }}
+              className="absolute bottom-12 text-white/30 text-xs tracking-[0.3em] uppercase"
+            >
+              Emerald Mansion Istanbul
+            </motion.div>
+
+             <button
+              className="absolute top-8 right-6 z-50 text-white hover:text-gold-500 transition-colors p-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <X size={32} />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }

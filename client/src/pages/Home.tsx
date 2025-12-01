@@ -1,29 +1,46 @@
 
 import { Link } from "wouter";
-import { ArrowRight, Wifi, Coffee, Car, Star, MapPin, Phone } from "lucide-react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { ArrowRight, Wifi, Coffee, Car, Star, ChevronDown, Play } from "lucide-react";
+import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import { rooms } from "@/lib/constants";
 import { useRef } from "react";
+import { cn } from "@/lib/utils";
 
-// Reusable Reveal Component
-const Reveal = ({ children, delay = 0, width = "100%" }: { children: React.ReactNode, delay?: number, width?: string }) => {
+// Animation Variants
+const fadeInUp: Variants = {
+  hidden: { opacity: 0, y: 60 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { duration: 1, ease: "easeOut" } 
+  }
+};
+
+const staggerContainer: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15
+    }
+  }
+};
+
+const RevealText = ({ text, className }: { text: string, className?: string }) => {
   return (
-    <div style={{ width, position: "relative", overflow: "hidden" }}>
-      <motion.div
-        variants={{
-          hidden: { opacity: 0, y: 75 },
-          visible: { opacity: 1, y: 0 },
-        }}
-        initial="hidden"
-        whileInView="visible"
-        transition={{ duration: 0.8, delay, ease: [0.25, 0.25, 0.25, 0.75] }}
+    <span className={cn("overflow-hidden inline-block align-bottom", className)}>
+      <motion.span
+        initial={{ y: "100%" }}
+        whileInView={{ y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
         viewport={{ once: true }}
+        className="inline-block"
       >
-        {children}
-      </motion.div>
-    </div>
+        {text}
+      </motion.span>
+    </span>
   );
 };
 
@@ -35,212 +52,274 @@ export default function Home() {
     offset: ["start start", "end start"]
   });
   
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
     <Layout>
-      {/* Cinematic Hero Section */}
-      <div ref={heroRef} className="relative h-screen w-full overflow-hidden bg-emerald-950">
+      {/* HERO SECTION */}
+      <section ref={heroRef} className="relative h-screen w-full overflow-hidden bg-black flex items-center justify-center">
+        {/* Background Image with Parallax */}
         <motion.div style={{ y, opacity }} className="absolute inset-0 w-full h-full">
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-emerald-950/90 z-10" />
+          <div className="absolute inset-0 bg-black/30 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black z-10" />
           <img 
             src="https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_17-576x1024.jpg.webp" 
             alt="Emerald Mansion Atmosphere" 
-            className="w-full h-full object-cover scale-110"
+            className="w-full h-full object-cover scale-105"
           />
         </motion.div>
 
-        <div className="relative z-20 h-full container mx-auto px-6 flex flex-col justify-center items-center text-center text-white">
+        {/* Hero Content */}
+        <div className="relative z-20 container mx-auto px-6 flex flex-col items-center text-center">
            <motion.div
-             initial={{ opacity: 0, y: 30 }}
-             animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 1, delay: 0.5 }}
+             initial="hidden"
+             animate="visible"
+             variants={staggerContainer}
              className="space-y-8"
            >
-             <p className="subtitle tracking-[0.3em] text-white/80 border-b border-white/20 pb-4 inline-block mx-auto">
-               Sultanahmet, İstanbul
-             </p>
-             <h1 className="display-1 font-medium">
-               Emerald <br /> <span className="italic font-light text-gold-400">Mansion</span>
-             </h1>
-             <div className="pt-8">
-               <a 
-                 href="#kesfet"
-                 className="group inline-flex items-center gap-4 text-sm uppercase tracking-widest hover:text-gold-400 transition-colors cursor-pointer"
+             <motion.div variants={fadeInUp}>
+                <span className="border border-white/20 px-4 py-2 text-xs uppercase tracking-[0.3em] text-white/80 backdrop-blur-sm">
+                  The Historic Peninsula
+                </span>
+             </motion.div>
+             
+             <div className="overflow-hidden">
+               <motion.h1 
+                 initial={{ y: "100%" }}
+                 animate={{ y: 0 }}
+                 transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
+                 className="display-huge text-white mix-blend-difference"
                >
-                 <span className="w-12 h-[1px] bg-white group-hover:bg-gold-400 transition-colors"></span>
-                 Keşfetmeye Başla
-               </a>
+                 EMERALD
+               </motion.h1>
              </div>
+             
+             <div className="overflow-hidden -mt-4 md:-mt-8">
+                <motion.h1 
+                 initial={{ y: "100%" }}
+                 animate={{ y: 0 }}
+                 transition={{ duration: 1.2, ease: "easeOut", delay: 0.4 }}
+                 className="font-serif text-4xl md:text-6xl lg:text-8xl italic text-gold-500"
+               >
+                 Mansion
+               </motion.h1>
+             </div>
+
+             <motion.p 
+               variants={fadeInUp}
+               className="max-w-md mx-auto text-white/70 font-light leading-relaxed pt-8 border-t border-white/10 mt-8"
+             >
+               İstanbul'un tarihi kalbinde, Osmanlı zarafeti ve modern lüksün kusursuz uyumu.
+             </motion.p>
            </motion.div>
         </div>
-      </div>
 
-      {/* Editorial Intro */}
-      <section id="kesfet" className="py-32 bg-stone-100 relative overflow-hidden">
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-5">
-               <Reveal>
-                 <div className="aspect-[3/4] w-full relative overflow-hidden">
-                   <img 
-                     src="https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_13-683x1024.jpg.webp" 
-                     alt="Interior Detail"
-                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
-                   />
-                 </div>
-               </Reveal>
+        {/* Scroll Indicator */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2, duration: 1 }}
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-white/50"
+        >
+          <span className="text-[10px] uppercase tracking-widest">Keşfet</span>
+          <ChevronDown className="animate-bounce w-4 h-4" />
+        </motion.div>
+      </section>
+
+      {/* INTRO SECTION - Dark Luxury */}
+      <section className="py-32 bg-black relative z-10">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div className="order-2 lg:order-1 relative">
+               <motion.div 
+                 initial={{ opacity: 0, scale: 0.9 }}
+                 whileInView={{ opacity: 1, scale: 1 }}
+                 viewport={{ once: true }}
+                 transition={{ duration: 1 }}
+                 className="aspect-[4/5] overflow-hidden relative border border-white/10"
+               >
+                 <img 
+                   src="https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_13-683x1024.jpg.webp" 
+                   alt="Interior Detail"
+                   className="w-full h-full object-cover"
+                 />
+                 {/* Decorative Overlay Frame */}
+                 <div className="absolute top-4 left-4 right-4 bottom-4 border border-gold-500/30 pointer-events-none"></div>
+               </motion.div>
             </div>
-            <div className="lg:col-span-1 hidden lg:block"></div>
-            <div className="lg:col-span-6 space-y-8">
-              <Reveal delay={0.2}>
-                <h2 className="display-2 text-emerald-950">
-                  Tarihin <span className="italic text-gold-600">İçinde</span> <br/>
-                  Modern Bir Rüya
-                </h2>
-              </Reveal>
-              <Reveal delay={0.3}>
-                <p className="text-lg text-muted-foreground leading-relaxed font-light">
-                  Emerald Mansion, sıradan bir otel değil; İstanbul'un kalbinde, tarihin dokusuna 
-                  saygıyla işlenmiş bir yaşam alanı. Osmanlı ve Selçuklu mimarisinin zarif detayları, 
-                  modern lüksün konforuyla buluşuyor. Burada her köşe, her detay size özel bir hikaye anlatıyor.
-                </p>
-              </Reveal>
-              <Reveal delay={0.4}>
-                <div className="flex gap-8 pt-4">
-                   <div className="space-y-2">
-                     <span className="block text-4xl font-serif text-gold-600">16</span>
-                     <span className="text-xs uppercase tracking-widest text-emerald-950">Özel Oda</span>
-                   </div>
-                   <div className="space-y-2">
-                     <span className="block text-4xl font-serif text-gold-600">∞</span>
-                     <span className="text-xs uppercase tracking-widest text-emerald-950">Huzur</span>
-                   </div>
-                </div>
-              </Reveal>
+            
+            <div className="order-1 lg:order-2 space-y-12">
+              <h2 className="font-serif text-5xl md:text-7xl text-white leading-tight">
+                <RevealText text="Zamanın" /> <br />
+                <span className="text-gold-500 italic"><RevealText text="Ötesinde" /></span> <br />
+                <RevealText text="Bir Deneyim." />
+              </h2>
+              
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+                className="text-white/60 text-lg font-light leading-relaxed border-l border-gold-500 pl-8"
+              >
+                Sultanahmet'in gölgesinde, tarihin fısıltılarını dinleyin. Emerald Mansion, 
+                sadece bir konaklama değil, İstanbul'un ruhuna yapılan bir yolculuktur. 
+                Her detayında sanat, her köşesinde huzur bulacaksınız.
+              </motion.p>
+
+              <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6 }}
+                className="grid grid-cols-2 gap-8 pt-8 border-t border-white/10"
+              >
+                 <div>
+                   <span className="block text-3xl font-serif text-gold-500 mb-2">16</span>
+                   <span className="text-xs uppercase tracking-widest text-white/50">Özel Süit</span>
+                 </div>
+                 <div>
+                   <span className="block text-3xl font-serif text-gold-500 mb-2">∞</span>
+                   <span className="text-xs uppercase tracking-widest text-white/50">Anı</span>
+                 </div>
+              </motion.div>
             </div>
           </div>
         </div>
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-stone-200/50 -z-0" />
       </section>
 
-      {/* Immersive Rooms Showcase */}
-      <section className="py-32 bg-emerald-950 text-white overflow-hidden">
-        <div className="container mx-auto px-6 mb-20 flex flex-col md:flex-row justify-between items-end gap-8">
-          <Reveal>
-            <h2 className="display-2">Özel <span className="italic text-gold-400">Odalar</span></h2>
-          </Reveal>
-          <Reveal delay={0.2}>
-            <Link href="/odalar">
-              <Button variant="link" className="text-white hover:text-gold-400 p-0 h-auto text-base uppercase tracking-widest group cursor-pointer">
-                Tümünü İncele <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-2" />
-              </Button>
-            </Link>
-          </Reveal>
+      {/* ROOMS SHOWCASE - Horizontal Scroll Style Grid */}
+      <section className="py-32 bg-black text-white relative border-t border-white/10">
+        <div className="container mx-auto px-6 mb-20 flex items-end justify-between">
+           <div className="space-y-4">
+             <span className="text-gold-500 text-xs uppercase tracking-[0.3em]">Konaklama</span>
+             <h2 className="font-serif text-5xl md:text-6xl">Süitler & Odalar</h2>
+           </div>
+           <Link href="/odalar">
+             <Button variant="outline" className="hidden md:flex border-white/20 text-white hover:bg-gold-500 hover:text-black hover:border-gold-500 rounded-none px-8 py-6 text-xs uppercase tracking-widest transition-all">
+               Tümünü İncele
+             </Button>
+           </Link>
         </div>
 
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredRooms.map((room, i) => (
-              <Reveal key={room.id} delay={i * 0.1}>
-                <Link href={`/odalar/${room.slug}`} className="group block cursor-pointer">
-                  <div className="aspect-[4/5] overflow-hidden relative mb-6">
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
+              <motion.div 
+                key={room.id}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.2, duration: 0.8 }}
+                className="group cursor-pointer"
+              >
+                <Link href={`/odalar/${room.slug}`}>
+                  <div className="aspect-[3/4] overflow-hidden relative border border-white/5 bg-white/5">
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-all duration-700 z-10" />
                     <img 
                       src={room.coverImage} 
                       alt={room.name} 
-                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-80 group-hover:opacity-100"
                     />
-                    <div className="absolute bottom-6 left-6 z-20">
-                      <div className="bg-white/10 backdrop-blur-md px-4 py-2 text-sm font-serif text-white inline-block">
-                        {room.size} m²
-                      </div>
+                    
+                    <div className="absolute bottom-0 left-0 right-0 p-8 z-20 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                      <span className="text-gold-500 text-xs uppercase tracking-widest mb-2 block opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">{room.size} m²</span>
+                      <h3 className="font-serif text-2xl md:text-3xl text-white mb-4 group-hover:text-gold-200 transition-colors">{room.shortName}</h3>
+                      <div className="w-full h-[1px] bg-white/20 group-hover:bg-gold-500 transition-colors duration-500 origin-left scale-x-0 group-hover:scale-x-100"></div>
                     </div>
-                  </div>
-                  <div className="space-y-2 border-t border-white/10 pt-6 group-hover:border-gold-500/50 transition-colors">
-                    <h3 className="font-serif text-2xl group-hover:text-gold-400 transition-colors">{room.shortName}</h3>
-                    <p className="text-white/50 text-sm line-clamp-2 font-light">{room.shortDescription}</p>
                   </div>
                 </Link>
-              </Reveal>
+              </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Services - Minimalist */}
-      <section className="py-32 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
-            <div>
-               <Reveal>
-                 <span className="subtitle mb-4 block">Ayrıcalıklar</span>
-                 <h2 className="display-2 text-emerald-950 mb-8">Sizin İçin <br/> Düşünüldü.</h2>
-                 <p className="text-muted-foreground font-light text-lg max-w-md">
-                   Konaklamanız boyunca ihtiyacınız olabilecek her detay, en ince ayrıntısına kadar planlandı.
-                 </p>
-                 <div className="mt-12">
-                   <a href="https://emerald-mansion.rezervasyonal.com" target="_blank" className="inline-flex items-center justify-center h-16 px-10 bg-emerald-950 text-white hover:bg-gold-600 transition-colors duration-300 uppercase tracking-widest text-sm font-medium">
-                     Rezervasyon Yap
-                   </a>
-                 </div>
-               </Reveal>
-            </div>
-            <div className="grid grid-cols-1 gap-12">
-              {[
-                { title: "Premium Kahvaltı", desc: "Güne taze, yerel ve organik lezzetlerle başlayın.", icon: Coffee },
-                { title: "Hızlı Wi-Fi & Workspace", desc: "Tarihi atmosferde, modern dünyanın hızından kopmayın.", icon: Wifi },
-                { title: "VIP Transfer", desc: "Havalimanından otelimize konforlu ulaşım.", icon: Car },
-                { title: "Concierge Hizmeti", desc: "Şehri bir lokal gibi keşfetmeniz için 7/24 destek.", icon: Star },
-              ].map((item, i) => (
-                <Reveal key={i} delay={0.2 + (i * 0.1)}>
-                  <div className="flex gap-6 group">
-                    <div className="w-12 h-12 flex items-center justify-center border border-emerald-900/10 rounded-full group-hover:border-gold-500 group-hover:text-gold-500 transition-all shrink-0">
-                      <item.icon size={20} />
-                    </div>
-                    <div>
-                      <h4 className="font-serif text-xl text-emerald-950 mb-2">{item.title}</h4>
-                      <p className="text-muted-foreground font-light text-sm">{item.desc}</p>
-                    </div>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
+          <div className="mt-12 md:hidden text-center">
+             <Link href="/odalar">
+              <Button variant="outline" className="w-full border-white/20 text-white hover:bg-gold-500 hover:text-black hover:border-gold-500 rounded-none px-8 py-6 text-xs uppercase tracking-widest transition-all">
+                Tümünü İncele
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
-      
-      {/* Full Width CTA */}
-      <section className="relative py-40 flex items-center justify-center overflow-hidden">
-         <div className="absolute inset-0">
-           <img 
-             src="https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_21-576x1024.jpg.webp" 
-             alt="Atmosphere"
-             className="w-full h-full object-cover"
-           />
-           <div className="absolute inset-0 bg-emerald-950/80" />
-         </div>
-         <div className="relative z-10 text-center space-y-8 px-4">
-           <Reveal>
-             <h2 className="display-2 text-white">İstanbul Sizi Bekliyor</h2>
-           </Reveal>
-           <Reveal delay={0.2}>
-             <p className="text-white/70 text-lg max-w-xl mx-auto font-light">
-               Emerald Mansion ayrıcalığı ile unutulmaz bir konaklama deneyimi için yerinizi ayırtın.
-             </p>
-           </Reveal>
-           <Reveal delay={0.4}>
-             <Button 
-               asChild
-               className="bg-gold-500 text-emerald-950 hover:bg-white hover:text-emerald-950 h-16 px-12 rounded-none text-lg uppercase tracking-widest font-semibold transition-all duration-300"
-             >
-               <a href="https://emerald-mansion.rezervasyonal.com" target="_blank">Müsaitlik Kontrolü</a>
-             </Button>
-           </Reveal>
-         </div>
+
+      {/* SERVICES - Minimal & Iconographic */}
+      <section className="py-32 bg-emerald-950 relative overflow-hidden">
+        {/* Pattern overlay */}
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10"></div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-24">
+            <span className="text-gold-500 text-xs uppercase tracking-[0.3em] mb-6 block">Hizmetler</span>
+            <h2 className="font-serif text-4xl md:text-5xl text-white leading-tight">
+              Konforunuz İçin <span className="italic text-white/50">Tasarlanmış</span> <br/> Ayrıcalıklar
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+             {[
+                { title: "Gurme Kahvaltı", desc: "Organik ve yerel lezzetler.", icon: Coffee },
+                { title: "Yüksek Hız", desc: "Fiber internet altyapısı.", icon: Wifi },
+                { title: "VIP Transfer", desc: "Lüks araçlarla ulaşım.", icon: Car },
+                { title: "Concierge", desc: "Size özel şehir rehberliği.", icon: Star },
+              ].map((item, i) => (
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1, duration: 0.6 }}
+                  className="p-8 border border-white/5 bg-white/5 hover:bg-white/10 hover:border-gold-500/30 transition-all duration-500 group"
+                >
+                  <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-gold-500 mb-6 group-hover:scale-110 transition-transform">
+                    <item.icon size={20} />
+                  </div>
+                  <h4 className="font-serif text-xl text-white mb-3">{item.title}</h4>
+                  <p className="text-white/50 text-sm font-light">{item.desc}</p>
+                </motion.div>
+              ))}
+          </div>
+        </div>
       </section>
 
+      {/* CTA / FOOTER PRELUDE */}
+      <section className="h-[80vh] relative flex items-center justify-center bg-black overflow-hidden">
+         <div className="absolute inset-0 opacity-40">
+           <img 
+             src="https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_21-576x1024.jpg.webp" 
+             alt="Mood" 
+             className="w-full h-full object-cover"
+           />
+         </div>
+         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/80" />
+         
+         <div className="relative z-10 text-center px-6 max-w-4xl">
+           <motion.h2 
+             initial={{ opacity: 0, y: 30 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true }}
+             transition={{ duration: 0.8 }}
+             className="font-serif text-5xl md:text-7xl text-white mb-8"
+           >
+             İstanbul Sizi Bekliyor
+           </motion.h2>
+           <motion.div
+             initial={{ opacity: 0, scale: 0.9 }}
+             whileInView={{ opacity: 1, scale: 1 }}
+             viewport={{ once: true }}
+             transition={{ delay: 0.2, duration: 0.8 }}
+           >
+             <Button 
+               asChild 
+               className="bg-gold-500 text-black hover:bg-white hover:text-black h-20 px-12 rounded-none text-lg uppercase tracking-[0.2em] font-bold transition-all duration-500"
+             >
+               <a href="https://emerald-mansion.rezervasyonal.com" target="_blank">
+                 Rezervasyon Yap
+               </a>
+             </Button>
+           </motion.div>
+         </div>
+      </section>
     </Layout>
   );
 }

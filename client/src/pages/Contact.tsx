@@ -6,89 +6,99 @@ import { MapPin, Phone, Mail } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
     <Layout>
-      <div className="bg-emerald-950 text-white pt-32 pb-16 md:pt-40 md:pb-24 text-center">
-        <div className="container mx-auto px-4">
-          <h1 className="font-serif text-4xl md:text-6xl mb-6">İletişim</h1>
-          <p className="text-white/70 max-w-2xl mx-auto text-lg font-light">
-            Sorularınız ve rezervasyon talepleriniz için bize dilediğiniz zaman ulaşabilirsiniz.
-          </p>
+      <div className="bg-black text-white pt-40 pb-24 text-center relative">
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <span className="text-gold-500 text-xs uppercase tracking-[0.4em] mb-6 block">Bize Ulaşın</span>
+          <h1 className="font-serif text-5xl md:text-7xl mb-6">İletişim</h1>
         </div>
       </div>
 
-      <div className="py-20 bg-off-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <div className="bg-black py-20 border-t border-white/10 text-white">
+        <div className="container mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             
             {/* Contact Form */}
-            <div>
-              <h2 className="font-serif text-3xl text-emerald-950 mb-8">Bize Yazın</h2>
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="font-serif text-3xl text-white mb-10">Mesaj Gönderin</h2>
+              <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Adınız Soyadınız</Label>
-                    <Input id="name" placeholder="Adınız" className="h-12 rounded-none border-gray-300 focus:border-gold-500" />
+                    <Label htmlFor="name" className="text-white/50 text-xs uppercase tracking-widest">Adınız Soyadınız</Label>
+                    <Input id="name" className="h-14 bg-white/5 border-white/10 focus:border-gold-500 text-white rounded-none" />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="email">E-posta Adresiniz</Label>
-                    <Input id="email" type="email" placeholder="ornek@email.com" className="h-12 rounded-none border-gray-300 focus:border-gold-500" />
+                    <Label htmlFor="email" className="text-white/50 text-xs uppercase tracking-widest">E-posta Adresiniz</Label>
+                    <Input id="email" type="email" className="h-14 bg-white/5 border-white/10 focus:border-gold-500 text-white rounded-none" />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="subject">Konu</Label>
-                  <Input id="subject" placeholder="Mesajınızın konusu" className="h-12 rounded-none border-gray-300 focus:border-gold-500" />
+                  <Label htmlFor="subject" className="text-white/50 text-xs uppercase tracking-widest">Konu</Label>
+                  <Input id="subject" className="h-14 bg-white/5 border-white/10 focus:border-gold-500 text-white rounded-none" />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="message">Mesajınız</Label>
-                  <Textarea id="message" placeholder="Mesajınızı buraya yazın..." className="min-h-[150px] rounded-none border-gray-300 focus:border-gold-500 resize-none" />
+                  <Label htmlFor="message" className="text-white/50 text-xs uppercase tracking-widest">Mesajınız</Label>
+                  <Textarea id="message" className="min-h-[150px] bg-white/5 border-white/10 focus:border-gold-500 text-white rounded-none resize-none" />
                 </div>
-                <Button className="w-full md:w-auto bg-emerald-900 hover:bg-emerald-800 text-white rounded-none px-10 h-12 text-base">
+                <Button className="w-full md:w-auto bg-gold-500 text-black hover:bg-white hover:text-black rounded-none px-12 h-14 text-xs uppercase tracking-[0.2em] font-bold">
                   Gönder
                 </Button>
               </form>
-            </div>
+            </motion.div>
 
             {/* Contact Info & Map */}
-            <div className="space-y-8">
-              <h2 className="font-serif text-3xl text-emerald-950 mb-8">İletişim Bilgileri</h2>
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="space-y-12"
+            >
+              <h2 className="font-serif text-3xl text-white mb-10">Bilgiler</h2>
               
-              <div className="grid gap-6">
-                <Card className="border-none shadow-md">
-                  <CardContent className="p-6 flex items-start gap-4">
-                    <MapPin className="w-6 h-6 text-gold-500 shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-serif text-lg text-emerald-950 mb-1">Adres</h4>
-                      <p className="text-muted-foreground leading-relaxed">{hotelInfo.address}</p>
+              <div className="space-y-8">
+                <div className="flex items-start gap-6">
+                    <div className="w-12 h-12 border border-white/10 flex items-center justify-center text-gold-500 shrink-0">
+                      <MapPin size={20} />
                     </div>
-                  </CardContent>
-                </Card>
+                    <div>
+                      <h4 className="text-xs uppercase tracking-widest text-white/50 mb-2">Adres</h4>
+                      <p className="text-white/80 leading-relaxed font-light">{hotelInfo.address}</p>
+                    </div>
+                </div>
                 
-                <Card className="border-none shadow-md">
-                  <CardContent className="p-6 flex items-start gap-4">
-                    <Phone className="w-6 h-6 text-gold-500 shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-serif text-lg text-emerald-950 mb-1">Telefon</h4>
-                      <p className="text-muted-foreground">+90 212 123 45 67</p>
+                <div className="flex items-start gap-6">
+                    <div className="w-12 h-12 border border-white/10 flex items-center justify-center text-gold-500 shrink-0">
+                      <Phone size={20} />
                     </div>
-                  </CardContent>
-                </Card>
+                    <div>
+                      <h4 className="text-xs uppercase tracking-widest text-white/50 mb-2">Telefon</h4>
+                      <p className="text-white/80 leading-relaxed font-light">+90 212 123 45 67</p>
+                    </div>
+                </div>
 
-                <Card className="border-none shadow-md">
-                  <CardContent className="p-6 flex items-start gap-4">
-                    <Mail className="w-6 h-6 text-gold-500 shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-serif text-lg text-emerald-950 mb-1">E-posta</h4>
-                      <p className="text-muted-foreground">{hotelInfo.email}</p>
+                <div className="flex items-start gap-6">
+                    <div className="w-12 h-12 border border-white/10 flex items-center justify-center text-gold-500 shrink-0">
+                      <Mail size={20} />
                     </div>
-                  </CardContent>
-                </Card>
+                    <div>
+                      <h4 className="text-xs uppercase tracking-widest text-white/50 mb-2">E-posta</h4>
+                      <p className="text-white/80 leading-relaxed font-light">{hotelInfo.email}</p>
+                    </div>
+                </div>
               </div>
 
-              <div className="w-full h-[300px] bg-gray-200 rounded-sm overflow-hidden shadow-lg mt-8 relative">
+              <div className="w-full h-[300px] border border-white/10 mt-8 relative grayscale hover:grayscale-0 transition-all duration-700">
                  {/* Dummy Map */}
                  <iframe 
                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.766668638832!2d28.975424876685497!3d41.00823767135048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9be92011c27%3A0x236e6f6f37444fae!2sSultanahmet%2C%20Fatih%2F%C4%B0stanbul!5e0!3m2!1str!2str!4v1708540000000!5m2!1str!2str" 
@@ -99,10 +109,11 @@ export default function Contact() {
                    loading="lazy" 
                    referrerPolicy="no-referrer-when-downgrade"
                    title="Emerald Mansion Location"
+                   className="opacity-70 hover:opacity-100 transition-opacity"
                  ></iframe>
               </div>
 
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

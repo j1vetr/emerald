@@ -22,65 +22,59 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   
-  /* Custom Colors available as utilities (e.g. text-gold-500) */
-  --color-gold-100: hsl(40 20% 94%);
-  --color-gold-400: hsl(40 40% 70%);
-  --color-gold-500: hsl(40 50% 60%);
-  --color-gold-600: hsl(40 45% 50%);
-
-  --color-emerald-100: hsl(165 20% 96%);
-  --color-emerald-800: hsl(165 25% 25%);
-  --color-emerald-900: hsl(165 30% 18%);
-  --color-emerald-950: hsl(165 35% 12%);
-
-  --color-stone-100: hsl(40 10% 96%);
-  --color-stone-200: hsl(40 10% 92%);
-
+  /* Custom Colors */
+  --color-gold-100: hsl(45 30% 95%);
+  --color-gold-200: hsl(45 30% 85%);
+  --color-gold-300: hsl(45 35% 75%);
+  --color-gold-400: hsl(45 40% 65%);
+  --color-gold-500: hsl(45 50% 55%); /* Classic Gold */
+  --color-gold-600: hsl(45 55% 45%);
+  
+  --color-noir-950: hsl(0 0% 4%);   /* Almost Black */
+  --color-noir-900: hsl(0 0% 8%);   /* Dark Grey */
+  --color-noir-800: hsl(0 0% 12%);
+  
+  --color-emerald-950: hsl(165 40% 8%); /* Deepest Green */
+  
   --font-sans: 'Montserrat', sans-serif;
   --font-serif: 'Playfair Display', serif;
   
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
 }
 
 :root {
-  /* Theme Mapping using the values defined above or overrides */
-  --background: hsl(40 10% 96%); /* stone-100 */
-  --foreground: hsl(165 35% 12%); /* emerald-950 */
+  /* DARK LUXURY THEME DEFAULT */
+  --background: hsl(165 40% 5%); /* Very dark emerald/black */
+  --foreground: hsl(45 30% 90%); /* Off-white / Pale Gold */
 
-  --card: hsl(0 0% 100%);
-  --card-foreground: hsl(165 35% 12%);
+  --card: hsl(165 40% 8%);
+  --card-foreground: hsl(45 30% 90%);
 
-  --popover: hsl(0 0% 100%);
-  --popover-foreground: hsl(165 35% 12%);
+  --popover: hsl(165 40% 8%);
+  --popover-foreground: hsl(45 30% 90%);
 
-  --primary: hsl(165 35% 12%);
-  --primary-foreground: hsl(0 0% 100%);
+  --primary: hsl(45 50% 55%); /* Gold */
+  --primary-foreground: hsl(0 0% 5%);
 
-  --secondary: hsl(40 20% 94%);
-  --secondary-foreground: hsl(165 35% 12%);
+  --secondary: hsl(165 30% 15%);
+  --secondary-foreground: hsl(45 30% 90%);
 
-  --muted: hsl(40 10% 92%);
-  --muted-foreground: hsl(220 10% 40%);
+  --muted: hsl(165 30% 15%);
+  --muted-foreground: hsl(165 10% 60%);
 
-  --accent: hsl(40 50% 60%); /* gold-500 */
-  --accent-foreground: hsl(165 35% 12%);
+  --accent: hsl(45 50% 55%);
+  --accent-foreground: hsl(0 0% 5%);
 
-  --destructive: hsl(0 84.2% 60.2%);
-  --destructive-foreground: hsl(210 40% 98%);
+  --destructive: hsl(0 60% 30%);
+  --destructive-foreground: hsl(0 0% 98%);
 
-  --border: hsl(40 10% 85%);
-  --input: hsl(40 10% 85%);
-  --ring: hsl(165 35% 12%);
+  --border: hsl(45 30% 20%); /* Subtle Gold Border */
+  --input: hsl(165 30% 15%);
+  --ring: hsl(45 50% 55%);
 
-  --radius: 0;
-}
-
-.dark {
-  --background: hsl(165 35% 12%);
-  --foreground: hsl(40 20% 94%);
-  /* Add other dark mode overrides if needed */
+  --radius: 0px;
 }
 
 @layer base {
@@ -88,44 +82,52 @@
     @apply border-border;
   }
   body {
-    @apply font-sans antialiased bg-background text-foreground overflow-x-hidden;
+    @apply font-sans antialiased bg-background text-foreground overflow-x-hidden selection:bg-gold-500 selection:text-black;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif tracking-tight;
   }
   
-  html {
-    scroll-behavior: smooth;
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(165 40% 5%);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(45 30% 20%);
+    border: 1px solid hsl(45 30% 10%);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(45 50% 40%);
   }
 }
 
 @layer utilities {
-  /* We don't need .text-gold manual classes anymore if we defined --color-gold-500 in theme */
-  /* But keeping them just in case legacy code uses them without the palette */
-  .text-gold {
-    color: var(--color-gold-500);
-  }
-  .bg-gold {
-    background-color: var(--color-gold-500);
+  .text-gold { color: var(--color-gold-500); }
+  .bg-gold { background-color: var(--color-gold-500); }
+  .border-gold { border-color: var(--color-gold-500); }
+  
+  .display-huge {
+    @apply font-serif text-5xl md:text-7xl lg:text-9xl leading-[0.9] tracking-tighter uppercase;
   }
   
-  .display-1 {
-    @apply font-serif text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tighter;
-  }
-  .display-2 {
-    @apply font-serif text-4xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight;
-  }
-  .subtitle {
-    @apply font-sans text-xs md:text-sm tracking-[0.2em] uppercase text-gold-500 font-medium;
+  .text-gradient-gold {
+    background: linear-gradient(to bottom right, hsl(45 40% 80%), hsl(45 50% 50%), hsl(45 60% 30%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   
-  .img-reveal {
-    @apply overflow-hidden relative;
+  .border-gradient-gold {
+    border-image: linear-gradient(to bottom right, hsl(45 40% 80%), hsl(45 50% 50%)) 1;
   }
-  .img-reveal img {
-    @apply transition-transform duration-[1.5s] ease-out;
+
+  .glass-panel {
+    @apply bg-black/40 backdrop-blur-xl border border-white/10;
   }
-  .img-reveal:hover img {
-    @apply scale-110;
+  
+  .hover-underline-gold {
+    @apply relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-gold-500 after:transition-all after:duration-300 hover:after:w-full;
   }
 }

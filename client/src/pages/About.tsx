@@ -3,68 +3,86 @@ import { Layout } from "@/components/layout/Layout";
 import { hotelInfo } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
     <Layout>
-       <div className="bg-emerald-950 text-white pt-32 pb-16 md:pt-40 md:pb-24 text-center">
-        <div className="container mx-auto px-4">
-          <h1 className="font-serif text-4xl md:text-6xl mb-6">Hakkımızda</h1>
-          <p className="text-white/70 max-w-2xl mx-auto text-lg font-light">
-            Emerald Mansion'ın hikayesi, İstanbul'un kalbinde bir rüyayla başladı.
-          </p>
+       <div className="bg-black text-white pt-40 pb-24 text-center relative">
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
+        <div className="container mx-auto px-4 relative z-10">
+           <span className="text-gold-500 text-xs uppercase tracking-[0.4em] mb-6 block">Hikayemiz</span>
+          <h1 className="font-serif text-5xl md:text-7xl mb-8">Hakkımızda</h1>
         </div>
       </div>
 
-      <div className="py-20 container mx-auto px-4 md:px-6">
-        <div className="max-w-4xl mx-auto space-y-8 text-lg text-muted-foreground leading-relaxed">
-          <p className="drop-cap first-letter:text-5xl first-letter:font-serif first-letter:mr-3 first-letter:float-left first-letter:text-gold-500">
-            İstanbul'un tarihi yarımadası Sultanahmet'te yer alan Emerald Mansion, 
-            köklü geçmişi modern bir lüks anlayışıyla harmanlayan, şehrin en özel butik otellerinden biridir.
-            Tarihi dokuya sadık kalınarak restore edilen binamız, Osmanlı ve Selçuklu mimarisinin 
-            zarif izlerini taşımaktadır.
-          </p>
-          <p>
-            2024 yılında kapılarını açan otelimiz, toplamda 16 özel odasıyla misafirlerine butik bir 
-            konaklama deneyimi sunar. Her bir odamız, misafirlerimizin konforu düşünülerek 
-            akıllı TV, klima, minibar, yüksek hızlı Wi-Fi gibi modern olanaklarla donatılmıştır. 
-            Ancak teknolojinin ötesinde, size sunduğumuz asıl şey; tarihin içinde uyanmanın verdiği o eşsiz huzurdur.
-          </p>
-          <p>
-            Emerald Mansion, sadece bir konaklama mekanı değil, aynı zamanda Türk misafirperverliğinin 
-            yaşatıldığı bir evdir. Sultanahmet Meydanı, Ayasofya, Topkapı Sarayı gibi dünya mirası 
-            eserlere sadece birkaç dakikalık yürüme mesafesinde olmanın ayrıcalığını bizimle yaşayın.
-          </p>
+      <div className="bg-black py-20 border-t border-white/10">
+        <div className="container mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+             <motion.div 
+               initial={{ opacity: 0, x: -30 }}
+               whileInView={{ opacity: 1, x: 0 }}
+               viewport={{ once: true }}
+               transition={{ duration: 1 }}
+               className="relative"
+             >
+                <div className="aspect-[4/5] border border-white/10 p-4">
+                   <img 
+                     src="https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_17-576x1024.jpg.webp" 
+                     alt="About Emerald Mansion" 
+                     className="w-full h-full object-cover grayscale-[30%]" 
+                   />
+                </div>
+                <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-emerald-950/50 backdrop-blur-lg border border-gold-500/30 flex items-center justify-center">
+                   <span className="font-serif text-4xl text-gold-500">2024</span>
+                </div>
+             </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-12 border-y border-gray-100 my-12">
-            <div className="text-center">
-              <div className="text-5xl font-serif text-emerald-900 mb-2">2024</div>
-              <div className="text-sm uppercase tracking-widest">Kuruluş Yılı</div>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl font-serif text-emerald-900 mb-2">16</div>
-              <div className="text-sm uppercase tracking-widest">Özel Oda</div>
-            </div>
-            <div className="text-center">
-              <div className="text-5xl font-serif text-emerald-900 mb-2">∞</div>
-              <div className="text-sm uppercase tracking-widest">Sınırsız Konfor</div>
-            </div>
-          </div>
+             <div className="space-y-10">
+                <h2 className="font-serif text-4xl text-white leading-tight">
+                   İstanbul'un Kalbinde <br/> <span className="text-gold-500 italic">Bir Rüya.</span>
+                </h2>
+                
+                <div className="space-y-6 text-white/60 font-light leading-loose text-lg">
+                  <p>
+                    İstanbul'un tarihi yarımadası Sultanahmet'te yer alan Emerald Mansion, 
+                    köklü geçmişi modern bir lüks anlayışıyla harmanlayan, şehrin en özel butik otellerinden biridir.
+                    Tarihi dokuya sadık kalınarak restore edilen binamız, Osmanlı ve Selçuklu mimarisinin 
+                    zarif izlerini taşımaktadır.
+                  </p>
+                  <p>
+                    2024 yılında kapılarını açan otelimiz, toplamda 16 özel odasıyla misafirlerine butik bir 
+                    konaklama deneyimi sunar. Her bir odamız, misafirlerimizin konforu düşünülerek 
+                    modern olanaklarla donatılmış, ancak ruhunu tarihten almıştır.
+                  </p>
+                </div>
 
-          <div className="text-center">
-            <h3 className="font-serif text-2xl text-emerald-950 mb-6">Bizimle Tanışın</h3>
-            <div className="flex gap-4 justify-center">
-              <Link href="/odalar">
-                <Button variant="outline" size="lg" className="rounded-none border-emerald-900 text-emerald-900 hover:bg-emerald-900 hover:text-white cursor-pointer">
-                  Odalarımızı Görün
-                </Button>
-              </Link>
-              <Button asChild size="lg" className="rounded-none bg-gold-500 text-emerald-950 hover:bg-gold-400">
-                <a href={hotelInfo.bookingUrl} target="_blank" rel="noopener noreferrer">Rezervasyon Yap</a>
-              </Button>
-            </div>
+                <div className="pt-8">
+                   <img src="/assets/logo.svg" alt="Signature" className="h-16 w-auto opacity-50 invert brightness-0" />
+                </div>
+             </div>
           </div>
         </div>
+      </div>
+      
+      {/* Stats */}
+      <div className="bg-emerald-950 py-20 border-y border-white/10">
+         <div className="container mx-auto px-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">
+               <div className="py-4">
+                  <span className="block font-serif text-5xl text-gold-500 mb-4">16</span>
+                  <span className="text-xs uppercase tracking-[0.3em] text-white/60">Özel Süit</span>
+               </div>
+               <div className="py-4">
+                  <span className="block font-serif text-5xl text-gold-500 mb-4">7/24</span>
+                  <span className="text-xs uppercase tracking-[0.3em] text-white/60">Concierge</span>
+               </div>
+               <div className="py-4">
+                  <span className="block font-serif text-5xl text-gold-500 mb-4">∞</span>
+                  <span className="text-xs uppercase tracking-[0.3em] text-white/60">Memnuniyet</span>
+               </div>
+            </div>
+         </div>
       </div>
     </Layout>
   );

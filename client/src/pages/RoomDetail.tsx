@@ -3,7 +3,7 @@ import { useRoute, Link } from "wouter";
 import { Layout } from "@/components/layout/Layout";
 import { rooms, hotelInfo } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
-import { Check, Ruler, Users, Bed, ArrowRight, Calendar } from "lucide-react";
+import { Check, Ruler, Users, Bed, ArrowRight, Calendar, Star } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import NotFound from "@/pages/not-found";
 import Autoplay from "embla-carousel-autoplay";
@@ -22,94 +22,125 @@ export default function RoomDetail() {
 
   return (
     <Layout>
-      {/* Editorial Hero */}
-      <div className="relative h-[85vh] w-full overflow-hidden">
-        <motion.div 
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-          className="absolute inset-0"
-        >
-          <img 
-            src={room.coverImage} 
-            alt={room.name} 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/90 via-emerald-950/20 to-transparent" />
-        </motion.div>
+      {/* Immersive Hero */}
+      <div className="relative h-screen w-full overflow-hidden bg-black">
+        <div className="absolute inset-0">
+           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black z-10" />
+           <motion.img 
+             initial={{ scale: 1.2 }}
+             animate={{ scale: 1 }}
+             transition={{ duration: 2, ease: "easeOut" }}
+             src={room.coverImage} 
+             alt={room.name} 
+             className="w-full h-full object-cover opacity-80"
+           />
+        </div>
         
-        <div className="absolute bottom-0 left-0 w-full p-6 md:p-12 lg:p-24 z-10">
-          <div className="container mx-auto">
+        <div className="absolute bottom-0 left-0 w-full p-6 md:p-12 lg:p-24 z-20">
+          <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-end">
              <motion.div 
-               initial={{ opacity: 0, y: 30 }}
+               initial={{ opacity: 0, y: 50 }}
                animate={{ opacity: 1, y: 0 }}
-               transition={{ delay: 0.5 }}
-               className="max-w-3xl"
+               transition={{ duration: 1, delay: 0.5 }}
              >
-               <span className="text-gold-400 text-sm uppercase tracking-widest mb-4 block font-medium">Emerald Collection</span>
-               <h1 className="display-2 text-white mb-6">{room.name}</h1>
-               <div className="flex flex-wrap gap-6 text-white/80 font-light tracking-wide text-sm md:text-base border-l-2 border-gold-500 pl-6">
-                  <span className="flex items-center gap-2"><Ruler size={18} className="text-gold-400"/> {room.size} m²</span>
-                  <span className="flex items-center gap-2"><Users size={18} className="text-gold-400"/> Max {room.capacity.adults} Kişi</span>
-                  <span className="flex items-center gap-2"><Bed size={18} className="text-gold-400"/> {room.bedType}</span>
+               <div className="flex items-center gap-4 mb-6">
+                 <span className="h-[1px] w-12 bg-gold-500"></span>
+                 <span className="text-gold-500 text-sm uppercase tracking-[0.3em]">Emerald Collection</span>
                </div>
+               <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-white mb-8 leading-tight">{room.name}</h1>
+               <div className="flex flex-wrap gap-8 text-white/80 font-light tracking-wider text-sm border-t border-white/10 pt-8">
+                  <div className="flex flex-col gap-1">
+                     <span className="text-xs text-white/40 uppercase">Boyut</span>
+                     <span className="flex items-center gap-2"><Ruler size={14} className="text-gold-500"/> {room.size} m²</span>
+                  </div>
+                  <div className="flex flex-col gap-1">
+                     <span className="text-xs text-white/40 uppercase">Kapasite</span>
+                     <span className="flex items-center gap-2"><Users size={14} className="text-gold-500"/> Max {room.capacity.adults} Kişi</span>
+                  </div>
+                  <div className="flex flex-col gap-1">
+                     <span className="text-xs text-white/40 uppercase">Yatak</span>
+                     <span className="flex items-center gap-2"><Bed size={14} className="text-gold-500"/> {room.bedType}</span>
+                  </div>
+               </div>
+             </motion.div>
+             
+             <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.2 }}
+                className="hidden lg:flex justify-end pb-8"
+             >
+                <Button 
+                  asChild 
+                  className="bg-gold-500 text-black hover:bg-white hover:text-black h-16 px-10 rounded-none text-sm uppercase tracking-widest font-bold"
+                >
+                  <a href={hotelInfo.bookingUrl} target="_blank" rel="noopener noreferrer">
+                    Rezervasyon Yap
+                  </a>
+                </Button>
              </motion.div>
           </div>
         </div>
       </div>
 
-      <div className="bg-stone-50 py-24">
+      {/* Content Layout */}
+      <div className="bg-black text-white py-24 border-t border-white/10">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             
-            {/* Main Content */}
-            <div className="lg:col-span-8 space-y-16">
+            {/* Left: Description & Gallery */}
+            <div className="lg:col-span-8 space-y-20">
               
-              {/* Description */}
-              <div>
-                <h2 className="font-serif text-4xl text-emerald-950 mb-8">Detaylar</h2>
-                <div className="prose prose-lg text-muted-foreground font-light leading-relaxed">
-                  <p className="text-xl text-emerald-900 mb-6 font-serif italic">{room.shortDescription}</p>
-                  <p>{room.description}</p>
-                  <p>
-                    Özel tasarım mobilyalar, yüksek tavanlar ve tarihi dokuya saygı duyan restorasyon anlayışıyla, 
-                    sadece bir odada değil, bir sanat eserinin içinde konaklayacaksınız.
-                  </p>
-                </div>
+              <div className="prose prose-invert prose-lg max-w-none">
+                <h2 className="font-serif text-4xl text-white mb-8">Deneyim</h2>
+                <p className="text-2xl font-serif text-gold-500/80 italic leading-relaxed mb-8">"{room.shortDescription}"</p>
+                <p className="text-white/60 font-light leading-loose">{room.description}</p>
+                <p className="text-white/60 font-light leading-loose">
+                  Yüksek tavanlar, el işçiliği ahşap detaylar ve lüks kumaşlar... 
+                  Her anınızda kaliteyi hissetmeniz için tasarlandı. Modern dünyanın gereklilikleri ile 
+                  tarihin büyüleyici dokusu burada birleşiyor.
+                </p>
               </div>
 
-              {/* Gallery Slider */}
-              <div>
-                <h3 className="subtitle text-emerald-950 mb-8 block">Görseller</h3>
-                <Carousel className="w-full cursor-grab active:cursor-grabbing" opts={{ loop: true }} plugins={[Autoplay({ delay: 4000 })]}>
+              {/* Gallery */}
+              <div className="space-y-8">
+                <div className="flex items-center justify-between">
+                   <h3 className="text-xs uppercase tracking-[0.3em] text-white/50">Görseller</h3>
+                   <div className="h-[1px] flex-grow bg-white/10 ml-6"></div>
+                </div>
+                
+                <Carousel className="w-full" opts={{ loop: true }} plugins={[Autoplay({ delay: 4000 })]}>
                   <CarouselContent>
                     {room.images.map((img, i) => (
-                      <CarouselItem key={i} className="md:basis-2/3 pl-4">
-                        <div className="aspect-[16/10] overflow-hidden relative group">
+                      <CarouselItem key={i} className="md:basis-2/3 pl-6">
+                        <div className="aspect-[16/10] overflow-hidden relative border border-white/10 group">
                           <img 
                             src={img.url} 
                             alt={img.alt} 
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-80 group-hover:opacity-100" 
                           />
                         </div>
                       </CarouselItem>
                     ))}
                   </CarouselContent>
-                  <div className="flex gap-2 mt-6 justify-end pr-4">
-                    <CarouselPrevious className="static translate-y-0 rounded-none border-emerald-900 text-emerald-900 hover:bg-emerald-900 hover:text-white" />
-                    <CarouselNext className="static translate-y-0 rounded-none border-emerald-900 text-emerald-900 hover:bg-emerald-900 hover:text-white" />
+                  <div className="flex gap-4 mt-8 justify-end">
+                    <CarouselPrevious className="static translate-y-0 rounded-none border-white/20 text-white hover:bg-gold-500 hover:text-black hover:border-gold-500 w-12 h-12" />
+                    <CarouselNext className="static translate-y-0 rounded-none border-white/20 text-white hover:bg-gold-500 hover:text-black hover:border-gold-500 w-12 h-12" />
                   </div>
                 </Carousel>
               </div>
 
-              {/* Amenities */}
-              <div className="bg-white p-10 border border-stone-200">
-                <h3 className="font-serif text-3xl text-emerald-950 mb-10">Olanaklar</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
+              {/* Amenities List */}
+              <div className="space-y-8">
+                 <div className="flex items-center justify-between">
+                   <h3 className="text-xs uppercase tracking-[0.3em] text-white/50">Olanaklar</h3>
+                   <div className="h-[1px] flex-grow bg-white/10 ml-6"></div>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12">
                   {room.amenities.map((item, i) => (
-                    <div key={i} className="flex items-center gap-4 group">
-                      <span className="w-2 h-2 bg-stone-200 group-hover:bg-gold-500 transition-colors rotate-45"></span>
-                      <span className="text-emerald-950/80 font-light group-hover:text-emerald-950 transition-colors">{item}</span>
+                    <div key={i} className="flex items-center gap-4 group border-b border-white/5 pb-4 hover:border-gold-500/50 transition-colors">
+                      <span className="text-gold-500 opacity-50 group-hover:opacity-100 transition-opacity"><Star size={12} /></span>
+                      <span className="text-white/70 font-light group-hover:text-white transition-colors">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -117,42 +148,43 @@ export default function RoomDetail() {
 
             </div>
 
-            {/* Sticky Sidebar */}
+            {/* Right: Sticky Reservation Card */}
             <div className="lg:col-span-4">
-              <div className="sticky top-32">
-                <div className="bg-emerald-950 text-white p-10 shadow-2xl relative overflow-hidden">
-                  <div className="absolute top-0 right-0 p-4 opacity-10">
-                    <Calendar size={120} />
-                  </div>
+              <div className="sticky top-32 space-y-8">
+                <div className="bg-emerald-950/30 border border-white/10 backdrop-blur-md p-8 md:p-10">
+                  <h3 className="font-serif text-3xl text-white mb-2">Rezervasyon</h3>
+                  <p className="text-white/50 text-sm font-light mb-8">Doğrudan rezervasyonlarda en iyi fiyat garantisi.</p>
                   
-                  <h3 className="font-serif text-3xl mb-2 relative z-10">Bu Odayı Ayırtın</h3>
-                  <p className="text-white/60 text-sm mb-8 font-light relative z-10">En iyi fiyat garantisi ile doğrudan rezervasyon yapın.</p>
-                  
-                  <div className="space-y-6 mb-10 relative z-10">
+                  <div className="space-y-6 mb-10">
                     <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                       <span className="text-sm uppercase tracking-wider text-gold-400">Giriş</span>
-                       <span className="font-serif text-lg">14:00</span>
+                       <span className="text-xs uppercase tracking-wider text-gold-500">Giriş</span>
+                       <span className="font-serif text-lg text-white">14:00</span>
                     </div>
                     <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                       <span className="text-sm uppercase tracking-wider text-gold-400">Çıkış</span>
-                       <span className="font-serif text-lg">12:00</span>
+                       <span className="text-xs uppercase tracking-wider text-gold-500">Çıkış</span>
+                       <span className="font-serif text-lg text-white">12:00</span>
+                    </div>
+                    <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                       <span className="text-xs uppercase tracking-wider text-gold-500">İptal</span>
+                       <span className="font-serif text-lg text-white text-right text-sm">Esnek Koşullar</span>
                     </div>
                   </div>
                   
                   <Button 
                     asChild 
-                    className="w-full bg-white text-emerald-950 hover:bg-gold-500 hover:text-white font-medium h-16 rounded-none text-lg uppercase tracking-widest transition-all duration-300 relative z-10"
+                    className="w-full bg-gold-500 text-black hover:bg-white hover:text-black font-bold h-16 rounded-none text-sm uppercase tracking-widest transition-all duration-300"
                   >
                     <a href={hotelInfo.bookingUrl} target="_blank" rel="noopener noreferrer">
-                      Müsaitlik Ara
+                      Müsaitlik Kontrolü
                     </a>
                   </Button>
                 </div>
-                
-                <div className="mt-8 text-center">
-                   <a href={`tel:+902121234567`} className="text-emerald-950/60 hover:text-emerald-950 text-sm border-b border-emerald-950/20 hover:border-emerald-950 transition-all pb-1">
-                     Yardıma mı ihtiyacınız var? Bizi Arayın.
-                   </a>
+
+                {/* Need Help */}
+                <div className="text-center p-8 border border-white/5 bg-white/5">
+                   <p className="text-white/50 text-sm mb-4">Özel istekleriniz mi var?</p>
+                   <a href="tel:+902121234567" className="font-serif text-xl text-white hover:text-gold-500 transition-colors block mb-2">+90 212 123 45 67</a>
+                   <a href={`mailto:${hotelInfo.email}`} className="text-sm text-white/40 hover:text-white transition-colors block">{hotelInfo.email}</a>
                 </div>
               </div>
             </div>
@@ -161,24 +193,25 @@ export default function RoomDetail() {
         </div>
       </div>
 
-      {/* Suggestion Section */}
-      <div className="bg-white py-32 border-t border-stone-100">
+      {/* Next Rooms Suggestion */}
+      <div className="bg-black py-32 border-t border-white/10">
         <div className="container mx-auto px-6">
           <div className="flex justify-between items-end mb-16">
-             <h3 className="font-serif text-4xl text-emerald-950">Diğer Seçenekler</h3>
-             <Link href="/odalar" className="text-sm uppercase tracking-widest text-muted-foreground hover:text-emerald-950 border-b border-transparent hover:border-emerald-950 transition-all pb-1 cursor-pointer">
+             <h3 className="font-serif text-4xl text-white">Diğer Seçenekler</h3>
+             <Link href="/odalar" className="text-xs uppercase tracking-widest text-white/50 hover:text-gold-500 border-b border-transparent hover:border-gold-500 transition-all pb-1 cursor-pointer">
                Tüm Odalar
              </Link>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {otherRooms.map((r) => (
               <Link key={r.id} href={`/odalar/${r.slug}`} className="group block cursor-pointer">
-                <div className="aspect-[3/4] overflow-hidden relative mb-6">
-                   <img src={r.coverImage} alt={r.name} className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
+                <div className="aspect-[3/4] overflow-hidden relative mb-6 border border-white/10">
+                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
+                   <img src={r.coverImage} alt={r.name} className="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" />
                 </div>
-                <h4 className="font-serif text-2xl text-emerald-950 mb-2 group-hover:text-gold-600 transition-colors">{r.shortName}</h4>
-                <p className="text-xs uppercase tracking-widest text-muted-foreground">
+                <h4 className="font-serif text-2xl text-white mb-2 group-hover:text-gold-500 transition-colors">{r.shortName}</h4>
+                <p className="text-xs uppercase tracking-widest text-white/40">
                    {r.size} m² • {r.capacity.adults} Kişi
                 </p>
               </Link>

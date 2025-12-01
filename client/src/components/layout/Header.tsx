@@ -55,7 +55,7 @@ export function Header() {
                </div>
 
                {/* Logo Container with Background */}
-               <div className="relative z-10 p-3 rounded-full bg-black/40 backdrop-blur-md">
+               <div className="relative z-10 p-3 rounded-full bg-black border border-white/5">
                  <img 
                    src="/assets/logo.svg" 
                    alt="Emerald Mansion" 

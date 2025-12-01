@@ -32,10 +32,10 @@ export default function Rooms() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8 }}
                 key={room.id} 
-                className="group relative grid grid-cols-1 lg:grid-cols-12 gap-0 items-center"
+                className="group relative grid grid-cols-1 lg:grid-cols-12 gap-0 items-center mb-24 last:mb-0"
               >
-                {/* Background/Image Area - Spans mostly full width but leaves room for content overlap */}
-                <div className={`lg:col-span-8 relative h-[500px] overflow-hidden ${index % 2 === 1 ? 'lg:col-start-5' : 'lg:col-start-1'}`}>
+                {/* Background/Image Area - Always on Left */}
+                <div className="lg:col-span-7 relative h-[500px] overflow-hidden">
                    <Link href={`/odalar/${room.slug}`}>
                       <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all duration-700 z-10 cursor-pointer" />
                       <img 
@@ -46,18 +46,13 @@ export default function Rooms() {
                    </Link>
                    
                    {/* Floating Price/Size Badge */}
-                   <div className={`absolute top-0 ${index % 2 === 1 ? 'right-0' : 'left-0'} bg-gold-500 text-black px-6 py-4 z-20`}>
+                   <div className="absolute top-0 left-0 bg-gold-500 text-black px-6 py-4 z-20">
                       <span className="block text-xs font-bold uppercase tracking-widest">{room.size} m²</span>
                    </div>
                 </div>
 
-                {/* Content Card - Overlaps the image */}
-                <div className={`lg:col-span-5 relative z-20 bg-zinc-900/90 backdrop-blur-md border border-white/10 p-10 md:p-12 flex flex-col gap-8 
-                  ${index % 2 === 1 
-                    ? 'lg:col-start-2 lg:-mt-0 lg:-mr-24 lg:row-start-1' 
-                    : 'lg:col-start-8 lg:-mt-0 lg:-ml-24 lg:row-start-1'
-                  } lg:shadow-2xl shadow-black/50`}
-                >
+                {/* Content Card - Always on Right overlapping Left */}
+                <div className="lg:col-span-5 relative z-20 bg-zinc-900/90 backdrop-blur-md border border-white/10 p-10 md:p-12 flex flex-col gap-8 lg:-ml-24 lg:mt-12 lg:shadow-2xl shadow-black/50 min-h-[400px] justify-center">
                   <div>
                     <span className="text-gold-500 text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Emerald Collection</span>
                     <Link href={`/odalar/${room.slug}`}>

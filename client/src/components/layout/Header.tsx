@@ -60,15 +60,17 @@ export function Header() {
                    />
 
                    {/* Inner Glow (Optional) */}
-                   <div className="absolute inset-0 rounded-full bg-emerald-500/5 blur-3xl"></div>
+                   <div className="absolute inset-0 rounded-full bg-white/5 blur-3xl"></div>
                </div>
 
-               {/* Logo - Increased Size */}
-               <img 
-                 src="/assets/logo.svg" 
-                 alt="Emerald Mansion" 
-                 className="h-24 w-auto relative z-10 brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity duration-500"
-               />
+               {/* Logo - Increased Size - Original Colors */}
+               <div className="relative z-10 p-4 rounded-full bg-black/20 backdrop-blur-sm">
+                 <img 
+                   src="/assets/logo.svg" 
+                   alt="Emerald Mansion" 
+                   className="h-24 w-auto drop-shadow-xl transition-transform duration-500 group-hover:scale-105"
+                 />
+               </div>
             </div>
           </Link>
 

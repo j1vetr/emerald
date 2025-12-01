@@ -67,7 +67,7 @@ export default function Home() {
           <div className="absolute inset-0 overflow-hidden">
             <iframe 
               className="absolute top-1/2 left-1/2 w-[180%] h-[180%] -translate-x-1/2 -translate-y-1/2 opacity-80 pointer-events-none"
-              src="https://www.youtube.com/embed/K6hfpqiGyOg?autoplay=1&mute=1&controls=0&loop=1&playlist=K6hfpqiGyOg&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&modestbranding=1"
+              src="https://www.youtube.com/embed/eV6lTEY95yY?autoplay=1&mute=1&controls=0&loop=1&playlist=eV6lTEY95yY&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&modestbranding=1"
               allow="autoplay; encrypted-media"
               title="Hero Background"
             />
@@ -291,7 +291,7 @@ export default function Home() {
          <div className="absolute inset-0 opacity-40 pointer-events-none overflow-hidden">
            <iframe 
               className="absolute top-1/2 left-1/2 w-[180%] h-[180%] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-              src="https://www.youtube.com/embed/eV6lTEY95yY?autoplay=1&mute=1&controls=0&loop=1&playlist=eV6lTEY95yY&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&modestbranding=1"
+              src="https://www.youtube.com/embed/K6hfpqiGyOg?autoplay=1&mute=1&controls=0&loop=1&playlist=K6hfpqiGyOg&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&modestbranding=1"
               allow="autoplay; encrypted-media"
               title="Istanbul Video"
             />

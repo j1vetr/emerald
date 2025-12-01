@@ -3,7 +3,7 @@ import { useRoute, Link } from "wouter";
 import { Layout } from "@/components/layout/Layout";
 import { rooms, hotelInfo } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
-import { Check, Ruler, Users, Bed, ArrowRight, Calendar, Star, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Check, Ruler, Users, Bed, ArrowRight, Calendar, Star, X, ChevronLeft, ChevronRight, Wifi, Wind, Wine, Lock, Tv, Sparkles, Coffee, Armchair, Shirt, Laptop, Waves } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import NotFound from "@/pages/not-found";
 import Autoplay from "embla-carousel-autoplay";
@@ -40,6 +40,21 @@ export default function RoomDetail() {
   const prevImage = (e?: React.MouseEvent) => {
     e?.stopPropagation();
     setCurrentImageIndex((prev) => (prev - 1 + room.images.length) % room.images.length);
+  };
+
+  const getAmenityIcon = (amenity: string) => {
+    const lower = amenity.toLowerCase();
+    if (lower.includes("wifi")) return <Wifi size={32} strokeWidth={1} />;
+    if (lower.includes("klima")) return <Wind size={32} strokeWidth={1} />;
+    if (lower.includes("minibar")) return <Wine size={32} strokeWidth={1} />;
+    if (lower.includes("kasa")) return <Lock size={32} strokeWidth={1} />;
+    if (lower.includes("tv")) return <Tv size={32} strokeWidth={1} />;
+    if (lower.includes("banyo") || lower.includes("kurutma")) return <Sparkles size={32} strokeWidth={1} />;
+    if (lower.includes("kahve") || lower.includes("espresso")) return <Coffee size={32} strokeWidth={1} />;
+    if (lower.includes("oturma") || lower.includes("koltuk")) return <Armchair size={32} strokeWidth={1} />;
+    if (lower.includes("bornoz") || lower.includes("terlik")) return <Shirt size={32} strokeWidth={1} />;
+    if (lower.includes("çalışma") || lower.includes("masa")) return <Laptop size={32} strokeWidth={1} />;
+    return <Star size={32} strokeWidth={1} />;
   };
 
   return (
@@ -217,17 +232,25 @@ export default function RoomDetail() {
                    <div className="h-[1px] flex-grow bg-white/10 ml-6"></div>
                 </div>
                 
-                <div className="bg-white/5 border border-white/10 p-8">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {room.amenities.map((item, i) => (
-                      <div key={i} className="flex items-center gap-4 p-4 hover:bg-white/5 transition-colors border border-transparent hover:border-white/10 group">
-                        <div className="w-10 h-10 flex items-center justify-center bg-black border border-gold-500/30 text-gold-500 group-hover:scale-110 transition-transform">
-                           <Star size={16} strokeWidth={1.5} />
-                        </div>
-                        <span className="text-white/80 font-light tracking-wide text-sm group-hover:text-white transition-colors">{item}</span>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {room.amenities.map((item, i) => (
+                    <div key={i} className="group relative bg-white/[0.02] border border-white/10 hover:border-gold-500/50 p-6 flex flex-col items-center justify-center gap-4 aspect-square transition-all duration-500 hover:bg-white/[0.04] overflow-hidden">
+                      
+                      {/* Background Glow Effect */}
+                      <div className="absolute inset-0 bg-gold-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl"></div>
+
+                      <div className="relative z-10 text-gold-500/80 group-hover:text-gold-500 transition-colors duration-500 transform group-hover:scale-110 group-hover:-translate-y-1">
+                         {getAmenityIcon(item)}
                       </div>
-                    ))}
-                  </div>
+                      <span className="relative z-10 text-white/60 text-[10px] uppercase tracking-widest text-center font-light group-hover:text-white transition-colors duration-500">
+                        {item}
+                      </span>
+                      
+                      {/* Corner accents */}
+                      <div className="absolute top-2 left-2 w-2 h-2 border-t border-l border-white/0 group-hover:border-gold-500/40 transition-all duration-500 group-hover:w-4 group-hover:h-4"></div>
+                      <div className="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-white/0 group-hover:border-gold-500/40 transition-all duration-500 group-hover:w-4 group-hover:h-4"></div>
+                    </div>
+                  ))}
                 </div>
               </div>
 

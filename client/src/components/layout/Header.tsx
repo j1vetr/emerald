@@ -42,29 +42,20 @@ export function Header() {
           {/* Logo Area */}
           <Link href="/" className="relative z-50 group cursor-pointer flex items-center justify-center">
             <div className="relative flex items-center justify-center p-4">
-               {/* Animation Container - Absolute & Larger */}
-               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] flex items-center justify-center pointer-events-none">
-                   {/* Static Elegant Border Ring */}
-                   <div className="absolute inset-0 rounded-full border border-white/5"></div>
-                   
-                   {/* Rotating Gradient Line - Luxurious & Slow */}
+               {/* Rotating Border Effect - Conic Gradient */}
+               <div className="absolute inset-[12px] rounded-full overflow-hidden z-0">
                    <motion.div 
-                     className="absolute inset-0 rounded-full"
+                     className="absolute top-1/2 left-1/2 w-[200%] h-[200%] -translate-x-1/2 -translate-y-1/2"
                      style={{
-                       background: "conic-gradient(from 0deg, transparent 0%, transparent 70%, #D4AF37 100%)",
-                       maskImage: "radial-gradient(transparent 69%, black 70%)",
-                       WebkitMaskImage: "radial-gradient(transparent 69%, black 70%)"
+                       background: "conic-gradient(from 0deg, transparent 0%, transparent 85%, #D4AF37 100%)"
                      }}
                      animate={{ rotate: 360 }}
-                     transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+                     transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
                    />
-
-                   {/* Inner Glow (Optional) */}
-                   <div className="absolute inset-0 rounded-full bg-white/5 blur-3xl"></div>
                </div>
 
-               {/* Logo - Increased Size - Original Colors */}
-               <div className="relative z-10 p-4 rounded-full bg-black/20 backdrop-blur-sm">
+               {/* Logo Container with Background */}
+               <div className="relative z-10 p-4 rounded-full bg-black/90 backdrop-blur-md border border-white/5 m-[2px]">
                  <img 
                    src="/assets/logo.svg" 
                    alt="Emerald Mansion" 

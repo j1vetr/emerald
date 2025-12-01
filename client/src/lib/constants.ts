@@ -163,45 +163,54 @@ export const rooms: Room[] = [
   }
 ];
 
+import galataTower from '@assets/stock_images/galata_tower_istanbu_5b2197de.jpg';
+import blueMosque from '@assets/stock_images/blue_mosque_sultanah_cf28c2fc.jpg';
+import basilicaCistern from '@assets/stock_images/basilica_cistern_ist_bcddf85b.jpg';
+import hagiaSophia from '@assets/stock_images/hagia_sophia_istanbu_b8b5dc4e.jpg';
+import topkapiPalace from '@assets/stock_images/topkapi_palace_istan_54d0f61b.jpg';
+import dolmabahcePalace from '@assets/stock_images/dolmabahce_palace_is_aa2d148d.jpg';
+import grandBazaar from '@assets/stock_images/grand_bazaar_istanbu_7aa32030.jpg';
+import istiklalStreet from '@assets/stock_images/istiklal_street_ista_0822a274.jpg';
+
 export const attractions = [
   {
     name: "Galata Kulesi",
-    description: "İstanbul'un en ikonik simgelerinden biri olan Galata Kulesi, 67 metre yüksekliğiyle şehre panoramik bir bakış sunar. Cenevizliler tarafından 1348 yılında inşa edilen kule, tarihi boyunca gözetleme kulesi ve zindan olarak kullanılmıştır.",
-    image: "https://images.unsplash.com/photo-1527838832700-5059252407fa?auto=format&fit=crop&w=800&q=80"
+    description: "1348 yılında Cenevizliler tarafından inşa edilen kule, İstanbul'un en ikonik simgelerinden biridir. Haliç ve Boğaz'ın panoramik manzarasını sunar.",
+    image: galataTower
   },
   {
     name: "Sultanahmet Camii",
-    description: "Mavi çinileriyle 'Blue Mosque' olarak da bilinen bu muazzam eser, 17. yüzyıl Osmanlı mimarisinin en zarif örneklerinden biridir. Altı minaresi ve devasa kubbesiyle İstanbul silüetinin vazgeçilmez bir parçasıdır.",
-    image: "https://images.unsplash.com/photo-1545459720-aacaf5090834?auto=format&fit=crop&w=800&q=80"
+    description: "17. yüzyılda I. Ahmed tarafından yaptırılan ve mavi çinileriyle 'Blue Mosque' olarak bilinen cami, Osmanlı mimarisinin en zarif örneklerindendir.",
+    image: blueMosque
   },
   {
     name: "Yerebatan Sarnıcı",
-    description: "Bizans İmparatoru I. Justinianus tarafından yaptırılan bu büyüleyici yeraltı sarnıcı, suyun içinden yükselen 336 mermer sütunuyla mistik bir atmosfere sahiptir. Medusa başları sarnıcın en ilgi çekici detaylarındandır.",
-    image: "https://images.unsplash.com/photo-1641128324972-af3212f0f6bd?auto=format&fit=crop&w=800&q=80"
+    description: "Bizans İmparatoru I. Justinianus tarafından 6. yüzyılda yaptırılan bu büyüleyici yeraltı sarnıcı, 336 mermer sütunu ve Medusa başları ile ünlüdür.",
+    image: basilicaCistern
   },
   {
-    name: "Ayasofya-i Kebir Camii",
-    description: "Dünya mimarlık tarihinin en önemli anıtlarından biri olan Ayasofya, 1500 yıllık tarihiyle büyüleyicidir. Bizans ve Osmanlı mimarisinin eşsiz sentezini sunan yapı, devasa kubbesiyle hayranlık uyandırır.",
-    image: "https://images.unsplash.com/photo-1564594736624-def7a10ab047?auto=format&fit=crop&w=800&q=80"
+    name: "Ayasofya Camii",
+    description: "Dünya mimarlık tarihinin başyapıtlarından biri olan Ayasofya, 1500 yıllık tarihiyle Bizans ve Osmanlı imparatorluklarının ortak mirasını simgeler.",
+    image: hagiaSophia
   },
   {
     name: "Topkapı Sarayı",
-    description: "Osmanlı İmparatorluğu'nun 400 yıl boyunca yönetim merkezi olan saray, muhteşem avluları, Harem dairesi ve Kutsal Emanetler bölümüyle tarihe ışık tutar. Sarayburnu'ndaki eşsiz konumuyla boğaz manzarasına hakimdir.",
-    image: "https://images.unsplash.com/photo-1599583072846-a93311191213?auto=format&fit=crop&w=800&q=80"
+    description: "Osmanlı İmparatorluğu'nun 400 yıl boyunca yönetim merkezi ve padişahların evi olan saray, muhteşem avluları, Harem dairesi ve Kutsal Emanetler bölümüyle tarihe ışık tutar.",
+    image: topkapiPalace
   },
   {
     name: "Dolmabahçe Sarayı",
-    description: "19. yüzyılda inşa edilen bu barok ve neoklasik tarzdaki saray, Osmanlı'nın modern yüzünü temsil eder. Mustafa Kemal Atatürk'ün de son günlerini geçirdiği saray, kristal avizeleri ve görkemli salonlarıyla ünlüdür.",
-    image: "https://images.unsplash.com/photo-1584557741728-1501c956707c?auto=format&fit=crop&w=800&q=80"
+    description: "19. yüzyılda inşa edilen bu barok ve neoklasik tarzdaki saray, Osmanlı'nın batılılaşma döneminin en görkemli yapısıdır. Boğaz kıyısındaki konumuyla büyüleyicidir.",
+    image: dolmabahcePalace
   },
   {
-    name: "Kapalıçarşı",
-    description: "Dünyanın en eski ve en büyük kapalı çarşılarından biri olan Kapalıçarşı, binlerce dükkanıyla alışveriş tutkunlarının uğrak noktasıdır. Takı, halı, baharat ve hediyelik eşya için eşsiz bir duraktır.",
-    image: "https://images.unsplash.com/photo-1595759393243-c4dfc37249e7?auto=format&fit=crop&w=800&q=80"
+    name: "Kapalı Çarşı",
+    description: "Dünyanın en eski ve en büyük kapalı çarşılarından biri olan Kapalı Çarşı, 4000'den fazla dükkanı, labirent gibi sokakları ve tarihi atmosferiyle ticaretin kalbidir.",
+    image: grandBazaar
   },
   {
     name: "İstiklal Caddesi",
-    description: "Beyoğlu'nun kalbi olan İstiklal Caddesi, tarihi tramvayı, mağazaları, kafeleri ve sanat galerileriyle 24 saat yaşayan bir caddedir. İstanbul'un modern ve kozmopolit yüzünü yansıtır.",
-    image: "https://images.unsplash.com/photo-1597987890764-4df4b5574c0a?auto=format&fit=crop&w=800&q=80"
+    description: "Beyoğlu'nun kalbi olan İstiklal Caddesi, 19. yüzyıl mimarisi, tarihi tramvayı, mağazaları, kafeleri ve sanat galerileriyle İstanbul'un modern yüzünü yansıtır.",
+    image: istiklalStreet
   }
 ];

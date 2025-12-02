@@ -85,7 +85,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="text-xs uppercase tracking-widest text-white/50 mb-2">Telefon</h4>
-                      <p className="text-white/80 leading-relaxed font-light">+90 212 123 45 67</p>
+                      <p className="text-white/80 leading-relaxed font-light">{hotelInfo.phone}</p>
                     </div>
                 </div>
 

@@ -208,15 +208,15 @@ export const rooms: Room[] = [
   }
 ];
 
-import galataTower from '@assets/stock_images/galata_tower_istanbu_5b2197de.jpg';
-import blueMosque from '@assets/stock_images/blue_mosque_sultanah_cf28c2fc.jpg';
-import basilicaCistern from '@assets/stock_images/basilica_cistern_ist_bcddf85b.jpg';
-import hagiaSophia from '@assets/stock_images/hagia_sophia_istanbu_b8b5dc4e.jpg';
-import topkapiPalace from '@assets/stock_images/topkapi_palace_istan_54d0f61b.jpg';
-import dolmabahcePalace from '@assets/stock_images/dolmabahce_palace_is_aa2d148d.jpg';
-import grandBazaar from '@assets/stock_images/grand_bazaar_istanbu_7aa32030.jpg';
-import istiklalStreet from '@assets/stock_images/istiklal_street_ista_0822a274.jpg';
-import spiceBazaar from '@assets/stock_images/spice_bazaar_istanbu_8eefd351.jpg';
+import galataTower from '@assets/stock_images/galata_tower_istanbu_5b2197de.webp';
+import blueMosque from '@assets/stock_images/blue_mosque_sultanah_cf28c2fc.webp';
+import basilicaCistern from '@assets/stock_images/basilica_cistern_ist_bcddf85b.webp';
+import hagiaSophia from '@assets/stock_images/hagia_sophia_istanbu_b8b5dc4e.webp';
+import topkapiPalace from '@assets/stock_images/topkapi_palace_istan_54d0f61b.webp';
+import dolmabahcePalace from '@assets/stock_images/dolmabahce_palace_is_aa2d148d.webp';
+import grandBazaar from '@assets/stock_images/grand_bazaar_istanbu_7aa32030.webp';
+import istiklalStreet from '@assets/stock_images/istiklal_street_ista_0822a274.webp';
+import spiceBazaar from '@assets/stock_images/spice_bazaar_istanbu_8eefd351.webp';
 
 export interface Attraction {
   name: string;

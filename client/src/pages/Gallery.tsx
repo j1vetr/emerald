@@ -9,9 +9,9 @@ export default function Gallery() {
   // Collect all unique images
   const allImages = [
     ...rooms.flatMap(r => r.images),
-    { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_17-576x1024.jpg.webp", alt: "Hotel General" },
-    { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_13-683x1024.jpg.webp", alt: "Hotel Interior" },
-    { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_21-576x1024.jpg.webp", alt: "Details" },
+    { url: "/assets/images/general/otel_genel_17.webp", alt: "Hotel General" },
+    { url: "/assets/images/general/otel_genel_13.webp", alt: "Hotel Interior" },
+    { url: "/assets/images/general/otel_genel_21.webp", alt: "Details" },
   ];
   const uniqueImages = Array.from(new Map(allImages.map(item => [item.url, item])).values());
 

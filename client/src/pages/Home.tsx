@@ -119,23 +119,6 @@ export default function Home() {
              >
                {t('home.heroDesc')}
              </motion.p>
-
-             <motion.div 
-               variants={fadeInUp}
-               className="pt-12"
-             >
-               <a 
-                 href={hotelInfo.bookingUrl} 
-                 target="_blank" 
-                 rel="noopener noreferrer"
-                 className="relative inline-flex items-center justify-center px-12 py-5 overflow-hidden font-medium text-emerald-950 transition duration-300 ease-out bg-gold-500 shadow-xl group hover:ring-1 hover:ring-gold-500"
-               >
-                 <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-emerald-950 via-emerald-900 to-emerald-950 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out"></span>
-                 <span className="relative text-xs uppercase tracking-[0.2em] font-bold group-hover:text-gold-500 transition-colors duration-300">
-                   {t('nav.bookNowAction')}
-                 </span>
-               </a>
-             </motion.div>
            </motion.div>
         </div>
 

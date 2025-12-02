@@ -19,10 +19,13 @@ export function BookingCTA() {
           href={hotelInfo.bookingUrl} 
           target="_blank" 
           rel="noopener noreferrer"
-          className="relative group flex flex-col items-center bg-black border border-l-0 border-white/10 py-10 px-3 hover:px-4 hover:bg-gold-500 hover:text-black hover:border-gold-500 transition-all duration-300 rounded-r-none shadow-2xl gap-4 overflow-hidden"
+          className="relative group flex flex-col items-center bg-emerald-950 border border-l-0 border-gold-500/30 py-12 px-3 hover:px-5 hover:border-gold-500 transition-all duration-500 rounded-r-lg shadow-2xl gap-4 overflow-hidden"
         >
+          {/* Hover Gradient Background */}
+          <div className="absolute inset-0 bg-gradient-to-r from-gold-500 via-gold-400 to-gold-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out" />
+          
           <div className="relative z-10 flex flex-col items-center gap-0">
-            <span className="writing-vertical-rl text-xs font-serif font-bold tracking-[0.2em] uppercase text-white group-hover:text-black transition-colors">
+            <span className="writing-vertical-rl text-xs font-serif font-bold tracking-[0.2em] uppercase text-gold-500 group-hover:text-emerald-950 transition-colors duration-300">
               {t('nav.bookNowAction') || "REZERVASYON"}
             </span>
           </div>

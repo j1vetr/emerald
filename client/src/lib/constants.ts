@@ -110,8 +110,8 @@ export const rooms: Room[] = [
     capacity: { adults: 2, children: 1 },
     bedType: "1 King Size Yatak",
     bedTypeEn: "1 King Size Bed",
-    amenities: ["Ücretsiz Wi-Fi", "Klima", "Minibar", "Kasa", "Akıllı TV", "Premium Banyo Malzemeleri", "Oturma Alanı", "Espresso Makinesi"],
-    amenitiesEn: ["Free Wi-Fi", "Air Conditioning", "Minibar", "Safe", "Smart TV", "Premium Toiletries", "Sitting Area", "Espresso Machine"],
+    amenities: ["Ücretsiz Wi-Fi", "Klima", "Minibar", "Kasa", "Akıllı TV", "Premium Banyo Malzemeleri", "Oturma Alanı", "Su Isıtıcı"],
+    amenitiesEn: ["Free Wi-Fi", "Air Conditioning", "Minibar", "Safe", "Smart TV", "Premium Toiletries", "Sitting Area", "Kettle"],
     coverImage: "/assets/images/rooms/303_oda_3.webp",
     images: [
       { url: "/assets/images/rooms/303_oda_3.webp", alt: "Superior King Room" },

@@ -46,7 +46,11 @@ const RevealText = ({ text, className }: { text: string, className?: string }) =
 
 export default function Home() {
   const { t, i18n } = useTranslation();
-  const featuredRooms = rooms.slice(0, 3);
+  const featuredRooms = [
+    rooms.find(r => r.id === 'junior-suite-king'),
+    rooms.find(r => r.id === 'junior-suite-twin'),
+    rooms.find(r => r.id === 'superior-king')
+  ].filter(Boolean) as typeof rooms;
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,

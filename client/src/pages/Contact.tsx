@@ -103,7 +103,7 @@ export default function Contact() {
               <div className="w-full h-[300px] border border-white/10 mt-8 relative grayscale hover:grayscale-0 transition-all duration-700">
                  {/* Dummy Map */}
                  <iframe 
-                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.766668638832!2d28.975424876685497!3d41.00823767135048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9be92011c27%3A0x236e6f6f37444fae!2sSultanahmet%2C%20Fatih%2F%C4%B0stanbul!5e0!3m2!1str!2str!4v1708540000000!5m2!1str!2str" 
+                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.7947200566664!2d28.969653112549302!3d41.00786607123109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab917a4d5843f%3A0x573afc0178ff5218!2sEmerald%20Mansion%20Hotel%20-%20Sultanahmet!5e0!3m2!1str!2str!4v1764695817518!5m2!1str!2str" 
                    width="100%" 
                    height="100%" 
                    style={{border:0}} 

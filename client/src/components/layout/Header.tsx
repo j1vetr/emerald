@@ -132,7 +132,7 @@ export function Header() {
               </div>
             ))}
             
-            <div className="pl-8 border-l border-white/10 flex items-center gap-6">
+            <div className="pl-6 border-l border-white/10 flex items-center gap-6">
               <WeatherWidget />
               
               <button 

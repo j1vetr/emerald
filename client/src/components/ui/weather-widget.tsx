@@ -19,16 +19,49 @@ export function WeatherWidget() {
   const [time, setTime] = useState<string>("");
   const [mounted, setMounted] = useState(false);
   const { i18n } = useTranslation();
-  
-  // Mock data
-  const weather = {
-    temp: 18,
-    condition: "Partly",
-    city: "Istanbul"
-  };
+  const [weather, setWeather] = useState<{ temp: number, condition: string, city: string } | null>(null);
 
   useEffect(() => {
     setMounted(true);
+    
+    // Fetch real weather data from Open-Meteo (No API key required)
+    const fetchWeather = async () => {
+      try {
+        // Istanbul coordinates: 41.0082° N, 28.9784° E
+        const res = await fetch('https://api.open-meteo.com/v1/forecast?latitude=41.0082&longitude=28.9784&current=temperature_2m,weather_code&timezone=auto');
+        const data = await res.json();
+        
+        // Map WMO weather codes to our conditions
+        const code = data.current.weather_code;
+        let condition = "Clear";
+        
+        if (code === 0) condition = "Clear";
+        else if (code >= 1 && code <= 3) condition = "Partly";
+        else if (code >= 45 && code <= 48) condition = "Clouds";
+        else if (code >= 51 && code <= 67) condition = "Rain";
+        else if (code >= 80 && code <= 82) condition = "Rain";
+        else if (code >= 95) condition = "Rain"; // Thunderstorm
+        
+        setWeather({
+          temp: Math.round(data.current.temperature_2m),
+          condition,
+          city: "Istanbul"
+        });
+      } catch (error) {
+        console.error("Weather fetch failed", error);
+        // Fallback to default if fetch fails
+        setWeather({
+          temp: 18,
+          condition: "Partly",
+          city: "Istanbul"
+        });
+      }
+    };
+
+    fetchWeather();
+    // Refresh weather every 30 mins
+    const weatherInterval = setInterval(fetchWeather, 1000 * 60 * 30);
+
     // Update time every minute
     const updateTime = () => {
       const now = new Date();
@@ -43,12 +76,15 @@ export function WeatherWidget() {
     };
 
     updateTime();
-    const interval = setInterval(updateTime, 1000 * 60);
+    const timeInterval = setInterval(updateTime, 1000 * 60);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(weatherInterval);
+      clearInterval(timeInterval);
+    };
   }, [i18n.language]);
 
-  if (!mounted) return null;
+  if (!mounted || !weather) return null;
 
   return (
     <div className="flex items-center gap-6 text-xs font-light tracking-widest h-8">

@@ -29,6 +29,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </main>
       {/* Replaced StickyBookingBar with new BookingCTA */}
       <BookingCTA />
+      <WhatsAppButton />
       <Footer />
     </div>
   );

@@ -19,16 +19,10 @@ export function BookingCTA() {
           href={hotelInfo.bookingUrl} 
           target="_blank" 
           rel="noopener noreferrer"
-          className="relative group flex flex-col items-center bg-gradient-to-b from-black/95 to-emerald-950/95 border border-l-0 border-white/10 py-8 px-4 hover:px-5 transition-all duration-300 rounded-r-lg shadow-2xl backdrop-blur-md gap-4 overflow-hidden"
+          className="relative group flex flex-col items-center bg-black border border-l-0 border-white/10 py-10 px-3 hover:px-4 hover:bg-gold-500 hover:text-black hover:border-gold-500 transition-all duration-300 rounded-r-none shadow-2xl gap-4 overflow-hidden"
         >
-          {/* Animated background sheen */}
-          <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-transparent via-gold-500/10 to-transparent -translate-y-full group-hover:translate-y-full transition-transform duration-700 ease-in-out"></div>
-          
-          <div className="relative z-10 flex flex-col items-center gap-4">
-            <div className="p-2 rounded-full border border-gold-500/30 group-hover:border-gold-500 group-hover:bg-gold-500 group-hover:text-black text-gold-500 transition-all duration-300">
-              <CalendarDays className="w-5 h-5" />
-            </div>
-            <span className="writing-vertical-rl text-[10px] font-bold tracking-[0.3em] uppercase text-white/80 group-hover:text-white transform rotate-180 border-t border-white/10 pt-4 group-hover:border-white/30 transition-colors">
+          <div className="relative z-10 flex flex-col items-center gap-0">
+            <span className="writing-vertical-rl text-xs font-serif font-bold tracking-[0.2em] uppercase text-white group-hover:text-black transition-colors">
               {t('nav.bookNowAction') || "REZERVASYON"}
             </span>
           </div>

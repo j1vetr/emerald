@@ -12,7 +12,7 @@ export function WhatsAppButton() {
       transition={{ delay: 1, duration: 0.5, type: "spring" }}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
-      className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg shadow-black/30 hover:shadow-green-500/30 transition-all duration-300 flex items-center justify-center group"
+      className="hidden lg:flex fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg shadow-black/30 hover:shadow-green-500/30 transition-all duration-300 items-center justify-center group"
       title="WhatsApp"
     >
       <svg 

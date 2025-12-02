@@ -3,7 +3,7 @@ import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { WhatsAppButton } from "@/components/ui/whatsapp-button";
 import { SmoothScroll } from "@/components/ui/smooth-scroll";
-import { StickyBookingBar } from "@/components/ui/sticky-booking-bar";
+import { BookingCTA } from "@/components/ui/booking-cta";
 import { useEffect } from "react";
 import { useLocation } from "wouter";
 
@@ -23,11 +23,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <SmoothScroll />
       <ScrollToTopWrapper />
       <Header />
-      <main className="flex-grow pt-0">
+      {/* Add bottom padding for mobile to account for fixed booking bar */}
+      <main className="flex-grow pt-0 pb-20 lg:pb-0">
         {children}
       </main>
       <WhatsAppButton />
-      <StickyBookingBar />
+      {/* Replaced StickyBookingBar with new BookingCTA */}
+      <BookingCTA />
       <Footer />
     </div>
   );

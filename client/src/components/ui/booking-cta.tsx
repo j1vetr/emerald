@@ -19,12 +19,12 @@ export function BookingCTA() {
           href={hotelInfo.bookingUrl} 
           target="_blank" 
           rel="noopener noreferrer"
-          className="group flex items-center bg-black border border-l-0 border-white/20 py-6 px-2 hover:bg-gold-500 transition-all duration-300 rounded-r-sm shadow-2xl hover:pl-4"
+          className="group flex flex-col items-center bg-black border border-l-0 border-white/20 py-6 px-3 hover:bg-gold-500 transition-all duration-300 rounded-r-sm shadow-2xl hover:pl-5 gap-4"
         >
-          <span className="writing-vertical-rl text-xs font-bold tracking-[0.3em] uppercase text-white group-hover:text-black rotate-180 transform">
+          <span className="writing-vertical-rl text-xs font-bold tracking-[0.3em] uppercase text-white group-hover:text-black transform">
             {t('nav.bookNowAction') || "REZERVASYON"}
           </span>
-          <CalendarDays className="w-4 h-4 text-gold-500 group-hover:text-black mt-4" />
+          <CalendarDays className="w-4 h-4 text-gold-500 group-hover:text-black" />
         </a>
       </motion.div>
 

@@ -97,7 +97,8 @@ export const resources = {
         experience: "Deneyim",
         gallery: "Görseller",
         zoom: "Büyüt",
-        checkAvailability: "Müsaitlik Kontrolü"
+        checkAvailability: "Müsaitlik Kontrolü",
+        dragToRotate: "Çevirmek için sürükleyin"
       },
       contact: {
         title: "İletişim",
@@ -232,7 +233,8 @@ export const resources = {
         experience: "Experience",
         gallery: "Images",
         zoom: "Zoom",
-        checkAvailability: "Check Availability"
+        checkAvailability: "Check Availability",
+        dragToRotate: "Drag to rotate"
       },
       contact: {
         title: "Contact",

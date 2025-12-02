@@ -1,4 +1,3 @@
-
 import { Link, useLocation } from "wouter";
 import { useState, useEffect } from "react";
 import { Menu, X, Phone, ChevronDown, Globe } from "lucide-react";
@@ -7,6 +6,7 @@ import { hotelInfo, rooms } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { WeatherWidget } from "@/components/ui/weather-widget";
 
 export function Header() {
   const [location] = useLocation();
@@ -133,6 +133,8 @@ export function Header() {
             ))}
             
             <div className="pl-8 border-l border-white/10 flex items-center gap-6">
+              <WeatherWidget />
+              
               <button 
                 onClick={toggleLanguage}
                 className="text-xs font-medium tracking-widest text-white/70 hover:text-gold-500 transition-colors uppercase flex items-center gap-2"
@@ -181,6 +183,7 @@ export function Header() {
             exit={{ opacity: 0, y: "-100%" }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center lg:hidden"
+            style={{ top: 0, minHeight: "100vh" }} 
           >
              {/* Background texture or image could go here */}
              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>

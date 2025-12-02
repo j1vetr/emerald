@@ -51,7 +51,7 @@ export function WeatherWidget() {
   if (!mounted) return null;
 
   return (
-    <div className="hidden md:flex items-center gap-6 text-xs font-light tracking-widest border-l border-white/10 pl-6 ml-6 h-8">
+    <div className="flex items-center gap-6 text-xs font-light tracking-widest border-l border-white/10 pl-6 ml-6 h-8">
       {/* Weather */}
       <div className="flex items-center gap-2 text-white/80 group cursor-default">
         <span className="group-hover:scale-110 transition-transform duration-300">

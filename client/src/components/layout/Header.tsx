@@ -55,7 +55,7 @@ export function Header() {
             : "bg-transparent py-8 border-transparent"
         )}
       >
-        <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
+        <div className="container mx-auto px-6 md:px-12 flex items-center justify-between pl-8">
           {/* Logo Area */}
           <Link href="/" className="relative z-50 group cursor-pointer flex items-center justify-center">
             <div className="relative flex items-center justify-center p-[2px] rounded-full overflow-hidden">
@@ -142,16 +142,6 @@ export function Header() {
                 <Globe size={14} />
                 {i18n.language === 'tr' ? 'EN' : 'TR'}
               </button>
-
-              <Button 
-                asChild 
-                variant="outline"
-                className="bg-transparent border-gold-500/50 text-gold-400 hover:bg-gold-500 hover:text-black hover:border-gold-500 rounded-none px-8 py-6 text-xs uppercase tracking-widest transition-all duration-500"
-              >
-                <a href={hotelInfo.bookingUrl} target="_blank" rel="noopener noreferrer">
-                  {t('nav.bookNow')}
-                </a>
-              </Button>
             </div>
           </nav>
 
@@ -209,17 +199,12 @@ export function Header() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 }}
-                className="mt-8"
+                className="mt-8 flex flex-col items-center gap-6"
               >
-                <Button 
-                  asChild 
-                  size="lg"
-                  className="bg-gold-500 text-black hover:bg-white hover:text-black rounded-none px-12 py-8 text-lg font-serif"
-                >
-                  <a href={hotelInfo.bookingUrl} target="_blank" rel="noopener noreferrer">
-                    {t('nav.bookNowAction')}
-                  </a>
-                </Button>
+                {/* Mobile Weather Widget - Styled to fit */}
+                <div className="scale-125 origin-center">
+                  <WeatherWidget />
+                </div>
               </motion.div>
             </nav>
             

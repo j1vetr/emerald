@@ -2,7 +2,6 @@ import { Layout } from "@/components/layout/Layout";
 import { attractions } from "@/lib/constants";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { CustomMap } from "@/components/ui/custom-map";
 import { ConciergeCard } from "@/components/ui/concierge-card";
 
 export default function Attractions() {
@@ -21,9 +20,6 @@ export default function Attractions() {
           </p>
         </div>
       </div>
-
-      {/* Custom Map Section */}
-      <CustomMap />
 
       <div className="bg-black py-20 border-t border-white/10">
         <div className="container mx-auto px-6">

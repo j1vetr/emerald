@@ -296,7 +296,7 @@ export default function RoomDetail() {
                 {/* Need Help */}
                 <div className="text-center p-8 border border-white/5 bg-white/5">
                    <p className="text-white/50 text-sm mb-4">{t('rooms.needHelp')}</p>
-                   <a href={`tel:+${hotelInfo.whatsapp}`} className="font-serif text-xl text-white hover:text-gold-500 transition-colors block mb-2">+{hotelInfo.phone.replace(/^\+/, '')}</a>
+                   <a href={`tel:${hotelInfo.phone.replace(/[^0-9]/g, '')}`} className="font-serif text-xl text-white hover:text-gold-500 transition-colors block mb-2">{hotelInfo.phone}</a>
                    <a href={`mailto:${hotelInfo.email}`} className="text-sm text-white/40 hover:text-white transition-colors block">{hotelInfo.email}</a>
                 </div>
               </div>

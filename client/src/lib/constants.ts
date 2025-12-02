@@ -35,7 +35,7 @@ export const hotelInfo = {
   location: "Sultanahmet, İstanbul",
   address: "Binbirdirek Mah. Boyacı Ahmet Sk. No: 8, Sultanahmet / Fatih / İstanbul",
   email: "info@emeraldmansion.com",
-  phone: "+90 554 145 14 13",
+  phone: "(0212) 830 13 13",
   whatsapp: "905541451413",
   bookingUrl: "https://emerald-mansion.rezervasyonal.com",
   logoUrl: "/assets/images/logo/logo.svg",

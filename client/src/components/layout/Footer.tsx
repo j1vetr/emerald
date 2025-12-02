@@ -60,7 +60,7 @@ export function Footer() {
             <div className="space-y-8">
                <div className="group">
                  <p className="text-white/40 text-xs uppercase mb-2">{t('footer.reservationLine')}</p>
-                 <a href={`tel:${hotelInfo.phone.replace(/\s/g, '')}`} className="font-serif text-2xl md:text-3xl text-white group-hover:text-gold-500 transition-colors block">
+                 <a href={`tel:${hotelInfo.phone.replace(/[^0-9]/g, '')}`} className="font-serif text-2xl md:text-3xl text-white group-hover:text-gold-500 transition-colors block">
                    {hotelInfo.phone}
                  </a>
                </div>

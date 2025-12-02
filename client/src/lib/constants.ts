@@ -224,6 +224,9 @@ export interface Attraction {
   description: string;
   descriptionEn: string;
   image: string;
+  distance: string;
+  time: string;
+  timeEn: string;
 }
 
 export const attractions: Attraction[] = [
@@ -232,62 +235,89 @@ export const attractions: Attraction[] = [
     nameEn: "Galata Tower",
     description: "1348 yılında Cenevizliler tarafından inşa edilen kule, İstanbul'un en ikonik simgelerinden biridir. Haliç ve Boğaz'ın panoramik manzarasını sunar.",
     descriptionEn: "Built by the Genoese in 1348, the tower is one of Istanbul's most iconic landmarks. It offers a panoramic view of the Golden Horn and the Bosphorus.",
-    image: galataTower
+    image: galataTower,
+    distance: "2.8 km",
+    time: "30 dk (Tramvay)",
+    timeEn: "30 min (Tram)"
   },
   {
     name: "Mısır Çarşısı",
     nameEn: "Spice Bazaar",
     description: "17. yüzyılda inşa edilen ve Eminönü'nde yer alan bu tarihi çarşı, egzotik baharat kokuları, renkli lokumları ve geleneksel atmosferiyle büyüleyicidir.",
     descriptionEn: "Built in the 17th century and located in Eminönü, this historical bazaar is fascinating with its exotic spice scents, colorful Turkish delights and traditional atmosphere.",
-    image: spiceBazaar
+    image: spiceBazaar,
+    distance: "1.2 km",
+    time: "15 dk Yürüyüş",
+    timeEn: "15 min Walk"
   },
   {
     name: "Sultanahmet Camii",
     nameEn: "Blue Mosque",
     description: "17. yüzyılda I. Ahmed tarafından yaptırılan ve mavi çinileriyle 'Blue Mosque' olarak bilinen cami, Osmanlı mimarisinin en zarif örneklerindendir.",
     descriptionEn: "Built by Ahmed I in the 17th century and known as the 'Blue Mosque' for its blue tiles, the mosque is one of the most elegant examples of Ottoman architecture.",
-    image: blueMosque
+    image: blueMosque,
+    distance: "250 m",
+    time: "3 dk Yürüyüş",
+    timeEn: "3 min Walk"
   },
   {
     name: "Yerebatan Sarnıcı",
     nameEn: "Basilica Cistern",
     description: "Bizans İmparatoru I. Justinianus tarafından 6. yüzyılda yaptırılan bu büyüleyici yeraltı sarnıcı, 336 mermer sütunu ve Medusa başları ile ünlüdür.",
     descriptionEn: "Built by Byzantine Emperor Justinian I in the 6th century, this fascinating underground cistern is famous for its 336 marble columns and Medusa heads.",
-    image: basilicaCistern
+    image: basilicaCistern,
+    distance: "350 m",
+    time: "4 dk Yürüyüş",
+    timeEn: "4 min Walk"
   },
   {
     name: "Ayasofya Camii",
     nameEn: "Hagia Sophia",
     description: "Dünya mimarlık tarihinin başyapıtlarından biri olan Ayasofya, 1500 yıllık tarihiyle Bizans ve Osmanlı imparatorluklarının ortak mirasını simgeler.",
     descriptionEn: "One of the masterpieces of world architectural history, Hagia Sophia symbolizes the common heritage of the Byzantine and Ottoman empires with its 1500-year history.",
-    image: hagiaSophia
+    image: hagiaSophia,
+    distance: "400 m",
+    time: "5 dk Yürüyüş",
+    timeEn: "5 min Walk"
   },
   {
     name: "Topkapı Sarayı",
     nameEn: "Topkapi Palace",
     description: "Osmanlı İmparatorluğu'nun 400 yıl boyunca yönetim merkezi ve padişahların evi olan saray, muhteşem avluları, Harem dairesi ve Kutsal Emanetler bölümüyle tarihe ışık tutar.",
     descriptionEn: "The palace, which was the administrative center of the Ottoman Empire and the home of the sultans for 400 years, sheds light on history with its magnificent courtyards, Harem section and Holy Relics section.",
-    image: topkapiPalace
+    image: topkapiPalace,
+    distance: "800 m",
+    time: "10 dk Yürüyüş",
+    timeEn: "10 min Walk"
   },
   {
     name: "Dolmabahçe Sarayı",
     nameEn: "Dolmabahce Palace",
     description: "19. yüzyılda inşa edilen bu barok ve neoklasik tarzdaki saray, Osmanlı'nın batılılaşma döneminin en görkemli yapısıdır. Boğaz kıyısındaki konumuyla büyüleyicidir.",
     descriptionEn: "Built in the 19th century, this baroque and neoclassical palace is the most magnificent structure of the Ottoman westernization period. It is fascinating with its location on the Bosphorus.",
-    image: dolmabahcePalace
+    image: dolmabahcePalace,
+    distance: "5.5 km",
+    time: "35 dk (Tramvay)",
+    timeEn: "35 min (Tram)"
   },
   {
     name: "Kapalı Çarşı",
     nameEn: "Grand Bazaar",
     description: "Dünyanın en eski ve en büyük kapalı çarşılarından biri olan Kapalı Çarşı, 4000'den fazla dükkanı, labirent gibi sokakları ve tarihi atmosferiyle ticaretin kalbidir.",
     descriptionEn: "One of the world's oldest and largest covered markets, the Grand Bazaar is the heart of trade with its more than 4000 shops, labyrinthine streets and historical atmosphere.",
-    image: grandBazaar
+    image: grandBazaar,
+    distance: "700 m",
+    time: "10 dk Yürüyüş",
+    timeEn: "10 min Walk"
   },
   {
     name: "İstiklal Caddesi",
     nameEn: "Istiklal Street",
     description: "Beyoğlu'nun kalbi olan İstiklal Caddesi, 19. yüzyıl mimarisi, tarihi tramvayı, mağazaları, kafeleri ve sanat galerileriyle İstanbul'un modern yüzünü yansıtır.",
     descriptionEn: "The heart of Beyoğlu, Istiklal Street reflects the modern face of Istanbul with its 19th-century architecture, historical tram, shops, cafes and art galleries.",
-    image: istiklalStreet
+    image: istiklalStreet,
+    distance: "4.2 km",
+    time: "40 dk (Tramvay)",
+    timeEn: "40 min (Tram)"
   }
 ];

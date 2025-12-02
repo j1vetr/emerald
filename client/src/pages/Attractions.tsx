@@ -34,8 +34,8 @@ export default function Attractions() {
                 title={isEn ? place.nameEn : place.name}
                 description={isEn ? place.descriptionEn : place.description}
                 image={place.image}
-                distance="5 dk" // Mock data, ideally from constants
-                time="Yürüyüş"
+                distance={place.distance}
+                time={isEn ? place.timeEn : place.time}
                 delay={i * 0.1}
               />
             ))}

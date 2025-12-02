@@ -68,16 +68,12 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black z-10" />
           
           <div className="absolute inset-0 overflow-hidden">
-            <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover opacity-80"
-                poster="/assets/images/general/otel_genel_13.webp"
-            >
-                <source src="https://cdn.coverr.co/videos/coverr-luxury-hotel-lobby-4516/1080p.mp4" type="video/mp4" />
-            </video>
+             <iframe 
+               className="absolute top-1/2 left-1/2 w-[180%] h-[180%] -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-60"
+               src="https://www.youtube.com/embed/K6hfpqiGyOg?autoplay=1&mute=1&controls=0&loop=1&playlist=K6hfpqiGyOg&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&modestbranding=1"
+               allow="autoplay; encrypted-media"
+               title="Hero Video"
+             />
           </div>
         </motion.div>
 

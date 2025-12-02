@@ -27,7 +27,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <main className="flex-grow pt-0 pb-20 lg:pb-0">
         {children}
       </main>
-      <WhatsAppButton />
       {/* Replaced StickyBookingBar with new BookingCTA */}
       <BookingCTA />
       <Footer />

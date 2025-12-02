@@ -74,7 +74,7 @@ export default function Home() {
                 muted
                 playsInline
                 className="w-full h-full object-cover opacity-80"
-                poster="https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_13-683x1024.jpg.webp"
+                poster="/assets/images/general/otel_genel_13.webp"
             >
                 <source src="https://cdn.coverr.co/videos/coverr-luxury-hotel-lobby-4516/1080p.mp4" type="video/mp4" />
             </video>
@@ -151,7 +151,7 @@ export default function Home() {
                  className="aspect-[4/5] overflow-hidden relative border border-white/10"
                >
                  <img 
-                   src="https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_13-683x1024.jpg.webp" 
+                   src="/assets/images/general/otel_genel_13.webp" 
                    alt="Interior Detail"
                    className="w-full h-full object-cover"
                  />

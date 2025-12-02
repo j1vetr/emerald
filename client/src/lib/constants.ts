@@ -38,7 +38,7 @@ export const hotelInfo = {
   phone: "+90 554 145 14 13",
   whatsapp: "905541451413",
   bookingUrl: "https://emerald-mansion.rezervasyonal.com",
-  logoUrl: "https://emeraldmansion.com/wp-content/uploads/2025/02/Emerald-Logo_3.svg",
+  logoUrl: "/assets/images/logo/logo.svg",
   instagramUrl: "https://www.instagram.com/emeraldmansionhotel"
 };
 
@@ -60,13 +60,13 @@ export const rooms: Room[] = [
     bedTypeEn: "1 Single Bed",
     amenities: ["Ücretsiz Wi-Fi", "Klima", "Minibar", "Kasa", "Akıllı TV", "Premium Banyo Malzemeleri", "Saç Kurutma Makinesi"],
     amenitiesEn: ["Free Wi-Fi", "Air Conditioning", "Minibar", "Safe", "Smart TV", "Premium Toiletries", "Hair Dryer"],
-    coverImage: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/2.kat_4-1024x683.jpg.webp",
+    coverImage: "/assets/images/rooms/2.kat_4.webp",
     images: [
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/2.kat_4-1024x683.jpg.webp", alt: "Comfort Single Room View" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/2.kat_3-1024x683.jpg.webp", alt: "Comfort Single Room Detail" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/04/IMG_1101-1024x683.jpg.webp", alt: "Bathroom" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/04/IMG_1105-1024x683.jpg.webp", alt: "Amenities" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_17-576x1024.jpg.webp", alt: "Room Interior" }
+      { url: "/assets/images/rooms/2.kat_4.webp", alt: "Comfort Single Room View" },
+      { url: "/assets/images/rooms/2.kat_3.webp", alt: "Comfort Single Room Detail" },
+      { url: "/assets/images/rooms/IMG_1101.webp", alt: "Bathroom" },
+      { url: "/assets/images/rooms/IMG_1105.webp", alt: "Amenities" },
+      { url: "/assets/images/general/otel_genel_17.webp", alt: "Room Interior" }
     ]
   },
   {
@@ -86,13 +86,13 @@ export const rooms: Room[] = [
     bedTypeEn: "1 Double Bed",
     amenities: ["Ücretsiz Wi-Fi", "Klima", "Minibar", "Kasa", "Akıllı TV", "Premium Banyo Malzemeleri", "Çay/Kahve Seti"],
     amenitiesEn: ["Free Wi-Fi", "Air Conditioning", "Minibar", "Safe", "Smart TV", "Premium Toiletries", "Tea/Coffee Set"],
-    coverImage: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/301_oda_2-1024x683.jpg.webp",
+    coverImage: "/assets/images/rooms/301_oda_2.webp",
     images: [
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/301_oda_2-1024x683.jpg.webp", alt: "Comfort Double Room" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/301_oda_1_3-1024x683.jpg.webp", alt: "Comfort Double Detail" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/04/IMG_1101-1024x683.jpg.webp", alt: "Bathroom" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/04/IMG_1105-1024x683.jpg.webp", alt: "Amenities" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_17-576x1024.jpg.webp", alt: "Room Ambiance" }
+      { url: "/assets/images/rooms/301_oda_2.webp", alt: "Comfort Double Room" },
+      { url: "/assets/images/rooms/301_oda_1_3.webp", alt: "Comfort Double Detail" },
+      { url: "/assets/images/rooms/IMG_1101.webp", alt: "Bathroom" },
+      { url: "/assets/images/rooms/IMG_1105.webp", alt: "Amenities" },
+      { url: "/assets/images/general/otel_genel_17.webp", alt: "Room Ambiance" }
     ]
   },
   {
@@ -112,13 +112,13 @@ export const rooms: Room[] = [
     bedTypeEn: "1 King Size Bed",
     amenities: ["Ücretsiz Wi-Fi", "Klima", "Minibar", "Kasa", "Akıllı TV", "Premium Banyo Malzemeleri", "Oturma Alanı", "Espresso Makinesi"],
     amenitiesEn: ["Free Wi-Fi", "Air Conditioning", "Minibar", "Safe", "Smart TV", "Premium Toiletries", "Sitting Area", "Espresso Machine"],
-    coverImage: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/303_oda_3-1024x683.jpg.webp",
+    coverImage: "/assets/images/rooms/303_oda_3.webp",
     images: [
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/303_oda_3-1024x683.jpg.webp", alt: "Superior King Room" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/303_oda_2-1024x683.jpg.webp", alt: "Superior King Detail" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/04/IMG_1101-1024x683.jpg.webp", alt: "Bathroom" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/04/IMG_1105-1024x683.jpg.webp", alt: "Amenities" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_13-683x1024.jpg.webp", alt: "Interior" }
+      { url: "/assets/images/rooms/303_oda_3.webp", alt: "Superior King Room" },
+      { url: "/assets/images/rooms/303_oda_2.webp", alt: "Superior King Detail" },
+      { url: "/assets/images/rooms/IMG_1101.webp", alt: "Bathroom" },
+      { url: "/assets/images/rooms/IMG_1105.webp", alt: "Amenities" },
+      { url: "/assets/images/general/otel_genel_13.webp", alt: "Interior" }
     ]
   },
   {
@@ -138,16 +138,16 @@ export const rooms: Room[] = [
     bedTypeEn: "1 King Size Bed + Sofa",
     amenities: ["Ücretsiz Wi-Fi", "Klima", "Minibar", "Kasa", "Akıllı TV", "Premium Banyo Malzemeleri", "Oturma Grubu", "Bornoz & Terlik"],
     amenitiesEn: ["Free Wi-Fi", "Air Conditioning", "Minibar", "Safe", "Smart TV", "Premium Toiletries", "Sitting Group", "Robes & Slippers"],
-    coverImage: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/305_oda_1-1024x683.jpg.webp",
+    coverImage: "/assets/images/rooms/305_oda_1.webp",
     images: [
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/305_oda_1-1024x683.jpg.webp", alt: "Junior Suite King" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/304_oda_6-1024x683.jpg.webp", alt: "Living Area" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/304_oda_1-1024x683.jpg.webp", alt: "Bedroom" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/304_oda_4-1024x683.jpg.webp", alt: "Detail" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/04/IMG_1101-1024x683.jpg.webp", alt: "Bathroom" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/04/IMG_1105-1024x683.jpg.webp", alt: "Amenities" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_21-576x1024.jpg.webp", alt: "Suite Ambience" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_19-576x1024.jpg.webp", alt: "Decor" }
+      { url: "/assets/images/rooms/305_oda_1.webp", alt: "Junior Suite King" },
+      { url: "/assets/images/rooms/304_oda_6.webp", alt: "Living Area" },
+      { url: "/assets/images/rooms/304_oda_1.webp", alt: "Bedroom" },
+      { url: "/assets/images/rooms/304_oda_4.webp", alt: "Detail" },
+      { url: "/assets/images/rooms/IMG_1101.webp", alt: "Bathroom" },
+      { url: "/assets/images/rooms/IMG_1105.webp", alt: "Amenities" },
+      { url: "/assets/images/general/otel_genel_21.webp", alt: "Suite Ambience" },
+      { url: "/assets/images/general/otel_genel_19.webp", alt: "Decor" }
     ]
   },
   {
@@ -167,15 +167,15 @@ export const rooms: Room[] = [
     bedTypeEn: "2 Single Beds",
     amenities: ["Ücretsiz Wi-Fi", "Klima", "Minibar", "Kasa", "Akıllı TV", "Premium Banyo Malzemeleri", "Çalışma Masası"],
     amenitiesEn: ["Free Wi-Fi", "Air Conditioning", "Minibar", "Safe", "Smart TV", "Premium Toiletries", "Work Desk"],
-    coverImage: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/302_oda_4-1024x683.jpg.webp",
+    coverImage: "/assets/images/rooms/302_oda_4.webp",
     images: [
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/302_oda_4-1024x683.jpg.webp", alt: "Junior Suite Twin" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/302_oda_2-1024x683.jpg.webp", alt: "Twin Beds" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/302_oda_6-1024x683.jpg.webp", alt: "Room View" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/04/IMG_1101-1024x683.jpg.webp", alt: "Bathroom" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/04/IMG_1105-1024x683.jpg.webp", alt: "Amenities" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_20-576x1024.jpg.webp", alt: "Details" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_21-576x1024.jpg.webp", alt: "Atmosphere" }
+      { url: "/assets/images/rooms/302_oda_4.webp", alt: "Junior Suite Twin" },
+      { url: "/assets/images/rooms/302_oda_2.webp", alt: "Twin Beds" },
+      { url: "/assets/images/rooms/302_oda_6.webp", alt: "Room View" },
+      { url: "/assets/images/rooms/IMG_1101.webp", alt: "Bathroom" },
+      { url: "/assets/images/rooms/IMG_1105.webp", alt: "Amenities" },
+      { url: "/assets/images/general/otel_genel_20.webp", alt: "Details" },
+      { url: "/assets/images/general/otel_genel_21.webp", alt: "Atmosphere" }
     ]
   },
   {
@@ -195,15 +195,15 @@ export const rooms: Room[] = [
     bedTypeEn: "1 Double + 2 Single Beds",
     amenities: ["Ücretsiz Wi-Fi", "2 x Klima", "2 x Minibar", "Kasa", "2 x Akıllı TV", "Premium Banyo Malzemeleri", "Geniş Oturma Alanı"],
     amenitiesEn: ["Free Wi-Fi", "2 x Air Conditioning", "2 x Minibar", "Safe", "2 x Smart TV", "Premium Toiletries", "Large Sitting Area"],
-    coverImage: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/2.kat_2_5-1-1024x683.jpg.webp",
+    coverImage: "/assets/images/rooms/2.kat_2_5-1.webp",
     images: [
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/2.kat_2_5-1-1024x683.jpg.webp", alt: "Family Suite" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/2.kat_2_3-1024x683.jpg.webp", alt: "Bedroom 1" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/2.kat_2_4-1024x683.jpg.webp", alt: "Bedroom 2" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/04/IMG_1101-1024x683.jpg.webp", alt: "Bathroom" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_20-576x1024.jpg.webp", alt: "Hallway" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/04/IMG_1105-1024x683.jpg.webp", alt: "Amenities" },
-      { url: "https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_13-683x1024.jpg.webp", alt: "Decor" }
+      { url: "/assets/images/rooms/2.kat_2_5-1.webp", alt: "Family Suite" },
+      { url: "/assets/images/rooms/2.kat_2_3.webp", alt: "Bedroom 1" },
+      { url: "/assets/images/rooms/2.kat_2_4.webp", alt: "Bedroom 2" },
+      { url: "/assets/images/rooms/IMG_1101.webp", alt: "Bathroom" },
+      { url: "/assets/images/general/otel_genel_20.webp", alt: "Hallway" },
+      { url: "/assets/images/rooms/IMG_1105.webp", alt: "Amenities" },
+      { url: "/assets/images/general/otel_genel_13.webp", alt: "Decor" }
     ]
   }
 ];

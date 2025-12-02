@@ -9,9 +9,6 @@ import Autoplay from "embla-carousel-autoplay";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Viewer360 } from "@/components/ui/viewer-360";
-import { PanoramaViewer } from "@/components/ui/panorama-viewer";
-import panoramaImage from '@assets/stock_images/360_degree_equirecta_7a641f99.jpg';
 
 export default function RoomDetail() {
   const [match, params] = useRoute("/odalar/:slug");
@@ -197,15 +194,6 @@ export default function RoomDetail() {
                     ? "High ceilings, handcrafted wooden details and luxurious fabrics... Designed for you to feel quality in every moment. The requirements of the modern world and the fascinating texture of history come together here."
                     : "Yüksek tavanlar, el işçiliği ahşap detaylar ve lüks kumaşlar... Her anınızda kaliteyi hissetmeniz için tasarlandı. Modern dünyanın gereklilikleri ile tarihin büyüleyici dokusu burada birleşiyor."}
                 </p>
-              </div>
-
-              {/* 360 Viewer */}
-              <div className="space-y-8">
-                 <div className="flex items-center justify-between">
-                   <h3 className="text-xs uppercase tracking-[0.3em] text-white/50">360° Tur</h3>
-                   <div className="h-[1px] flex-grow bg-white/10 ml-6"></div>
-                </div>
-                <PanoramaViewer image={panoramaImage} />
               </div>
 
               {/* Gallery */}

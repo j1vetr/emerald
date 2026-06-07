@@ -32,13 +32,24 @@ export function SmoothScroll() {
     };
   }, []);
 
+  // Force scroll to top when location changes
   useEffect(() => {
-    // Reset scroll position on route change
-    if (lenisRef.current) {
-      lenisRef.current.scrollTo(0, { immediate: true });
-    } else {
+    const scrollToTop = () => {
       window.scrollTo(0, 0);
-    }
+      document.documentElement.scrollTo(0, 0);
+      document.body.scrollTo(0, 0);
+      
+      if (lenisRef.current) {
+        lenisRef.current.scrollTo(0, { immediate: true });
+      }
+    };
+    
+    // Execute immediately
+    scrollToTop();
+    
+    // And also after a short delay to ensure DOM has updated
+    const timer = setTimeout(scrollToTop, 50);
+    return () => clearTimeout(timer);
   }, [location]);
 
   return null;

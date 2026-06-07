@@ -119,7 +119,8 @@ export default function RoomDetail() {
       {/* Immersive Hero */}
       <div className="relative h-screen w-full overflow-hidden bg-black">
         <div className="absolute inset-0">
-           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black z-10" />
+           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black z-10" />
+           <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black via-black/60 to-transparent z-10" />
            <motion.img 
              initial={{ scale: 1.2 }}
              animate={{ scale: 1 }}
@@ -141,7 +142,7 @@ export default function RoomDetail() {
                  <span className="h-[1px] w-12 bg-gold-500"></span>
                  <span className="text-gold-500 text-sm uppercase tracking-[0.3em]">Emerald Collection</span>
                </div>
-               <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-white mb-8 leading-tight">{isEn ? room.nameEn : room.name}</h1>
+               <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-white mb-8 leading-tight drop-shadow-lg">{isEn ? room.nameEn : room.name}</h1>
                <div className="flex flex-wrap gap-8 text-white/80 font-light tracking-wider text-sm border-t border-white/10 pt-8">
                   <div className="flex flex-col gap-1">
                      <span className="text-xs text-white/40 uppercase">{t('rooms.size')}</span>

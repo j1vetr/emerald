@@ -1,7 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Lenis from "lenis";
+import { useLocation } from "wouter";
 
 export function SmoothScroll() {
+  const lenisRef = useRef<Lenis | null>(null);
+  const [location] = useLocation();
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -12,6 +16,8 @@ export function SmoothScroll() {
       wheelMultiplier: 1,
       touchMultiplier: 2,
     });
+    
+    lenisRef.current = lenis;
 
     function raf(time: number) {
       lenis.raf(time);
@@ -22,8 +28,18 @@ export function SmoothScroll() {
 
     return () => {
       lenis.destroy();
+      lenisRef.current = null;
     };
   }, []);
+
+  useEffect(() => {
+    // Reset scroll position on route change
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
 
   return null;
 }

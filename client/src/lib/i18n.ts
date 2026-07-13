@@ -52,7 +52,8 @@ export const resources = {
         locationTitle: "Konum",
         locationSubtitle: "Tarihin Merkezinde",
         locationDesc: "Ayasofya, Topkapı Sarayı ve Kapalı Çarşı sadece yürüme mesafesinde. İstanbul'un ruhunu hissetmek için en doğru adrestesiniz.",
-        getDirections: "Yol Tarifi Al"
+        getDirections: "Yol Tarifi Al",
+        transferOffer: "500€ ve üzeri konaklamalarınızda tek yön özel transfer dahildir."
       },
       rooms: {
         size: "Boyut",
@@ -188,7 +189,8 @@ export const resources = {
         locationTitle: "Location",
         locationSubtitle: "Center of History",
         locationDesc: "Hagia Sophia, Topkapi Palace and the Grand Bazaar are just walking distance away. You are at the right address to feel the soul of Istanbul.",
-        getDirections: "Get Directions"
+        getDirections: "Get Directions",
+        transferOffer: "One-way private transfer is included for stays of €500 and above."
       },
       rooms: {
         size: "Size",

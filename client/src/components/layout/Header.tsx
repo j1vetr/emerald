@@ -84,6 +84,11 @@ export function Header() {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-12">
+            <div className="bg-gold-500/10 border border-gold-500/20 px-4 py-1.5 rounded-full mr-4 animate-pulse">
+              <span className="text-gold-500 text-[10px] uppercase tracking-widest font-medium whitespace-nowrap">
+                {t('home.transferOffer')}
+              </span>
+            </div>
             {navLinks.map((link) => (
               <div 
                 key={link.href} 
@@ -179,6 +184,17 @@ export function Header() {
              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
 
              <nav className="flex flex-col items-center gap-8 relative z-10">
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                className="bg-gold-500/10 border border-gold-500/30 px-6 py-3 rounded-full mb-4 text-center max-w-[80%]"
+              >
+                <span className="text-gold-500 text-[10px] md:text-xs uppercase tracking-widest font-medium">
+                  {t('home.transferOffer')}
+                </span>
+              </motion.div>
+
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.href}

@@ -47,12 +47,19 @@ export function Header() {
 
   return (
     <>
+      {/* Top Announcement Bar */}
+      <div className="bg-emerald-950/80 backdrop-blur-md text-gold-500 h-10 flex items-center justify-center px-4 fixed top-0 left-0 right-0 z-[70] border-b border-gold-500/20">
+        <span className="text-[9px] md:text-[11px] font-medium uppercase tracking-[0.2em] text-center">
+          {t('home.transferOffer')}
+        </span>
+      </div>
+
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-[60] transition-all duration-700 border-b",
+          "fixed left-0 right-0 z-[60] transition-all duration-700 border-b",
           isScrolled
-            ? "bg-black/80 backdrop-blur-md py-4 border-white/10"
-            : "bg-transparent py-8 border-transparent"
+            ? "top-10 bg-black/80 backdrop-blur-md py-4 border-white/10"
+            : "top-10 bg-transparent py-6 md:py-8 border-transparent"
         )}
       >
         <div className="container mx-auto px-6 md:px-12 flex items-center justify-between pl-8">
@@ -84,11 +91,6 @@ export function Header() {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-12">
-            <div className="bg-gold-500/10 border border-gold-500/20 px-4 py-1.5 rounded-full mr-4 animate-pulse">
-              <span className="text-gold-500 text-[10px] uppercase tracking-widest font-medium whitespace-nowrap">
-                {t('home.transferOffer')}
-              </span>
-            </div>
             {navLinks.map((link) => (
               <div 
                 key={link.href} 
@@ -184,17 +186,6 @@ export function Header() {
              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
 
              <nav className="flex flex-col items-center gap-8 relative z-10">
-              <motion.div
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-                className="bg-gold-500/10 border border-gold-500/30 px-6 py-3 rounded-full mb-4 text-center max-w-[80%]"
-              >
-                <span className="text-gold-500 text-[10px] md:text-xs uppercase tracking-widest font-medium">
-                  {t('home.transferOffer')}
-                </span>
-              </motion.div>
-
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.href}

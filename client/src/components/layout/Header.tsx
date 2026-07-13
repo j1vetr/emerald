@@ -48,18 +48,20 @@ export function Header() {
   return (
     <>
       {/* Top Announcement Bar */}
-      <div className="bg-emerald-950/80 backdrop-blur-md text-gold-500 h-10 flex items-center justify-center px-4 fixed top-0 left-0 right-0 z-[70] border-b border-gold-500/20">
-        <span className="text-[9px] md:text-[11px] font-medium uppercase tracking-[0.2em] text-center">
-          {t('home.transferOffer')}
-        </span>
+      <div className="bg-emerald-950/80 backdrop-blur-md text-gold-500 h-12 md:h-10 flex items-center justify-center px-4 fixed top-0 left-0 right-0 z-[70] border-b border-gold-500/20">
+        <div className="text-[9px] md:text-[11px] font-medium uppercase tracking-[0.15em] md:tracking-[0.2em] text-center leading-[1.6]">
+          <span className="block md:inline">{t('home.transferOffer1')}</span>
+          <span className="hidden md:inline">{" "}</span>
+          <span className="block md:inline">{t('home.transferOffer2')}</span>
+        </div>
       </div>
 
       <header
         className={cn(
           "fixed left-0 right-0 z-[60] transition-all duration-700 border-b",
           isScrolled
-            ? "top-10 bg-black/80 backdrop-blur-md py-4 border-white/10"
-            : "top-10 bg-transparent py-6 md:py-8 border-transparent"
+            ? "top-12 md:top-10 bg-black/80 backdrop-blur-md py-4 border-white/10"
+            : "top-12 md:top-10 bg-transparent py-4 md:py-8 border-transparent"
         )}
       >
         <div className="container mx-auto px-6 md:px-12 flex items-center justify-between pl-8">

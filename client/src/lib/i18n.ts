@@ -53,7 +53,7 @@ export const resources = {
         locationSubtitle: "Tarihin Merkezinde",
         locationDesc: "Ayasofya, Topkapı Sarayı ve Kapalı Çarşı sadece yürüme mesafesinde. İstanbul'un ruhunu hissetmek için en doğru adrestesiniz.",
         getDirections: "Yol Tarifi Al",
-        transferOffer1: "500€ ve üzeri konaklamalarınızda",
+        transferOffer1: "Web sitemizden 500€ ve üzeri rezervasyonlarda",
         transferOffer2: "tek yön özel transfer dahildir."
       },
       rooms: {
@@ -191,8 +191,8 @@ export const resources = {
         locationSubtitle: "Center of History",
         locationDesc: "Hagia Sophia, Topkapi Palace and the Grand Bazaar are just walking distance away. You are at the right address to feel the soul of Istanbul.",
         getDirections: "Get Directions",
-        transferOffer1: "One-way private transfer is included",
-        transferOffer2: "for stays of €500 and above."
+        transferOffer1: "One-way private transfer for website bookings",
+        transferOffer2: "of €500 and above."
       },
       rooms: {
         size: "Size",

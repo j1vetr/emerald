@@ -1,0 +1,1453 @@
+# Emerald Mansion SEO Teknik Optimizasyon Görevi
+
+Web sitesi: https://emeraldmansion.com
+
+Ana SEO hedefimiz Emerald Mansion sitesini özellikle Sultanahmet bölgesindeki otel aramalarında mümkün olduğunca yukarı taşımaktır.
+
+Ana hedef kelimeler:
+
+* sultanahmet hotel
+* sultanahmet hotels
+* hotel in sultanahmet
+* hotels in sultanahmet
+* sultanahmet boutique hotel
+* boutique hotel sultanahmet
+* boutique hotel in sultanahmet
+* sultanahmet otel
+* sultanahmet otelleri
+* sultanahmet butik otel
+* istanbul boutique hotel
+* hotel in istanbul old city
+* old city istanbul hotel
+* hotel near blue mosque
+* hotel near hagia sophia
+* hotel near grand bazaar
+* ayasofya yakın otel
+* sultanahmet camii yakın otel
+
+Ama keyword stuffing yapılmayacak. Metinler doğal, kaliteli ve gerçek kullanıcıya yönelik olacak.
+
+## ÇOK ÖNEMLİ
+
+Mevcut web sitesinin tasarımını değiştirme.
+
+* Tasarım korunacak.
+* Mevcut animasyonlar korunacak.
+* Oda kartlarının tasarımı korunacak.
+* Responsive yapı bozulmayacak.
+* Mevcut rezervasyon sistemi bozulmayacak.
+* SEO çalışması ağırlıklı olarak teknik altyapı, metadata, semantic HTML, içerik yapısı, schema, internal linking, sitemap ve index yönetimi üzerinden yapılacak.
+
+Öncelikle mevcut proje yapısını analiz et ve kullandığımız framework'e göre en doğru implementasyonu yap.
+
+---
+
+# 1. TÜM SAYFALARIN TITLE VE META DESCRIPTION ALANLARINI AYIR
+
+Şu anda birçok sayfa aynı SEO title ile Google'a gidiyor.
+
+Her sayfanın title ve description bilgisi benzersiz olacak.
+
+## İngilizce Anasayfa
+
+Title:
+
+Sultanahmet Hotel in Istanbul | Emerald Mansion Boutique Hotel
+
+Meta Description:
+
+Stay at Emerald Mansion, a boutique hotel in the heart of Sultanahmet, Istanbul. Walk to Hagia Sophia, Blue Mosque, Grand Bazaar and the historic Old City.
+
+## Türkçe Anasayfa
+
+Title:
+
+Sultanahmet Otel | İstanbul Butik Otel | Emerald Mansion
+
+Meta Description:
+
+Sultanahmet'ın kalbinde yer alan Emerald Mansion'da konaklayın. Ayasofya, Sultanahmet Camii, Kapalıçarşı ve İstanbul'un tarihi merkezine yürüme mesafesinde butik otel.
+
+## Rooms
+
+Title:
+
+Rooms & Suites in Sultanahmet | Emerald Mansion Hotel
+
+Description:
+
+Discover rooms and suites at Emerald Mansion, a boutique hotel in Sultanahmet Istanbul near Hagia Sophia, Blue Mosque and Grand Bazaar.
+
+## Superior King
+
+Title:
+
+Superior King Room in Sultanahmet | Emerald Mansion
+
+## Junior Suite King
+
+Title:
+
+Junior Suite King in Sultanahmet | Emerald Mansion
+
+## Junior Suite Twin
+
+Title:
+
+Junior Suite Twin in Sultanahmet | Emerald Mansion
+
+## Comfort Single
+
+Title:
+
+Comfort Single Room in Sultanahmet | Emerald Mansion
+
+## Comfort Double
+
+Title:
+
+Comfort Double Room in Sultanahmet | Emerald Mansion
+
+## Family Suite
+
+Title:
+
+Family Suite in Sultanahmet Istanbul | Emerald Mansion
+
+## About
+
+Title:
+
+About Emerald Mansion | Boutique Hotel in Sultanahmet
+
+## Gallery
+
+Title:
+
+Emerald Mansion Hotel Gallery | Sultanahmet Istanbul
+
+## Contact
+
+Title:
+
+Contact Emerald Mansion Hotel | Sultanahmet Istanbul
+
+Her sayfaya içeriğine özel yaklaşık 140-160 karakterlik doğal meta description oluştur.
+
+Title ve description hiçbir sayfada global olarak hard-code edilmiş tek bir değer kullanmamalı.
+
+---
+
+# 2. HOMEPAGE H1 YAPISINI DÜZELT
+
+Şu anda EMERALD ve Mansion gibi marka parçaları H1 olarak kullanılıyor.
+
+Bu SEO açısından değiştirilecek.
+
+Sayfada yalnızca ana içeriği ifade eden temel bir H1 kullanılmasını istiyorum.
+
+İngilizce homepage H1:
+
+Boutique Hotel in Sultanahmet, Istanbul
+
+H1 altına doğal şekilde şu mesajı ekleyebiliriz:
+
+Stay in the heart of Istanbul's Old City, within walking distance of the Blue Mosque, Hagia Sophia, Grand Bazaar and Sultanahmet Square.
+
+Marka logosu veya "Emerald Mansion" tasarımı H1 olmak zorunda değil.
+
+Logo kendi görsel/branding elementi olarak kalabilir.
+
+Semantic heading yapısını düzelt:
+
+H1
+H2
+H3
+
+sıralaması mantıklı olsun.
+
+Görsel tasarımın bozulmasına izin verme.
+
+---
+
+# 3. TÜRKÇE VE İNGİLİZCE SAYFALARI SEO AÇISINDAN AYIR
+
+Sitede İngilizce ve Türkçe içeriklerin aynı URL veya aynı sayfa içerisinde karışmasını istemiyorum.
+
+Mümkünse mimari şu şekilde olmalı:
+
+/en/
+/en/rooms/
+/en/rooms/superior-king/
+/en/rooms/junior-suite-king/
+/en/rooms/junior-suite-twin/
+/en/rooms/comfort-single/
+/en/rooms/comfort-double/
+/en/rooms/family-suite/
+/en/about/
+/en/gallery/
+/en/contact/
+/en/location/
+/en/istanbul-guide/
+
+/tr/
+/tr/odalar/
+/tr/odalar/superior-king/
+/tr/odalar/junior-suite-king/
+/tr/odalar/junior-suite-twin/
+/tr/odalar/comfort-single/
+/tr/odalar/comfort-double/
+/tr/odalar/family-suite/
+/tr/hakkimizda/
+/tr/galeri/
+/tr/iletisim/
+/tr/konum/
+/tr/istanbul-rehberi/
+
+Eğer mevcut router mimarisi nedeniyle URL yapısını değiştirmek ciddi şekilde siteyi bozacaksa doğrudan migration yapma.
+
+Önce mevcut sistemi incele.
+
+Ancak hedef olarak her dilin ayrı crawlable URL'si olması gerekiyor.
+
+Her dil URL'sinde hreflang oluştur.
+
+Örnek:
+
+<link rel="alternate" hreflang="en" href="https://emeraldmansion.com/en/" />
+<link rel="alternate" hreflang="tr" href="https://emeraldmansion.com/tr/" />
+<link rel="alternate" hreflang="x-default" href="https://emeraldmansion.com/en/" />
+
+İngilizce sayfanın canonical'i İngilizce sayfayı göstermeli.
+
+Türkçe sayfanın canonical'i Türkçe sayfayı göstermeli.
+
+Hreflang karşılıklı yani reciprocal olmalı.
+
+---
+
+# 4. CANONICAL URL YAPISINI DÜZELT
+
+Site genelinde tek domain formatı kullan.
+
+Tercih edilen:
+
+https://emeraldmansion.com/
+
+Aşağıdaki varyasyonlar varsa 301 ile ana domaine yönlendir:
+
+http://emeraldmansion.com/
+http://www.emeraldmansion.com/
+https://www.emeraldmansion.com/
+
+Aynı şekilde URL trailing slash standardı belirle.
+
+Örneğin:
+
+/rooms/
+/about/
+/contact/
+
+gibi tek format kullan.
+
+Şunların ikisinin birden 200 dönmesini istemiyorum:
+
+/rooms
+/rooms/
+
+Bir tanesi canonical URL olacak.
+
+Diğeri 301 olacak.
+
+Her indexlenebilir sayfada self-referencing canonical bulunmalı.
+
+Örneğin:
+
+<link rel="canonical" href="https://emeraldmansion.com/en/rooms/superior-king/" />
+
+---
+
+# 5. 404 VE SOFT 404 SORUNLARINI DÜZELT
+
+Google eski bazı görsel URL'lerini sayfa gibi indexlemiş.
+
+Örnek eski URL'ler:
+
+/dacegug/2025/02/301_oda_1.jpg
+/dacegug/2025/02/302_oda_4-1024x683.jpg
+/dacegug/2025/02/2.kat_4-1024x683.jpg
+/dacegug/2024/12/istiklal-caddesi.jpg
+
+Bu dosyalar gerçekten mevcut değilse HTTP response mutlaka:
+
+404 Not Found
+
+veya bilinçli kalıcı kaldırma durumunda:
+
+410 Gone
+
+dönmeli.
+
+Kesinlikle custom 404 ekranı gösterip HTTP 200 dönmemeli.
+
+Tüm bilinmeyen route'larda gerçek HTTP 404 kullanılmalı.
+
+Soft 404 oluşturabilecek yapıları temizle.
+
+Eski ve mevcut olmayan URL'ler sitemap içerisinde bulunmamalı.
+
+---
+
+# 6. XML SITEMAP'I YENİDEN DÜZENLE
+
+Dinamik ve temiz XML sitemap oluştur.
+
+Tercihen:
+
+/sitemap.xml
+
+ve gerekiyorsa sitemap index kullan.
+
+Sitemap içerisinde sadece:
+
+* canonical
+* HTTP 200 dönen
+* indexlenebilir
+* gerçek sayfalar
+
+bulunsun.
+
+Özellikle tüm oda detay sayfalarının sitemap içerisinde yer aldığından emin ol.
+
+Sitemap'e:
+
+* 404
+* redirect
+* noindex
+* booking engine
+* query parameter
+* API
+* admin
+* image dosyasını web sayfası gibi gösteren URL
+
+ekleme.
+
+lastmod değerlerini mümkünse gerçek content modification zamanından üret.
+
+---
+
+# 7. ROBOTS.TXT DÜZENLE
+
+/robots.txt düzgün çalışmalı.
+
+Ana site içerikleri crawl edilebilir olacak.
+
+Admin, internal API vb. gereksiz alanları engelle.
+
+En alta sitemap ekle:
+
+Sitemap: https://emeraldmansion.com/sitemap.xml
+
+CSS, JS ve sayfa render etmek için gerekli assetleri Googlebot'tan engelleme.
+
+---
+
+# 8. TÜM ODA SAYFALARINI AYRI INDEXLENEBİLİR URL YAP
+
+Şu oda tiplerinin her birinin ayrı gerçek URL'si olacak:
+
+Comfort Single
+Comfort Double
+Superior King
+Junior Suite King
+Junior Suite Twin
+Family Suite
+
+Oda kartları sadece JavaScript onClick ile yönlendirme yapmasın.
+
+Gerçek crawlable link kullan.
+
+Next.js ise örnek:
+
+<Link href="/en/rooms/superior-king/">
+...
+</Link>
+
+HTML çıktısında gerçek:
+
+<a href="...">
+
+olmasını istiyorum.
+
+Her oda sayfasında:
+
+* benzersiz title
+* benzersiz description
+* H1
+* oda açıklaması
+* room size
+* capacity
+* bed
+* amenities
+* images
+* breadcrumb
+* HotelRoom schema
+* ana Rooms sayfasına internal link
+
+olmalı.
+
+---
+
+# 9. HOMEPAGE İÇERİĞİNİ SULTANAHMET SEO'YA GÖRE GÜÇLENDİR
+
+Mevcut tasarımı değiştirmeden homepage'e SEO açısından güçlü bölümler ekle veya mevcut içerikleri optimize et.
+
+Hedef keyword'leri spam şeklinde tekrar etme.
+
+İlk intro içerisinde doğal olarak:
+
+Sultanahmet
+boutique hotel
+Istanbul
+Old City
+Blue Mosque
+Hagia Sophia
+Grand Bazaar
+
+geçsin.
+
+Örnek anlam:
+
+Emerald Mansion is a boutique hotel located in the heart of Sultanahmet, Istanbul's historic Old City. Guests can reach Hagia Sophia, the Blue Mosque, Basilica Cistern, Grand Bazaar and Sultanahmet Square within a short walk.
+
+Bunu birebir kullanmak zorunda değilsin ancak anlamı koru.
+
+---
+
+# 10. HOMEPAGE'E LOCATION SEO BÖLÜMÜ EKLE
+
+Mevcut tasarıma uyacak şekilde bir H2 oluştur:
+
+Stay in the Heart of Sultanahmet
+
+Burada otelin lokasyon avantajını açıkla.
+
+Öne çıkarılabilecek önemli noktalar:
+
+Sultanahmet Square
+Blue Mosque
+Hagia Sophia
+Basilica Cistern
+Grand Bazaar
+Topkapi Palace
+
+Gerçek yürüyüş mesafelerini doğrulamadan rastgele metre yazma.
+
+Mevcut veri/map sistemi varsa oradan hesapla veya yalnızca:
+
+"within walking distance"
+
+şeklinde kullan.
+
+---
+
+# 11. AYRI LOCATION SAYFASI OLUŞTUR
+
+İngilizce:
+
+/en/location/
+
+Türkçe:
+
+/tr/konum/
+
+English H1:
+
+Hotel in the Heart of Sultanahmet
+
+Bu sayfada:
+
+* otelin açık adresi
+* map
+* Sultanahmet hakkında kısa bilgi
+* Hagia Sophia ulaşım
+* Blue Mosque ulaşım
+* Grand Bazaar ulaşım
+* Basilica Cistern ulaşım
+* Topkapi Palace ulaşım
+* Sultanahmet tram stop
+* Istanbul Airport ulaşımı
+* Sabiha Gökçen Airport ulaşımı
+* airport transfer hizmeti
+
+olabilir.
+
+İçerik gerçek ve kullanıcıya faydalı olacak.
+
+Spam içerik oluşturma.
+
+Homepage → Location
+
+Location → Rooms
+
+Location → İstanbul Guide
+
+internal linkleri oluştur.
+
+---
+
+# 12. SULTANAHMET İÇERİK HUB'I OLUŞTUR
+
+İngilizce:
+
+/en/sultanahmet/
+
+veya mevcut bilgi mimarisine uyuyorsa:
+
+/en/istanbul-guide/sultanahmet/
+
+Türkçe:
+
+/tr/sultanahmet/
+
+Bu sayfa reklam landing page değil, kaliteli bir şehir rehberi olacak.
+
+English Title:
+
+Sultanahmet Istanbul Guide | Where to Stay & What to See
+
+İçerik başlıkları:
+
+What is Sultanahmet?
+Why stay in Sultanahmet?
+Things to do in Sultanahmet
+Blue Mosque
+Hagia Sophia
+Basilica Cistern
+Topkapi Palace
+Grand Bazaar
+Getting around Sultanahmet
+Sultanahmet tram
+Where to stay in Sultanahmet
+1-day Sultanahmet itinerary
+FAQ
+
+Buradan doğal internal link:
+
+boutique hotel in Sultanahmet
+
+anchor ile homepage veya Rooms sayfasına verilebilir.
+
+Keyword stuffing yapma.
+
+---
+
+# 13. İSTANBUL GUIDE CLUSTER OLUŞTUR
+
+Mevcut "Gezilecek Yerler" içeriklerini SEO açısından gerçek ayrı içeriklere dönüştür.
+
+Önerilen İngilizce URL'ler:
+
+/en/istanbul-guide/hagia-sophia/
+/en/istanbul-guide/blue-mosque/
+/en/istanbul-guide/grand-bazaar/
+/en/istanbul-guide/basilica-cistern/
+/en/istanbul-guide/topkapi-palace/
+
+Her içerik kaliteli ve yeterince detaylı olacak.
+
+Sırf SEO için 150-200 kelimelik thin content oluşturma.
+
+Her rehberde mümkünse:
+
+* attraction hakkında bilgi
+* Emerald Mansion'dan nasıl ulaşılır
+* walking distance
+* ziyaret için tavsiyeler
+* yakınındaki diğer yerler
+* Sultanahmet ile ilişkisi
+* FAQ
+* hotel / rooms internal link
+
+bulunsun.
+
+Yanlış veya sürekli değişebilecek giriş ücretleri gibi verileri hard-code ederken dikkat et.
+
+Gerekirse bu tür bilgiler için "check official website" yaklaşımı kullan.
+
+---
+
+# 14. HOTEL STRUCTURED DATA / SCHEMA EKLE
+
+Homepage içerisinde JSON-LD olarak Hotel schema oluştur.
+
+Schema.org:
+
+Hotel
+
+kullan.
+
+Entity için sabit @id kullan:
+
+https://emeraldmansion.com/#hotel
+
+Temel yapı:
+
+{
+"@context": "https://schema.org",
+"@type": "Hotel",
+"@id": "https://emeraldmansion.com/#hotel",
+"name": "Emerald Mansion Hotel",
+"url": "https://emeraldmansion.com/",
+"telephone": "+90 212 830 13 13",
+"email": "[info@emeraldmansion.com](mailto:info@emeraldmansion.com)",
+"description": "...",
+"address": {
+"@type": "PostalAddress",
+"streetAddress": "Binbirdirek Mah. Boyacı Ahmet Sk. No: 8",
+"addressLocality": "Fatih",
+"addressRegion": "Istanbul",
+"addressCountry": "TR"
+},
+"checkinTime": "14:00",
+"checkoutTime": "12:00",
+"numberOfRooms": 16
+}
+
+AMA:
+
+Veriler mevcut site/backend/config içerisinden doğrulanmalı.
+
+Doğrulanmamış bilgi schema'ya eklenmemeli.
+
+Özellikle:
+
+* numberOfRooms
+* checkinTime
+* checkoutTime
+* postalCode
+* latitude
+* longitude
+
+mevcut gerçek verilerle eşleşmeli.
+
+Mümkünse ayrıca:
+
+image
+logo
+sameAs
+amenityFeature
+geo
+hasMap
+
+ekle.
+
+sameAs içerisine sadece gerçekten Emerald Mansion'a ait resmi profilleri ekle.
+
+---
+
+# 15. HOTELROOM SCHEMA EKLE
+
+Her oda detay sayfasına ayrı HotelRoom schema ekle.
+
+Örnek Superior King:
+
+{
+"@context": "https://schema.org",
+"@type": "HotelRoom",
+"@id": "https://emeraldmansion.com/en/rooms/superior-king/#room",
+"name": "Superior King Room",
+"description": "...",
+"floorSize": {
+"@type": "QuantitativeValue",
+"value": 20,
+"unitCode": "MTK"
+},
+"occupancy": {
+"@type": "QuantitativeValue",
+"maxValue": 2
+},
+"bed": "1 King Bed",
+"containedInPlace": {
+"@id": "https://emeraldmansion.com/#hotel"
+}
+}
+
+Ancak örnek değerleri körü körüne kullanma.
+
+Her odanın gerçek:
+
+* size
+* bed
+* occupancy
+* amenities
+
+verisini mevcut data kaynağından çek.
+
+Mümkün olduğunca schema'yı UI verileriyle aynı data source üzerinden üret.
+
+Böylece içerik ve schema çelişmesin.
+
+---
+
+# 16. BREADCRUMB EKLE
+
+İç sayfalara kullanıcıya görünür breadcrumb ekle.
+
+Örneğin:
+
+Home > Rooms > Superior King Room
+
+ve buna karşılık BreadcrumbList JSON-LD oluştur.
+
+Örnek:
+
+{
+"@context": "https://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement": [
+{
+"@type": "ListItem",
+"position": 1,
+"name": "Home",
+"item": "https://emeraldmansion.com/en/"
+},
+{
+"@type": "ListItem",
+"position": 2,
+"name": "Rooms",
+"item": "https://emeraldmansion.com/en/rooms/"
+},
+{
+"@type": "ListItem",
+"position": 3,
+"name": "Superior King Room"
+}
+]
+}
+
+Breadcrumb tasarımı site stiline uygun ve sade olacak.
+
+---
+
+# 17. FAQ BÖLÜMÜ EKLE
+
+Homepage veya Location alanında gerçek kullanıcıların sorabileceği FAQ oluştur.
+
+Örnek sorular:
+
+Is Emerald Mansion located in Sultanahmet?
+
+How far is Emerald Mansion from Hagia Sophia?
+
+Is the Blue Mosque within walking distance?
+
+Is Emerald Mansion near the Grand Bazaar?
+
+Does Emerald Mansion offer airport transfer?
+
+What are the check-in and check-out times?
+
+Which tram station is closest to Emerald Mansion?
+
+Does the hotel provide Wi-Fi?
+
+Türkçe versiyonlarını Türkçe sayfada göster.
+
+FAQ içeriğinin cevabı sitenin gerçek bilgileriyle uyumlu olmalı.
+
+FAQPage schema kullanılabilir ancak görünmeyen içerikleri schema'ya ekleme.
+
+Schema içerisindeki FAQ kullanıcıya sayfada gerçekten görünmeli.
+
+---
+
+# 18. IMAGE SEO DÜZENLEMESİ
+
+Mevcut görselleri optimize et.
+
+Alt text'ler:
+
+"image"
+"room"
+"Bathroom"
+"Interior"
+"Detail"
+
+gibi anlamsız/genel olmasın.
+
+Doğal açıklamalar kullan.
+
+Örneğin:
+
+Superior King Room at Emerald Mansion Hotel in Sultanahmet
+
+Boutique hotel interior at Emerald Mansion Istanbul
+
+Bathroom of Junior Suite King at Emerald Mansion
+
+Historic interior of Emerald Mansion Hotel in Sultanahmet
+
+Ancak her görsele keyword doldurma.
+
+Alt text gerçekten görseli tarif etsin.
+
+Görseller mümkünse:
+
+WebP veya AVIF
+
+kullanmalı.
+
+Responsive srcset / image sizes uygulanmalı.
+
+Framework Next.js ise Next/Image kullan.
+
+Width ve height belirleyerek CLS azalt.
+
+Above-the-fold ana hero image optimize edilmeli.
+
+Hero görseli LCP ise lazy-load yapılmamalı.
+
+Aşağıdaki görseller lazy load edilebilir.
+
+---
+
+# 19. OPEN GRAPH VE SOCIAL METADATA EKLE
+
+Her önemli sayfada:
+
+og:title
+og:description
+og:url
+og:image
+og:type
+
+ve Twitter/X metadata oluştur.
+
+Homepage için og:type:
+
+website
+
+kullanılabilir.
+
+Oda sayfaları için uygun page metadata oluştur.
+
+Mutlak URL kullan.
+
+---
+
+# 20. INTERNAL LINKING SİSTEMİNİ GÜÇLENDİR
+
+Site içerisinde mantıklı internal linking oluştur.
+
+Ana yapı:
+
+Homepage
+→ Rooms
+→ Room Details
+→ Location
+→ Sultanahmet Guide
+→ Istanbul Guides
+
+Guide sayfalarından commercial sayfalara doğal link ver.
+
+Örnek anchorlar:
+
+boutique hotel in Sultanahmet
+rooms in Sultanahmet
+stay at Emerald Mansion
+explore our rooms
+
+Ama her içerikte aynı exact-match anchor'ı tekrar tekrar kullanma.
+
+Doğal varyasyon kullan.
+
+---
+
+# 21. FOOTER'I LOCAL SEO İÇİN GÜÇLENDİR
+
+Footer içerisinde mevcut tasarımı bozmadan şu bilgiler bulunmalı:
+
+Emerald Mansion Hotel
+
+Açık adres
+
+Telefon
+
+E-mail
+
+Google Maps / directions bağlantısı varsa
+
+Check-in / check-out gerekiyorsa
+
+Ana navigation
+
+Rooms
+Location
+About
+Contact
+Sultanahmet Guide
+
+NAP bilgileri site genelinde aynı formatta olmalı.
+
+---
+
+# 22. BOOKING ENGINE INDEX KONTROLÜ
+
+Rezervasyon tarafında:
+
+emerald-mansion.rezervasyonal.com
+
+gibi harici rezervasyon subdomain/domain sayfası Google tarafından indexleniyor olabilir.
+
+Bu bizim branded SEO'muzla rekabet etmemeli.
+
+Site kodundan kontrol edilebiliyorsa veya entegrasyon tarafında mümkünse booking landing page'in:
+
+noindex, follow
+
+olmasını sağla.
+
+Ancak ödeme/rezervasyon akışını kesinlikle bozma.
+
+Üçüncü taraf servis üzerinde bizim kontrolümüz yoksa uygulama kodunda rastgele çözüm üretme.
+
+Sadece mevcut site tarafındaki duplicate booking landing pages varsa noindex uygula.
+
+---
+
+# 23. SEMANTIC HTML KULLAN
+
+Sayfalarda uygun şekilde:
+
+<header>
+<nav>
+<main>
+<section>
+<article>
+<footer>
+
+kullan.
+
+Her şeyi div ile oluşturma.
+
+Ana sayfa içeriği <main> içerisinde olmalı.
+
+Navigation gerçek <nav> olmalı.
+
+Footer gerçek <footer> olmalı.
+
+Adres varsa <address> semantic elementi uygun şekilde kullanılabilir.
+
+---
+
+# 24. SEO İÇİN JAVASCRIPT'E BAĞIMLILIĞI AZALT
+
+Ana SEO içeriği initial HTML'de bulunmalı.
+
+Google'ın sayfayı render etmesini beklemek zorunda kalmaması tercih edilir.
+
+Framework destekliyorsa SSR/SSG kullan.
+
+Özellikle:
+
+* title
+* description
+* canonical
+* H1
+* page content
+* structured data
+* internal links
+
+server-rendered HTML içerisinde bulunmalı.
+
+SEO içeriğini client-side useEffect ile sonradan inject etme.
+
+---
+
+# 25. CORE WEB VITALS OPTİMİZASYONU
+
+Siteyi performans açısından incele.
+
+Hedef:
+
+LCP < 2.5 saniye
+
+INP < 200ms
+
+CLS < 0.1
+
+Özellikle kontrol et:
+
+* hero image
+* font loading
+* unused JavaScript
+* image dimensions
+* lazy loading
+* third party scripts
+* booking widgets
+* analytics scripts
+* animations
+
+Tasarımı veya işlevi bozacak agresif optimizasyon yapma.
+
+Font display strategy kullan.
+
+Mümkünse local font veya preload optimizasyonu yap.
+
+Ancak bütün fontları preload etme.
+
+---
+
+# 26. DUPLICATE CONTENT KONTROLÜ
+
+Site genelinde aynı metnin birçok sayfaya kopyalanmasını engelle.
+
+Özellikle oda sayfalarının her biri benzersiz description içermeli.
+
+Örneğin bütün oda sayfalarında sadece oda ismini değiştirip aynı 2 paragrafı kullanma.
+
+Her odanın:
+
+* kullanım tipi
+* yatak tipi
+* oda büyüklüğü
+* atmosferi
+* kapasitesi
+* avantajları
+
+üzerinden özgün metin oluştur.
+
+---
+
+# 27. URL SLUG'LARI SEO FRIENDLY YAP
+
+Yeni oluşturulan URL'ler kısa ve anlaşılır olsun.
+
+İngilizce:
+
+/en/rooms/superior-king/
+/en/location/
+/en/sultanahmet/
+/en/istanbul-guide/hagia-sophia/
+
+Türkçe:
+
+/tr/odalar/superior-king/
+/tr/konum/
+/tr/sultanahmet/
+/tr/istanbul-rehberi/ayasofya/
+
+URL içerisinde:
+
+?id=23
+?page=hotel123
+
+gibi yapılar kullanma.
+
+Mevcut indexlenmiş URL değiştirilirse eski URL'den yeni URL'ye 301 redirect oluştur.
+
+404'e düşürme.
+
+---
+
+# 28. 301 REDIRECT MAP OLUŞTUR
+
+Mevcut slug'ları değiştiriyorsan mutlaka redirect map oluştur.
+
+Örneğin mevcut:
+
+/odalar/superior-king-bed
+
+yeni:
+
+/en/rooms/superior-king/
+
+oluyorsa:
+
+301
+
+/odalar/superior-king-bed
+→
+/en/rooms/superior-king/
+
+yap.
+
+Google'da hali hazırda indexlenmiş ve trafik alabilecek URL'leri redirect olmadan silme.
+
+---
+
+# 29. SEARCH ENGINE FRIENDLY PAGINATION / FILTER
+
+Rooms veya Gallery tarafında filter/query oluşuyorsa:
+
+?room=king
+?filter=...
+
+gibi URL'lerin gereksiz indexlenmesini önle.
+
+Canonical ana kategoriye gitmeli veya sayfanın gerçekten ayrı index değeri yoksa noindex stratejisi uygulanmalı.
+
+Ama kullanıcı deneyimini bozma.
+
+---
+
+# 30. LOCAL ENTITY BİLGİLERİNİ TEK DATA SOURCE'TA TUT
+
+Mümkünse şirket bilgilerini tek config/data dosyasında tut.
+
+Örneğin:
+
+hotelName
+address
+phone
+email
+latitude
+longitude
+checkIn
+checkOut
+socialProfiles
+
+Schema, footer, contact page ve metadata aynı source'dan beslensin.
+
+Böylece ileride telefon/adres değiştirilince farklı alanların birbirinden farklı kalmasını engelleriz.
+
+---
+
+# 31. POSTA KODUNU DOĞRULAMADAN EKLEME
+
+Web üzerindeki farklı kaynaklarda Emerald Mansion için farklı posta kodları bulunabiliyor.
+
+Bu nedenle postalCode değerini tahmin etme.
+
+Projede/database'de doğrulanmış değer yoksa placeholder kullanma.
+
+Schema'ya yanlış postalCode koymaktansa postalCode alanını geçici olarak çıkart.
+
+---
+
+# 32. SITEMAP + ROBOTS + METADATA TESTİ
+
+Implementasyon bittikten sonra otomatik veya manuel test et.
+
+Kontrol listesi:
+
+/robots.txt → HTTP 200
+
+/sitemap.xml → HTTP 200
+
+Tüm sitemap URL'leri → HTTP 200
+
+404 test URL → HTTP 404
+
+www → non-www 301
+
+HTTP → HTTPS 301
+
+Her sayfa self canonical içeriyor
+
+Her sayfanın unique title'ı var
+
+Her sayfanın unique description'ı var
+
+Homepage yalnızca doğru H1'e sahip
+
+Tüm oda sayfaları crawlable <a> linklerinden erişilebilir
+
+Structured data JSON parse edilebilir
+
+Schema duplicate değil
+
+Schema görünür içerikle uyuşuyor
+
+Hreflang reciprocal
+
+TR ve EN canonical'leri doğru
+
+---
+
+# 33. STRUCTURED DATA TESTLERİNİ YAP
+
+Kod içerisinde JSON-LD syntax hatası bırakma.
+
+Aşağıdaki schema tiplerini kontrol et:
+
+Hotel
+
+HotelRoom
+
+BreadcrumbList
+
+FAQPage
+
+Bir sayfada aynı Hotel entity'sini farklı bilgilerle iki kere üretme.
+
+@id kullanarak entity ilişkilerini koru.
+
+Örneğin Hotel:
+
+https://emeraldmansion.com/#hotel
+
+Room:
+
+https://emeraldmansion.com/en/rooms/superior-king/#room
+
+Room → containedInPlace → Hotel @id
+
+şeklinde ilişkilendir.
+
+---
+
+# 34. 404 SAYFASINI GELİŞTİR
+
+404 ekranı kullanıcı dostu olsun.
+
+404 içerisinde:
+
+Page not found
+
+Home
+Rooms
+Contact
+
+linkleri olabilir.
+
+Ancak en önemlisi response status gerçek 404 olacak.
+
+404 sayfası indexlenmemeli.
+
+---
+
+# 35. ORPHAN PAGE KALMASIN
+
+Sitemap'te bulunan her değerli SEO sayfasına site içerisinden crawlable internal link bulunmalı.
+
+Özellikle:
+
+Location
+
+Sultanahmet
+
+Hagia Sophia
+
+Blue Mosque
+
+Grand Bazaar
+
+Basilica Cistern
+
+Topkapi
+
+oda detay sayfaları
+
+orphan page olmasın.
+
+---
+
+# 36. ENGLISH VE TURKISH CONTENT KARIŞMASIN
+
+English URL'lerde kullanıcıya görünen temel içerik tamamen İngilizce olsun.
+
+Türkçe URL'lerde tamamen Türkçe olsun.
+
+Şu tip karışımları kaldır:
+
+Rooms & Suites
+
+altında Türkçe açıklama
+
+veya:
+
+Experience
+Size
+Capacity
+
+altında Türkçe içerik.
+
+Dil tutarlılığı çok önemli.
+
+HTML lang attribute da URL'ye göre değişsin.
+
+İngilizce:
+
+<html lang="en">
+
+Türkçe:
+
+<html lang="tr">
+
+---
+
+# 37. ANA SAYFADA OTELİN GERÇEK USP'LERİNİ KULLAN
+
+İçerikte gerçek özelliklerden faydalan.
+
+Özellikle:
+
+* Sultanahmet location
+* Istanbul Old City
+* historic mansion
+* boutique accommodation
+* walking distance to attractions
+* room experience
+* concierge
+* airport transfer
+* Wi-Fi
+
+gibi gerçek özellikleri kullan.
+
+Sırf SEO için doğrulanmamış:
+
+"best hotel in Sultanahmet"
+
+"#1 Sultanahmet hotel"
+
+gibi iddialar kullanma.
+
+---
+
+# 38. KEYWORD STUFFING YAPMA
+
+Aşağıdaki gibi spam istemiyorum:
+
+"Sultanahmet hotel is the best Sultanahmet hotel among Sultanahmet hotels..."
+
+Bunun yerine doğal semantic SEO kullan.
+
+Örneğin:
+
+"Emerald Mansion is a boutique hotel in the historic Sultanahmet district of Istanbul, a short walk from Hagia Sophia and the Blue Mosque."
+
+Google'ın anlaması gereken entity ilişkileri:
+
+Emerald Mansion
+→ Hotel
+→ Boutique Hotel
+→ Sultanahmet
+→ Fatih
+→ Istanbul
+→ Old City / Historic Peninsula
+→ Hagia Sophia
+→ Blue Mosque
+→ Grand Bazaar
+
+---
+
+# 39. ÖNCELİK SIRASI
+
+Her şeyi aynı anda rastgele değiştirme.
+
+Öncelik:
+
+P0
+
+1. Metadata
+2. H1 / semantic headings
+3. Canonical
+4. www / non-www redirects
+5. 404 / soft 404
+6. Sitemap
+7. Robots.txt
+8. Crawlable room URLs
+9. TR / EN language consistency
+
+P1
+
+10. Hotel schema
+11. HotelRoom schema
+12. Breadcrumb schema
+13. Homepage location content
+14. Location page
+15. Sultanahmet content page
+16. Internal linking
+17. FAQ
+
+P2
+
+18. Istanbul Guide cluster
+19. Image SEO
+20. Performance
+21. OpenGraph
+22. Additional semantic improvements
+
+---
+
+# 40. MEVCUT TASARIMI BOZMADAN ÇALIŞ
+
+Bu projenin web tasarımı zaten hazır.
+
+SEO çalışması bahanesiyle siteyi sıfırdan tasarlama.
+
+Özellikle:
+
+* header
+* hero
+* gallery
+* room cards
+* footer genel tasarımı
+* animations
+* mobile layout
+
+korunsun.
+
+Yeni eklenen içerikler mevcut premium hotel tasarımıyla uyumlu görünmeli.
+
+---
+
+# 41. SONUNDA BANA RAPOR VER
+
+Tüm işlemleri tamamladıktan sonra bana maddeler halinde rapor oluştur.
+
+Raporda şunları ayrı ayrı yaz:
+
+1. Hangi dosyaları değiştirdin?
+2. Hangi yeni route'ları oluşturdun?
+3. Hangi redirectleri ekledin?
+4. Title ve meta description sistemi nasıl çalışıyor?
+5. Canonical nasıl oluşturuluyor?
+6. Hreflang nasıl oluşturuluyor?
+7. Sitemap nasıl oluşturuluyor?
+8. Robots.txt ne durumda?
+9. Hangi schema'lar eklendi?
+10. Oda sayfalarının schema yapısı nasıl?
+11. 404 HTTP status testi sonucu ne?
+12. www/non-www redirect testi ne?
+13. TR/EN yapısı nasıl çalışıyor?
+14. Yeni internal linkler neler?
+15. Hangi SEO içerik sayfaları oluşturuldu?
+16. Performans için ne optimize edildi?
+17. Bilerek dokunmadığın veya manuel işlem gerektiren SEO konuları neler?
+
+Ayrıca finalde örnek olarak şu URL'lerin generated HTML/head çıktısını kontrol et:
+
+Homepage
+
+Rooms
+
+Superior King
+
+Location
+
+Sultanahmet Guide
+
+ve title, meta description, canonical, hreflang, JSON-LD bilgilerinin doğru render edildiğini doğrula.
+
+## SON KRİTİK KURAL
+
+Bir değişikliğin mevcut URL'leri, rezervasyon akışını, mevcut SEO indeksini veya site tasarımını bozma ihtimali varsa körü körüne uygulama.
+
+Mevcut kod mimarisini analiz et.
+
+Eski URL indexlenmişse 301 redirect bırak.
+
+Mevcut data kaynaklarını mümkün olduğunca yeniden kullan.
+
+Fake bilgi üretme.
+
+Schema içerikleri gerçek site içeriğiyle birebir uyumlu olsun.
+
+Amacımız siteyi sadece "SEO plugin eklenmiş" hale getirmek değil.
+
+Amacımız Emerald Mansion'ı teknik ve içerik mimarisi açısından Google'ın açıkça şu şekilde anlayacağı hale getirmek:
+
+"Emerald Mansion is a boutique hotel located in Sultanahmet, Istanbul's historic Old City, close to Hagia Sophia, the Blue Mosque, Grand Bazaar and other major attractions."

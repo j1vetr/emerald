@@ -4,9 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { getPagePath, type Lang } from "@/lib/seo";
 
 export default function About() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang: Lang = i18n.language === 'en' ? 'en' : 'tr';
 
   return (
     <Layout>
@@ -15,6 +18,14 @@ export default function About() {
         <div className="container mx-auto px-4 relative z-10">
            <span className="text-gold-500 text-xs uppercase tracking-[0.4em] mb-6 block">{t('about.story')}</span>
           <h1 className="font-serif text-5xl md:text-7xl mb-8">{t('about.title')}</h1>
+          <div className="flex justify-center">
+            <Breadcrumbs
+              items={[
+                { label: t('nav.home'), href: getPagePath('home', lang) },
+                { label: t('nav.about') },
+              ]}
+            />
+          </div>
         </div>
       </div>
 

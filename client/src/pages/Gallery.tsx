@@ -3,9 +3,12 @@ import { rooms } from "@/lib/constants";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { getPagePath, type Lang } from "@/lib/seo";
 
 export default function Gallery() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang: Lang = i18n.language === 'en' ? 'en' : 'tr';
   // Collect all unique images
   const allImages = [
     ...rooms.flatMap(r => r.images),
@@ -22,6 +25,14 @@ export default function Gallery() {
         <div className="container mx-auto px-4 relative z-10">
           <span className="text-gold-500 text-xs uppercase tracking-[0.4em] mb-6 block">{t('gallery.portfolio')}</span>
           <h1 className="font-serif text-5xl md:text-7xl mb-6">{t('gallery.title')}</h1>
+          <div className="flex justify-center">
+            <Breadcrumbs
+              items={[
+                { label: t('nav.home'), href: getPagePath('home', lang) },
+                { label: t('nav.gallery') },
+              ]}
+            />
+          </div>
         </div>
       </div>
 

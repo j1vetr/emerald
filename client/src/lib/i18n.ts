@@ -12,6 +12,8 @@ export const resources = {
         attractions: "Gezilecek Yerler",
         gallery: "Galeri",
         contact: "İletişim",
+        location: "Konum",
+        sultanahmetGuide: "Sultanahmet Rehberi",
         bookNow: "Rezervasyon",
         bookNowAction: "Rezervasyon Yap"
       },
@@ -38,8 +40,8 @@ export const resources = {
         exploreRooms: "Odaları İncele",
         welcomeTitle: "Hoşgeldiniz",
         welcomeSubtitle: "Bir İstanbul Masalı",
-        welcomeText1: "İstanbul'un kalbi Sultanahmet'te, tarihin ve lüksün kusursuz uyumunu keşfedin. Emerald Mansion, sadece bir otel değil, yüzyıllık bir mirasın modern yorumudur.",
-        welcomeText2: "Her detayı özenle tasarlanmış odalarımız, sizi Osmanlı'nın ihtişamlı günlerine götürürken, günümüzün tüm konforunu sunuyor. Ayasofya ve Sultanahmet Camii'nin gölgesinde, unutulmaz bir konaklama deneyimi.",
+        welcomeText1: "Emerald Mansion, İstanbul'un tarihi merkezi Sultanahmet'in kalbinde yer alan bir butik oteldir. Ayasofya, Sultanahmet Camii, Kapalıçarşı ve Sultanahmet Meydanı'na kısa bir yürüyüş mesafesinde, tarihin ve lüksün kusursuz uyumunu keşfedin.",
+        welcomeText2: "Her detayı özenle tasarlanmış odalarımız, sizi Osmanlı'nın ihtişamlı günlerine götürürken, günümüzün tüm konforunu sunuyor. Tarihi yarımadanın gölgesinde, unutulmaz bir konaklama deneyimi.",
         featuredRooms: "Öne Çıkan Odalar",
         viewAllRooms: "Tüm Odalar",
         experience: "Deneyim",
@@ -54,7 +56,12 @@ export const resources = {
         locationDesc: "Ayasofya, Topkapı Sarayı ve Kapalı Çarşı sadece yürüme mesafesinde. İstanbul'un ruhunu hissetmek için en doğru adrestesiniz.",
         getDirections: "Yol Tarifi Al",
         transferOffer1: "WEB SİTEMİZDEN 500€ VE ÜZERİ REZERVASYONLARDA",
-        transferOffer2: "TEK YÖN ÖZEL TRANSFER DAHİLDİR."
+        transferOffer2: "TEK YÖN ÖZEL TRANSFER DAHİLDİR.",
+        stayTitle: "Sultanahmet'in Kalbinde Konaklayın",
+        stayText: "Emerald Mansion'dan tarihi yarımadanın en önemli eserlerine yürüyerek ulaşabilirsiniz. Şehri keşfedin, dinlenmek için birkaç dakika içinde odanıza dönün.",
+        stayWalking: "Yürüme mesafesinde",
+        stayLocationLink: "Konumumuzu Keşfedin",
+        stayGuideLink: "Sultanahmet Rehberi"
       },
       rooms: {
         size: "Boyut",
@@ -100,7 +107,9 @@ export const resources = {
         gallery: "Görseller",
         zoom: "Büyüt",
         checkAvailability: "Müsaitlik Kontrolü",
-        dragToRotate: "Çevirmek için sürükleyin"
+        dragToRotate: "Çevirmek için sürükleyin",
+        locationText: "Otelimiz Sultanahmet'in kalbinde, tarihi yarımadanın eserlerine birkaç adım uzaklıkta yer alıyor.",
+        locationLink: "Konumumuzu ve çevredeki gezilecek yerleri inceleyin"
       },
       contact: {
         title: "İletişim",
@@ -156,6 +165,8 @@ export const resources = {
         attractions: "Attractions",
         gallery: "Gallery",
         contact: "Contact",
+        location: "Location",
+        sultanahmetGuide: "Sultanahmet Guide",
         bookNow: "Book Now",
         bookNowAction: "Book Now"
       },
@@ -182,7 +193,7 @@ export const resources = {
         exploreRooms: "Explore Rooms",
         welcomeTitle: "Welcome",
         welcomeSubtitle: "An Istanbul Tale",
-        welcomeText1: "Discover the perfect harmony of history and luxury in Sultanahmet, the heart of Istanbul. Emerald Mansion is not just a hotel, but a modern interpretation of a century-old legacy.",
+        welcomeText1: "Emerald Mansion is a boutique hotel in the heart of Sultanahmet, Istanbul's historic Old City. Hagia Sophia, the Blue Mosque, the Grand Bazaar and Sultanahmet Square are all within a short walk of our door.",
         welcomeText2: "Carefully designed in every detail, our rooms take you to the magnificent days of the Ottoman Empire while offering all the comforts of today. An unforgettable accommodation experience in the shadow of Hagia Sophia and the Blue Mosque.",
         featuredRooms: "Featured Rooms",
         viewAllRooms: "All Rooms",
@@ -198,7 +209,12 @@ export const resources = {
         locationDesc: "Hagia Sophia, Topkapi Palace and the Grand Bazaar are just walking distance away. You are at the right address to feel the soul of Istanbul.",
         getDirections: "Get Directions",
         transferOffer1: "ONE-WAY PRIVATE TRANSFER FOR WEBSITE BOOKINGS",
-        transferOffer2: "OF €500 AND ABOVE."
+        transferOffer2: "OF €500 AND ABOVE.",
+        stayTitle: "Stay in the Heart of Sultanahmet",
+        stayText: "From Emerald Mansion you can walk to the most important monuments of the historic peninsula. Explore the city and return to your room to rest within minutes.",
+        stayWalking: "Within walking distance",
+        stayLocationLink: "Discover Our Location",
+        stayGuideLink: "Sultanahmet Guide"
       },
       rooms: {
         size: "Size",
@@ -244,7 +260,9 @@ export const resources = {
         gallery: "Images",
         zoom: "Zoom",
         checkAvailability: "Check Availability",
-        dragToRotate: "Drag to rotate"
+        dragToRotate: "Drag to rotate",
+        locationText: "The hotel sits in the heart of Sultanahmet, steps from the landmarks of the Old City.",
+        locationLink: "See our location and nearby attractions"
       },
       contact: {
         title: "Contact",

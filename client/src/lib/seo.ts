@@ -131,6 +131,30 @@ export const pages: PageDef[] = [
     },
   },
   {
+    key: "location",
+    paths: { en: "/en/location/", tr: "/tr/konum/" },
+    title: {
+      en: "Hotel in the Heart of Sultanahmet | Emerald Mansion",
+      tr: "Konum | Sultanahmet'in Kalbinde Otel | Emerald Mansion",
+    },
+    description: {
+      en: "Emerald Mansion is in the heart of Sultanahmet, Istanbul. See our address, map, walking distances to Hagia Sophia and Blue Mosque, tram and airport access.",
+      tr: "Emerald Mansion Sultanahmet'in kalbinde yer alır. Adres, harita, Ayasofya ve Sultanahmet Camii'ne yürüme mesafeleri, tramvay ve havalimanı ulaşımı.",
+    },
+  },
+  {
+    key: "sultanahmet",
+    paths: { en: "/en/sultanahmet/", tr: "/tr/sultanahmet/" },
+    title: {
+      en: "Sultanahmet Istanbul Guide | Where to Stay & What to See",
+      tr: "Sultanahmet Rehberi | Gezilecek Yerler ve Konaklama",
+    },
+    description: {
+      en: "Plan your visit to Sultanahmet, Istanbul's historic Old City. Things to do, Blue Mosque, Hagia Sophia, tram tips, a one day itinerary and where to stay.",
+      tr: "İstanbul'un tarihi merkezi Sultanahmet rehberi. Gezilecek yerler, Sultanahmet Camii, Ayasofya, tramvay ipuçları, bir günlük rota ve konaklama önerileri.",
+    },
+  },
+  {
     key: "guide",
     paths: { en: "/en/istanbul-guide/", tr: "/tr/istanbul-rehberi/" },
     title: {

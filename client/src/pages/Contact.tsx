@@ -7,9 +7,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { getPagePath, type Lang } from "@/lib/seo";
 
 export default function Contact() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang: Lang = i18n.language === 'en' ? 'en' : 'tr';
 
   return (
     <Layout>
@@ -18,6 +21,14 @@ export default function Contact() {
         <div className="container mx-auto px-4 relative z-10">
           <span className="text-gold-500 text-xs uppercase tracking-[0.4em] mb-6 block">{t('contact.subtitle')}</span>
           <h1 className="font-serif text-5xl md:text-7xl mb-6">{t('contact.title')}</h1>
+          <div className="flex justify-center">
+            <Breadcrumbs
+              items={[
+                { label: t('nav.home'), href: getPagePath('home', lang) },
+                { label: t('nav.contact') },
+              ]}
+            />
+          </div>
         </div>
       </div>
 
@@ -101,9 +112,8 @@ export default function Contact() {
               </div>
 
               <div className="w-full h-[300px] border border-white/10 mt-8 relative grayscale hover:grayscale-0 transition-all duration-700">
-                 {/* Dummy Map */}
                  <iframe 
-                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.7947200566664!2d28.969653112549302!3d41.00786607123109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab917a4d5843f%3A0x573afc0178ff5218!2sEmerald%20Mansion%20Hotel%20-%20Sultanahmet!5e0!3m2!1str!2str!4v1764695817518!5m2!1str!2str" 
+                   src={hotelInfo.mapEmbedUrl} 
                    width="100%" 
                    height="100%" 
                    style={{border:0}} 

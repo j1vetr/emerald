@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { rooms, hotelInfo } from "@/lib/constants";
-import { getRoomPath, type Lang } from "@/lib/seo";
+import { getPagePath, getRoomPath, type Lang } from "@/lib/seo";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Link } from "wouter";
 import { Ruler, Users, Bed, ArrowRight, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -20,11 +21,19 @@ export default function Rooms() {
         <div className="container mx-auto px-4 relative z-10">
           <span className="text-gold-500 text-xs uppercase tracking-[0.4em] mb-6 block">{t('nav.rooms')}</span>
           <h1 className="font-serif text-5xl md:text-7xl mb-8 text-white">{t('footer.roomsAndSuites')}</h1>
-          <p className="text-white/60 max-w-2xl mx-auto text-lg font-light leading-relaxed mb-12">
+          <p className="text-white/60 max-w-2xl mx-auto text-lg font-light leading-relaxed mb-8">
             {isEn 
               ? "Specially designed living spaces where historical texture meets modern comfort." 
               : "Tarihi dokunun modern konforla buluştuğu, her biri özenle tasarlanmış özel yaşam alanları."}
           </p>
+          <div className="mb-12 flex justify-center">
+            <Breadcrumbs
+              items={[
+                { label: t('nav.home'), href: getPagePath('home', lang) },
+                { label: t('nav.rooms') },
+              ]}
+            />
+          </div>
 
           {/* Quick Room Navigation */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">

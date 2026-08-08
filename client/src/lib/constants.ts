@@ -30,16 +30,36 @@ export interface Room {
   coverImage: string;
 }
 
+// Central hotel entity data. Schema builders, footer, contact page and
+// metadata all read from this single source. Only verified values that are
+// already published on the site belong here. Do not add postal code or
+// coordinates unless they are verified.
 export const hotelInfo = {
   name: "Emerald Mansion",
+  fullName: "Emerald Mansion Hotel",
   location: "Sultanahmet, İstanbul",
   address: "Binbirdirek Mah. Boyacı Ahmet Sk. No: 8, Sultanahmet / Fatih / İstanbul",
+  streetAddress: "Binbirdirek Mah. Boyacı Ahmet Sk. No: 8",
+  addressLocality: "Fatih",
+  addressRegion: "İstanbul",
+  addressCountry: "TR",
   email: "info@emeraldmansion.com",
   phone: "(0212) 830 13 13",
+  phoneIntl: "+90 212 830 13 13",
   whatsapp: "905541451413",
   bookingUrl: "https://emerald-mansion.rezervasyonal.com",
   logoUrl: "/assets/images/logo/logo.svg",
-  instagramUrl: "https://www.instagram.com/emeraldmansionhotel"
+  instagramUrl: "https://www.instagram.com/emeraldmansionhotel",
+  socialProfiles: ["https://www.instagram.com/emeraldmansionhotel"],
+  // Shown on room detail pages and in the terms of service
+  checkIn: "14:00",
+  checkOut: "12:00",
+  // Published on the About page
+  numberOfRooms: 16,
+  mapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=Emerald%20Mansion%20Hotel%20-%20Sultanahmet",
+  mapEmbedUrl:
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.7947200566664!2d28.969653112549302!3d41.00786607123109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab917a4d5843f%3A0x573afc0178ff5218!2sEmerald%20Mansion%20Hotel%20-%20Sultanahmet!5e0!3m2!1str!2str!4v1764695817518!5m2!1str!2str"
 };
 
 export const rooms: Room[] = [

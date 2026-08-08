@@ -5,6 +5,9 @@ import { getPagePath, getRoomPath, type Lang } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
 import { Check, Ruler, Users, Bed, ArrowRight, Calendar, Star, X, ChevronLeft, ChevronRight, Wifi, Wind, Wine, Lock, Tv, Sparkles, Coffee, Armchair, Shirt, Laptop, Waves } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { JsonLd } from "@/components/json-ld";
+import { buildRoomSchema } from "@/lib/schema";
 import NotFound from "@/pages/not-found";
 import Autoplay from "embla-carousel-autoplay";
 import { motion, AnimatePresence } from "framer-motion";
@@ -63,6 +66,7 @@ export default function RoomDetail({ slug }: { slug: string }) {
 
   return (
     <Layout>
+      <JsonLd data={buildRoomSchema(room, lang)} />
       <AnimatePresence>
         {lightboxOpen && (
           <motion.div 
@@ -137,6 +141,14 @@ export default function RoomDetail({ slug }: { slug: string }) {
                animate={{ opacity: 1, y: 0 }}
                transition={{ duration: 1, delay: 0.5 }}
              >
+               <Breadcrumbs
+                 className="mb-6"
+                 items={[
+                   { label: t('nav.home'), href: getPagePath('home', lang) },
+                   { label: t('nav.rooms'), href: getPagePath('rooms', lang) },
+                   { label: isEn ? room.shortNameEn : room.shortName },
+                 ]}
+               />
                <div className="flex items-center gap-4 mb-6">
                  <span className="h-[1px] w-12 bg-gold-500"></span>
                  <span className="text-gold-500 text-sm uppercase tracking-[0.3em]">Emerald Collection</span>
@@ -298,6 +310,14 @@ export default function RoomDetail({ slug }: { slug: string }) {
                    <p className="text-white/50 text-sm mb-4">{t('rooms.needHelp')}</p>
                    <a href={`tel:${hotelInfo.phone.replace(/[^0-9]/g, '')}`} className="font-serif text-xl text-white hover:text-gold-500 transition-colors block mb-2">{hotelInfo.phone}</a>
                    <a href={`mailto:${hotelInfo.email}`} className="text-sm text-white/40 hover:text-white transition-colors block">{hotelInfo.email}</a>
+                </div>
+
+                {/* Location link */}
+                <div className="p-8 border border-white/5 bg-white/5">
+                   <p className="text-white/50 text-sm font-light leading-relaxed mb-4">{t('roomDetail.locationText')}</p>
+                   <Link href={getPagePath('location', lang)} className="text-xs uppercase tracking-widest text-gold-500 hover:text-white border-b border-gold-500/50 hover:border-white transition-colors cursor-pointer">
+                     {t('roomDetail.locationLink')}
+                   </Link>
                 </div>
               </div>
             </div>

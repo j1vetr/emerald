@@ -3,7 +3,9 @@ import { ArrowRight, Wifi, Coffee, Car, Star, ChevronDown, Play } from "lucide-r
 import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
-import { rooms, hotelInfo } from "@/lib/constants";
+import { JsonLd } from "@/components/json-ld";
+import { buildHotelSchema } from "@/lib/schema";
+import { rooms, hotelInfo, attractions } from "@/lib/constants";
 import { getPagePath, getRoomPath, type Lang } from "@/lib/seo";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
@@ -64,8 +66,19 @@ export default function Home() {
   const isEn = i18n.language === 'en';
   const lang: Lang = isEn ? 'en' : 'tr';
 
+  const nearbyLandmarks = [
+    "Blue Mosque",
+    "Basilica Cistern",
+    "Hagia Sophia",
+    "Grand Bazaar",
+    "Topkapi Palace",
+  ]
+    .map((key) => attractions.find((a) => a.nameEn === key))
+    .filter(Boolean) as typeof attractions;
+
   return (
     <Layout>
+      <JsonLd data={buildHotelSchema(lang)} />
       {/* HERO SECTION */}
       <section ref={heroRef} className="relative h-[100dvh] w-full overflow-hidden bg-black flex items-center justify-center">
         {/* Background Video with Parallax */}
@@ -298,6 +311,40 @@ export default function Home() {
                   <p className="text-white/50 text-sm font-light">{item.desc}</p>
                 </motion.div>
               ))}
+          </div>
+        </div>
+      </section>
+
+      {/* LOCATION / SULTANAHMET SECTION */}
+      <section className="py-32 bg-black text-white relative border-t border-white/10">
+        <div className="container mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <span className="text-gold-500 text-xs uppercase tracking-[0.3em] mb-6 block">{isEn ? "Location" : "Konum"}</span>
+            <h2 className="font-serif text-4xl md:text-5xl leading-tight mb-6">{t('home.stayTitle')}</h2>
+            <p className="text-white/60 font-light leading-relaxed">{t('home.stayText')}</p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-16">
+            {nearbyLandmarks.map((place) => (
+              <div key={place.nameEn} className="border border-white/10 bg-white/[0.02] p-6 text-center hover:border-gold-500/40 transition-colors">
+                <span className="font-serif text-lg block mb-2">{isEn ? place.nameEn : place.name}</span>
+                <span className="text-xs uppercase tracking-widest text-gold-500">{place.distance}</span>
+                <span className="block text-xs text-white/40 mt-1">{isEn ? place.timeEn : place.time}</span>
+              </div>
+            ))}
+            <div className="border border-white/10 bg-white/[0.02] p-6 text-center hover:border-gold-500/40 transition-colors">
+              <span className="font-serif text-lg block mb-2">{isEn ? "Sultanahmet Square" : "Sultanahmet Meydanı"}</span>
+              <span className="text-xs uppercase tracking-widest text-gold-500">{t('home.stayWalking')}</span>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild variant="outline" className="border-white/20 text-white hover:bg-gold-500 hover:text-black hover:border-gold-500 rounded-none px-8 py-6 text-xs uppercase tracking-widest transition-all">
+              <Link href={getPagePath('location', lang)}>{t('home.stayLocationLink')} <ArrowRight className="ml-2 w-4 h-4" /></Link>
+            </Button>
+            <Button asChild variant="outline" className="border-white/20 text-white hover:bg-white hover:text-black rounded-none px-8 py-6 text-xs uppercase tracking-widest transition-all">
+              <Link href={getPagePath('sultanahmet', lang)}>{t('home.stayGuideLink')}</Link>
+            </Button>
           </div>
         </div>
       </section>

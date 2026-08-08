@@ -3,10 +3,13 @@ import { attractions } from "@/lib/constants";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { ConciergeCard } from "@/components/ui/concierge-card";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { getPagePath, type Lang } from "@/lib/seo";
 
 export default function Attractions() {
   const { t, i18n } = useTranslation();
   const isEn = i18n.language === 'en';
+  const lang: Lang = isEn ? 'en' : 'tr';
 
   return (
     <Layout>
@@ -18,6 +21,14 @@ export default function Attractions() {
           <p className="text-white/60 max-w-2xl mx-auto text-lg font-light">
             {t('attractions.desc')}
           </p>
+          <div className="mt-8 flex justify-center">
+            <Breadcrumbs
+              items={[
+                { label: t('nav.home'), href: getPagePath('home', lang) },
+                { label: t('attractions.title') },
+              ]}
+            />
+          </div>
         </div>
       </div>
 

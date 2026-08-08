@@ -42,6 +42,8 @@ export function Footer() {
                 { href: getPagePath('rooms', lang), label: t('footer.roomsAndSuites') },
                 { href: getPagePath('about', lang), label: t('nav.about') },
                 { href: getPagePath('gallery', lang), label: t('nav.gallery') },
+                { href: getPagePath('location', lang), label: t('nav.location') },
+                { href: getPagePath('sultanahmet', lang), label: t('nav.sultanahmetGuide') },
                 { href: getPagePath('guide', lang), label: t('footer.istanbulGuide') },
                 { href: getPagePath('contact', lang), label: t('nav.contact') },
               ].map((link) => (
@@ -76,9 +78,17 @@ export function Footer() {
 
                <div>
                  <p className="text-white/40 text-xs uppercase mb-2">{t('footer.address')}</p>
-                 <p className="text-white/60 font-light leading-relaxed">
+                 <address className="text-white/60 font-light leading-relaxed not-italic">
                    {hotelInfo.address}
-                 </p>
+                 </address>
+                 <a
+                   href={hotelInfo.mapsUrl}
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="inline-flex items-center gap-2 mt-3 text-xs uppercase tracking-widest text-gold-500 hover:text-white transition-colors"
+                 >
+                   <MapPin size={12} /> {lang === 'en' ? 'Get Directions' : 'Yol Tarifi'}
+                 </a>
                </div>
 
                <div className="pt-6">

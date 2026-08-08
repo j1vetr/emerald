@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { rooms, hotelInfo } from "@/lib/constants";
+import { getRoomPath, type Lang } from "@/lib/seo";
 import { Link } from "wouter";
 import { Ruler, Users, Bed, ArrowRight, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -9,6 +10,7 @@ import { useTranslation } from "react-i18next";
 export default function Rooms() {
   const { t, i18n } = useTranslation();
   const isEn = i18n.language === 'en';
+  const lang: Lang = isEn ? 'en' : 'tr';
 
   return (
     <Layout>
@@ -59,7 +61,7 @@ export default function Rooms() {
               >
                 {/* Background/Image Area - Always on Left */}
                 <div className="lg:col-span-7 relative h-[500px] overflow-hidden">
-                   <Link href={`/odalar/${room.slug}`}>
+                   <Link href={getRoomPath(room.slug, lang)}>
                       <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all duration-700 z-10 cursor-pointer" />
                       <img 
                         src={room.coverImage} 
@@ -78,7 +80,7 @@ export default function Rooms() {
                 <div className="lg:col-span-5 relative z-20 bg-zinc-900/90 backdrop-blur-md border border-white/10 p-10 md:p-12 flex flex-col gap-8 lg:-ml-24 lg:mt-12 lg:shadow-2xl shadow-black/50 min-h-[400px] justify-center">
                   <div>
                     <span className="text-gold-500 text-xs font-bold uppercase tracking-[0.3em] mb-4 block">Emerald Collection</span>
-                    <Link href={`/odalar/${room.slug}`}>
+                    <Link href={getRoomPath(room.slug, lang)}>
                       <h2 className="font-serif text-3xl md:text-4xl text-white mb-4 hover:text-gold-500 transition-colors cursor-pointer leading-tight">
                         {isEn ? room.nameEn : room.name}
                       </h2>
@@ -96,7 +98,7 @@ export default function Rooms() {
 
                     {/* Action Buttons */}
                     <div className="flex flex-col sm:flex-row gap-4">
-                      <Link href={`/odalar/${room.slug}`} className="flex-1">
+                      <Link href={getRoomPath(room.slug, lang)} className="flex-1">
                         <Button className="w-full bg-transparent border border-white/30 text-white hover:bg-white hover:text-black rounded-none h-14 uppercase tracking-widest text-xs font-bold transition-all">
                           {t('rooms.details')}
                         </Button>

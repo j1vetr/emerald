@@ -97,7 +97,7 @@ export const rooms: Room[] = [
   },
   {
     id: "superior-king",
-    slug: "superior-king-bed",
+    slug: "superior-king",
     name: "Superior King Bed Room",
     nameEn: "Superior King Bed Room",
     shortName: "Superior King",
@@ -123,7 +123,7 @@ export const rooms: Room[] = [
   },
   {
     id: "junior-suite-king",
-    slug: "junior-suite-king-bed",
+    slug: "junior-suite-king",
     name: "Junior Suite King Bed",
     nameEn: "Junior Suite King Bed",
     shortName: "Junior Suite King",
@@ -152,7 +152,7 @@ export const rooms: Room[] = [
   },
   {
     id: "junior-suite-twin",
-    slug: "junior-suite-twin-bed",
+    slug: "junior-suite-twin",
     name: "Junior Suite Twin Bed",
     nameEn: "Junior Suite Twin Bed",
     shortName: "Junior Suite Twin",
@@ -180,7 +180,7 @@ export const rooms: Room[] = [
   },
   {
     id: "family-suite",
-    slug: "family-suite-connected",
+    slug: "family-suite",
     name: "Family Suite Connected",
     nameEn: "Family Suite Connected",
     shortName: "Family Suite",

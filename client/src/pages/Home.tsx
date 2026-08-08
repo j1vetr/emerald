@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import { rooms, hotelInfo } from "@/lib/constants";
+import { getPagePath, getRoomPath, type Lang } from "@/lib/seo";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
@@ -61,6 +62,7 @@ export default function Home() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   const isEn = i18n.language === 'en';
+  const lang: Lang = isEn ? 'en' : 'tr';
 
   return (
     <Layout>
@@ -90,31 +92,31 @@ export default function Home() {
              className="space-y-8"
            >
              <motion.div variants={fadeInUp}>
-                <span className="border border-white/20 px-4 py-2 text-xs uppercase tracking-[0.3em] text-white/80 backdrop-blur-sm">
+                <h1 className="inline-block border border-white/20 px-4 py-2 text-xs uppercase tracking-[0.3em] text-white/80 backdrop-blur-sm font-sans font-normal">
                   {t('home.heroSubtitle')}
-                </span>
+                </h1>
              </motion.div>
              
              <div className="overflow-hidden">
-               <motion.h1 
+               <motion.div 
                  initial={{ y: "100%" }}
                  animate={{ y: 0 }}
                  transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
                  className="display-huge text-white mix-blend-difference"
                >
                  EMERALD
-               </motion.h1>
+               </motion.div>
              </div>
              
              <div className="overflow-hidden -mt-4 md:-mt-8">
-                <motion.h1 
+                <motion.div 
                  initial={{ y: "100%" }}
                  animate={{ y: 0 }}
                  transition={{ duration: 1.2, ease: "easeOut", delay: 0.4 }}
                  className="font-serif text-4xl md:text-6xl lg:text-8xl italic text-gold-500"
                >
                  Mansion
-               </motion.h1>
+               </motion.div>
              </div>
 
              <motion.p 
@@ -214,7 +216,7 @@ export default function Home() {
              <span className="text-gold-500 text-xs uppercase tracking-[0.3em]">{t('nav.rooms')}</span>
              <h2 className="font-serif text-5xl md:text-6xl">{t('footer.roomsAndSuites')}</h2>
            </div>
-           <Link href="/odalar">
+           <Link href={getPagePath('rooms', lang)}>
              <Button variant="outline" className="hidden md:flex border-white/20 text-white hover:bg-gold-500 hover:text-black hover:border-gold-500 rounded-none px-8 py-6 text-xs uppercase tracking-widest transition-all">
                {t('home.viewAllRooms')}
              </Button>
@@ -232,7 +234,7 @@ export default function Home() {
                 transition={{ delay: i * 0.2, duration: 0.8 }}
                 className="group cursor-pointer"
               >
-                <Link href={`/odalar/${room.slug}`}>
+                <Link href={getRoomPath(room.slug, lang)}>
                   <div className="aspect-[3/4] overflow-hidden relative border border-white/5 bg-white/5">
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-all duration-700 z-10" />
                     <img 
@@ -252,7 +254,7 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-12 md:hidden text-center">
-             <Link href="/odalar">
+             <Link href={getPagePath('rooms', lang)}>
               <Button variant="outline" className="w-full border-white/20 text-white hover:bg-gold-500 hover:text-black hover:border-gold-500 rounded-none px-8 py-6 text-xs uppercase tracking-widest transition-all">
                 {t('home.viewAllRooms')}
               </Button>
@@ -292,7 +294,7 @@ export default function Home() {
                   <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-gold-500 mb-6 group-hover:scale-110 transition-transform">
                     <item.icon size={20} />
                   </div>
-                  <h4 className="font-serif text-xl text-white mb-3">{item.title}</h4>
+                  <h3 className="font-serif text-xl text-white mb-3">{item.title}</h3>
                   <p className="text-white/50 text-sm font-light">{item.desc}</p>
                 </motion.div>
               ))}

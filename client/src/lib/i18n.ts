@@ -1,6 +1,6 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
+import { langFromPath } from './seo';
 
 export const resources = {
   tr: {
@@ -32,9 +32,9 @@ export const resources = {
         istanbulGuide: "İstanbul Rehberi"
       },
       home: {
-        heroSubtitle: "Sultanahmet'in Kalbinde",
+        heroSubtitle: "İstanbul Sultanahmet'te Butik Otel",
         heroTitle: "Zamanın Ötesinde Bir Lüks",
-        heroDesc: "Tarihi yarımadanın büyüleyici atmosferinde, Osmanlı zarafetini modern konforla buluşturuyoruz.",
+        heroDesc: "İstanbul'un tarihi merkezinin kalbinde konaklayın. Sultanahmet Camii, Ayasofya, Kapalıçarşı ve Sultanahmet Meydanı'na yürüme mesafesindesiniz.",
         exploreRooms: "Odaları İncele",
         welcomeTitle: "Hoşgeldiniz",
         welcomeSubtitle: "Bir İstanbul Masalı",
@@ -129,6 +129,12 @@ export const resources = {
         disclaimer: { title: "5. Sorumluluk Reddi", text: "Emerald Mansion, web sitesindeki olası hatalar, kesintiler veya veri kayıplarından sorumlu tutulamaz. Hizmetler \"olduğu gibi\" sunulmaktadır." },
         changes: { title: "6. Değişiklikler", text: "Hizmet koşullarını dilediğimiz zaman güncelleme hakkımız saklıdır. Değişiklikler web sitemizde yayınlandığı andan itibaren geçerli olur." }
       },
+      notFound: {
+        title: "Sayfa Bulunamadı",
+        text: "Aradığınız sayfa mevcut değil veya taşınmış olabilir.",
+        backHome: "Anasayfaya Dön",
+        explore: "Şu sayfalara göz atabilirsiniz"
+      },
       privacy: {
         title: "Gizlilik Politikası",
         lastUpdated: "Son Güncelleme: 1 Aralık 2025",
@@ -170,9 +176,9 @@ export const resources = {
         istanbulGuide: "Istanbul Guide"
       },
       home: {
-        heroSubtitle: "Heart of Sultanahmet",
+        heroSubtitle: "Boutique Hotel in Sultanahmet, Istanbul",
         heroTitle: "Luxury Beyond Time",
-        heroDesc: "In the enchanting atmosphere of the historical peninsula, we blend Ottoman elegance with modern comfort.",
+        heroDesc: "Stay in the heart of Istanbul's Old City, within walking distance of the Blue Mosque, Hagia Sophia, Grand Bazaar and Sultanahmet Square.",
         exploreRooms: "Explore Rooms",
         welcomeTitle: "Welcome",
         welcomeSubtitle: "An Istanbul Tale",
@@ -267,6 +273,12 @@ export const resources = {
         disclaimer: { title: "5. Disclaimer", text: "Emerald Mansion cannot be held responsible for possible errors, interruptions, or data losses on the website. Services are provided \"as is\"." },
         changes: { title: "6. Changes", text: "We reserve the right to update the terms of service at any time. Changes become effective as soon as they are published on our website." }
       },
+      notFound: {
+        title: "Page Not Found",
+        text: "The page you are looking for does not exist or may have been moved.",
+        backHome: "Return Home",
+        explore: "You may want to visit these pages"
+      },
       privacy: {
         title: "Privacy Policy",
         lastUpdated: "Last Updated: December 1, 2025",
@@ -281,12 +293,17 @@ export const resources = {
   }
 };
 
+// Language is derived from the URL path (/en/... or /tr/...), not from
+// browser detection, so that each language lives on its own URL tree.
+const initialLang =
+  typeof window !== "undefined" ? langFromPath(window.location.pathname) : "en";
+
 i18n
-  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources,
-    fallbackLng: 'tr',
+    lng: initialLang,
+    fallbackLng: 'en',
     interpolation: {
       escapeValue: false
     }

@@ -1,6 +1,7 @@
-import { useRoute, Link } from "wouter";
+import { Link } from "wouter";
 import { Layout } from "@/components/layout/Layout";
 import { rooms, hotelInfo } from "@/lib/constants";
+import { getPagePath, getRoomPath, type Lang } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
 import { Check, Ruler, Users, Bed, ArrowRight, Calendar, Star, X, ChevronLeft, ChevronRight, Wifi, Wind, Wine, Lock, Tv, Sparkles, Coffee, Armchair, Shirt, Laptop, Waves } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -10,17 +11,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-export default function RoomDetail() {
-  const [match, params] = useRoute("/odalar/:slug");
+export default function RoomDetail({ slug }: { slug: string }) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const { t, i18n } = useTranslation();
   const isEn = i18n.language === 'en';
-  
-  if (!match) return <NotFound />;
-  
-  const room = rooms.find(r => r.slug === params.slug);
-  
+  const lang: Lang = isEn ? 'en' : 'tr';
+
+  const room = rooms.find(r => r.slug === slug);
+
   if (!room) return <NotFound />;
 
   const otherRooms = rooms.filter(r => r.id !== room.id).slice(0, 3);
@@ -312,14 +311,14 @@ export default function RoomDetail() {
         <div className="container mx-auto px-6">
           <div className="flex justify-between items-end mb-16">
              <h3 className="font-serif text-4xl text-white">{t('rooms.otherOptions')}</h3>
-             <Link href="/odalar" className="text-xs uppercase tracking-widest text-white/50 hover:text-gold-500 border-b border-transparent hover:border-gold-500 transition-all pb-1 cursor-pointer">
+             <Link href={getPagePath('rooms', lang)} className="text-xs uppercase tracking-widest text-white/50 hover:text-gold-500 border-b border-transparent hover:border-gold-500 transition-all pb-1 cursor-pointer">
                {t('rooms.allRooms')}
              </Link>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {otherRooms.map((r) => (
-              <Link key={r.id} href={`/odalar/${r.slug}`} className="group block cursor-pointer">
+              <Link key={r.id} href={getRoomPath(r.slug, lang)} className="group block cursor-pointer">
                 <div className="aspect-[3/4] overflow-hidden relative mb-6 border border-white/10">
                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
                    <img src={r.coverImage} alt={isEn ? r.nameEn : r.name} className="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" />

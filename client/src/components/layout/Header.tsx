@@ -3,17 +3,19 @@ import { useState, useEffect } from "react";
 import { Menu, X, Phone, ChevronDown, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { hotelInfo, rooms } from "@/lib/constants";
+import { getPagePath, getRoomPath, getAlternatePath, normalizePath, type Lang } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { WeatherWidget } from "@/components/ui/weather-widget";
 
 export function Header() {
-  const [location] = useLocation();
+  const [location, navigate] = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
   const { t, i18n } = useTranslation();
+  const lang: Lang = i18n.language === "tr" ? "tr" : "en";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,26 +26,30 @@ export function Header() {
   }, []);
 
   const toggleLanguage = () => {
-    const newLang = i18n.language === 'tr' ? 'en' : 'tr';
+    const newLang: Lang = lang === 'tr' ? 'en' : 'tr';
+    const target = getAlternatePath(location, newLang);
     i18n.changeLanguage(newLang);
+    navigate(target);
   };
 
   const navLinks = [
-    { href: "/", label: t('nav.home') },
-    { 
-      href: "/odalar", 
+    { href: getPagePath('home', lang), label: t('nav.home') },
+    {
+      href: getPagePath('rooms', lang),
       label: t('nav.rooms'),
       hasSubmenu: true,
       submenuItems: rooms.map(room => ({
-        href: `/odalar/${room.slug}`,
-        label: i18n.language === 'en' ? room.shortNameEn : room.shortName
+        href: getRoomPath(room.slug, lang),
+        label: lang === 'en' ? room.shortNameEn : room.shortName
       }))
     },
-    { href: "/hakkimizda", label: t('nav.about') },
-    { href: "/gezilecek-yerler", label: t('nav.attractions') },
-    { href: "/galeri", label: t('nav.gallery') },
-    { href: "/iletisim", label: t('nav.contact') },
+    { href: getPagePath('about', lang), label: t('nav.about') },
+    { href: getPagePath('guide', lang), label: t('nav.attractions') },
+    { href: getPagePath('gallery', lang), label: t('nav.gallery') },
+    { href: getPagePath('contact', lang), label: t('nav.contact') },
   ];
+
+  const isActive = (href: string) => normalizePath(location) === href;
 
   return (
     <>
@@ -66,7 +72,7 @@ export function Header() {
       >
         <div className="container mx-auto px-6 md:px-12 flex items-center justify-between pl-8">
           {/* Logo Area */}
-          <Link href="/" className="relative z-50 group cursor-pointer flex items-center justify-center">
+          <Link href={getPagePath('home', lang)} className="relative z-50 group cursor-pointer flex items-center justify-center">
             <div className="relative flex items-center justify-center p-[2px] rounded-full overflow-hidden">
                {/* Rotating Border Effect - Conic Gradient */}
                <div className="absolute inset-0 z-0">
@@ -102,7 +108,7 @@ export function Header() {
               >
                 <Link href={link.href} className={cn(
                       "text-xs font-medium tracking-[0.2em] uppercase transition-all duration-500 relative cursor-pointer py-4 flex items-center gap-1",
-                      location === link.href
+                      isActive(link.href)
                         ? "text-gold-500"
                         : "text-white/70 hover:text-white"
                     )}>
@@ -110,7 +116,7 @@ export function Header() {
                     {link.hasSubmenu && <ChevronDown size={12} className="opacity-50" />}
                     <span className={cn(
                       "absolute bottom-2 left-0 w-0 h-[1px] bg-gold-500 transition-all duration-500 group-hover:w-full",
-                      location === link.href ? "w-full" : "w-0"
+                      isActive(link.href) ? "w-full" : "w-0"
                     )} />
                 </Link>
 
@@ -149,7 +155,7 @@ export function Header() {
                 className="text-xs font-medium tracking-widest text-white/70 hover:text-gold-500 transition-colors uppercase flex items-center gap-2"
               >
                 <Globe size={14} />
-                {i18n.language === 'tr' ? 'EN' : 'TR'}
+                {lang === 'tr' ? 'EN' : 'TR'}
               </button>
             </div>
           </nav>
@@ -160,7 +166,7 @@ export function Header() {
               onClick={toggleLanguage}
               className="text-xs font-bold tracking-widest text-white hover:text-gold-500 transition-colors uppercase"
             >
-              {i18n.language === 'tr' ? 'EN' : 'TR'}
+              {lang === 'tr' ? 'EN' : 'TR'}
             </button>
             
             <button
@@ -197,7 +203,7 @@ export function Header() {
                 >
                   <Link href={link.href} onClick={() => setIsMobileMenuOpen(false)} className={cn(
                         "text-4xl font-serif transition-all duration-300 cursor-pointer hover:text-gold-500 hover:italic block",
-                        location === link.href ? "text-gold-500 italic" : "text-white"
+                        isActive(link.href) ? "text-gold-500 italic" : "text-white"
                       )}>
                       {link.label}
                   </Link>

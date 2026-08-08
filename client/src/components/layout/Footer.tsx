@@ -1,11 +1,13 @@
 import { Link } from "wouter";
 import { MapPin, Phone, Mail, Instagram, ArrowRight } from "lucide-react";
 import { hotelInfo } from "@/lib/constants";
+import { getPagePath, type Lang } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 
 export function Footer() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang: Lang = i18n.language === "tr" ? "tr" : "en";
 
   return (
     <footer className="bg-black text-white pt-32 pb-12 border-t border-white/10 relative overflow-hidden">
@@ -36,12 +38,12 @@ export function Footer() {
             <h4 className="text-xs uppercase tracking-widest text-gold-500 mb-8 font-medium">{t('footer.menu')}</h4>
             <ul className="space-y-4">
               {[
-                { href: "/", label: t('nav.home') },
-                { href: "/odalar", label: t('footer.roomsAndSuites') },
-                { href: "/hakkimizda", label: t('nav.about') },
-                { href: "/galeri", label: t('nav.gallery') },
-                { href: "/gezilecek-yerler", label: t('footer.istanbulGuide') },
-                { href: "/iletisim", label: t('nav.contact') },
+                { href: getPagePath('home', lang), label: t('nav.home') },
+                { href: getPagePath('rooms', lang), label: t('footer.roomsAndSuites') },
+                { href: getPagePath('about', lang), label: t('nav.about') },
+                { href: getPagePath('gallery', lang), label: t('nav.gallery') },
+                { href: getPagePath('guide', lang), label: t('footer.istanbulGuide') },
+                { href: getPagePath('contact', lang), label: t('nav.contact') },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-white/60 hover:text-white transition-colors font-light text-sm flex items-center gap-2 group cursor-pointer">
@@ -97,8 +99,8 @@ export function Footer() {
              </p>
           </div>
           <div className="flex gap-8">
-            <Link href="/gizlilik-politikasi" className="hover:text-white transition-colors cursor-pointer">{t('footer.privacy')}</Link>
-            <Link href="/hizmet-kosullari" className="hover:text-white transition-colors cursor-pointer">{t('footer.terms')}</Link>
+            <Link href={getPagePath('privacy', lang)} className="hover:text-white transition-colors cursor-pointer">{t('footer.privacy')}</Link>
+            <Link href={getPagePath('terms', lang)} className="hover:text-white transition-colors cursor-pointer">{t('footer.terms')}</Link>
           </div>
         </div>
       </div>

@@ -7,9 +7,14 @@ channel = "stable-24_05"
 packages = ["imagemagick"]
 
 [deployment]
-deploymentTarget = "static"
+deploymentTarget = "autoscale"
 build = ["npm", "run", "build"]
 publicDir = "dist/public"
+run = ["npm", "run", "start"]
+
+[[ports]]
+localPort = 4173
+externalPort = 3001
 
 [[ports]]
 localPort = 5000

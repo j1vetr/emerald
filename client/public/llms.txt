@@ -1,0 +1,52 @@
+# Emerald Mansion Hotel
+
+> Emerald Mansion is a 16-room boutique hotel in Sultanahmet, Istanbul, within walking distance of major historic attractions including Hagia Sophia, the Blue Mosque and the Basilica Cistern.
+
+The site is bilingual. English pages live under /en/ and Turkish pages under /tr/. English is the x-default language tree.
+
+## Main Pages
+
+* [Homepage](https://emeraldmansion.com/en/): Overview of Emerald Mansion, a boutique hotel in the heart of Sultanahmet, Istanbul's historic Old City.
+* [Rooms & Suites](https://emeraldmansion.com/en/rooms/): All room and suite categories with sizes, bed types and amenities.
+* [About](https://emeraldmansion.com/en/about/): The story of the restored mansion and its 16 rooms, blending Ottoman heritage with modern comfort.
+* [Contact](https://emeraldmansion.com/en/contact/): Phone, email and WhatsApp contact details for reservations and requests.
+
+## Rooms
+
+* [Superior King Room](https://emeraldmansion.com/en/rooms/superior-king/): 20 m2 room with a king size bed and a sitting area.
+* [Junior Suite King](https://emeraldmansion.com/en/rooms/junior-suite-king/): 25 m2 suite with a king bed, sofa and sitting area.
+* [Junior Suite Twin](https://emeraldmansion.com/en/rooms/junior-suite-twin/): 25 m2 suite with two single beds and a sofa bed for up to three guests.
+* [Comfort Single Room](https://emeraldmansion.com/en/rooms/comfort-single/): 15 m2 room for solo travelers.
+* [Comfort Double Room](https://emeraldmansion.com/en/rooms/comfort-double/): 15 m2 double room with high ceilings.
+* [Family Suite](https://emeraldmansion.com/en/rooms/family-suite/): 35 m2 suite with connected rooms for up to four adults.
+
+## Location & Sultanahmet
+
+* [Location](https://emeraldmansion.com/en/location/): Address, map, walking distances to Hagia Sophia and the Blue Mosque, tram and airport access.
+* [Sultanahmet Guide](https://emeraldmansion.com/en/sultanahmet/): Guide to Istanbul's historic Old City with things to do and a one day itinerary.
+* [Istanbul Guide Hub](https://emeraldmansion.com/en/istanbul-guide/): Index of guides to attractions near the hotel.
+
+## Istanbul Guides
+
+* [Hagia Sophia](https://emeraldmansion.com/en/istanbul-guide/hagia-sophia/): History, visiting tips and the 5 minute walk from the hotel.
+* [Blue Mosque](https://emeraldmansion.com/en/istanbul-guide/blue-mosque/): Iznik tiles, prayer time etiquette, dress code and the 3 minute walk from the hotel.
+* [Grand Bazaar](https://emeraldmansion.com/en/istanbul-guide/grand-bazaar/): Shopping tips, bargaining culture and the 10 minute walk from the hotel.
+* [Basilica Cistern](https://emeraldmansion.com/en/istanbul-guide/basilica-cistern/): The underground cistern with 336 columns and Medusa heads, a 4 minute walk from the hotel.
+* [Topkapi Palace](https://emeraldmansion.com/en/istanbul-guide/topkapi-palace/): Courtyards, the Harem, visiting tips and the 10 minute walk from the hotel.
+* [Spice Bazaar](https://emeraldmansion.com/en/istanbul-guide/spice-bazaar/): Spices, Turkish delight and the 15 minute walk to Eminonu.
+* [Galata Tower](https://emeraldmansion.com/en/istanbul-guide/galata-tower/): History, panoramic views and how to get there from Sultanahmet.
+* [Dolmabahce Palace](https://emeraldmansion.com/en/istanbul-guide/dolmabahce-palace/): The 19th century Ottoman palace on the Bosphorus and how to get there from Sultanahmet.
+
+## Turkish
+
+* [Ana Sayfa](https://emeraldmansion.com/tr/): Turkish homepage.
+* [Odalar](https://emeraldmansion.com/tr/odalar/): Turkish rooms and suites hub.
+* [Konum](https://emeraldmansion.com/tr/konum/): Turkish location page.
+* [Sultanahmet](https://emeraldmansion.com/tr/sultanahmet/): Turkish Sultanahmet guide.
+* [Istanbul Rehberi](https://emeraldmansion.com/tr/istanbul-rehberi/): Turkish Istanbul guide hub.
+
+## Optional
+
+* [Gallery](https://emeraldmansion.com/en/gallery/): Photos of rooms, suites and interiors.
+* [Privacy Policy](https://emeraldmansion.com/en/privacy-policy/): How personal information is collected, used and protected.
+* [Terms of Service](https://emeraldmansion.com/en/terms-of-service/): Reservation rules, payment terms and hotel policies.

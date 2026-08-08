@@ -62,11 +62,9 @@ export function serveStatic(app: Express) {
       return res.redirect(301, pathname.replace(/\/{2,}/g, "/") + query);
     }
 
-    // Root: pick language by Accept-Language, x-default tree is /en/
+    // Root permanently redirects to the x-default English tree, single hop
     if (pathname === "/") {
-      const accept = String(req.headers["accept-language"] || "");
-      const primary = accept.split(",")[0]?.trim().toLowerCase() || "";
-      return res.redirect(302, primary.startsWith("tr") ? "/tr/" : "/en/");
+      return res.redirect(301, "/en/");
     }
 
     // 301 map for previously indexed URLs

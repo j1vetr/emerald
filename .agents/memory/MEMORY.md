@@ -1,0 +1,1 @@
+- [Post-merge kurulumu](post-merge-setup.md) — Birleşme sonrası npm ci ve production build scripts/post-merge.sh üzerinden çalıştırılıyor.

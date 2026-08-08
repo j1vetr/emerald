@@ -2,7 +2,13 @@
 // Room Types Data
 export interface RoomImage {
   url: string;
+  /** Descriptive English alt text */
   alt: string;
+  /** Descriptive Turkish alt text */
+  altTr: string;
+  /** Intrinsic pixel dimensions, used for width/height attributes */
+  width: number;
+  height: number;
 }
 
 export interface Room {
@@ -26,6 +32,10 @@ export interface Room {
   bedTypeEn: string;
   amenities: string[];
   amenitiesEn: string[];
+  /** Unique second paragraph for the room detail page, Turkish */
+  experience: string;
+  /** Unique second paragraph for the room detail page, English */
+  experienceEn: string;
   images: RoomImage[];
   coverImage: string;
 }
@@ -80,13 +90,15 @@ export const rooms: Room[] = [
     bedTypeEn: "1 Single Bed",
     amenities: ["Ücretsiz Wi-Fi", "Klima", "Minibar", "Kasa", "Akıllı TV", "Premium Banyo Malzemeleri", "Saç Kurutma Makinesi"],
     amenitiesEn: ["Free Wi-Fi", "Air Conditioning", "Minibar", "Safe", "Smart TV", "Premium Toiletries", "Hair Dryer"],
+    experience: "15 metrekarelik plan, tek başına seyahat edenin ritmine göre düzenlendi. Boy dolabı, sakin bir köşe ve karartma perdeleri, tarihi yarımadayı yürüyerek keşfettiğiniz uzun bir günün ardından dinlenmenizi kolaylaştırır.",
+    experienceEn: "The 15 m2 layout is planned around a solo traveler's rhythm. A full wardrobe, a quiet corner and blackout curtains make it easy to rest after a long day of exploring the Old City on foot.",
     coverImage: "/assets/images/rooms/2.kat_4.webp",
     images: [
-      { url: "/assets/images/rooms/2.kat_4.webp", alt: "Comfort Single Room View" },
-      { url: "/assets/images/rooms/2.kat_3.webp", alt: "Comfort Single Room Detail" },
-      { url: "/assets/images/rooms/IMG_1101.webp", alt: "Bathroom" },
-      { url: "/assets/images/rooms/IMG_1105.webp", alt: "Amenities" },
-      { url: "/assets/images/general/otel_genel_17.webp", alt: "Room Interior" }
+      { url: "/assets/images/rooms/2.kat_4.webp", alt: "Comfort Single Room with single bed at Emerald Mansion Hotel in Sultanahmet", altTr: "Sultanahmet'teki Emerald Mansion Hotel'de tek kişilik yataklı Comfort Single Oda", width: 1024, height: 683 },
+      { url: "/assets/images/rooms/2.kat_3.webp", alt: "Ottoman inspired decor in the Comfort Single Room at Emerald Mansion", altTr: "Emerald Mansion Comfort Single Oda'da Osmanlı esintili dekorasyon", width: 1024, height: 683 },
+      { url: "/assets/images/rooms/IMG_1101.webp", alt: "Marble bathroom with walk-in shower at Emerald Mansion Hotel", altTr: "Emerald Mansion Hotel'de duşlu mermer banyo", width: 1024, height: 683 },
+      { url: "/assets/images/rooms/IMG_1105.webp", alt: "Premium bathroom amenities offered at Emerald Mansion Hotel", altTr: "Emerald Mansion Hotel'de sunulan premium banyo ürünleri", width: 1024, height: 683 },
+      { url: "/assets/images/general/otel_genel_17.webp", alt: "Historic interior details of Emerald Mansion in Istanbul's Old City", altTr: "Tarihi yarımadadaki Emerald Mansion'ın iç mekan detayları", width: 576, height: 1024 }
     ]
   },
   {
@@ -106,13 +118,15 @@ export const rooms: Room[] = [
     bedTypeEn: "1 Double Bed",
     amenities: ["Ücretsiz Wi-Fi", "Klima", "Minibar", "Kasa", "Akıllı TV", "Premium Banyo Malzemeleri", "Çay/Kahve Seti"],
     amenitiesEn: ["Free Wi-Fi", "Air Conditioning", "Minibar", "Safe", "Smart TV", "Premium Toiletries", "Tea/Coffee Set"],
+    experience: "Çiftler bu odanın oranlarını çok sever. Çift kişilik yatak yüksek tavanların altında yer alır, sabah ışığı uzun pencerelerden süzülür ve çay setinden akıllı televizyona kadar tüm gereksinimler 15 metrekarelik alanı daraltmadan elinizin altındadır.",
+    experienceEn: "Couples appreciate this room's proportions. The double bed sits beneath high ceilings, morning light arrives through tall windows and everything from the tea set to the smart TV stays within reach without crowding the 15 m2 space.",
     coverImage: "/assets/images/rooms/301_oda_2.webp",
     images: [
-      { url: "/assets/images/rooms/301_oda_2.webp", alt: "Comfort Double Room" },
-      { url: "/assets/images/rooms/301_oda_1_3.webp", alt: "Comfort Double Detail" },
-      { url: "/assets/images/rooms/IMG_1101.webp", alt: "Bathroom" },
-      { url: "/assets/images/rooms/IMG_1105.webp", alt: "Amenities" },
-      { url: "/assets/images/general/otel_genel_17.webp", alt: "Room Ambiance" }
+      { url: "/assets/images/rooms/301_oda_2.webp", alt: "Comfort Double Room with double bed at Emerald Mansion Hotel in Sultanahmet", altTr: "Sultanahmet'teki Emerald Mansion Hotel'de çift kişilik yataklı Comfort Double Oda", width: 1024, height: 683 },
+      { url: "/assets/images/rooms/301_oda_1_3.webp", alt: "High ceilings and seating corner in the Comfort Double Room at Emerald Mansion", altTr: "Emerald Mansion Comfort Double Oda'da yüksek tavanlar ve oturma köşesi", width: 1024, height: 683 },
+      { url: "/assets/images/rooms/IMG_1101.webp", alt: "Marble bathroom with walk-in shower at Emerald Mansion Hotel", altTr: "Emerald Mansion Hotel'de duşlu mermer banyo", width: 1024, height: 683 },
+      { url: "/assets/images/rooms/IMG_1105.webp", alt: "Premium bathroom amenities offered at Emerald Mansion Hotel", altTr: "Emerald Mansion Hotel'de sunulan premium banyo ürünleri", width: 1024, height: 683 },
+      { url: "/assets/images/general/otel_genel_17.webp", alt: "Historic interior details of Emerald Mansion in Istanbul's Old City", altTr: "Tarihi yarımadadaki Emerald Mansion'ın iç mekan detayları", width: 576, height: 1024 }
     ]
   },
   {
@@ -132,13 +146,15 @@ export const rooms: Room[] = [
     bedTypeEn: "1 King Size Bed",
     amenities: ["Ücretsiz Wi-Fi", "Klima", "Minibar", "Kasa", "Akıllı TV", "Premium Banyo Malzemeleri", "Oturma Alanı", "Su Isıtıcı"],
     amenitiesEn: ["Free Wi-Fi", "Air Conditioning", "Minibar", "Safe", "Smart TV", "Premium Toiletries", "Sitting Area", "Kettle"],
+    experience: "20 metrekarelik Superior King, ferahlığı tam gereken yerde sunar. King size yatak mekanın merkezini oluşturur, özel oturma alanı sakin sabahlara davet eder ve Ayasofya'ya doğru yola çıkmadan önce su ısıtıcınız çayınız için hazırdır.",
+    experienceEn: "At 20 m2 the Superior King adds breathing room where it matters. The king size bed anchors the space, a dedicated sitting area invites slow mornings and the kettle stands ready for tea before you step out toward Hagia Sophia.",
     coverImage: "/assets/images/rooms/303_oda_3.webp",
     images: [
-      { url: "/assets/images/rooms/303_oda_3.webp", alt: "Superior King Room" },
-      { url: "/assets/images/rooms/303_oda_2.webp", alt: "Superior King Detail" },
-      { url: "/assets/images/rooms/IMG_1101.webp", alt: "Bathroom" },
-      { url: "/assets/images/rooms/IMG_1105.webp", alt: "Amenities" },
-      { url: "/assets/images/general/otel_genel_13.webp", alt: "Interior" }
+      { url: "/assets/images/rooms/303_oda_3.webp", alt: "Superior King Room with king size bed at Emerald Mansion Hotel in Sultanahmet", altTr: "Sultanahmet'teki Emerald Mansion Hotel'de king size yataklı Superior King Oda", width: 1024, height: 683 },
+      { url: "/assets/images/rooms/303_oda_2.webp", alt: "Sitting area and window detail in the Superior King Room at Emerald Mansion", altTr: "Emerald Mansion Superior King Oda'da oturma alanı ve pencere detayı", width: 1024, height: 683 },
+      { url: "/assets/images/rooms/IMG_1101.webp", alt: "Marble bathroom with walk-in shower at Emerald Mansion Hotel", altTr: "Emerald Mansion Hotel'de duşlu mermer banyo", width: 1024, height: 683 },
+      { url: "/assets/images/rooms/IMG_1105.webp", alt: "Premium bathroom amenities offered at Emerald Mansion Hotel", altTr: "Emerald Mansion Hotel'de sunulan premium banyo ürünleri", width: 1024, height: 683 },
+      { url: "/assets/images/general/otel_genel_13.webp", alt: "Restored Ottoman era interior of Emerald Mansion Hotel", altTr: "Emerald Mansion Hotel'in restore edilmiş Osmanlı dönemi iç mekanı", width: 683, height: 1024 }
     ]
   },
   {
@@ -158,16 +174,18 @@ export const rooms: Room[] = [
     bedTypeEn: "1 King Size Bed + Sofa",
     amenities: ["Ücretsiz Wi-Fi", "Klima", "Minibar", "Kasa", "Akıllı TV", "Premium Banyo Malzemeleri", "Oturma Grubu", "Havlu & Terlik"],
     amenitiesEn: ["Free Wi-Fi", "Air Conditioning", "Minibar", "Safe", "Smart TV", "Premium Toiletries", "Sitting Group", "Towels & Slippers"],
+    experience: "25 metrekarelik süit, uyku ve yaşam alanını birbirinden ayırır. Pencere kenarındaki oturma grubu en sevilen okuma köşesine dönüşür, geniş banyo ferahlık katar ve üç misafire kadar konforlu bir yerleşim sunar.",
+    experienceEn: "The 25 m2 suite separates sleeping and living. The sofa group by the window becomes a favorite reading corner, the large bathroom adds a sense of ease and up to three guests settle in comfortably.",
     coverImage: "/assets/images/rooms/305_oda_1.webp",
     images: [
-      { url: "/assets/images/rooms/305_oda_1.webp", alt: "Junior Suite King" },
-      { url: "/assets/images/rooms/304_oda_6.webp", alt: "Living Area" },
-      { url: "/assets/images/rooms/304_oda_1.webp", alt: "Bedroom" },
-      { url: "/assets/images/rooms/304_oda_4.webp", alt: "Detail" },
-      { url: "/assets/images/rooms/IMG_1101.webp", alt: "Bathroom" },
-      { url: "/assets/images/rooms/IMG_1105.webp", alt: "Amenities" },
-      { url: "/assets/images/general/otel_genel_21.webp", alt: "Suite Ambience" },
-      { url: "/assets/images/general/otel_genel_19.webp", alt: "Decor" }
+      { url: "/assets/images/rooms/305_oda_1.webp", alt: "Junior Suite King with king bed and sitting area at Emerald Mansion in Sultanahmet", altTr: "Sultanahmet'teki Emerald Mansion'da king yataklı ve oturma alanlı Junior Suite King", width: 1024, height: 683 },
+      { url: "/assets/images/rooms/304_oda_6.webp", alt: "Living area with sofa in the Junior Suite King at Emerald Mansion", altTr: "Emerald Mansion Junior Suite King'de koltuklu oturma alanı", width: 1024, height: 683 },
+      { url: "/assets/images/rooms/304_oda_1.webp", alt: "Bedroom of the Junior Suite King at Emerald Mansion Hotel", altTr: "Emerald Mansion Hotel Junior Suite King yatak odası", width: 1024, height: 683 },
+      { url: "/assets/images/rooms/304_oda_4.webp", alt: "Handcrafted wooden details in the Junior Suite King at Emerald Mansion", altTr: "Emerald Mansion Junior Suite King'de el işçiliği ahşap detaylar", width: 1024, height: 683 },
+      { url: "/assets/images/rooms/IMG_1101.webp", alt: "Marble bathroom with walk-in shower at Emerald Mansion Hotel", altTr: "Emerald Mansion Hotel'de duşlu mermer banyo", width: 1024, height: 683 },
+      { url: "/assets/images/rooms/IMG_1105.webp", alt: "Premium bathroom amenities offered at Emerald Mansion Hotel", altTr: "Emerald Mansion Hotel'de sunulan premium banyo ürünleri", width: 1024, height: 683 },
+      { url: "/assets/images/general/otel_genel_21.webp", alt: "Warm lighting in the corridors of Emerald Mansion boutique hotel", altTr: "Emerald Mansion butik otelin koridorlarında sıcak aydınlatma", width: 576, height: 1024 },
+      { url: "/assets/images/general/otel_genel_19.webp", alt: "Decorative interior touches at Emerald Mansion in Sultanahmet", altTr: "Sultanahmet'teki Emerald Mansion'da dekoratif iç mekan dokunuşları", width: 576, height: 1024 }
     ]
   },
   {
@@ -187,15 +205,17 @@ export const rooms: Room[] = [
     bedTypeEn: "2 Single Beds + 1 Sofa Bed",
     amenities: ["Ücretsiz Wi-Fi", "Klima", "Minibar", "Kasa", "Akıllı TV", "Premium Banyo Malzemeleri", "Çalışma Masası"],
     amenitiesEn: ["Free Wi-Fi", "Air Conditioning", "Minibar", "Safe", "Smart TV", "Premium Toiletries", "Work Desk"],
+    experience: "İki ayrı tek kişilik yatak ve bir çekyat, 25 metrekarelik planda arkadaşlara veya iş arkadaşlarına kendi alanlarını verir. Çalışma masası gerçekten kullanışlıdır ve süit üç misafir ve bavullarıyla bile düzenli kalır.",
+    experienceEn: "Two proper single beds and a sofa bed give friends or colleagues their own space within the 25 m2 plan. The work desk is genuinely usable and the suite stays orderly even with three guests and their luggage.",
     coverImage: "/assets/images/rooms/302_oda_4.webp",
     images: [
-      { url: "/assets/images/rooms/302_oda_4.webp", alt: "Junior Suite Twin" },
-      { url: "/assets/images/rooms/302_oda_2.webp", alt: "Twin Beds" },
-      { url: "/assets/images/rooms/302_oda_6.webp", alt: "Room View" },
-      { url: "/assets/images/rooms/IMG_1101.webp", alt: "Bathroom" },
-      { url: "/assets/images/rooms/IMG_1105.webp", alt: "Amenities" },
-      { url: "/assets/images/general/otel_genel_20.webp", alt: "Details" },
-      { url: "/assets/images/general/otel_genel_21.webp", alt: "Atmosphere" }
+      { url: "/assets/images/rooms/302_oda_4.webp", alt: "Junior Suite Twin with two single beds at Emerald Mansion Hotel in Sultanahmet", altTr: "Sultanahmet'teki Emerald Mansion Hotel'de iki tek kişilik yataklı Junior Suite Twin", width: 1024, height: 683 },
+      { url: "/assets/images/rooms/302_oda_2.webp", alt: "Two single beds in the Junior Suite Twin at Emerald Mansion", altTr: "Emerald Mansion Junior Suite Twin'de iki tek kişilik yatak", width: 1024, height: 683 },
+      { url: "/assets/images/rooms/302_oda_6.webp", alt: "Spacious layout of the Junior Suite Twin at Emerald Mansion Hotel", altTr: "Emerald Mansion Hotel Junior Suite Twin'in ferah yerleşimi", width: 1024, height: 683 },
+      { url: "/assets/images/rooms/IMG_1101.webp", alt: "Marble bathroom with walk-in shower at Emerald Mansion Hotel", altTr: "Emerald Mansion Hotel'de duşlu mermer banyo", width: 1024, height: 683 },
+      { url: "/assets/images/rooms/IMG_1105.webp", alt: "Premium bathroom amenities offered at Emerald Mansion Hotel", altTr: "Emerald Mansion Hotel'de sunulan premium banyo ürünleri", width: 1024, height: 683 },
+      { url: "/assets/images/general/otel_genel_20.webp", alt: "Historic staircase detail at Emerald Mansion Hotel", altTr: "Emerald Mansion Hotel'de tarihi merdiven detayı", width: 576, height: 1024 },
+      { url: "/assets/images/general/otel_genel_21.webp", alt: "Warm lighting in the corridors of Emerald Mansion boutique hotel", altTr: "Emerald Mansion butik otelin koridorlarında sıcak aydınlatma", width: 576, height: 1024 }
     ]
   },
   {
@@ -215,15 +235,17 @@ export const rooms: Room[] = [
     bedTypeEn: "1 Double Bed + 2 Sofa Beds",
     amenities: ["Ücretsiz Wi-Fi", "2 x Klima", "2 x Minibar", "Kasa", "2 x Akıllı TV", "Premium Banyo Malzemeleri", "Geniş Oturma Alanı"],
     amenitiesEn: ["Free Wi-Fi", "2 x Air Conditioning", "2 x Minibar", "Safe", "2 x Smart TV", "Premium Toiletries", "Large Sitting Area"],
+    experience: "Birbirine bağlantılı iki oda, ebeveynler ve çocukların tek bir girişin ardında ayrı alanlarını korumasını sağlar. Her odanın kendi kliması ve televizyonu vardır ve 35 metrekarelik plan aile seyahatinin neşeli telaşını rahatça karşılar.",
+    experienceEn: "Two connected rooms let parents and children keep separate spaces behind a single entrance. Each room has its own air conditioning and TV, and the 35 m2 layout comfortably absorbs the happy bustle of family travel.",
     coverImage: "/assets/images/rooms/2.kat_2_5-1.webp",
     images: [
-      { url: "/assets/images/rooms/2.kat_2_5-1.webp", alt: "Family Suite" },
-      { url: "/assets/images/rooms/2.kat_2_3.webp", alt: "Bedroom 1" },
-      { url: "/assets/images/rooms/2.kat_2_4.webp", alt: "Bedroom 2" },
-      { url: "/assets/images/rooms/IMG_1101.webp", alt: "Bathroom" },
-      { url: "/assets/images/general/otel_genel_20.webp", alt: "Hallway" },
-      { url: "/assets/images/rooms/IMG_1105.webp", alt: "Amenities" },
-      { url: "/assets/images/general/otel_genel_13.webp", alt: "Decor" }
+      { url: "/assets/images/rooms/2.kat_2_5-1.webp", alt: "Family Suite with connected rooms at Emerald Mansion Hotel in Sultanahmet", altTr: "Sultanahmet'teki Emerald Mansion Hotel'de bağlantılı odalı Family Suite", width: 1024, height: 683 },
+      { url: "/assets/images/rooms/2.kat_2_3.webp", alt: "First bedroom of the Family Suite at Emerald Mansion with double bed", altTr: "Emerald Mansion Family Suite'in çift kişilik yataklı ilk odası", width: 1024, height: 683 },
+      { url: "/assets/images/rooms/2.kat_2_4.webp", alt: "Second room of the Family Suite at Emerald Mansion with sofa beds", altTr: "Emerald Mansion Family Suite'in çekyatlı ikinci odası", width: 1024, height: 683 },
+      { url: "/assets/images/rooms/IMG_1101.webp", alt: "Marble bathroom with walk-in shower at Emerald Mansion Hotel", altTr: "Emerald Mansion Hotel'de duşlu mermer banyo", width: 1024, height: 683 },
+      { url: "/assets/images/general/otel_genel_20.webp", alt: "Historic staircase detail at Emerald Mansion Hotel", altTr: "Emerald Mansion Hotel'de tarihi merdiven detayı", width: 576, height: 1024 },
+      { url: "/assets/images/rooms/IMG_1105.webp", alt: "Premium bathroom amenities offered at Emerald Mansion Hotel", altTr: "Emerald Mansion Hotel'de sunulan premium banyo ürünleri", width: 1024, height: 683 },
+      { url: "/assets/images/general/otel_genel_13.webp", alt: "Restored Ottoman era interior of Emerald Mansion Hotel", altTr: "Emerald Mansion Hotel'in restore edilmiş Osmanlı dönemi iç mekanı", width: 683, height: 1024 }
     ]
   }
 ];

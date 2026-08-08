@@ -18,6 +18,7 @@ import Gallery from "@/pages/Gallery";
 import Contact from "@/pages/Contact";
 import Location from "@/pages/Location";
 import Sultanahmet from "@/pages/Sultanahmet";
+import AttractionGuide from "@/pages/AttractionGuide";
 import Privacy from "@/pages/Privacy";
 import Terms from "@/pages/Terms";
 
@@ -77,6 +78,12 @@ function Router() {
 
       <Route path="/en/istanbul-guide" component={Attractions} />
       <Route path="/tr/istanbul-rehberi" component={Attractions} />
+      <Route path="/en/istanbul-guide/:slug">
+        {(params) => <AttractionGuide slug={params.slug} routeLang="en" />}
+      </Route>
+      <Route path="/tr/istanbul-rehberi/:slug">
+        {(params) => <AttractionGuide slug={params.slug} routeLang="tr" />}
+      </Route>
 
       <Route path="/en/gallery" component={Gallery} />
       <Route path="/tr/galeri" component={Gallery} />

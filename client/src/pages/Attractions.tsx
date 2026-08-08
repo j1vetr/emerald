@@ -4,7 +4,16 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { ConciergeCard } from "@/components/ui/concierge-card";
 import { Breadcrumbs } from "@/components/breadcrumbs";
-import { getPagePath, type Lang } from "@/lib/seo";
+import { getGuidePath, getPagePath, type GuideKey, type Lang } from "@/lib/seo";
+
+// Attractions that have a dedicated guide page, keyed by their English name
+const guideKeyByName: Record<string, GuideKey> = {
+  "Hagia Sophia": "hagia-sophia",
+  "Blue Mosque": "blue-mosque",
+  "Grand Bazaar": "grand-bazaar",
+  "Basilica Cistern": "basilica-cistern",
+  "Topkapi Palace": "topkapi-palace",
+};
 
 export default function Attractions() {
   const { t, i18n } = useTranslation();
@@ -35,17 +44,23 @@ export default function Attractions() {
       <div className="bg-black py-20 border-t border-white/10">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {attractions.map((place, i) => (
-              <ConciergeCard
-                key={i}
-                title={isEn ? place.nameEn : place.name}
-                description={isEn ? place.descriptionEn : place.description}
-                image={place.image}
-                distance={place.distance}
-                time={isEn ? place.timeEn : place.time}
-                delay={i * 0.1}
-              />
-            ))}
+            {attractions.map((place, i) => {
+              const guideKey = guideKeyByName[place.nameEn];
+              return (
+                <ConciergeCard
+                  key={i}
+                  title={isEn ? place.nameEn : place.name}
+                  description={isEn ? place.descriptionEn : place.description}
+                  image={place.image}
+                  imageAlt={isEn ? `${place.nameEn} in Istanbul` : `İstanbul'da ${place.name}`}
+                  distance={place.distance}
+                  time={isEn ? place.timeEn : place.time}
+                  delay={i * 0.1}
+                  href={guideKey ? getGuidePath(guideKey, lang) : undefined}
+                  linkLabel={guideKey ? (isEn ? "Read the Guide" : "Rehberi Okuyun") : undefined}
+                />
+              );
+            })}
           </div>
         </div>
       </div>

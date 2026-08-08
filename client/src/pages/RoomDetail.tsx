@@ -101,7 +101,7 @@ export default function RoomDetail({ slug }: { slug: string }) {
             >
               <img 
                 src={room.images[currentImageIndex].url} 
-                alt={room.images[currentImageIndex].alt} 
+                alt={isEn ? room.images[currentImageIndex].alt : room.images[currentImageIndex].altTr} 
                 className="max-w-full max-h-full object-contain shadow-2xl"
               />
               <div className="absolute bottom-4 left-0 right-0 text-center text-white/70 text-sm">
@@ -130,6 +130,7 @@ export default function RoomDetail({ slug }: { slug: string }) {
              transition={{ duration: 2, ease: "easeOut" }}
              src={room.coverImage} 
              alt={isEn ? room.nameEn : room.name} 
+             fetchPriority="high"
              className="w-full h-full object-cover opacity-80"
            />
         </div>
@@ -202,9 +203,7 @@ export default function RoomDetail({ slug }: { slug: string }) {
                 <p className="text-2xl font-serif text-gold-500/80 italic leading-relaxed mb-8">"{isEn ? room.shortDescriptionEn : room.shortDescription}"</p>
                 <p className="text-white/60 font-light leading-loose">{isEn ? room.descriptionEn : room.description}</p>
                 <p className="text-white/60 font-light leading-loose">
-                  {isEn 
-                    ? "High ceilings, handcrafted wooden details and luxurious fabrics... Designed for you to feel quality in every moment. The requirements of the modern world and the fascinating texture of history come together here."
-                    : "Yüksek tavanlar, el işçiliği ahşap detaylar ve lüks kumaşlar... Her anınızda kaliteyi hissetmeniz için tasarlandı. Modern dünyanın gereklilikleri ile tarihin büyüleyici dokusu burada birleşiyor."}
+                  {isEn ? room.experienceEn : room.experience}
                 </p>
               </div>
 
@@ -225,7 +224,10 @@ export default function RoomDetail({ slug }: { slug: string }) {
                         >
                           <img 
                             src={img.url} 
-                            alt={img.alt} 
+                            alt={isEn ? img.alt : img.altTr} 
+                            width={img.width}
+                            height={img.height}
+                            loading="lazy"
                             className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-80 group-hover:opacity-100" 
                           />
                           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/20">
@@ -341,7 +343,7 @@ export default function RoomDetail({ slug }: { slug: string }) {
               <Link key={r.id} href={getRoomPath(r.slug, lang)} className="group block cursor-pointer">
                 <div className="aspect-[3/4] overflow-hidden relative mb-6 border border-white/10">
                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
-                   <img src={r.coverImage} alt={isEn ? r.nameEn : r.name} className="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" />
+                   <img src={r.coverImage} alt={isEn ? r.nameEn : r.name} loading="lazy" className="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" />
                 </div>
                 <h4 className="font-serif text-2xl text-white mb-2 group-hover:text-gold-500 transition-colors">{isEn ? r.shortNameEn : r.shortName}</h4>
                 <p className="text-xs uppercase tracking-widest text-white/40">

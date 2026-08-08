@@ -10,9 +10,13 @@ interface ConciergeCardProps {
   time: string;
   image: string;
   delay?: number;
+  /** Optional guide page path. Renders a crawlable link when present. */
+  href?: string;
+  linkLabel?: string;
+  imageAlt?: string;
 }
 
-export function ConciergeCard({ title, description, distance, time, image, delay = 0 }: ConciergeCardProps) {
+export function ConciergeCard({ title, description, distance, time, image, delay = 0, href, linkLabel, imageAlt }: ConciergeCardProps) {
   const { t } = useTranslation();
   
   return (
@@ -28,7 +32,8 @@ export function ConciergeCard({ title, description, distance, time, image, delay
         <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
         <img 
           src={image} 
-          alt={title} 
+          alt={imageAlt ?? title} 
+          loading="lazy"
           className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale-[30%] group-hover:grayscale-0"
         />
         
@@ -49,15 +54,32 @@ export function ConciergeCard({ title, description, distance, time, image, delay
       <div className="p-6 md:p-8 relative">
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         
-        <h3 className="font-serif text-2xl text-white mb-4 group-hover:text-gold-500 transition-colors">{title}</h3>
+        <h3 className="font-serif text-2xl text-white mb-4 group-hover:text-gold-500 transition-colors">
+          {href ? (
+            <Link href={href} className="hover:text-gold-500 transition-colors">
+              {title}
+            </Link>
+          ) : (
+            title
+          )}
+        </h3>
         <p className="text-white/60 text-sm leading-relaxed font-light mb-6 line-clamp-3">
           {description}
         </p>
         
         <div className="flex items-center justify-between pt-4 border-t border-white/5">
-          <span className="text-[10px] uppercase tracking-widest text-white/40 group-hover:text-white/60 transition-colors">
-            Emerald Concierge
-          </span>
+          {href && linkLabel ? (
+            <Link
+              href={href}
+              className="text-[10px] uppercase tracking-widest text-gold-500 hover:text-white border-b border-gold-500/50 hover:border-white transition-colors pb-0.5"
+            >
+              {linkLabel}
+            </Link>
+          ) : (
+            <span className="text-[10px] uppercase tracking-widest text-white/40 group-hover:text-white/60 transition-colors">
+              Emerald Concierge
+            </span>
+          )}
           <span className="w-8 h-[1px] bg-white/20 group-hover:bg-gold-500 transition-colors"></span>
         </div>
       </div>

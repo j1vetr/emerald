@@ -167,7 +167,10 @@ export default function Home() {
                >
                  <img 
                    src="/assets/images/general/otel_genel_13.webp" 
-                   alt="Interior Detail"
+                   alt={isEn ? "Restored Ottoman era interior of Emerald Mansion Hotel in Sultanahmet" : "Sultanahmet'teki Emerald Mansion Hotel'in restore edilmiş Osmanlı dönemi iç mekanı"}
+                   width={683}
+                   height={1024}
+                   loading="lazy"
                    className="w-full h-full object-cover"
                  />
                  {/* Decorative Overlay Frame */}
@@ -253,6 +256,9 @@ export default function Home() {
                     <img 
                       src={room.coverImage} 
                       alt={isEn ? room.nameEn : room.name} 
+                      width={1024}
+                      height={683}
+                      loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-80 group-hover:opacity-100"
                     />
                     
@@ -356,6 +362,7 @@ export default function Home() {
               className="absolute top-1/2 left-1/2 w-[180%] h-[180%] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
               src="https://www.youtube.com/embed/K6hfpqiGyOg?autoplay=1&mute=1&controls=0&loop=1&playlist=K6hfpqiGyOg&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&modestbranding=1"
               allow="autoplay; encrypted-media"
+              loading="lazy"
               title="Istanbul Video"
             />
          </div>

@@ -90,6 +90,29 @@ export function buildRoomSchema(room: Room, lang: Lang) {
   };
 }
 
+/** TouristAttraction entity for an Istanbul guide page. */
+export function buildAttractionSchema(opts: {
+  name: string;
+  description: string;
+  path: string;
+  image: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "TouristAttraction",
+    name: opts.name,
+    description: opts.description,
+    url: absoluteUrl(opts.path),
+    image: absoluteUrl(opts.image),
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Fatih",
+      addressRegion: "İstanbul",
+      addressCountry: "TR",
+    },
+  };
+}
+
 export interface FaqItem {
   q: string;
   a: string;

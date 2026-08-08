@@ -9,7 +9,8 @@ import { getPagePath, type Lang } from "@/lib/seo";
 
 export default function About() {
   const { t, i18n } = useTranslation();
-  const lang: Lang = i18n.language === 'en' ? 'en' : 'tr';
+  const isEn = i18n.language === 'en';
+  const lang: Lang = isEn ? 'en' : 'tr';
 
   return (
     <Layout>
@@ -41,8 +42,11 @@ export default function About() {
              >
                 <div className="aspect-[4/5] border border-white/10 p-4">
                    <img 
-                     src="https://emeraldmansion.com/wp-content/webp-express/webp-images/uploads/2025/02/otel_genel_17-576x1024.jpg.webp" 
-                     alt="About Emerald Mansion" 
+                     src="/assets/images/general/otel_genel_17.webp" 
+                     alt={isEn ? "Historic interior of Emerald Mansion, a restored boutique hotel in Sultanahmet" : "Sultanahmet'te restore edilmiş butik otel Emerald Mansion'ın tarihi iç mekanı"}
+                     width={576}
+                     height={1024}
+                     loading="lazy"
                      className="w-full h-full object-cover grayscale-[30%]" 
                    />
                 </div>

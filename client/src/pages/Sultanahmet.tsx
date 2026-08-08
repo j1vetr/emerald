@@ -6,8 +6,17 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { JsonLd } from "@/components/json-ld";
 import { buildFaqSchema } from "@/lib/schema";
 import { attractions } from "@/lib/constants";
-import { getPagePath, type Lang } from "@/lib/seo";
+import { getGuidePath, getPagePath, type GuideKey, type Lang } from "@/lib/seo";
 import { sultanahmetContent } from "@/lib/content/sultanahmet-content";
+
+// Attractions with a dedicated guide page, keyed by their English name
+const guideKeyByName: Record<string, GuideKey> = {
+  "Hagia Sophia": "hagia-sophia",
+  "Blue Mosque": "blue-mosque",
+  "Grand Bazaar": "grand-bazaar",
+  "Basilica Cistern": "basilica-cistern",
+  "Topkapi Palace": "topkapi-palace",
+};
 
 export default function Sultanahmet() {
   const { t, i18n } = useTranslation();
@@ -85,6 +94,14 @@ export default function Sultanahmet() {
                       </p>
                     )}
                     <p className="text-white/60 font-light leading-relaxed">{thing.text}</p>
+                    {guideKeyByName[thing.attractionKey] && (
+                      <Link
+                        href={getGuidePath(guideKeyByName[thing.attractionKey], lang)}
+                        className="inline-block text-xs uppercase tracking-widest text-gold-500 hover:text-white border-b border-gold-500/50 hover:border-white transition-colors pb-1"
+                      >
+                        {isEn ? "Read the full guide" : "Detaylı rehberi okuyun"}
+                      </Link>
+                    )}
                   </div>
                 </article>
               );

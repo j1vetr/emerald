@@ -20,6 +20,40 @@ export const ROOM_SLUGS = [
 
 export type RoomSlug = (typeof ROOM_SLUGS)[number];
 
+// Istanbul guide cluster. English and Turkish slugs differ on purpose so
+// each language gets a natural, localized URL.
+export const GUIDE_KEYS = [
+  "hagia-sophia",
+  "blue-mosque",
+  "grand-bazaar",
+  "basilica-cistern",
+  "topkapi-palace",
+] as const;
+
+export type GuideKey = (typeof GUIDE_KEYS)[number];
+
+export const guideSlugs: Record<GuideKey, Record<Lang, string>> = {
+  "hagia-sophia": { en: "hagia-sophia", tr: "ayasofya" },
+  "blue-mosque": { en: "blue-mosque", tr: "sultanahmet-camii" },
+  "grand-bazaar": { en: "grand-bazaar", tr: "kapalicarsi" },
+  "basilica-cistern": { en: "basilica-cistern", tr: "yerebatan-sarnici" },
+  "topkapi-palace": { en: "topkapi-palace", tr: "topkapi-sarayi" },
+};
+
+export function getGuidePath(key: GuideKey, lang: Lang): string {
+  return lang === "tr"
+    ? `/tr/istanbul-rehberi/${guideSlugs[key].tr}/`
+    : `/en/istanbul-guide/${guideSlugs[key].en}/`;
+}
+
+/** Resolve a guide key from a URL slug for the given language tree */
+export function findGuideKeyBySlug(slug: string, lang: Lang): GuideKey | null {
+  for (const key of GUIDE_KEYS) {
+    if (guideSlugs[key][lang] === slug) return key;
+  }
+  return null;
+}
+
 export interface PageDef {
   key: string;
   /** Canonical path per language, always with trailing slash */
@@ -164,6 +198,81 @@ export const pages: PageDef[] = [
     description: {
       en: "Discover Hagia Sophia, Blue Mosque, Basilica Cistern, Grand Bazaar and more, all within easy reach of Emerald Mansion in Sultanahmet, Istanbul.",
       tr: "Ayasofya, Sultanahmet Camii, Yerebatan Sarnıcı ve Kapalıçarşı gibi tarihi yerleri keşfedin. Emerald Mansion'dan yürüme mesafesinde İstanbul rehberi.",
+    },
+  },
+  {
+    key: "guide:hagia-sophia",
+    paths: {
+      en: "/en/istanbul-guide/hagia-sophia/",
+      tr: "/tr/istanbul-rehberi/ayasofya/",
+    },
+    title: {
+      en: "Hagia Sophia Guide | Visiting Tips from Sultanahmet",
+      tr: "Ayasofya Rehberi | Ziyaret İpuçları ve Ulaşım",
+    },
+    description: {
+      en: "Plan your visit to Hagia Sophia in Istanbul. History, visiting tips, what to see inside and how to walk there in 5 minutes from Emerald Mansion in Sultanahmet.",
+      tr: "Ayasofya ziyaretinizi planlayın. Tarihçe, ziyaret ipuçları, içeride görülecekler ve Sultanahmet'teki Emerald Mansion'dan 5 dakikalık yürüyüş rotası.",
+    },
+  },
+  {
+    key: "guide:blue-mosque",
+    paths: {
+      en: "/en/istanbul-guide/blue-mosque/",
+      tr: "/tr/istanbul-rehberi/sultanahmet-camii/",
+    },
+    title: {
+      en: "Blue Mosque Guide | Visiting Tips & How to Get There",
+      tr: "Sultanahmet Camii Rehberi | Ziyaret İpuçları",
+    },
+    description: {
+      en: "Visit the Blue Mosque in Istanbul. Learn about its blue Iznik tiles, prayer time etiquette, dress code and the 3 minute walk from Emerald Mansion in Sultanahmet.",
+      tr: "Sultanahmet Camii ziyareti için rehber. Mavi İznik çinileri, ziyaret saatleri, kıyafet kuralları ve Emerald Mansion'dan 3 dakikalık yürüyüş mesafesi.",
+    },
+  },
+  {
+    key: "guide:grand-bazaar",
+    paths: {
+      en: "/en/istanbul-guide/grand-bazaar/",
+      tr: "/tr/istanbul-rehberi/kapalicarsi/",
+    },
+    title: {
+      en: "Grand Bazaar Guide | Shopping Tips & Getting There",
+      tr: "Kapalıçarşı Rehberi | Alışveriş İpuçları ve Ulaşım",
+    },
+    description: {
+      en: "Explore the Grand Bazaar in Istanbul. Shopping tips, bargaining culture, what to buy and how to reach it on foot in 10 minutes from Emerald Mansion in Sultanahmet.",
+      tr: "Kapalıçarşı rehberi. Alışveriş ipuçları, pazarlık kültürü, ne alınır ve Sultanahmet'teki Emerald Mansion'dan 10 dakikalık yürüyüş rotası.",
+    },
+  },
+  {
+    key: "guide:basilica-cistern",
+    paths: {
+      en: "/en/istanbul-guide/basilica-cistern/",
+      tr: "/tr/istanbul-rehberi/yerebatan-sarnici/",
+    },
+    title: {
+      en: "Basilica Cistern Guide | Tips for Your Visit",
+      tr: "Yerebatan Sarnıcı Rehberi | Ziyaret İpuçları",
+    },
+    description: {
+      en: "Discover the Basilica Cistern, Istanbul's underground wonder with 336 columns and Medusa heads, a 4 minute walk from Emerald Mansion in Sultanahmet.",
+      tr: "Yerebatan Sarnıcı rehberi. 336 sütunu ve Medusa başlarıyla yeraltı sarnıcı, Sultanahmet'teki Emerald Mansion'a 4 dakikalık yürüyüş mesafesinde.",
+    },
+  },
+  {
+    key: "guide:topkapi-palace",
+    paths: {
+      en: "/en/istanbul-guide/topkapi-palace/",
+      tr: "/tr/istanbul-rehberi/topkapi-sarayi/",
+    },
+    title: {
+      en: "Topkapi Palace Guide | Visiting Tips from Sultanahmet",
+      tr: "Topkapı Sarayı Rehberi | Ziyaret İpuçları ve Ulaşım",
+    },
+    description: {
+      en: "Visit Topkapi Palace, home of Ottoman sultans for 400 years. Courtyards, Harem, visiting tips and the 10 minute walk from Emerald Mansion in Sultanahmet.",
+      tr: "Topkapı Sarayı rehberi. Avlular, Harem, ziyaret ipuçları ve Sultanahmet'teki Emerald Mansion'dan 10 dakikalık yürüyüş rotası.",
     },
   },
   {

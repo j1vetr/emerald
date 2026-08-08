@@ -8,13 +8,14 @@ import { getPagePath, type Lang } from "@/lib/seo";
 
 export default function Gallery() {
   const { t, i18n } = useTranslation();
-  const lang: Lang = i18n.language === 'en' ? 'en' : 'tr';
+  const isEn = i18n.language === 'en';
+  const lang: Lang = isEn ? 'en' : 'tr';
   // Collect all unique images
   const allImages = [
     ...rooms.flatMap(r => r.images),
-    { url: "/assets/images/general/otel_genel_17.webp", alt: "Hotel General" },
-    { url: "/assets/images/general/otel_genel_13.webp", alt: "Hotel Interior" },
-    { url: "/assets/images/general/otel_genel_21.webp", alt: "Details" },
+    { url: "/assets/images/general/otel_genel_17.webp", alt: "Historic interior details of Emerald Mansion in Istanbul's Old City", altTr: "Tarihi yarımadadaki Emerald Mansion'ın iç mekan detayları", width: 576, height: 1024 },
+    { url: "/assets/images/general/otel_genel_13.webp", alt: "Restored Ottoman era interior of Emerald Mansion Hotel", altTr: "Emerald Mansion Hotel'in restore edilmiş Osmanlı dönemi iç mekanı", width: 683, height: 1024 },
+    { url: "/assets/images/general/otel_genel_21.webp", alt: "Warm lighting in the corridors of Emerald Mansion boutique hotel", altTr: "Emerald Mansion butik otelin koridorlarında sıcak aydınlatma", width: 576, height: 1024 },
   ];
   const uniqueImages = Array.from(new Map(allImages.map(item => [item.url, item])).values());
 
@@ -51,7 +52,9 @@ export default function Gallery() {
                   >
                     <img 
                       src={img.url} 
-                      alt={img.alt} 
+                      alt={isEn ? img.alt : img.altTr} 
+                      width={img.width}
+                      height={img.height}
                       className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-110 grayscale-[30%] group-hover:grayscale-0"
                       loading="lazy"
                     />
@@ -62,8 +65,8 @@ export default function Gallery() {
                 </DialogTrigger>
                 <DialogContent className="max-w-6xl w-full bg-transparent border-none p-0 shadow-none text-white">
                    <div className="relative flex flex-col items-center">
-                     <img src={img.url} alt={img.alt} className="w-auto max-h-[85vh] object-contain shadow-2xl border border-white/10" />
-                     <p className="text-center mt-4 text-white/60 font-serif text-lg italic tracking-wide">{img.alt}</p>
+                     <img src={img.url} alt={isEn ? img.alt : img.altTr} className="w-auto max-h-[85vh] object-contain shadow-2xl border border-white/10" />
+                     <p className="text-center mt-4 text-white/60 font-serif text-lg italic tracking-wide">{isEn ? img.alt : img.altTr}</p>
                    </div>
                 </DialogContent>
               </Dialog>

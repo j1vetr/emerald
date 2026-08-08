@@ -75,6 +75,9 @@ export default function Rooms() {
                       <img 
                         src={room.coverImage} 
                         alt={isEn ? room.nameEn : room.name} 
+                        width={1024}
+                        height={683}
+                        loading={index === 0 ? undefined : "lazy"}
                         className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
                       />
                    </Link>

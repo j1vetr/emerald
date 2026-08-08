@@ -7,6 +7,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { SmoothScroll } from "@/components/ui/smooth-scroll";
 import { SeoHead, LanguageSync } from "@/components/seo-head";
+import { Analytics } from "@/lib/analytics";
 import { findRedirect } from "@/lib/seo";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
@@ -108,6 +109,7 @@ function App() {
       <TooltipProvider>
         <LanguageSync />
         <SeoHead />
+        <Analytics />
         <SmoothScroll />
         <Toaster />
         <Router />

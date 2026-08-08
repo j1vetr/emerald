@@ -9,6 +9,9 @@ import blueMosqueImg from "@assets/stock_images/blue_mosque_sultanah_cf28c2fc.we
 import grandBazaarImg from "@assets/stock_images/grand_bazaar_istanbu_7aa32030.webp";
 import basilicaCisternImg from "@assets/stock_images/basilica_cistern_ist_bcddf85b.webp";
 import topkapiPalaceImg from "@assets/stock_images/topkapi_palace_istan_54d0f61b.webp";
+import spiceBazaarImg from "@assets/stock_images/spice_bazaar_istanbu_8eefd351.webp";
+import galataTowerImg from "@assets/stock_images/galata_tower_istanbu_5b2197de.webp";
+import dolmabahcePalaceImg from "@assets/stock_images/dolmabahce_palace_is_aa2d148d.webp";
 
 export interface GuideFaqItem {
   q: string;
@@ -771,6 +774,420 @@ export const guides: GuideDef[] = [
           {
             q: "Topkapı Sarayı için ne kadar süre ayırmalıyım?",
             a: "Avluları, Hazine'yi ve Harem'i aceleye getirmeden gezmek için üç dört saat ayırın. Tarih meraklıları rahatlıkla tam gün geçirebilir.",
+          },
+        ],
+      },
+    },
+  },
+  {
+    key: "spice-bazaar",
+    image: spiceBazaarImg,
+    distance: "1.2 km",
+    walkTime: { en: "15 min walk", tr: "15 dk yürüyüş" },
+    copy: {
+      en: {
+        name: "Spice Bazaar",
+        heroAlt: "Colorful spice stalls inside the Spice Bazaar in Eminonu Istanbul",
+        tagline: "Four centuries of aromas in the heart of Eminonu",
+        intro: [
+          "The Spice Bazaar, known in Turkish as Misir Carsisi or the Egyptian Bazaar, was built in the 1660s as part of the Yeni Cami complex in Eminonu. Its name comes from the Egyptian customs duties that originally funded its construction. For four centuries it has been Istanbul's most fragrant market, a place where merchants have traded spices, dried herbs, nuts, Turkish delight and local produce under its L-shaped vaulted roof.",
+          "A visit here is a full sensory experience. Towers of vivid spices, ropes of dried figs and apricots, bowls of pistachios and walnuts, and shelf upon shelf of lokum in every flavor compete for your attention. The bazaar is smaller and more approachable than the Grand Bazaar, which makes it an easy and rewarding half-morning stop.",
+        ],
+        whatToSee: {
+          heading: "What to Look For",
+          items: [
+            {
+              title: "Spice Stalls",
+              text: "Saffron, sumac, dried mint, isot pepper and dozens of spice blends are sold in portions of any size. Vendors are happy to let you smell before you buy.",
+            },
+            {
+              title: "Turkish Delight",
+              text: "The bazaar has some of the best lokum shops in the city. Double-roasted pistachio, rose and pomegranate are classic flavors worth seeking out.",
+            },
+            {
+              title: "Nuts, Dried Fruit and Honey",
+              text: "Almonds, hazelnuts, walnuts, dried figs and multiple grades of Turkish honey line the deeper stalls. These make excellent and portable gifts.",
+            },
+            {
+              title: "The Eminonu Waterfront",
+              text: "After the bazaar, walk two minutes to the Galata Bridge. The views of the Golden Horn with the New Mosque in the background are among the most photographed in Istanbul.",
+            },
+          ],
+        },
+        fromHotel: {
+          heading: "Getting There from Emerald Mansion",
+          paragraphs: [
+            "The Spice Bazaar is about 1.2 kilometers from Emerald Mansion, a 15 minute walk downhill along Divanyolu and then Yeniceriler Caddesi toward Eminonu. You pass the Grand Bazaar and Cemberlitas along the way, so the walk naturally strings two or three stops together.",
+            "You can also take the T1 tram one stop from Sultanahmet to Eminonu, which drops you right at the bazaar entrance. The walk downhill is easy and the tram ride back uphill saves your legs.",
+          ],
+        },
+        tips: {
+          heading: "Shopping Tips",
+          items: [
+            "Most spice shops will package and vacuum seal your purchases. If you are flying home, ask for vacuum packing to protect your bags.",
+            "Prices are often fixed but a friendly request for a discount on a larger purchase is rarely refused.",
+            "The bazaar is busiest on Saturday mornings. Arrive early or visit on a weekday for a calmer experience.",
+            "Opening hours can vary by season and public holiday. Check the official website before your visit.",
+            "Combine your trip with a walk along the Galata Bridge or a ferry crossing to Kadikoy for a full day on the water.",
+          ],
+        },
+        faq: [
+          {
+            q: "How far is the Spice Bazaar from Emerald Mansion?",
+            a: "About 1.2 kilometers. The downhill walk takes around 15 minutes or you can take the T1 tram one stop to Eminonu.",
+          },
+          {
+            q: "What is the best thing to buy at the Spice Bazaar?",
+            a: "Turkish delight, saffron, sumac, isot pepper and quality dried fruits are the most popular purchases. The nuts and honeys are also excellent.",
+          },
+          {
+            q: "Is the Spice Bazaar open every day?",
+            a: "It is open most days but hours can vary by season and public holidays. Check the official website for current opening times.",
+          },
+          {
+            q: "Why is it called the Egyptian Bazaar?",
+            a: "The bazaar was partly funded by revenues from Egypt, then an Ottoman province. The name stuck even after the original financial arrangement ended.",
+          },
+        ],
+      },
+      tr: {
+        name: "Mısır Çarşısı",
+        heroAlt: "Eminönü'ndeki Mısır Çarşısı'nın renkli baharat tezgahları",
+        tagline: "Eminönü'nün kalbinde dört yüzyıllık aromatik miras",
+        intro: [
+          "Mısır Çarşısı, 1660'lı yıllarda Eminönü'ndeki Yeni Cami külliyesinin bir parçası olarak inşa edildi. Adını başlangıçta yapımını finanse eden Mısır gümrük gelirlerinden alır. Dört yüzyıldır İstanbul'un en kokulu çarşısıdır. L biçimli tonozlu çatısı altında tüccarlar baharatlar, kuru otlar, kuruyemişler, lokum ve yerel ürünler satmaya devam eder.",
+          "Bir ziyaret burada tam anlamıyla çok duyulu bir deneyimdir. Göz alıcı baharat kuleleri, kuru incir ve kayısı dizileri, fıstık ve ceviz kaseler ve her lezzette rafları dolduran lokumlar dikkatinizi çeker. Kapalıçarşı'dan daha küçük ve daha ulaşılabilir olan Mısır Çarşısı, keyifli bir sabah durağıdır.",
+        ],
+        whatToSee: {
+          heading: "Nelere Bakmalı",
+          items: [
+            {
+              title: "Baharat Tezgahları",
+              text: "Safran, sumak, kuru nane, isot biberi ve onlarca baharat karışımı istediğiniz gramajda satılır. Satıcılar almadan önce koklayıp denemenize memnuniyetle izin verir.",
+            },
+            {
+              title: "Lokum",
+              text: "Çarşıda şehrin en iyi lokumcularından bazıları bulunur. Çift kavrulmuş fıstıklı, gül ve nar aromalı çeşitler mutlaka tatmaya değer.",
+            },
+            {
+              title: "Kuruyemiş, Kuru Meyve ve Bal",
+              text: "Badem, fındık, ceviz, kuru incir ve farklı kalitelerde Türk balı tezgahlarda sıralanır. Taşıması kolay ve güzel hediyeler bunlar.",
+            },
+            {
+              title: "Eminönü Sahili",
+              text: "Çarşıdan çıktıktan sonra iki dakika yürüyerek Galata Köprüsü'ne ulaşın. Arkasında Yeni Cami ile Haliç manzarası İstanbul'un en çok fotoğraflanan görünümlerindendir.",
+            },
+          ],
+        },
+        fromHotel: {
+          heading: "Emerald Mansion'dan Ulaşım",
+          paragraphs: [
+            "Mısır Çarşısı, Emerald Mansion'a yaklaşık 1,2 kilometre mesafededir. Divanyolu ve ardından Yeniceriler Caddesi boyunca Eminönü'ne yokuş aşağı 15 dakikalık bir yürüyüşle ulaşılır. Yol üzerinde Kapalıçarşı ve Çemberlitaş geçtiğinden bu yürüyüş doğal olarak birkaç durağı birbirine bağlar.",
+            "T1 tramvayıyla Sultanahmet'ten Eminönü'ne bir durak giderek de ulaşabilirsiniz. Yokuş aşağı yürümek kolaydır, geri dönüşte tramvay bacaklarınızı dinlendirir.",
+          ],
+        },
+        tips: {
+          heading: "Alışveriş İpuçları",
+          items: [
+            "Baharat dükkanlarının çoğu satın aldığınız ürünleri paketleyip vakumlar. Uçakla dönüyorsanız çantanızı korumak için vakumlu paket isteyin.",
+            "Fiyatlar genellikle sabittir ancak büyük miktarda alımlarda dostanece indirim istemek nadiren geri çevrilir.",
+            "Çarşı cumartesi sabahları en kalabalık olur. Daha sakin bir deneyim için erken saatlerde veya hafta içi gelin.",
+            "Açılış saatleri mevsime ve resmi tatillere göre değişebilir. Ziyaretinizden önce resmi web sitesini kontrol edin.",
+            "Galata Köprüsü boyunca bir yürüyüşü veya Kadıköy'e feribot geçişini ekleyerek tam bir su kenarı günü geçirebilirsiniz.",
+          ],
+        },
+        faq: [
+          {
+            q: "Mısır Çarşısı Emerald Mansion'a ne kadar uzaklıkta?",
+            a: "Yaklaşık 1,2 kilometre. Yokuş aşağı yürüyüş 15 dakika sürer ya da T1 tramvayıyla Eminönü'ne bir duraksınız.",
+          },
+          {
+            q: "Mısır Çarşısı'ndan ne alınır?",
+            a: "Lokum, safran, sumak, isot biberi ve kaliteli kuru meyveler en çok tercih edilen alışverişlerdir. Kuruyemişler ve ballar da mükemmeldir.",
+          },
+          {
+            q: "Mısır Çarşısı her gün açık mı?",
+            a: "Büyük çoğunlukla açıktır ancak saatler mevsime ve resmi tatillere göre değişebilir. Güncel saatler için resmi web sitesini kontrol edin.",
+          },
+          {
+            q: "Neden Mısır Çarşısı deniyor?",
+            a: "Çarşı kısmen o dönemde Osmanlı eyaleti olan Mısır'dan gelen gelirlerle inşa edildi. Bu isim finansman düzenlemesi sona erdikten sonra da kaldı.",
+          },
+        ],
+      },
+    },
+  },
+  {
+    key: "galata-tower",
+    image: galataTowerImg,
+    distance: "2.8 km",
+    walkTime: { en: "30 min (Tram)", tr: "30 dk (Tramvay)" },
+    copy: {
+      en: {
+        name: "Galata Tower",
+        heroAlt: "Galata Tower rising above the rooftops of the Beyoglu district in Istanbul",
+        tagline: "Six hundred years of skyline above the Golden Horn",
+        intro: [
+          "Galata Tower was built by the Genoese in 1348 as the tallest structure in their trading colony on the northern shore of the Golden Horn. Standing 66 meters tall, it anchored what was then a walled city-within-a-city that the Ottomans would later absorb into a growing Istanbul. The Genoese called it the Tower of Christ. Over the centuries it served as a watchtower, a prison and a fire lookout before becoming one of the most recognized landmarks on the Istanbul skyline.",
+          "Today the tower offers one of the finest 360-degree panoramas in the city. From the viewing gallery you can trace the curve of the Bosphorus, pick out the minarets of the Old City across the Golden Horn, and on clear days see as far as the Princes Islands in the Sea of Marmara. The Galata neighborhood below is one of Istanbul's most rewarding areas to explore on foot.",
+        ],
+        whatToSee: {
+          heading: "What to See",
+          items: [
+            {
+              title: "The Viewing Gallery",
+              text: "The open balcony wraps around the top of the tower and gives an unobstructed panorama over both the European and Asian sides of the city.",
+            },
+            {
+              title: "The Galata Neighborhood",
+              text: "The streets around the tower are full of independent coffee shops, wine bars, bookshops and antique dealers. Allow at least an hour to wander after you descend.",
+            },
+            {
+              title: "Galata Bridge",
+              text: "A 10 minute walk downhill from the tower leads to the Galata Bridge, where fishermen line both sides and the view back toward the Old City is stunning.",
+            },
+            {
+              title: "The Interior Exhibitions",
+              text: "The tower houses a small exhibition on its history and on the legend of Hezarfen Ahmed Celebi, said to have glided from its top across the Bosphorus in the 17th century.",
+            },
+          ],
+        },
+        fromHotel: {
+          heading: "Getting There from Emerald Mansion",
+          paragraphs: [
+            "Galata Tower is about 2.8 kilometers from Emerald Mansion. The most comfortable route is to take the T1 tram from Sultanahmet toward Kabatas and ride to the Karakoy stop, then walk uphill through the Galata neighborhood for about 10 minutes. The total journey takes roughly 30 minutes.",
+            "Alternatively you can walk the whole way downhill to Eminonu and cross the Galata Bridge on foot, which is a scenic approach. Coming back, the tram from Karakoy to Sultanahmet is quick and simple.",
+          ],
+        },
+        tips: {
+          heading: "Visiting Tips",
+          items: [
+            "Tickets sell out in high season. Book online through the official website to guarantee your slot.",
+            "Entry fees and opening hours change through the year. Check the official website before your visit.",
+            "The viewing gallery is narrow and the height can be dizzying. Take your time on the way around.",
+            "Late afternoon light falls beautifully over the Golden Horn from the tower. Sunset is the most popular time and the most crowded.",
+            "The Galata neighborhood rewards slow walking. Leave time after your visit to explore the streets below.",
+          ],
+        },
+        faq: [
+          {
+            q: "How far is Galata Tower from Emerald Mansion?",
+            a: "About 2.8 kilometers. The tram from Sultanahmet to Karakoy followed by a short uphill walk takes around 30 minutes.",
+          },
+          {
+            q: "Do I need to book tickets in advance for Galata Tower?",
+            a: "In high season tickets can sell out. Booking online through the official website is strongly recommended.",
+          },
+          {
+            q: "Who built Galata Tower?",
+            a: "It was built by the Genoese in 1348 as part of their trading colony on the northern shore of the Golden Horn.",
+          },
+          {
+            q: "What is the best time of day to visit Galata Tower?",
+            a: "Late afternoon is popular for the warm light over the Golden Horn. Morning visits are quieter and the views are just as rewarding.",
+          },
+        ],
+      },
+      tr: {
+        name: "Galata Kulesi",
+        heroAlt: "Beyoglu semtinin çatıları üzerinde yükselen Galata Kulesi",
+        tagline: "Haliç üzerinde altı yüz yıllık siluet",
+        intro: [
+          "Galata Kulesi, 1348 yılında Cenevizliler tarafından Haliç'in kuzey kıyısındaki ticaret kolonisinin en yüksek yapısı olarak inşa edildi. 66 metre yüksekliğiyle o dönemde surlarla çevrili ayrı bir şehir olan Galata'nın simgesiydi. Cenevizliler buna Christea Turris, yani Mesih Kulesi diyordu. Osmanlılar Galata'yı büyüyen İstanbul'a kattıktan sonra kule yüzyıllar boyunca gözetleme noktası, hapishane ve yangın kulesi olarak kullanıldı.",
+          "Bugün kule şehrin en güzel 360 derece panoramalarından birini sunuyor. Seyir terasından Boğaz'ın kıvrımını izleyebilir, Haliç'in karşısındaki Tarihi Yarımada'nın minarelerini seçebilir ve açık havalarda Marmara Denizi'ndeki Adalar'ı görebilirsiniz. Kulenin hemen altındaki Galata mahallesi ise İstanbul'un yürüyerek keşfetmenin en keyifli olduğu bölgelerinden biridir.",
+        ],
+        whatToSee: {
+          heading: "Görülecekler",
+          items: [
+            {
+              title: "Seyir Terası",
+              text: "Kulenin tepesini çevreleyen açık balkon, şehrin hem Avrupa hem Asya yakasına engelsiz panorama sunar.",
+            },
+            {
+              title: "Galata Mahallesi",
+              text: "Kulenin çevresindeki sokaklar bağımsız kahvehaneler, şarap barları, kitapçılar ve antikacılarla doludur. Inişten sonra gezmek için en az bir saat ayırın.",
+            },
+            {
+              title: "Galata Köprüsü",
+              text: "Kuleden yokuş aşağı 10 dakikalık yürüyüş sizi Galata Köprüsü'ne ulaştırır. Köprünün iki yanında balıkçılar sıralanır ve Tarihi Yarımada'ya doğru manzara muhteşemdir.",
+            },
+            {
+              title: "İç Mekan Sergileri",
+              text: "Kule, tarihi ve 17. yüzyılda Boğaz'ı süzülerek geçtiği söylenen Hezarfen Ahmed Çelebi efsanesine dair küçük bir sergi barındırır.",
+            },
+          ],
+        },
+        fromHotel: {
+          heading: "Emerald Mansion'dan Ulaşım",
+          paragraphs: [
+            "Galata Kulesi, Emerald Mansion'a yaklaşık 2,8 kilometre mesafededir. En rahat yol T1 tramvayıyla Sultanahmet'ten Karaköy durağına gitmek ve ardından Galata mahallesinde yaklaşık 10 dakika yokuş yukarı yürümektir. Toplam yolculuk yaklaşık 30 dakika sürer.",
+            "Alternatif olarak tüm yolu yürüyerek Eminönü'ne inebilir ve Galata Köprüsü'nü yürüyerek geçebilirsiniz. Dönüşte Karaköy'den Sultanahmet'e tramvay hızlı ve pratiktir.",
+          ],
+        },
+        tips: {
+          heading: "Ziyaret İpuçları",
+          items: [
+            "Yoğun sezonda biletler tükenmektedir. Yerinizi garantilemek için resmi web sitesinden önceden satın alın.",
+            "Giriş ücretleri ve açılış saatleri yıl içinde değişebilir. Ziyaretinizden önce resmi web sitesini kontrol edin.",
+            "Seyir terası dardır ve yükseklik baş döndürebilir. Teras boyunca ilerlerken acele etmeyin.",
+            "Öğleden sonra ışığı Haliç üzerinde güzelce yayılır. Gün batımı en popüler ve en kalabalık saattir.",
+            "Galata mahallesi yavaş yürüyüşü ödüller. Ziyaretin ardından aşağıdaki sokakları keşfetmek için zaman bırakın.",
+          ],
+        },
+        faq: [
+          {
+            q: "Galata Kulesi Emerald Mansion'a ne kadar uzaklıkta?",
+            a: "Yaklaşık 2,8 kilometre. Sultanahmet'ten tramvayla Karaköy'e gidip kısa bir yokuş yukarı yürüyüşle toplam yaklaşık 30 dakikada ulaşılır.",
+          },
+          {
+            q: "Galata Kulesi için bilet önceden alınmalı mı?",
+            a: "Yoğun sezonda biletler tükenmektedir. Resmi web sitesinden önceden satın almak güçlü tavsiye edilir.",
+          },
+          {
+            q: "Galata Kulesi'ni kim yaptırdı?",
+            a: "Kule, 1348 yılında Cenevizliler tarafından Haliç'in kuzey kıyısındaki ticaret kolonisinin bir parçası olarak inşa edildi.",
+          },
+          {
+            q: "Galata Kulesi'ni ziyaret etmek için en iyi saat hangisi?",
+            a: "Öğleden sonra Haliç üzerindeki sıcak ışık için popülerdir. Sabah ziyaretleri daha sakin olur ve manzara aynı güzelliktedir.",
+          },
+        ],
+      },
+    },
+  },
+  {
+    key: "dolmabahce-palace",
+    image: dolmabahcePalaceImg,
+    distance: "5.5 km",
+    walkTime: { en: "35 min (Tram)", tr: "35 dk (Tramvay)" },
+    copy: {
+      en: {
+        name: "Dolmabahce Palace",
+        heroAlt: "Dolmabahce Palace on the Bosphorus shore in Istanbul",
+        tagline: "The grandest palace of the Ottoman westernization era",
+        intro: [
+          "Dolmabahce Palace was built between 1843 and 1856 for Sultan Abdulmecid I on reclaimed land along the Bosphorus. It replaced Topkapi as the main imperial residence and was designed to signal Ottoman modernity to European powers. The result is an extraordinary blend of Baroque, Rococo and Neoclassical styles wrapped around a 600-meter Bosphorus facade, the longest palace facade of any palace in the world.",
+          "Inside, the scale is staggering. The ceremonial hall alone holds the largest Bohemian crystal chandelier ever made, a gift from Queen Victoria weighing 4.5 tons. The palace served as an administrative center and imperial home through the end of the Ottoman Empire and was later used by Mustafa Kemal Ataturk, who died here in 1938. Both histories are visible in its rooms.",
+        ],
+        whatToSee: {
+          heading: "What to See",
+          items: [
+            {
+              title: "The Ceremonial Hall",
+              text: "The Muayede Salonu is the centerpiece of the palace, dominated by a 4.5-ton Bohemian crystal chandelier and a 600 square meter Hereke carpet.",
+            },
+            {
+              title: "The Harem and Selamlik",
+              text: "The palace is divided into the Harem for the imperial family and the Selamlik for official functions. Both sections are included in the standard visit.",
+            },
+            {
+              title: "The Bosphorus Garden and Gate",
+              text: "The ornate waterfront gate and the formal gardens along the shore offer some of the best views of the Bosphorus from ground level.",
+            },
+            {
+              title: "Ataturk's Rooms",
+              text: "The rooms used by Ataturk during his stays are preserved as he left them. The clock on his bedside table is stopped at 9:05, the time of his death on 10 November 1938.",
+            },
+          ],
+        },
+        fromHotel: {
+          heading: "Getting There from Emerald Mansion",
+          paragraphs: [
+            "Dolmabahce Palace is about 5.5 kilometers from Emerald Mansion. Take the T1 tram from Sultanahmet toward Kabatas, ride to the Kabatas terminus, and the palace entrance is a short walk along the Bosphorus shore. The journey takes around 35 minutes.",
+            "The palace requires a guided tour as visitors cannot explore independently. Tours depart regularly and the duration is typically one to one and a half hours. Plan a half day for the visit including travel time.",
+          ],
+        },
+        tips: {
+          heading: "Visiting Tips",
+          items: [
+            "Entry is by guided tour only. Tours run throughout the day but groups are limited in size, so booking online through the official website is recommended.",
+            "Ticket prices, tour schedules and opening days change seasonally. Check the official website before your visit.",
+            "Photography is restricted inside the palace. Confirm the current rules at the ticket office.",
+            "The palace is closed on certain days of the week. Check the official website for the current schedule.",
+            "Combine your visit with a walk along the Bosphorus shore toward Besiktas for a full afternoon by the water.",
+          ],
+        },
+        faq: [
+          {
+            q: "How far is Dolmabahce Palace from Emerald Mansion?",
+            a: "About 5.5 kilometers. The T1 tram from Sultanahmet to the Kabatas terminus followed by a short walk along the shore takes around 35 minutes.",
+          },
+          {
+            q: "Can you visit Dolmabahce Palace independently?",
+            a: "No. All visits are guided tours that depart throughout the day. Book through the official website to secure your spot.",
+          },
+          {
+            q: "How long does a visit to Dolmabahce Palace take?",
+            a: "Guided tours typically last one to one and a half hours. Allow a full half day including travel from Sultanahmet.",
+          },
+          {
+            q: "What is the most famous room in Dolmabahce Palace?",
+            a: "The Ceremonial Hall, with its 4.5-ton Bohemian crystal chandelier gifted by Queen Victoria and its enormous Hereke carpet, is the most celebrated space in the palace.",
+          },
+        ],
+      },
+      tr: {
+        name: "Dolmabahçe Sarayı",
+        heroAlt: "Boğaz kıyısındaki Dolmabahçe Sarayı",
+        tagline: "Osmanlı batılılaşma döneminin en görkemli sarayı",
+        intro: [
+          "Dolmabahçe Sarayı, Sultan Abdülmecid I için 1843 ile 1856 yılları arasında Boğaz kıyısında doldurularak elde edilen arazi üzerine inşa edildi. Topkapı Sarayı'nın yerini alarak ana saray konutu oldu ve Avrupa güçlerine Osmanlı modernliğini göstermek amacıyla tasarlandı. Sonuç dünyanın en uzun saray cephesi olan 600 metrelik Boğaz yüzüne sahip, Barok, Rokoko ve Neoklasik üslupların olağanüstü bir bileşimidir.",
+          "İçeride ölçek şaşırtıcıdır. Tören salonu tek başına Kraliçe Victoria'nın hediyesi olan 4,5 ton ağırlığında dünyanın en büyük Bohemya kristal avizesini barındırır. Saray Osmanlı İmparatorluğu'nun sonuna kadar yönetim merkezi ve saray konutu olarak hizmet verdi ve ardından Mustafa Kemal Atatürk tarafından kullanıldı. Atatürk 1938'de burada hayatını kaybetti. Her iki dönemin izleri odalarda hala görülebilir.",
+        ],
+        whatToSee: {
+          heading: "Görülecekler",
+          items: [
+            {
+              title: "Muayede Salonu",
+              text: "Sarayın merkezindeki bu salon, 4,5 tonluk Bohemya kristal avize ve 600 metrekarelik Hereke halısıyla baş döndürür.",
+            },
+            {
+              title: "Harem ve Selamlık",
+              text: "Saray, hanedan ailesinin yaşadığı Harem ve resmi törenler için kullanılan Selamlık olarak ikiye ayrılır. Her iki bölüm standart ziyarete dahildir.",
+            },
+            {
+              title: "Boğaz Bahçesi ve Kapısı",
+              text: "İşlemeli sahil kapısı ve kıyı boyunca uzanan düzenli bahçeler, Boğaz'ın zemin seviyesinden en güzel manzaralarını sunar.",
+            },
+            {
+              title: "Atatürk'ün Odaları",
+              text: "Atatürk'ün kullandığı odalar olduğu gibi korunmuştur. Başucundaki tablonun saati, 10 Kasım 1938'deki vefatının saati olan 9:05'te durdurulmuştur.",
+            },
+          ],
+        },
+        fromHotel: {
+          heading: "Emerald Mansion'dan Ulaşım",
+          paragraphs: [
+            "Dolmabahçe Sarayı, Emerald Mansion'a yaklaşık 5,5 kilometre mesafededir. T1 tramvayıyla Sultanahmet'ten Kabataş son durağına kadar gidin ve Boğaz kıyısı boyunca kısa bir yürüyüşle saray girişine ulaşın. Yolculuk yaklaşık 35 dakika sürer.",
+            "Saray bağımsız ziyarete kapalıdır ve rehberli tur zorunludur. Turlar gün boyunca düzenli aralıklarla kalkar, süresi genellikle bir ile bir buçuk saat arasındadır. Ulaşım dahil yarım gün planlayın.",
+          ],
+        },
+        tips: {
+          heading: "Ziyaret İpuçları",
+          items: [
+            "Giriş yalnızca rehberli turla mümkündür. Gruplar sınırlı sayıda kabul edildiğinden resmi web sitesinden önceden rezervasyon yapılması önerilir.",
+            "Bilet ücretleri, tur saatleri ve açık günler mevsime göre değişir. Ziyaretinizden önce resmi web sitesini kontrol edin.",
+            "Saray içinde fotoğraf çekmek kısıtlıdır. Güncel kuralları gişede teyit edin.",
+            "Saray haftanın belirli günlerinde kapalıdır. Güncel programı resmi web sitesinden öğrenin.",
+            "Ziyaretinizi Beşiktaş yönünde Boğaz kıyısında bir yürüyüşle tamamlayarak su kenarında dolu bir öğleden sonra geçirebilirsiniz.",
+          ],
+        },
+        faq: [
+          {
+            q: "Dolmabahçe Sarayı Emerald Mansion'a ne kadar uzaklıkta?",
+            a: "Yaklaşık 5,5 kilometre. Sultanahmet'ten tramvayla Kabataş son durağına gidip kıyı boyunca kısa bir yürüyüş yaklaşık 35 dakika sürer.",
+          },
+          {
+            q: "Dolmabahçe Sarayı bağımsız gezilir mi?",
+            a: "Hayır. Ziyaretler yalnızca gün boyunca düzenli kalkan rehberli turlarla yapılır. Yerinizi güvence altına almak için resmi web sitesinden rezervasyon yapın.",
+          },
+          {
+            q: "Dolmabahçe Sarayı ziyareti ne kadar sürer?",
+            a: "Rehberli turlar genellikle bir ile bir buçuk saat sürer. Sultanahmet'ten ulaşım dahil yarım gün ayırın.",
+          },
+          {
+            q: "Dolmabahçe Sarayı'nın en ünlü odası hangisidir?",
+            a: "Kraliçe Victoria'nın hediyesi 4,5 tonluk Bohemya kristal avizesi ve devasa Hereke halısıyla Muayede Salonu sarayın en çok bilinen mekanıdır.",
           },
         ],
       },

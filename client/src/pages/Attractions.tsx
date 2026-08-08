@@ -13,6 +13,9 @@ const guideKeyByName: Record<string, GuideKey> = {
   "Grand Bazaar": "grand-bazaar",
   "Basilica Cistern": "basilica-cistern",
   "Topkapi Palace": "topkapi-palace",
+  "Spice Bazaar": "spice-bazaar",
+  "Galata Tower": "galata-tower",
+  "Dolmabahce Palace": "dolmabahce-palace",
 };
 
 export default function Attractions() {

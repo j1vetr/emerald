@@ -28,6 +28,9 @@ export const GUIDE_KEYS = [
   "grand-bazaar",
   "basilica-cistern",
   "topkapi-palace",
+  "spice-bazaar",
+  "galata-tower",
+  "dolmabahce-palace",
 ] as const;
 
 export type GuideKey = (typeof GUIDE_KEYS)[number];
@@ -38,6 +41,9 @@ export const guideSlugs: Record<GuideKey, Record<Lang, string>> = {
   "grand-bazaar": { en: "grand-bazaar", tr: "kapalicarsi" },
   "basilica-cistern": { en: "basilica-cistern", tr: "yerebatan-sarnici" },
   "topkapi-palace": { en: "topkapi-palace", tr: "topkapi-sarayi" },
+  "spice-bazaar": { en: "spice-bazaar", tr: "misir-carsisi" },
+  "galata-tower": { en: "galata-tower", tr: "galata-kulesi" },
+  "dolmabahce-palace": { en: "dolmabahce-palace", tr: "dolmabahce-sarayi" },
 };
 
 export function getGuidePath(key: GuideKey, lang: Lang): string {
@@ -273,6 +279,51 @@ export const pages: PageDef[] = [
     description: {
       en: "Visit Topkapi Palace, home of Ottoman sultans for 400 years. Courtyards, Harem, visiting tips and the 10 minute walk from Emerald Mansion in Sultanahmet.",
       tr: "Topkapı Sarayı rehberi. Avlular, Harem, ziyaret ipuçları ve Sultanahmet'teki Emerald Mansion'dan 10 dakikalık yürüyüş rotası.",
+    },
+  },
+  {
+    key: "guide:spice-bazaar",
+    paths: {
+      en: "/en/istanbul-guide/spice-bazaar/",
+      tr: "/tr/istanbul-rehberi/misir-carsisi/",
+    },
+    title: {
+      en: "Spice Bazaar Guide | Istanbul's Egyptian Bazaar from Sultanahmet",
+      tr: "Mısır Çarşısı Rehberi | Ziyaret İpuçları ve Ulaşım",
+    },
+    description: {
+      en: "Explore the Spice Bazaar in Istanbul. Spices, Turkish delight, local produce and how to reach Eminonu in 15 minutes on foot from Emerald Mansion in Sultanahmet.",
+      tr: "Mısır Çarşısı rehberi. Baharatlar, lokum, yerel ürünler ve Sultanahmet'teki Emerald Mansion'dan 15 dakikalık yürüyüşle Eminönü'ne ulaşım.",
+    },
+  },
+  {
+    key: "guide:galata-tower",
+    paths: {
+      en: "/en/istanbul-guide/galata-tower/",
+      tr: "/tr/istanbul-rehberi/galata-kulesi/",
+    },
+    title: {
+      en: "Galata Tower Guide | Visiting Tips & Views from Sultanahmet",
+      tr: "Galata Kulesi Rehberi | Ziyaret İpuçları ve Manzara",
+    },
+    description: {
+      en: "Visit Galata Tower in Istanbul. History, panoramic views over the Golden Horn and the Bosphorus, and how to get there from Emerald Mansion in Sultanahmet.",
+      tr: "Galata Kulesi rehberi. Tarihçe, Haliç ve Boğaz üzerindeki panoramik manzara ve Sultanahmet'teki Emerald Mansion'dan ulaşım ipuçları.",
+    },
+  },
+  {
+    key: "guide:dolmabahce-palace",
+    paths: {
+      en: "/en/istanbul-guide/dolmabahce-palace/",
+      tr: "/tr/istanbul-rehberi/dolmabahce-sarayi/",
+    },
+    title: {
+      en: "Dolmabahce Palace Guide | Visiting Tips from Istanbul",
+      tr: "Dolmabahçe Sarayı Rehberi | Ziyaret İpuçları ve Ulaşım",
+    },
+    description: {
+      en: "Visit Dolmabahce Palace on the Bosphorus. The grandest Ottoman palace of the 19th century, its crystal chandelier, the Harem and how to get there from Sultanahmet.",
+      tr: "Dolmabahçe Sarayı rehberi. 19. yüzyılın en görkemli Osmanlı sarayı, kristal avizesi, Harem ve Sultanahmet'ten ulaşım ipuçları.",
     },
   },
   {

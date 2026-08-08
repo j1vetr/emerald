@@ -1,0 +1,886 @@
+# EMERALD MANSION – P3 LLM/AI DISCOVERABILITY + ROOT REDIRECT FIX
+
+Website:
+
+https://emeraldmansion.com/
+
+Bu görev çok DAR KAPSAMLIDIR.
+
+Mevcut SEO sistemi zaten çalışıyor ve production üzerinde test edildi.
+
+Bu görevde SADECE şu iki ana işi yap:
+
+1. AI / LLM discoverability katmanını ekle ve doğrula.
+2. Root `/` URL'sinin `/en/` yönlendirmesini 302'den permanent redirect'e çevir.
+
+BUNLARIN DIŞINDA mevcut SEO mimarisini değiştirme.
+
+---
+
+# CRITICAL: MEVCUT ÇALIŞAN SEO'YA DOKUNMA
+
+Şu anda production'da çalışan aşağıdaki sistemleri değiştirme:
+
+* `/en/` ve `/tr/` URL architecture
+* mevcut title'lar
+* meta descriptions
+* H1'ler
+* canonical
+* hreflang
+* x-default
+* Hotel schema
+* HotelRoom schema
+* BreadcrumbList
+* FAQPage
+* TouristAttraction schema
+* room content
+* guide content
+* internal linking
+* sitemap architecture
+* existing 301 redirects
+* 404 behavior
+* `/dacegug/` 410 behavior
+* image SEO
+* prerender system
+* SSR/prerender architecture
+* navigation
+* design
+* booking integration
+* existing URLs
+
+Mevcut sistem production'da çalışıyor.
+
+Bu görev mevcut SEO altyapısını refactor etme görevi değildir.
+
+---
+
+# TASK 1 – ROOT 302 → 301 PERMANENT REDIRECT
+
+Production üzerinde şu davranış mevcut:
+
+Request:
+
+https://emeraldmansion.com/
+
+Current response:
+
+HTTP 302 Found
+
+Location: /en/
+
+Bu davranışı değiştir.
+
+Root `/` kalıcı olarak English homepage `/en/` URL'sine yönleniyor.
+
+Bu nedenle:
+
+https://emeraldmansion.com/
+
+şu response'u vermeli:
+
+HTTP 301 Moved Permanently
+
+Location: /en/
+
+Tercihen mevcut Express redirect architecture içerisinde 301 kullan.
+
+Örneğin mevcut framework mantığına uygun biçimde:
+
+res.redirect(301, "/en/")
+
+benzeri bir implementation.
+
+Framework'e uygun gerçek yöntem neyse onu kullan.
+
+---
+
+# 301 TERCİHİ
+
+Bu görevde 301 kullan.
+
+308'e geçmek için ayrıca mimari değişiklik yapma.
+
+Hedef:
+
+/
+→ 301
+→ /en/
+
+---
+
+# REDIRECT CHAIN OLUŞTURMA
+
+Şunu oluşturma:
+
+/
+→ 301 başka URL
+→ 301 /en/
+
+Tek hop olmalı:
+
+/
+→ /en/
+
+---
+
+# ROOT REDIRECT SON TEST
+
+Implementation sonrası şu komut ile test et:
+
+curl -I https://emeraldmansion.com/
+
+Beklenen:
+
+HTTP/1.1 301 Moved Permanently
+
+ve:
+
+Location: /en/
+
+Daha sonra:
+
+curl -IL https://emeraldmansion.com/
+
+zincirini kontrol et.
+
+Beklenen mantık:
+
+301
+→
+200
+
+Ek redirect olmamalı.
+
+---
+
+# EXISTING REDIRECTS'E DOKUNMA
+
+Örneğin production'da şu sistem zaten doğru çalışıyor:
+
+/odalar/superior-king-bed
+→ 301
+→ /tr/odalar/superior-king/
+
+www
+→ 301
+→ non-www
+
+HTTP
+→ 301
+→ HTTPS
+
+Bunları refactor etme.
+
+Yalnızca root `/` 302 davranışını düzelt.
+
+---
+
+# TASK 2 – P3 AI / LLM DISCOVERABILITY
+
+Emerald Mansion için temiz ve ölçülü bir AI/LLM discoverability katmanı oluştur.
+
+Ama bunu:
+
+"Google AI SEO hack"
+
+veya:
+
+"LLM ranking hack"
+
+olarak değerlendirme.
+
+Google Search'in llms.txt kullanmadığını dikkate al.
+
+llms.txt burada diğer LLM/agent sistemlerine Emerald Mansion'ın önemli public kaynaklarını düzenli şekilde göstermek için kullanılacaktır.
+
+---
+
+# CREATE /llms.txt
+
+Root üzerinde oluştur:
+
+https://emeraldmansion.com/llms.txt
+
+Dosya gerçek plain-text / Markdown formatında accessible olmalı.
+
+HTTP status:
+
+200
+
+Encoding:
+
+UTF-8
+
+Tercih edilen Content-Type:
+
+text/plain; charset=utf-8
+
+---
+
+# LLMS.TXT FORMAT
+
+Current llms.txt proposal formatına uygun oluştur.
+
+Temel yapı:
+
+# Emerald Mansion Hotel
+
+> Concise English description.
+
+Optional concise explanatory text.
+
+## Main Pages
+
+* [Title](canonical URL): concise description
+
+## Rooms
+
+* [...]
+
+## Location & Sultanahmet
+
+* [...]
+
+## Istanbul Guides
+
+* [...]
+
+## Turkish
+
+* [...]
+
+## Optional
+
+* [...]
+
+H1 sadece site/brand adı olacak.
+
+Blockquote siteyi kısa ve factual şekilde açıklamalı.
+
+---
+
+# LLMS.TXT BRAND DESCRIPTION
+
+Örnek başlangıç:
+
+# Emerald Mansion Hotel
+
+> Emerald Mansion is a 16-room boutique hotel in Sultanahmet, Istanbul, within walking distance of major historic attractions including Hagia Sophia, the Blue Mosque and Basilica Cistern.
+
+Ancak "16-room" dahil bütün bilgiler mevcut verified site datasından alınmalı.
+
+Yeni bilgi uydurma.
+
+---
+
+# LLMS.TXT MAIN PAGES
+
+En az şu canonical URL'leri değerlendir:
+
+https://emeraldmansion.com/en/
+
+https://emeraldmansion.com/en/rooms/
+
+https://emeraldmansion.com/en/location/
+
+https://emeraldmansion.com/en/sultanahmet/
+
+https://emeraldmansion.com/en/istanbul-guide/
+
+https://emeraldmansion.com/en/about/
+
+https://emeraldmansion.com/en/contact/
+
+Gerçek route registry'de olmayan URL ekleme.
+
+Önce mevcut SEO registry'den doğrula.
+
+---
+
+# LLMS.TXT ROOMS
+
+Mevcut English canonical room URLs kullanılmalı.
+
+Örneğin:
+
+Comfort Single
+
+Comfort Double
+
+Superior King
+
+Junior Suite King
+
+Junior Suite Twin
+
+Family Suite
+
+Her biri mevcut canonical English URL'sine link vermeli.
+
+Descriptions kısa ve factual olmalı.
+
+Fake amenity veya room feature ekleme.
+
+---
+
+# LLMS.TXT LOCATION
+
+Önemli location/entity sayfalarını ekle:
+
+English location page
+
+English Sultanahmet page
+
+English Istanbul Guide hub
+
+Bunlar Emerald Mansion'ın Sultanahmet / Istanbul relationship'ini açıklayan primary pages olarak işaretlenebilir.
+
+---
+
+# LLMS.TXT ISTANBUL GUIDES
+
+Mevcut 5 gerçek English guide URL'sini ekle:
+
+* Hagia Sophia
+* Blue Mosque
+* Grand Bazaar
+* Basilica Cistern
+* Topkapi Palace
+
+Canonical URL'leri SEO registry'den al.
+
+URL'leri elle tahmin edip duplicate üretme.
+
+---
+
+# TURKISH SECTION
+
+Türkçe site de mevcut olduğu için önemli Turkish canonical URLs için ayrı section ekle.
+
+Örneğin:
+
+## Turkish
+
+* Turkish Homepage
+* Rooms
+* Location
+* Sultanahmet
+* Istanbul Guide
+
+İstersen tüm individual Turkish guide'ları burada tekrar etmek yerine yalnızca ana Turkish hubs kullan.
+
+Dosyayı gereksiz uzatma.
+
+---
+
+# LLMS.TXT CURATED OLMALI
+
+Tüm sitemap'i llms.txt içerisine kopyalama.
+
+42 URL'nin tamamını sırf sitemap'te var diye ekleme.
+
+Önemli:
+
+* homepage
+* rooms hub
+* primary room pages
+* location
+* Sultanahmet
+* guide hub
+* strongest guide pages
+* about
+* contact
+
+gibi kaynakları seç.
+
+Amaç curated context sunmak.
+
+---
+
+# NO FAKE LLM CONTENT
+
+llms.txt içerisinde yeni marketing claims oluşturma.
+
+Şunları yalnızca site datasında doğrulanıyorsa kullan:
+
+* room count
+* distances
+* amenities
+* free transfer
+* opening/reception details
+* awards
+* ratings
+* review count
+* pricing
+* "luxury"
+* "best"
+* "number one"
+* airport transfer
+* concierge
+
+Third-party rating scrape etme.
+
+---
+
+# CANONICAL URLS ONLY
+
+llms.txt yalnızca preferred canonical URL'lere link versin.
+
+Şunları kullanma:
+
+* www
+* HTTP
+* redirecting legacy URLs
+* old `/odalar/...`
+* query parameters
+* booking engine duplicates
+* `/dacegug/`
+* staging
+* Replit preview URLs
+
+---
+
+# DO NOT CREATE llms-full.txt UNLESS NEEDED
+
+Bu görev kapsamında gereksiz yere:
+
+/llms-full.txt
+
+oluşturma.
+
+Önce yalnızca temiz:
+
+/llms.txt
+
+yeterli.
+
+---
+
+# DO NOT CREATE DUPLICATE MARKDOWN PAGES
+
+Şu aşamada:
+
+/en/index.md
+
+/en/rooms/index.md
+
+veya her HTML sayfanın `.md` versiyonunu oluşturma.
+
+Bu görev yalnızca `/llms.txt` için.
+
+Duplicate content veya bakım yükü yaratma.
+
+---
+
+# GOOGLE CLAIMS
+
+Kod veya rapor içerisinde:
+
+"llms.txt improves Google rankings"
+
+"llms.txt helps Google AI Overviews"
+
+"llms.txt is required for AI Mode"
+
+gibi iddialarda bulunma.
+
+Bunlar doğru değildir.
+
+Google Search mevcut SEO HTML'ini kullanmaya devam eder.
+
+---
+
+# OAI-SEARCHBOT AUDIT
+
+ChatGPT Search discovery açısından OAI-SearchBot erişimini kontrol et.
+
+Mevcut robots.txt:
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://emeraldmansion.com/sitemap.xml
+
+Bu policy public pages açısından OAI-SearchBot'u engellemiyor olmalı.
+
+Bunu doğrula.
+
+---
+
+# ROBOTS.TXT'I GEREKSİZ DEĞİŞTİRME
+
+Mevcut:
+
+User-agent: *
+Allow: /
+
+zaten OAI-SearchBot için public content'e izin veriyorsa ayrıca:
+
+User-agent: OAI-SearchBot
+Allow: /
+
+satırı eklemek zorunda değilsin.
+
+Redundant configuration oluşturma.
+
+Yalnızca gerçekten gerekiyor ise değiştir.
+
+Ana kural:
+
+OAI-SearchBot public SEO pages'e erişebilmeli.
+
+---
+
+# OAI-SEARCHBOT HTTP TEST
+
+Mümkünse şu tarz request ile test et:
+
+curl -I -A "OAI-SearchBot" https://emeraldmansion.com/en/
+
+ve:
+
+curl -I -A "OAI-SearchBot" https://emeraldmansion.com/en/rooms/superior-king/
+
+Beklenen:
+
+200
+
+veya normal canonical redirect sonrasında 200.
+
+Şunlar olmamalı:
+
+403
+
+401
+
+429
+
+CAPTCHA
+
+JS challenge
+
+bot block page
+
+---
+
+# CDN / WAF
+
+Proje katmanında Cloudflare/WAF configuration erişilebilir değilse bunu değiştirmeye çalışma.
+
+Sadece test sonucunu final raporda belirt.
+
+OAI-SearchBot HTTP request server tarafından kabul ediliyorsa:
+
+PASS
+
+olarak raporla.
+
+---
+
+# GPTBOT
+
+GPTBot'u OAI-SearchBot ile karıştırma.
+
+Bu görev kapsamında GPTBot policy'sini SEO için değiştirme.
+
+Mevcut robots policy'sini raporla.
+
+Training preference ayrı bir business decision'dır.
+
+---
+
+# GOOGLE-EXTENDED
+
+Google-Extended policy'sini Google Search crawling ile karıştırma.
+
+Bu görev kapsamında Google-Extended için özel Allow/Disallow ekleme.
+
+Yalnızca mevcut policy varsa raporla.
+
+---
+
+# DO NOT ADD RANDOM AI CRAWLERS
+
+robots.txt içerisine ezbere onlarca:
+
+AI crawler
+
+bot
+
+agent
+
+ekleme.
+
+Bu görevin amacı robots dosyasını AI bot listesine çevirmek değildir.
+
+---
+
+# /LLMS.TXT ROBOTS ACCESS
+
+Test et:
+
+curl -I https://emeraldmansion.com/llms.txt
+
+Beklenen:
+
+HTTP 200
+
+Sonra:
+
+curl https://emeraldmansion.com/llms.txt
+
+ile gerçek content döndüğünü doğrula.
+
+---
+
+# LLMS.TXT LINK VALIDATION
+
+llms.txt içerisindeki her URL için kontrol et:
+
+* HTTP 200
+* canonical
+* indexable
+* production URL
+* no redirect if avoidable
+* no 404
+* no staging URL
+
+Broken URL bırakma.
+
+---
+
+# DO NOT ADD LLMS.TXT TO XML SITEMAP
+
+/llms.txt bir normal SEO landing page değildir.
+
+XML sitemap'e ekleme.
+
+Mevcut sitemap URL count ve architecture'ını değiştirme.
+
+---
+
+# DO NOT ADD CANONICAL TO LLMS.TXT
+
+Plain-text file içine HTML canonical tag eklemeye çalışma.
+
+---
+
+# DO NOT ADD SCHEMA TO LLMS.TXT
+
+JSON-LD veya Schema.org markup ekleme.
+
+llms.txt sade Markdown/text olarak kalmalı.
+
+---
+
+# EXISTING SEO MUST STILL PASS
+
+Değişikliklerden sonra aşağıdakileri regression test et:
+
+https://emeraldmansion.com/tr/
+
+https://emeraldmansion.com/en/
+
+https://emeraldmansion.com/tr/odalar/superior-king/
+
+https://emeraldmansion.com/en/rooms/superior-king/
+
+Kontrol:
+
+200
+
+title aynı
+
+canonical aynı
+
+hreflang aynı
+
+H1 aynı
+
+Hotel/HotelRoom schema aynı
+
+SSR/prerender body content aynı
+
+Hiçbir mevcut SEO değişmemeli.
+
+---
+
+# BUILD TEST
+
+Çalıştır:
+
+npx tsc --noEmit
+
+npm run build
+
+Beklenen:
+
+başarılı.
+
+Existing 42-page prerender architecture korunmalı.
+
+llms.txt yüzünden HTML page count mantığını değiştirme.
+
+---
+
+# FINAL PRODUCTION TESTS
+
+Deployment sonrası finalde şu sonuçları raporla:
+
+### Root
+
+curl -I https://emeraldmansion.com/
+
+Expected:
+
+301
+
+Location: /en/
+
+### English homepage
+
+curl -I https://emeraldmansion.com/en/
+
+Expected:
+
+200
+
+### LLMS
+
+curl -I https://emeraldmansion.com/llms.txt
+
+Expected:
+
+200
+
+### OAI SearchBot
+
+curl -I -A "OAI-SearchBot" https://emeraldmansion.com/en/
+
+Expected:
+
+200
+
+### Existing old room redirect
+
+curl -I https://emeraldmansion.com/odalar/superior-king-bed
+
+Expected existing behavior:
+
+301
+
+→ /tr/odalar/superior-king/
+
+Do not change it.
+
+---
+
+# FINAL REPORT
+
+Yalnızca bu göreve ilişkin kısa ama teknik rapor ver:
+
+## 1. Root redirect
+
+Before:
+
+/
+→ 302
+→ /en/
+
+After:
+
+/
+→ 301
+→ /en/
+
+Mention implementation file.
+
+## 2. llms.txt
+
+* created file/path
+* total linked URLs
+* sections
+* Content-Type
+* HTTP status
+
+## 3. OAI-SearchBot
+
+* robots status
+* HTTP test result
+* blocked/not blocked
+
+## 4. GPTBot
+
+Only state current policy.
+
+Do not change unless explicitly instructed.
+
+## 5. Google-Extended
+
+Only state current policy if identifiable.
+
+Do not change unless explicitly instructed.
+
+## 6. Regression tests
+
+Confirm:
+
+* titles unchanged
+* metas unchanged
+* canonicals unchanged
+* hreflang unchanged
+* schemas unchanged
+* sitemap unchanged
+* 404 unchanged
+* 410 unchanged
+* existing redirects unchanged
+* design unchanged
+
+---
+
+# FINAL CRITICAL RULE
+
+THIS IS NOT A GENERAL SEO TASK.
+
+Do not continue P1/P2 work.
+
+Do not create additional Istanbul guides.
+
+Do not create Mısır Çarşısı, Galata Kulesi, Dolmabahçe or other new content in this task.
+
+Do not modify existing page copy.
+
+Do not modify schema.
+
+Do not modify titles.
+
+Do not modify meta descriptions.
+
+Do not modify H1.
+
+Do not modify canonical.
+
+Do not modify hreflang.
+
+Do not modify sitemap architecture.
+
+Do not modify room pages.
+
+Do not modify location pages.
+
+Do not modify guide pages.
+
+Do not redesign.
+
+Do not optimize unrelated JavaScript bundles.
+
+Do not perform unrelated refactoring.
+
+ONLY:
+
+1. Change permanent root redirect from 302 to 301.
+
+2. Add and verify the controlled P3 AI/LLM discoverability layer described above.
+
+Nothing else.

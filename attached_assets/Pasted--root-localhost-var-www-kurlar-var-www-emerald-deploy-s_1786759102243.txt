@@ -1,0 +1,61 @@
+
+root@localhost:/var/www/kurlar# /var/www/emerald/deploy.sh
+==> Git pull
+remote: Enumerating objects: 98, done.
+remote: Counting objects: 100% (98/98), done.
+remote: Compressing objects: 100% (21/21), done.
+remote: Total 56 (delta 32), reused 56 (delta 32), pack-reused 0 (from 0)
+Unpacking objects: 100% (56/56), 138.43 KiB | 1.05 MiB/s, done.
+From https://github.com/j1vetr/emerald
+ * branch            main       -> FETCH_HEAD
+   72211b0..1633a09  main       -> origin/main
+Updating 72211b0..1633a09
+Fast-forward
+ .agents/memory/MEMORY.md                           |   3 +-
+ .agents/memory/performance-architecture.md         |  20 +
+ .replit                                            |   4 +
+ ...-04-kurulu-temiz-bir-producti_1786755026035.txt | 770 +++++++++++++++++++++
+ ...elerle-kar-la-t-n-g-r-n-Bu-UR_1786756920706.txt | 272 ++++++++
+ client/index.html                                  |  16 +-
+ .../assets/images/general/otel_genel_13.webp       | Bin 147824 -> 110594 bytes
+ client/public/assets/textures/cubes.png            | Bin 0 -> 633 bytes
+ client/public/assets/textures/stardust.png         | Bin 0 -> 9145 bytes
+ client/src/App.tsx                                 |  32 +-
+ client/src/components/layout/Header.tsx            |   4 +-
+ client/src/components/ui/lazy-youtube.tsx          | 105 +++
+ client/src/components/ui/weather-widget.tsx        |  15 +-
+ client/src/entry-server.tsx                        |  33 +-
+ client/src/index.css                               |  36 +-
+ client/src/lib/analytics.ts                        |  63 +-
+ client/src/pages/About.tsx                         |   4 +-
+ client/src/pages/AttractionGuide.tsx               |   4 +
+ client/src/pages/Attractions.tsx                   |   2 +-
+ client/src/pages/Contact.tsx                       |   2 +-
+ client/src/pages/Gallery.tsx                       |   2 +-
+ client/src/pages/Home.tsx                          |  71 +-
+ client/src/pages/Location.tsx                      |   6 +-
+ client/src/pages/RoomDetail.tsx                    |   2 +-
+ client/src/pages/Rooms.tsx                         |   2 +-
+ client/src/pages/Sultanahmet.tsx                   |   8 +-
+ client/src/pages/not-found.tsx                     |   2 +-
+ package-lock.json                                  | 105 ++-
+ package.json                                       |   4 +
+ replit.nix                                         |   4 +
+ script/build.ts                                    |   1 +
+ server/index.ts                                    |   2 +
+ 32 files changed, 1483 insertions(+), 111 deletions(-)
+ create mode 100644 .agents/memory/performance-architecture.md
+ create mode 100644 attached_assets/Pasted-A-a-daki-projeyi-Ubuntu-22-04-kurulu-temiz-bir-producti_1786755026035.txt
+ create mode 100644 attached_assets/Pasted-er-ek-kullan-c-lar-n-z-n-nelerle-kar-la-t-n-g-r-n-Bu-UR_1786756920706.txt
+ create mode 100644 client/public/assets/textures/cubes.png
+ create mode 100644 client/public/assets/textures/stardust.png
+ create mode 100644 client/src/components/ui/lazy-youtube.tsx
+ create mode 100644 replit.nix
+==> Dependencies (npm ci)
+npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+npm error code EAI_AGAIN
+npm error syscall getaddrinfo
+npm error errno EAI_AGAIN
+npm error request to http://package-firewall.replit.local/npm/compression/-/compression-1.8.1.tgz failed, reason: getaddrinfo EAI_AGAIN package-firewall.replit.local
+npm error A complete log of this run can be found in: /var/www/emerald/.npm/_logs/2026-08-15T01_56_16_781Z-debug-0.log

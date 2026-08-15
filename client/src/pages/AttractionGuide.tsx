@@ -165,7 +165,7 @@ export default function AttractionGuide({
                 </li>
               ))}
             </ul>
-            <p className="mt-8 text-white/40 text-sm font-light flex items-start gap-3 border border-white/10 bg-white/[0.02] p-5">
+            <p className="mt-8 text-white/60 text-sm font-light flex items-start gap-3 border border-white/10 bg-white/[0.02] p-5">
               <Info size={16} className="text-gold-500 shrink-0 mt-0.5" />
               {ui.officialNote}
             </p>
@@ -217,7 +217,7 @@ export default function AttractionGuide({
                     <span className="font-serif text-white group-hover:text-gold-500 transition-colors block text-sm md:text-base">
                       {g.copy[lang].name}
                     </span>
-                    <span className="text-[10px] uppercase tracking-widest text-white/40">
+                    <span className="text-[10px] uppercase tracking-widest text-white/60">
                       {g.distance}
                     </span>
                   </div>

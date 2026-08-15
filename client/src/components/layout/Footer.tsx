@@ -27,7 +27,7 @@ export function Footer() {
               {t('footer.brandQuote')}
             </p>
             <div className="flex gap-6 pt-4">
-              <a href={hotelInfo.instagramUrl} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-black hover:bg-gold-500 hover:border-gold-500 transition-all duration-300">
+              <a href={hotelInfo.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-black hover:bg-gold-500 hover:border-gold-500 transition-all duration-300">
                 <Instagram size={20} />
               </a>
             </div>
@@ -35,7 +35,7 @@ export function Footer() {
 
           {/* Navigation Links */}
           <div className="lg:col-span-3">
-            <h4 className="text-xs uppercase tracking-widest text-gold-500 mb-8 font-medium">{t('footer.menu')}</h4>
+            <h3 className="text-xs uppercase tracking-widest text-gold-500 mb-8 font-medium">{t('footer.menu')}</h3>
             <ul className="space-y-4">
               {[
                 { href: getPagePath('home', lang), label: t('nav.home') },
@@ -59,25 +59,25 @@ export function Footer() {
 
           {/* Contact Info */}
           <div className="lg:col-span-4">
-            <h4 className="text-xs uppercase tracking-widest text-gold-500 mb-8 font-medium">{t('footer.contact')}</h4>
+            <h3 className="text-xs uppercase tracking-widest text-gold-500 mb-8 font-medium">{t('footer.contact')}</h3>
             
             <div className="space-y-8">
                <div className="group">
-                 <p className="text-white/40 text-xs uppercase mb-2">{t('footer.reservationLine')}</p>
+                 <p className="text-white/60 text-xs uppercase mb-2">{t('footer.reservationLine')}</p>
                  <a href={`tel:${hotelInfo.phone.replace(/[^0-9]/g, '')}`} className="font-serif text-2xl md:text-3xl text-white group-hover:text-gold-500 transition-colors block">
                    {hotelInfo.phone}
                  </a>
                </div>
                
                <div className="group">
-                 <p className="text-white/40 text-xs uppercase mb-2">{t('footer.email')}</p>
+                 <p className="text-white/60 text-xs uppercase mb-2">{t('footer.email')}</p>
                  <a href={`mailto:${hotelInfo.email}`} className="text-lg text-white/80 group-hover:text-gold-500 transition-colors">
                    {hotelInfo.email}
                  </a>
                </div>
 
                <div>
-                 <p className="text-white/40 text-xs uppercase mb-2">{t('footer.address')}</p>
+                 <p className="text-white/60 text-xs uppercase mb-2">{t('footer.address')}</p>
                  <address className="text-white/60 font-light leading-relaxed not-italic">
                    {hotelInfo.address}
                  </address>
@@ -100,12 +100,12 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-widest text-white/20">
+        <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-widest text-white/50">
           <div className="flex flex-col md:flex-row gap-4 items-center">
              <p>© 2025 Emerald Mansion. {t('footer.rights')}</p>
              <span className="hidden md:inline">•</span>
              <p>
-               {t('footer.design')}: <a href="https://toov.com.tr" target="_blank" rel="noopener noreferrer" className="text-gold-500 hover:text-white transition-colors">TOOV</a>
+               {t('footer.design')}: <a href="https://toov.com.tr" target="_blank" rel="noopener noreferrer" className="text-gold-500 underline underline-offset-2 hover:text-white transition-colors">TOOV</a>
              </p>
           </div>
           <div className="flex gap-8">

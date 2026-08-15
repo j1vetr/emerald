@@ -85,7 +85,7 @@ export default function Contact() {
                       <MapPin size={20} />
                     </div>
                     <div>
-                      <h4 className="text-xs uppercase tracking-widest text-white/50 mb-2">{t('footer.address')}</h4>
+                      <h3 className="text-xs uppercase tracking-widest text-white/50 mb-2">{t('footer.address')}</h3>
                       <p className="text-white/80 leading-relaxed font-light">{hotelInfo.address}</p>
                     </div>
                 </div>
@@ -95,7 +95,7 @@ export default function Contact() {
                       <Phone size={20} />
                     </div>
                     <div>
-                      <h4 className="text-xs uppercase tracking-widest text-white/50 mb-2">Telefon</h4>
+                      <h3 className="text-xs uppercase tracking-widest text-white/50 mb-2">Telefon</h3>
                       <p className="text-white/80 leading-relaxed font-light">{hotelInfo.phone}</p>
                     </div>
                 </div>
@@ -105,7 +105,7 @@ export default function Contact() {
                       <Mail size={20} />
                     </div>
                     <div>
-                      <h4 className="text-xs uppercase tracking-widest text-white/50 mb-2">{t('footer.email')}</h4>
+                      <h3 className="text-xs uppercase tracking-widest text-white/50 mb-2">{t('footer.email')}</h3>
                       <p className="text-white/80 leading-relaxed font-light">{hotelInfo.email}</p>
                     </div>
                 </div>

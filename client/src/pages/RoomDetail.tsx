@@ -157,15 +157,15 @@ export default function RoomDetail({ slug }: { slug: string }) {
                <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-white mb-8 leading-tight drop-shadow-lg">{isEn ? room.nameEn : room.name}</h1>
                <div className="flex flex-wrap gap-8 text-white/80 font-light tracking-wider text-sm border-t border-white/10 pt-8">
                   <div className="flex flex-col gap-1">
-                     <span className="text-xs text-white/40 uppercase">{t('rooms.size')}</span>
+                     <span className="text-xs text-white/60 uppercase">{t('rooms.size')}</span>
                      <span className="flex items-center gap-2"><Ruler size={14} className="text-gold-500"/> {room.size} m²</span>
                   </div>
                   <div className="flex flex-col gap-1">
-                     <span className="text-xs text-white/40 uppercase">{t('rooms.capacity')}</span>
+                     <span className="text-xs text-white/60 uppercase">{t('rooms.capacity')}</span>
                      <span className="flex items-center gap-2"><Users size={14} className="text-gold-500"/> Max {room.capacity.adults} {t('rooms.person')}</span>
                   </div>
                   <div className="flex flex-col gap-1">
-                     <span className="text-xs text-white/40 uppercase">{t('rooms.bed')}</span>
+                     <span className="text-xs text-white/60 uppercase">{t('rooms.bed')}</span>
                      <span className="flex items-center gap-2"><Bed size={14} className="text-gold-500"/> {isEn ? room.bedTypeEn : room.bedType}</span>
                   </div>
                </div>
@@ -311,7 +311,7 @@ export default function RoomDetail({ slug }: { slug: string }) {
                 <div className="text-center p-8 border border-white/5 bg-white/5">
                    <p className="text-white/50 text-sm mb-4">{t('rooms.needHelp')}</p>
                    <a href={`tel:${hotelInfo.phone.replace(/[^0-9]/g, '')}`} className="font-serif text-xl text-white hover:text-gold-500 transition-colors block mb-2">{hotelInfo.phone}</a>
-                   <a href={`mailto:${hotelInfo.email}`} className="text-sm text-white/40 hover:text-white transition-colors block">{hotelInfo.email}</a>
+                   <a href={`mailto:${hotelInfo.email}`} className="text-sm text-white/60 hover:text-white transition-colors block">{hotelInfo.email}</a>
                 </div>
 
                 {/* Location link */}
@@ -345,8 +345,8 @@ export default function RoomDetail({ slug }: { slug: string }) {
                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
                    <img src={r.coverImage} alt={isEn ? r.nameEn : r.name} width={1024} height={683} loading="lazy" className="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" />
                 </div>
-                <h4 className="font-serif text-2xl text-white mb-2 group-hover:text-gold-500 transition-colors">{isEn ? r.shortNameEn : r.shortName}</h4>
-                <p className="text-xs uppercase tracking-widest text-white/40">
+                <h3 className="font-serif text-2xl text-white mb-2 group-hover:text-gold-500 transition-colors">{isEn ? r.shortNameEn : r.shortName}</h3>
+                <p className="text-xs uppercase tracking-widest text-white/60">
                    {r.size} m² • {r.capacity.adults} {t('rooms.person')}
                 </p>
               </Link>

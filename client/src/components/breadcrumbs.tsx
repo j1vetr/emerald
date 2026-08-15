@@ -19,7 +19,7 @@ export function Breadcrumbs({
   return (
     <nav aria-label="Breadcrumb" className={cn("relative z-10", className)}>
       <JsonLd data={buildBreadcrumbSchema(items)} />
-      <ol className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-white/40">
+      <ol className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-white/60">
         {items.map((c, i) => (
           <li key={i} className="flex items-center gap-2">
             {i > 0 && <span className="text-gold-500/60" aria-hidden="true">/</span>}

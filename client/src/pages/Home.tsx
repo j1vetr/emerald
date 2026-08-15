@@ -212,11 +212,9 @@ export default function Home() {
              <span className="text-gold-500 text-xs uppercase tracking-[0.3em]">{t('nav.rooms')}</span>
              <h2 className="font-serif text-5xl md:text-6xl">{t('footer.roomsAndSuites')}</h2>
            </div>
-           <Link href={getPagePath('rooms', lang)}>
-             <Button variant="outline" className="hidden md:flex border-white/20 text-white hover:bg-gold-500 hover:text-black hover:border-gold-500 rounded-none px-8 py-6 text-xs uppercase tracking-widest transition-all">
-               {t('home.viewAllRooms')}
-             </Button>
-           </Link>
+           <Button asChild variant="outline" className="hidden md:flex border-white/20 text-white hover:bg-gold-500 hover:text-black hover:border-gold-500 rounded-none px-8 py-6 text-xs uppercase tracking-widest transition-all">
+             <Link href={getPagePath('rooms', lang)}>{t('home.viewAllRooms')}</Link>
+           </Button>
         </div>
 
         <div className="container mx-auto px-6">
@@ -230,7 +228,7 @@ export default function Home() {
                 transition={{ delay: i * 0.2, duration: 0.8 }}
                 className="group cursor-pointer"
               >
-                <Link href={getRoomPath(room.slug, lang)}>
+                <Link href={getRoomPath(room.slug, lang)} aria-label={isEn ? room.nameEn : room.name}>
                   <div className="aspect-[3/4] overflow-hidden relative border border-white/5 bg-white/5">
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-all duration-700 z-10" />
                     <img 
@@ -253,11 +251,9 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-12 md:hidden text-center">
-             <Link href={getPagePath('rooms', lang)}>
-              <Button variant="outline" className="w-full border-white/20 text-white hover:bg-gold-500 hover:text-black hover:border-gold-500 rounded-none px-8 py-6 text-xs uppercase tracking-widest transition-all">
-                {t('home.viewAllRooms')}
-              </Button>
-            </Link>
+             <Button asChild variant="outline" className="w-full border-white/20 text-white hover:bg-gold-500 hover:text-black hover:border-gold-500 rounded-none px-8 py-6 text-xs uppercase tracking-widest transition-all">
+              <Link href={getPagePath('rooms', lang)}>{t('home.viewAllRooms')}</Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -315,7 +311,7 @@ export default function Home() {
               <div key={place.nameEn} className="border border-white/10 bg-white/[0.02] p-6 text-center hover:border-gold-500/40 transition-colors">
                 <span className="font-serif text-lg block mb-2">{isEn ? place.nameEn : place.name}</span>
                 <span className="text-xs uppercase tracking-widest text-gold-500">{place.distance}</span>
-                <span className="block text-xs text-white/40 mt-1">{isEn ? place.timeEn : place.time}</span>
+                <span className="block text-xs text-white/60 mt-1">{isEn ? place.timeEn : place.time}</span>
               </div>
             ))}
             <div className="border border-white/10 bg-white/[0.02] p-6 text-center hover:border-gold-500/40 transition-colors">

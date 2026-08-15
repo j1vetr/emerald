@@ -107,7 +107,7 @@ export function WeatherWidget() {
           {getWeatherIcon(weather.condition)}
         </span>
         <span>{weather.temp}°C</span>
-        <span className="text-white/40 hidden lg:inline">{weather.city}</span>
+        <span className="text-white/60 hidden lg:inline">{weather.city}</span>
       </div>
 
       {/* Time */}

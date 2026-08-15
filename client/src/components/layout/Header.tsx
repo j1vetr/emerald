@@ -174,6 +174,8 @@ export function Header() {
             <button
               className="z-50 text-white p-2 hover:text-gold-500 transition-colors duration-300"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? (lang === 'tr' ? 'Menüyü kapat' : 'Close menu') : (lang === 'tr' ? 'Menüyü aç' : 'Open menu')}
+              aria-expanded={isMobileMenuOpen}
             >
               {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
@@ -229,7 +231,7 @@ export function Header() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1 }}
-              className="absolute bottom-12 text-white/30 text-xs tracking-[0.3em] uppercase"
+              className="absolute bottom-12 text-white/50 text-xs tracking-[0.3em] uppercase"
             >
               Emerald Mansion Istanbul
             </motion.div>
@@ -237,6 +239,7 @@ export function Header() {
              <button
               className="absolute top-8 right-6 z-50 text-white hover:text-gold-500 transition-colors p-2"
               onClick={() => setIsMobileMenuOpen(false)}
+              aria-label={lang === 'tr' ? 'Menüyü kapat' : 'Close menu'}
             >
               <X size={32} />
             </button>

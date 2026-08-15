@@ -43,7 +43,7 @@ export default function NotFound() {
                 </Link>
               </div>
 
-              <div className="pt-6 text-sm text-white/40">
+              <div className="pt-6 text-sm text-white/60">
                 <span className="block mb-3 text-xs uppercase tracking-widest">{t('notFound.explore')}</span>
                 <div className="flex items-center justify-center gap-6">
                   <Link href={getPagePath('rooms', lang)} className="hover:text-gold-500 transition-colors underline underline-offset-4">

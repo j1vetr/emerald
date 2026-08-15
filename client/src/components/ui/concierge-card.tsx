@@ -76,7 +76,7 @@ export function ConciergeCard({ title, description, distance, time, image, delay
               {linkLabel}
             </Link>
           ) : (
-            <span className="text-[10px] uppercase tracking-widest text-white/40 group-hover:text-white/60 transition-colors">
+            <span className="text-[10px] uppercase tracking-widest text-white/60 group-hover:text-white/60 transition-colors">
               Emerald Concierge
             </span>
           )}

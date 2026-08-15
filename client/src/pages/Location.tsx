@@ -157,7 +157,7 @@ export default function Location() {
                 <span className="font-serif text-lg text-white">{isEn ? place.nameEn : place.name}</span>
                 <span className="text-xs uppercase tracking-widest text-gold-500 text-right">
                   {place.distance}
-                  <span className="block text-white/40 normal-case tracking-normal mt-1">{isEn ? place.timeEn : place.time}</span>
+                  <span className="block text-white/60 normal-case tracking-normal mt-1">{isEn ? place.timeEn : place.time}</span>
                 </span>
               </div>
             ))}

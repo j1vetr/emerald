@@ -1,0 +1,272 @@
+erçek kullanıcılarınızın nelerle karşılaştığını görün
+Bu URL
+Kaynak
+
+Önemli Web Verileri Değerlendirmesi:
+Başarısız Oldu
+
+Görünümü genişlet
+Largest Contentful Paint (LCP)
+3,3 sn.
+
+Interaction to Next Paint (INP)
+663 ms.
+
+Cumulative Layout Shift (CLS)
+0,02
+
+Dikkate Değer Diğer Metrikler
+First Contentful Paint (FCP)
+2,8 sn.
+
+Time to First Byte (TTFB)
+0,8 sn.
+
+Son 28 günlük dönem
+(
+geçmiş
+)
+Farklı mobil cihazlar
+
+Birçok örnek (
+Chrome Kullanıcı Deneyimi Raporu
+)
+Tam ziyaret süreleri
+Farklı ağ bağlantıları
+
+Tüm Chrome sürümleri
+
+Performans sorunlarını teşhis edin
+53
+Performans
+81
+Erişilebilirlik
+77
+En İyi Uygulamalar
+100
+SEO
+2/3
+Ajan Tabanlı Tarama
+53
+FCP
++0
+LCP
++0
+TBT
++28
+CLS
++25
+SI
++0
+Performans
+Değerler tahminidir ve değişiklik gösterebilir. Performance skorunun hesaplanması , doğrudan bu metriklerle yapılır.Hesap makinesini göster.
+0–49
+50–89
+90–100
+Final Screenshot
+
+Metrikler
+Görünümü genişlet
+First Contentful Paint
+12,8 sn.
+Largest Contentful Paint
+17,1 sn.
+Total Blocking Time
+180 ms.
+Cumulative Layout Shift
+0.007
+Speed Index
+12,8 sn.
+Captured at 15 Ağu 2026 04:20 GMT+3
+Emülasyonlu Moto G Power with Lighthouse 13.4.1
+Tek sayfalık oturum
+İlk sayfa yükleme
+Yavaş 4G kısıtlaması
+Using HeadlessChromium 150.0.7871.186 with lr
+Ağaç grafiği göster
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Şunlarla alakalı denetimleri göster:
+
+All
+
+FCP
+
+LCP
+
+TBT
+
+CLS
+Analizler
+Oluşturma engelleme istekleri Tahmini tasarruf: 2.560 ms.
+İstekler sayfanın ilk oluşturma işlemini engelliyor. Bu durum, LCP'yi geciktirebilir. Erteleme veya satır içine yerleştirme, bu ağ isteklerini kritik yoldan uzaklaştırabilir.LCPFCPPuanlanmamış
+URL
+Aktarım Boyutu
+Süre
+emeraldmansion.com 1. taraf
+123,8 KiB	5.650 msn
+/assets/index-CAsp3wEU.css(emeraldmansion.com)
+123,8 KiB
+5.650 msn
+Google Fonts cdn 
+1,5 KiB	750 msn
+/css2?family=…(fonts.googleapis.com)
+1,5 KiB
+750 msn
+Doküman isteğiyle ilgili gecikme Tahmini tasarruf: 330 ms.
+İlk ağ isteğiniz en önemli isteğinizdir. Yönlendirmelerden kaçınarak, hızlı sunucu yanıtı sağlayarak ve metin sıkıştırmayı etkinleştirerek gecikmeyi azaltın.LCPFCPPuanlanmamış
+Yönlendirmeler vardı (1 yönlendirme, +327 ms)
+Sunucu hızlı yanıt veriyor (2 ms gözlemlendi)
+Metin sıkıştırma uygulanır
+LCP dökümü
+Her alt bölüm için belirli iyileştirme stratejileri vardır. İdeal olarak LCP süresinin çoğu gecikmeler için değil, kaynakları yüklemek için harcanmalıdır.LCPPuanlanmamış
+Alt bölüm
+Süre
+Time to First Byte
+0 msn
+Öğe oluşturma gecikmesi
+2.760 msn
+Stay in the heart of Istanbul's Old City, within walking distance of the Blue M…
+<p class="max-w-md mx-auto text-white/70 font-light leading-relaxed pt-8 border-t bo…" style="opacity: 1; transform: none;">
+Ağ bağımlılık ağacı
+Sayfaların daha kolay yüklenmesi için zincir uzunluğunu azaltarak, kaynakların indirme boyutunu küçülterek veya gereksiz kaynakların indirilmesini erteleyerek kritik istek zinciri oluşturmaktan kaçının.LCPPuanlanmamış
+Maksimum kritik yol gecikmesi: 4.018 msn
+İlk Gezinme
+/en/(emeraldmansion.com) - 679 msn, 9,99 KiB
+/en/(emeraldmansion.com) - 679 msn, 9,99 KiB
+/css2?family=…(fonts.googleapis.com) - 678 msn, 1,50 KiB
+…v31/JTUQjIg1_….woff2(fonts.gstatic.com) - 1.189 msn, 37,04 KiB
+…v31/JTUSjIg1_….woff2(fonts.gstatic.com) - 1.192 msn, 67,42 KiB
+…v31/JTUSjIg1_….woff2(fonts.gstatic.com) - 1.190 msn, 35,47 KiB
+…v40/nuFkD-vYS….woff2(fonts.gstatic.com) - 1.188 msn, 38,77 KiB
+…v40/nuFiD-vYS….woff2(fonts.gstatic.com) - 1.190 msn, 38,35 KiB
+/assets/index-CeDkqavE.js(emeraldmansion.com) - 1.249 msn, 787,71 KiB
+/g/collect?v=…(www.google-analytics.com) - 1.723 msn, 0,78 KiB
+/v1/forecast?latitude=…(api.open-meteo.com) - 4.018 msn, 0,68 KiB
+/assets/index-CAsp3wEU.css(emeraldmansion.com) - 1.123 msn, 123,84 KiB
+Önceden bağlanmış kaynaklar
+Önceden bağlanma ipuçları, sayfa yüklenirken tarayıcının gerekli bağlantıları önceden kurmasına yardımcı olarak ilgili kaynağa yapılacak ilk istekte zaman kazandırır. Sayfanın önceden bağlantı kurduğu kaynaklar aşağıda verilmiştir.
+Kaynak
+Kaynak
+https://fonts.googleapis.com/
+head > link
+<link rel="preconnect" href="https://fonts.googleapis.com">
+https://fonts.gstatic.com/
+head > link
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+https://i.ytimg.com/
+head > link
+<link rel="preconnect" href="https://i.ytimg.com">
+Kullanılmayan ön bağlantı. Yalnızca sayfanın isteyebileceği kaynaklar için preconnect öğesini kullanın.
+Önceden bağlanma adayları
+En önemli kaynaklarınıza önceden bağlanma ipuçları ekleyin ancak 4'ten az ipucu kullanmaya çalışın.
+Kaynak
+Tahmini LCP tasarrufu
+https://www.transparenttextures.com
+320 msn
+https://jnn-pa.googleapis.com
+300 msn
+Verimli önbellek sürelerini kullanın Tahmini tasarruf: 1 KiB
+Resim yayınlamayı kolaylaştırın Tahmini tasarruf: 118 KiB
+Düzen kayması sorununun nedenleri
+3. taraflar
+Bu analizler Chrome Geliştirici Araçları Performans Paneli'nde de mevcuttur. Daha ayrıntılı bilgi görüntülemek için izleme kaydı oluşturun.
+Teşhis
+Ana iş parçacığı çalışmasını en aza indir 2,3 sn.
+JS'yi ayrıştırma, derleme ve yürütme için harcanan zamanı kısaltabilirsiniz. Daha küçük JS yüklerinin sağlanması bu konuda yardımcı olabilir. Ana iş parçacığının işini nasıl azaltacağınızı öğrenin.TBTPuanlanmamış
+Kategori
+Harcanan Süre
+Script Evaluation
+972 msn
+Other
+434 msn
+Script Parsing & Compilation
+411 msn
+Style & Layout
+295 msn
+Rendering
+107 msn
+Garbage Collection
+47 msn
+Parse HTML & CSS
+31 msn
+Kullanılmayan JavaScript'i azaltın Tahmini tasarruf: 948 KiB
+Ağ etkinliğinin kullandığı bayt sayısını azaltılmaları gerekene kadar kullanılmayan JavaScript'i azaltıp komut dosyalarını erteleyin. Kullanılmayan JavaScript'i nasıl azaltacağınızı öğrenin.LCPFCPPuanlanmamış
+URL
+Aktarım Boyutu
+Tahmini Tasarruf
+YouTube video 
+855,6 KiB	525,1 KiB
+…en_US/base.js(www.youtube.com)
+466,3 KiB
+329,6 KiB
+…rs=AGKMywGzv…/m=r78Drb(www.youtube.com)
+235,5 KiB
+121,5 KiB
+…rs=AGKMywGlf…/m=root,base(www.youtube.com)
+153,7 KiB
+74,0 KiB
+emeraldmansion.com 1. taraf
+783,0 KiB	355,7 KiB
+/assets/index-CeDkqavE.js(emeraldmansion.com)
+783,0 KiB
+355,7 KiB
+Google Tag Manager tag-manager 
+161,5 KiB	67,3 KiB
+/gtag/js?id=G-W9DZFSBWCD(www.googletagmanager.com)
+161,5 KiB
+67,3 KiB
+Kullanılmayan CSS'yi azaltın Tahmini tasarruf: 110 KiB
+Ağ etkinliğinin kullandığı bayt sayısını azaltmak üzere stil sayfalarında kullanılmayan kuralları azaltıp ekranın üst kısmında içerik için kullanılmayan CSS'yi erteleyin. Kullanılmayan CSS'yi nasıl azaltacağınızı öğrenin.LCPFCPPuanlanmamış
+URL
+Aktarım Boyutu
+Tahmini Tasarruf
+YouTube video 
+56,2 KiB	55,8 KiB
+…b0d2d49a/www-player.css(www.youtube.com)
+56,2 KiB
+55,8 KiB
+İlişkilendirilemez
+55,0 KiB	54,1 KiB
+:root{--t3a480c2f814ef19c:initial;--t77e217518bcd986b:initial;--tc5e0863356bf5767:initial;--t7a2234…
+55,0 KiB
+54,1 KiB
+Resim öğelerinin açıkça belirtilmiş width ve height değerleri yok
+Çok büyük ağ yüklerinden kaçının Toplam boyut 2.753 KiB'tı
+Büyük ağ yükleri kullanıcılar için parasal maliyet anlamına gelir ve yükleme sürelerinin uzamasında yüksek bir etkiye sahiptir. Yük boyutlarını nasıl düşüreceğinizi öğrenin.Puanlanmamış
+URL
+Aktarım Boyutu
+emeraldmansion.com 1. taraf
+1.296,8 KiB
+/assets/index-CeDkqavE.js(emeraldmansion.com)
+787,7 KiB
+…general/otel_genel_13.webp(emeraldmansion.com)
+144,7 KiB
+/assets/index-CAsp3wEU.css(emeraldmansion.com)
+123,8 KiB
+…rooms/303_oda_3.webp(emeraldmansion.com)
+87,2 KiB
+…rooms/302_oda_4.webp(emeraldmansion.com)
+78,0 KiB
+…rooms/305_oda_1.webp(emeraldmansion.com)
+75,4 KiB
+YouTube video 
+858,3 KiB
+…en_US/base.js(www.youtube.com)
+467,1 KiB
+…rs=AGKMywGzv…/m=r78Drb(www.youtube.com)
+236,5 KiB
+…rs=AGKMywGlf…/m=root,base(www.youtube.com)
+154,7 KiB
+Google Tag Manager tag-manager 
+162,2 KiB
+/gtag/js?id=G-W9DZFSBWCD(www.googletagmanager.com)
+162,2 KiB
+Uzun ana ileti dizisi görevlerinden kaçının 7 uzun görev bulundu
+Kullanıcı Zamanlaması işaretleri ve ölçüleri 39 kullanıcı zamanlaması

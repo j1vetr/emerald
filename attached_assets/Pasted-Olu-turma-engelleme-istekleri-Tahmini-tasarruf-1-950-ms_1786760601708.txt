@@ -1,0 +1,72 @@
+Oluşturma engelleme istekleri Tahmini tasarruf: 1.950 ms.
+İstekler sayfanın ilk oluşturma işlemini engelliyor. Bu durum, LCP'yi geciktirebilir. Erteleme veya satır içine yerleştirme, bu ağ isteklerini kritik yoldan uzaklaştırabilir.LCPFCPPuanlanmamış
+URL
+Aktarım Boyutu
+Süre
+emeraldmansion.com 1. taraf
+20,4 KiB	300 msn
+/assets/index-D2EpAG-i.css(emeraldmansion.com)
+20,4 KiB
+300 msn
+Ağ bağımlılık ağacı
+Sayfaların daha kolay yüklenmesi için zincir uzunluğunu azaltarak, kaynakların indirme boyutunu küçülterek veya gereksiz kaynakların indirilmesini erteleyerek kritik istek zinciri oluşturmaktan kaçının.LCPPuanlanmamış
+Maksimum kritik yol gecikmesi: 1.568 msn
+İlk Gezinme
+/en/(emeraldmansion.com) - 234 msn, 8,34 KiB
+/assets/index-mOqt9fja.js(emeraldmansion.com) - 680 msn, 190,11 KiB
+/v1/forecast?latitude=…(api.open-meteo.com) - 1.568 msn, 0,68 KiB
+/assets/index-D2EpAG-i.css(emeraldmansion.com) - 617 msn, 20,41 KiB
+/assets/montserra….woff2(emeraldmansion.com) - 1.075 msn, 69,34 KiB
+/assets/montserra….woff2(emeraldmansion.com) - 1.009 msn, 37,37 KiB
+/assets/montserra….woff2(emeraldmansion.com) - 970 msn, 39,01 KiB
+/assets/playfair-….woff2(emeraldmansion.com) - 1.026 msn, 37,81 KiB
+/assets/playfair-….woff2(emeraldmansion.com) - 1.026 msn, 38,20 KiB
+Önceden bağlanmış kaynaklar
+Önceden bağlanma ipuçları, sayfa yüklenirken tarayıcının gerekli bağlantıları önceden kurmasına yardımcı olarak ilgili kaynağa yapılacak ilk istekte zaman kazandırır. Sayfanın önceden bağlantı kurduğu kaynaklar aşağıda verilmiştir.
+Kaynak
+Kaynak
+https://api.open-meteo.com/
+head > link
+<link rel="preconnect" href="https://api.open-meteo.com" crossorigin="">
+Kullanılmayan ön bağlantı. crossorigin özelliğinin doğru şekilde kullanıldığını kontrol edin.
+Önceden bağlanma adayları
+En önemli kaynaklarınıza önceden bağlanma ipuçları ekleyin ancak 4'ten az ipucu kullanmaya çalışın.
+Kaynak
+Tahmini LCP tasarrufu
+https://api.open-meteo.com
+340 msn
+Resim yayınlamayı kolaylaştırın Tahmini tasarruf: 69 KiB
+Resimlerin indirme süresini kısaltmak, sayfanın algılanan yükleme süresini ve LCP'yi daha iyi hale getirebilir. Resim boyutunu optimize etme hakkında daha fazla bilgi edinin.LCPFCPPuanlanmamış
+URL
+Kaynak Boyutu
+Tahmini Tasarruf
+emeraldmansion.com 1. taraf
+100,9 KiB	68,9 KiB
+Restored Ottoman era interior of Emerald Mansion Hotel in Sultanahmet
+<img src="/assets/images/general/otel_genel_13.webp" srcset="/assets/images/general/otel_genel_13_400.webp 400w, /assets/images/general…" sizes="(max-width: 1023px) 90vw, 40vw" alt="Restored Ottoman era interior of Emerald Mansion Hotel in Sultanahmet" width="683" height="1024" loading="lazy" class="w-full h-full object-cover">
+…general/otel_genel_13.webp(emeraldmansion.com)
+100,9 KiB
+68,9 KiB
+Resim sıkıştırma faktörünü artırarak bu resmin indirme boyutunu küçültebilirsiniz.
+5,9 KiB
+Bu resim dosyası, görüntülenen boyutlarına (362x543) göre olması gerekenden (683x854) daha büyük. Resim indirme boyutunu küçültmek için duyarlı resimler kullanın.
+66,9 KiB
+LCP dökümü
+3. taraflar
+Bu analizler Chrome Geliştirici Araçları Performans Paneli'nde de mevcuttur. Daha ayrıntılı bilgi görüntülemek için izleme kaydı oluşturun.
+Teşhis
+Kullanılmayan JavaScript'i azaltın Tahmini tasarruf: 146 KiB
+Ağ etkinliğinin kullandığı bayt sayısını azaltılmaları gerekene kadar kullanılmayan JavaScript'i azaltıp komut dosyalarını erteleyin. Kullanılmayan JavaScript'i nasıl azaltacağınızı öğrenin.LCPFCPPuanlanmamış
+URL
+Aktarım Boyutu
+Tahmini Tasarruf
+emeraldmansion.com 1. taraf
+189,3 KiB	78,8 KiB
+/assets/index-mOqt9fja.js(emeraldmansion.com)
+189,3 KiB
+78,8 KiB
+Google Tag Manager tag-manager 
+161,5 KiB	67,4 KiB
+/gtag/js?id=G-W9DZFSBWCD(www.googletagmanager.com)
+161,5 KiB
+67,4 KiB

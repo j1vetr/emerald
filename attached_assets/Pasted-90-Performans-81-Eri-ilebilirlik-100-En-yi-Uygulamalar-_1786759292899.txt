@@ -1,0 +1,265 @@
+90
+Performans
+81
+Erişilebilirlik
+100
+En İyi Uygulamalar
+100
+SEO
+2/3
+Ajan Tabanlı Tarama
+90
+FCP
++7
+LCP
++19
+TBT
++30
+CLS
++25
+SI
++9
+Performans
+Değerler tahminidir ve değişiklik gösterebilir. Performance skorunun hesaplanması , doğrudan bu metriklerle yapılır.Hesap makinesini göster.
+0–49
+50–89
+90–100
+Final Screenshot
+
+Metrikler
+Görünümü genişlet
+First Contentful Paint
+2,5 sn.
+Largest Contentful Paint
+3,0 sn.
+Total Blocking Time
+20 ms.
+Cumulative Layout Shift
+0.039
+Speed Index
+3,6 sn.
+Captured at 15 Ağu 2026 05:00 GMT+3
+Emülasyonlu Moto G Power with Lighthouse 13.4.1
+Tek sayfalık oturum
+İlk sayfa yükleme
+Yavaş 4G kısıtlaması
+Using HeadlessChromium 150.0.7871.186 with lr
+Ağaç grafiği göster
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Şunlarla alakalı denetimleri göster:
+
+All
+
+FCP
+
+LCP
+
+TBT
+
+CLS
+Analizler
+Doküman isteğiyle ilgili gecikme Tahmini tasarruf: 340 ms.
+İlk ağ isteğiniz en önemli isteğinizdir. Yönlendirmelerden kaçınarak, hızlı sunucu yanıtı sağlayarak ve metin sıkıştırmayı etkinleştirerek gecikmeyi azaltın.LCPFCPPuanlanmamış
+Yönlendirmeler vardı (1 yönlendirme, +340 ms)
+Sunucu hızlı yanıt veriyor (2 ms gözlemlendi)
+Metin sıkıştırma uygulanır
+Oluşturma engelleme istekleri Tahmini tasarruf: 310 ms.
+İstekler sayfanın ilk oluşturma işlemini engelliyor. Bu durum, LCP'yi geciktirebilir. Erteleme veya satır içine yerleştirme, bu ağ isteklerini kritik yoldan uzaklaştırabilir.LCPFCPPuanlanmamış
+URL
+Aktarım Boyutu
+Süre
+emeraldmansion.com 1. taraf
+20,4 KiB	370 msn
+/assets/index-_otbwoC8.css(emeraldmansion.com)
+20,4 KiB
+370 msn
+Ağ bağımlılık ağacı
+Sayfaların daha kolay yüklenmesi için zincir uzunluğunu azaltarak, kaynakların indirme boyutunu küçülterek veya gereksiz kaynakların indirilmesini erteleyerek kritik istek zinciri oluşturmaktan kaçının.LCPPuanlanmamış
+Maksimum kritik yol gecikmesi: 1.711 msn
+İlk Gezinme
+/en/(emeraldmansion.com) - 587 msn, 8,22 KiB
+/en/(emeraldmansion.com) - 587 msn, 8,22 KiB
+/assets/index-v68h1Ppr.js(emeraldmansion.com) - 1.078 msn, 190,12 KiB
+/v1/forecast?latitude=…(api.open-meteo.com) - 1.711 msn, 0,67 KiB
+/assets/index-_otbwoC8.css(emeraldmansion.com) - 982 msn, 20,42 KiB
+/assets/montserra….woff2(emeraldmansion.com) - 1.462 msn, 69,34 KiB
+/assets/montserra….woff2(emeraldmansion.com) - 1.467 msn, 37,37 KiB
+/assets/montserra….woff2(emeraldmansion.com) - 1.273 msn, 39,01 KiB
+/assets/playfair-….woff2(emeraldmansion.com) - 1.426 msn, 37,81 KiB
+/assets/playfair-….woff2(emeraldmansion.com) - 1.216 msn, 38,20 KiB
+Önceden bağlanmış kaynaklar
+Önceden bağlanma ipuçları, sayfa yüklenirken tarayıcının gerekli bağlantıları önceden kurmasına yardımcı olarak ilgili kaynağa yapılacak ilk istekte zaman kazandırır. Sayfanın önceden bağlantı kurduğu kaynaklar aşağıda verilmiştir.
+hiçbir kaynak önceden bağlanmadı
+Önceden bağlanma adayları
+En önemli kaynaklarınıza önceden bağlanma ipuçları ekleyin ancak 4'ten az ipucu kullanmaya çalışın.
+Ön bağlantı için uygun ek kaynak bulunmamaktadır
+Resim yayınlamayı kolaylaştırın Tahmini tasarruf: 82 KiB
+Resimlerin indirme süresini kısaltmak, sayfanın algılanan yükleme süresini ve LCP'yi daha iyi hale getirebilir. Resim boyutunu optimize etme hakkında daha fazla bilgi edinin.LCPFCPPuanlanmamış
+URL
+Kaynak Boyutu
+Tahmini Tasarruf
+emeraldmansion.com 1. taraf
+347,7 KiB	82,0 KiB
+Superior King Bed Room
+<img src="/assets/images/rooms/303_oda_3.webp" alt="Superior King Bed Room" width="1024" height="683" loading="lazy" class="w-full h-full object-cover transition-transform duration-1000 group-hover:…">
+…rooms/303_oda_3.webp(emeraldmansion.com)
+86,9 KiB
+30,0 KiB
+Resim sıkıştırma faktörünü artırarak bu resmin indirme boyutunu küçültebilirsiniz.
+30,0 KiB
+Junior Suite Twin Bed
+<img src="/assets/images/rooms/302_oda_4.webp" alt="Junior Suite Twin Bed" width="1024" height="683" loading="lazy" class="w-full h-full object-cover transition-transform duration-1000 group-hover:…">
+…rooms/302_oda_4.webp(emeraldmansion.com)
+77,7 KiB
+20,8 KiB
+Resim sıkıştırma faktörünü artırarak bu resmin indirme boyutunu küçültebilirsiniz.
+20,8 KiB
+Junior Suite King Bed
+<img src="/assets/images/rooms/305_oda_1.webp" alt="Junior Suite King Bed" width="1024" height="683" loading="lazy" class="w-full h-full object-cover transition-transform duration-1000 group-hover:…">
+…rooms/305_oda_1.webp(emeraldmansion.com)
+75,1 KiB
+18,1 KiB
+Resim sıkıştırma faktörünü artırarak bu resmin indirme boyutunu küçültebilirsiniz.
+18,1 KiB
+Restored Ottoman era interior of Emerald Mansion Hotel in Sultanahmet
+<img src="/assets/images/general/otel_genel_13.webp" alt="Restored Ottoman era interior of Emerald Mansion Hotel in Sultanahmet" width="683" height="1024" loading="lazy" class="w-full h-full object-cover">
+…general/otel_genel_13.webp(emeraldmansion.com)
+108,0 KiB
+13,0 KiB
+Resim sıkıştırma faktörünü artırarak bu resmin indirme boyutunu küçültebilirsiniz.
+13,0 KiB
+Düzen kayması sorununun nedenleri
+LCP dökümü
+3. taraflar
+Bu analizler Chrome Geliştirici Araçları Performans Paneli'nde de mevcuttur. Daha ayrıntılı bilgi görüntülemek için izleme kaydı oluşturun.
+Teşhis
+Kullanılmayan JavaScript'i azaltın Tahmini tasarruf: 146 KiB
+Ağ etkinliğinin kullandığı bayt sayısını azaltılmaları gerekene kadar kullanılmayan JavaScript'i azaltıp komut dosyalarını erteleyin. Kullanılmayan JavaScript'i nasıl azaltacağınızı öğrenin.LCPFCPPuanlanmamış
+URL
+Aktarım Boyutu
+Tahmini Tasarruf
+emeraldmansion.com 1. taraf
+189,3 KiB	78,6 KiB
+/assets/index-v68h1Ppr.js(emeraldmansion.com)
+189,3 KiB
+78,6 KiB
+Google Tag Manager tag-manager 
+161,5 KiB	67,4 KiB
+/gtag/js?id=G-W9DZFSBWCD(www.googletagmanager.com)
+161,5 KiB
+67,4 KiB
+Kullanılmayan CSS'yi azaltın Tahmini tasarruf: 157 KiB
+Ağ etkinliğinin kullandığı bayt sayısını azaltmak üzere stil sayfalarında kullanılmayan kuralları azaltıp ekranın üst kısmında içerik için kullanılmayan CSS'yi erteleyin. Kullanılmayan CSS'yi nasıl azaltacağınızı öğrenin.LCPFCPPuanlanmamış
+URL
+Aktarım Boyutu
+Tahmini Tasarruf
+…b0d2d49a/www-player.css(www.youtube-nocookie.com)
+104,0 KiB
+103,1 KiB
+:root{--t3a480c2f814ef19c:initial;--t77e217518bcd986b:initial;--tc5e0863356bf5767:initial;--t7a2234…
+55,0 KiB
+54,1 KiB
+Uzun ana ileti dizisi görevlerinden kaçının 2 uzun görev bulundu
+Uygulamanızın performansı hakkında daha fazla bilgi. Bu sayılar Performan skoruna doğrudan etki etmezler.
+Başarılı denetimler (17)
+Göster
+81
+Erişilebilirlik
+Bu kontroller, web uygulamanızın erişilebilirliğini iyileştirme fırsatlarını öne çıkarır. Otomatik algılama, sorunların yalnızca bir alt kümesini algılayabilir ve web uygulamanızın erişilebilirliğini garanti etmez. Bu nedenle, manuel test yapmanız da önerilir.
+Adlar ve etiketler
+Düğmelerin erişilebilir adları yok
+Düğmelerin erişilebilir özellikli adı olmadığında ekran okuyucular bu düğmeyi yalnızca "düğme" olarak okur. Bu da, ekran okuyuculardan yararlanan kullanıcılar için yararlı olmaz. Düğmeleri nasıl daha erişilebilir yapabileceğinizi öğrenin.
+Başarısız Öğeler
+header.fixed > div.container > div.lg:hidden > button.z-50
+<button class="z-50 text-white p-2 hover:text-gold-500 transition-colors duration-300">
+Bağlantıların ayırt edilebilir adları yok
+Ayırt edilebilir, benzersiz ve odaklanılabilir bağlantı metni (ve bağlantı olarak kullanıldığında resimler için alternatif metin), ekran okuyucu kullanıcılarına daha iyi bir gezinme deneyimi sunar. Bağlantıları nasıl erişilebilir hale getireceğinizi öğrenin.
+Başarısız Öğeler
+main.flex-grow > section.py-32 > div.container > a
+<a href="/en/rooms/">
+div.grid > div.lg:col-span-5 > div.flex > a.w-12
+<a href="https://www.instagram.com/emeraldmansionhotel" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-ce…">
+Bu fırsatlar, uygulamanızdaki kontrollerin anlamının iyileştirilmesine olanak tanır. Bu durum, ekran okuyucu gibi yardımcı teknolojilerin kullanıcılarına daha iyi bir deneyim sunulmasını sağlayabilir.
+En iyi uygulamalar
+[user-scalable="no"], <meta name="viewport"> öğesinde kullanılmış veya [maximum-scale] özelliği 5'ten küçük.
+Yakınlaştırmanın devre dışı bırakılması, az gören ve bir web sayfasının içeriğini düzgün bir şekilde görebilmek için ekran büyütme özelliğinden yararlanan kullanıcılar için sorun teşkil eder. Görüntü alanı meta etiketi hakkında daha fazla bilgi edinin.
+Başarısız Öğeler
+head > meta
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+Bu öğeler, erişilebilirlikle ilgili yaygın en iyi uygulamaları öne çıkarır.
+Kontrast
+Arka plan ve ön plan renkleri yeterli kontrast oranına sahip değil.
+Birçok kullanıcı, düşük kontrastlı metni okumakta zorlanır veya okuyamaz. Yeterli renk kontrastını nasıl sağlayacağınızı öğrenin.
+Başarısız Öğeler
+3 min Walk
+<span class="block text-xs text-white/40 mt-1">
+Blue Mosque 250 M 3 min Walk
+<div class="border border-white/10 bg-white/[0.02] p-6 text-center hover:border-gold-5…">
+LOCATION Stay in the Heart of Sultanahmet From Emerald Mansion you can walk to…
+<section class="py-32 bg-black text-white relative border-t border-white/10">
+4 min Walk
+<span class="block text-xs text-white/40 mt-1">
+Basilica Cistern 350 M 4 min Walk
+<div class="border border-white/10 bg-white/[0.02] p-6 text-center hover:border-gold-5…">
+LOCATION Stay in the Heart of Sultanahmet From Emerald Mansion you can walk to…
+<section class="py-32 bg-black text-white relative border-t border-white/10">
+5 min Walk
+<span class="block text-xs text-white/40 mt-1">
+Hagia Sophia 400 M 5 min Walk
+<div class="border border-white/10 bg-white/[0.02] p-6 text-center hover:border-gold-5…">
+LOCATION Stay in the Heart of Sultanahmet From Emerald Mansion you can walk to…
+<section class="py-32 bg-black text-white relative border-t border-white/10">
+10 min Walk
+<span class="block text-xs text-white/40 mt-1">
+Grand Bazaar 700 M 10 min Walk
+<div class="border border-white/10 bg-white/[0.02] p-6 text-center hover:border-gold-5…">
+LOCATION Stay in the Heart of Sultanahmet From Emerald Mansion you can walk to…
+<section class="py-32 bg-black text-white relative border-t border-white/10">
+10 min Walk
+<span class="block text-xs text-white/40 mt-1">
+Topkapi Palace 800 M 10 min Walk
+<div class="border border-white/10 bg-white/[0.02] p-6 text-center hover:border-gold-5…">
+LOCATION Stay in the Heart of Sultanahmet From Emerald Mansion you can walk to…
+<section class="py-32 bg-black text-white relative border-t border-white/10">
+RESERVATION LINE
+<p class="text-white/40 text-xs uppercase mb-2">
+EMERALD MANSION ISTANBUL "Luxury beyond time, in the heart of history. The no…
+<footer class="bg-black text-white pt-32 pb-12 border-t border-white/10 relative overflow…">
+EMAIL
+<p class="text-white/40 text-xs uppercase mb-2">
+EMERALD MANSION ISTANBUL "Luxury beyond time, in the heart of history. The no…
+<footer class="bg-black text-white pt-32 pb-12 border-t border-white/10 relative overflow…">
+ADDRESS
+<p class="text-white/40 text-xs uppercase mb-2">
+EMERALD MANSION ISTANBUL "Luxury beyond time, in the heart of history. The no…
+<footer class="bg-black text-white pt-32 pb-12 border-t border-white/10 relative overflow…">
+© 2025 EMERALD MANSION. ALL RIGHTS RESERVED.
+<p>
+EMERALD MANSION ISTANBUL "Luxury beyond time, in the heart of history. The no…
+<footer class="bg-black text-white pt-32 pb-12 border-t border-white/10 relative overflow…">
+DESIGN & DEVELOPMENT: TOOV
+<p>
+EMERALD MANSION ISTANBUL "Luxury beyond time, in the heart of history. The no…
+<footer class="bg-black text-white pt-32 pb-12 border-t border-white/10 relative overflow…">
+PRIVACY POLICY
+<a href="/en/privacy-policy/" class="hover:text-white transition-colors cursor-pointer">
+EMERALD MANSION ISTANBUL "Luxury beyond time, in the heart of history. The no…
+<footer class="bg-black text-white pt-32 pb-12 border-t border-white/10 relative overflow…">
+TERMS OF SERVICE
+<a href="/en/terms-of-service/" class="hover:text-white transition-colors cursor-pointer">
+EMERALD MANSION ISTANBUL "Luxury beyond time, in the heart of history. The no…
+<footer class="bg-black text-white pt-32 pb-12 border-t border-white/10 relative overflow…">
+Bu fırsatlar, içeriğinizin daha rahat okunmasına olanak tanır.
+Gezinme
+Başlık öğeleri sırayla azalan düzende sıralı değil
+Düzey atlamayan gerektiği gibi sıralanmış başlıklar sayfanın anlamsal yapısını iletir. Böylece, yardımcı teknolojiler kullanılırken gezinmeyi ve anlaşılmayı kolaylaştırır. Başlık sıralaması hakkında daha fazla bilgi edinin.
+Başarısız Öğeler
+MENU
+<h4 class="text-xs uppercase tracking-widest text-gold-500 mb-8 font-medium">

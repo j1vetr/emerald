@@ -1,0 +1,149 @@
+63
+Performans
+100
+Erişilebilirlik
+100
+En İyi Uygulamalar
+100
+SEO
+3/3
+Ajan Tabanlı Tarama
+63
+FCP
++3
+LCP
++1
+TBT
++30
+CLS
++25
+SI
++5
+Performans
+Değerler tahminidir ve değişiklik gösterebilir. Performance skorunun hesaplanması , doğrudan bu metriklerle yapılır.Hesap makinesini göster.
+0–49
+50–89
+90–100
+Final Screenshot
+
+Metrikler
+Görünümü genişlet
+First Contentful Paint
+3,9 sn.
+Largest Contentful Paint
+7,3 sn.
+Total Blocking Time
+0 ms.
+Cumulative Layout Shift
+0
+Speed Index
+5,9 sn.
+Captured at 15 Ağu 2026 05:10 GMT+3
+Emülasyonlu Moto G Power with Lighthouse 13.4.1
+Tek sayfalık oturum
+İlk sayfa yükleme
+Yavaş 4G kısıtlaması
+Using HeadlessChromium 150.0.7871.186 with lr
+Ağaç grafiği göster
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Şunlarla alakalı denetimleri göster:
+
+All
+
+FCP
+
+LCP
+
+TBT
+Analizler
+Oluşturma engelleme istekleri Tahmini tasarruf: 2.220 ms.
+İstekler sayfanın ilk oluşturma işlemini engelliyor. Bu durum, LCP'yi geciktirebilir. Erteleme veya satır içine yerleştirme, bu ağ isteklerini kritik yoldan uzaklaştırabilir.LCPFCPPuanlanmamış
+URL
+Aktarım Boyutu
+Süre
+emeraldmansion.com 1. taraf
+20,4 KiB	450 msn
+/assets/index-D2EpAG-i.css(emeraldmansion.com)
+20,4 KiB
+450 msn
+Ağ bağımlılık ağacı
+Sayfaların daha kolay yüklenmesi için zincir uzunluğunu azaltarak, kaynakların indirme boyutunu küçülterek veya gereksiz kaynakların indirilmesini erteleyerek kritik istek zinciri oluşturmaktan kaçının.LCPPuanlanmamış
+Maksimum kritik yol gecikmesi: 1.652 msn
+İlk Gezinme
+/en/(emeraldmansion.com) - 354 msn, 8,26 KiB
+/assets/index-jgUPc8DE.js(emeraldmansion.com) - 915 msn, 190,21 KiB
+/v1/forecast?latitude=…(api.open-meteo.com) - 1.652 msn, 0,67 KiB
+/assets/index-D2EpAG-i.css(emeraldmansion.com) - 767 msn, 20,41 KiB
+/assets/montserra….woff2(emeraldmansion.com) - 1.288 msn, 69,34 KiB
+/assets/montserra….woff2(emeraldmansion.com) - 1.241 msn, 37,37 KiB
+/assets/montserra….woff2(emeraldmansion.com) - 1.381 msn, 39,01 KiB
+/assets/playfair-….woff2(emeraldmansion.com) - 1.380 msn, 37,81 KiB
+/assets/playfair-….woff2(emeraldmansion.com) - 1.374 msn, 38,20 KiB
+Önceden bağlanmış kaynaklar
+Önceden bağlanma ipuçları, sayfa yüklenirken tarayıcının gerekli bağlantıları önceden kurmasına yardımcı olarak ilgili kaynağa yapılacak ilk istekte zaman kazandırır. Sayfanın önceden bağlantı kurduğu kaynaklar aşağıda verilmiştir.
+hiçbir kaynak önceden bağlanmadı
+Önceden bağlanma adayları
+En önemli kaynaklarınıza önceden bağlanma ipuçları ekleyin ancak 4'ten az ipucu kullanmaya çalışın.
+Kaynak
+Tahmini LCP tasarrufu
+https://api.open-meteo.com
+340 msn
+Resim yayınlamayı kolaylaştırın Tahmini tasarruf: 69 KiB
+Resimlerin indirme süresini kısaltmak, sayfanın algılanan yükleme süresini ve LCP'yi daha iyi hale getirebilir. Resim boyutunu optimize etme hakkında daha fazla bilgi edinin.LCPFCPPuanlanmamış
+URL
+Kaynak Boyutu
+Tahmini Tasarruf
+emeraldmansion.com 1. taraf
+100,9 KiB	68,9 KiB
+Restored Ottoman era interior of Emerald Mansion Hotel in Sultanahmet
+<img src="/assets/images/general/otel_genel_13.webp" alt="Restored Ottoman era interior of Emerald Mansion Hotel in Sultanahmet" width="683" height="1024" loading="lazy" class="w-full h-full object-cover">
+…general/otel_genel_13.webp(emeraldmansion.com)
+100,9 KiB
+68,9 KiB
+Resim sıkıştırma faktörünü artırarak bu resmin indirme boyutunu küçültebilirsiniz.
+5,9 KiB
+Bu resim dosyası, görüntülenen boyutlarına (362x543) göre olması gerekenden (683x854) daha büyük. Resim indirme boyutunu küçültmek için duyarlı resimler kullanın.
+66,9 KiB
+LCP dökümü
+3. taraflar
+Bu analizler Chrome Geliştirici Araçları Performans Paneli'nde de mevcuttur. Daha ayrıntılı bilgi görüntülemek için izleme kaydı oluşturun.
+Teşhis
+Kullanılmayan JavaScript'i azaltın Tahmini tasarruf: 614 KiB
+Ağ etkinliğinin kullandığı bayt sayısını azaltılmaları gerekene kadar kullanılmayan JavaScript'i azaltıp komut dosyalarını erteleyin. Kullanılmayan JavaScript'i nasıl azaltacağınızı öğrenin.LCPFCPPuanlanmamış
+URL
+Aktarım Boyutu
+Tahmini Tasarruf
+İlişkilendirilemez
+667,2 KiB	468,1 KiB
+…en_US/base.js(www.youtube-nocookie.com)
+517,9 KiB
+374,6 KiB
+…rs=AGKMywGlf…/m=root,base(www.youtube-nocookie.com)
+149,3 KiB
+93,5 KiB
+emeraldmansion.com 1. taraf
+189,3 KiB	78,7 KiB
+/assets/index-jgUPc8DE.js(emeraldmansion.com)
+189,3 KiB
+78,7 KiB
+Google Tag Manager tag-manager 
+161,5 KiB	66,9 KiB
+/gtag/js?id=G-W9DZFSBWCD(www.googletagmanager.com)
+161,5 KiB
+66,9 KiB
+Kullanılmayan CSS'yi azaltın Tahmini tasarruf: 157 KiB
+Ağ etkinliğinin kullandığı bayt sayısını azaltmak üzere stil sayfalarında kullanılmayan kuralları azaltıp ekranın üst kısmında içerik için kullanılmayan CSS'yi erteleyin. Kullanılmayan CSS'yi nasıl azaltacağınızı öğrenin.LCPFCPPuanlanmamış
+URL
+Aktarım Boyutu
+Tahmini Tasarruf
+…b0d2d49a/www-player.css(www.youtube-nocookie.com)
+104,0 KiB
+103,1 KiB
+:root{--t3a480c2f814ef19c:initial;--t77e217518bcd986b:initial;--tc5e0863356bf5767:initial;--t7a2234…

@@ -12,6 +12,8 @@ description: Core Web Vitals için alınan kalıcı kararlar ve yerel Lighthouse
 - Fontlar @fontsource-variable ile self-host, font family adları 'Montserrat Variable' / 'Playfair Display Variable'. Google Fonts linki index.html'e geri eklenmemeli.
 - GA gtag.js analytics.ts içinde idle/ilk etkileşimde yüklenir, dataLayer stub kuyruklar; index.html'e sync gtag script'i geri koyma.
 
+- Hero YouTube facade'ında zamanlayıcı fallback OLMAMALI, yalnızca gerçek etkileşim. **Why:** 3,5 sn idle fallback yavaş 4G'de PageSpeed trace'ine denk gelip ~660 KB oynatıcıyla mobil skoru 63'e düşürdü. Masaüstü etkilenmez çünkü ölçüm oynatıcı yüklenmeden biter.
+
 # Yerel Lighthouse ölçümü
 
 - Chrome yok. Geçici çöz: `installSystemDependencies({packages:["chromium"]})`, ölçüm sonrası uninstall et.

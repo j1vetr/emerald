@@ -147,6 +147,8 @@ export default function Home() {
                >
                  <img 
                    src="/assets/images/general/otel_genel_13.webp" 
+                   srcSet="/assets/images/general/otel_genel_13_400.webp 400w, /assets/images/general/otel_genel_13.webp 683w"
+                   sizes="(max-width: 1023px) 90vw, 40vw"
                    alt={isEn ? "Restored Ottoman era interior of Emerald Mansion Hotel in Sultanahmet" : "Sultanahmet'teki Emerald Mansion Hotel'in restore edilmiş Osmanlı dönemi iç mekanı"}
                    width={683}
                    height={1024}

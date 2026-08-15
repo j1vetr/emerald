@@ -5,8 +5,8 @@ interface LazyYouTubeProps {
   title: string;
   className?: string;
   /**
-   * "interaction": load after first user interaction or idle time after
-   * window load (used for above-the-fold ambience video).
+   * "interaction": load only after a real user interaction
+   * (used for above-the-fold ambience video).
    * "visible": load when the element scrolls near the viewport.
    */
   strategy?: "interaction" | "visible";
@@ -59,7 +59,10 @@ export function LazyYouTube({ videoId, title, className, strategy = "interaction
       return () => io.disconnect();
     }
 
-    // "interaction" strategy: first input, or idle time shortly after load
+    // "interaction" strategy: only load after a real user interaction.
+    // No idle timer fallback: on slow mobile connections an automatic
+    // load competes with the page's own resources and hurts LCP, and a
+    // user who never interacts never needed the video.
     let done = false;
     const start = () => {
       if (done) return;
@@ -68,24 +71,12 @@ export function LazyYouTube({ videoId, title, className, strategy = "interaction
       setLoad(true);
     };
 
-    const events: (keyof WindowEventMap)[] = ["pointerdown", "touchstart", "keydown", "wheel", "scroll"];
+    const events: (keyof WindowEventMap)[] = ["pointerdown", "pointermove", "touchstart", "keydown", "wheel", "scroll"];
     const opts: AddEventListenerOptions = { once: true, passive: true };
     events.forEach((ev) => window.addEventListener(ev, start, opts));
 
-    let timer: ReturnType<typeof setTimeout> | undefined;
-    const scheduleIdle = () => {
-      timer = setTimeout(start, 3500);
-    };
-    if (document.readyState === "complete") {
-      scheduleIdle();
-    } else {
-      window.addEventListener("load", scheduleIdle, { once: true });
-    }
-
     const cleanup = () => {
       events.forEach((ev) => window.removeEventListener(ev, start));
-      window.removeEventListener("load", scheduleIdle);
-      if (timer) clearTimeout(timer);
     };
     return cleanup;
   }, [load, strategy]);

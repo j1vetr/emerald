@@ -14,6 +14,9 @@ description: Core Web Vitals için alınan kalıcı kararlar ve yerel Lighthouse
 
 - Hero YouTube facade'ında zamanlayıcı fallback OLMAMALI, yalnızca gerçek etkileşim. **Why:** 3,5 sn idle fallback yavaş 4G'de PageSpeed trace'ine denk gelip ~660 KB oynatıcıyla mobil skoru 63'e düşürdü. Masaüstü etkilenmez çünkü ölçüm oynatıcı yüklenmeden biter.
 
+- İngilizce sayfalarda "İ" gibi latin-ext glifler tek başına ~70 KB'lik montserrat latin-ext dosyasını indirtir. **Why:** unicode-range alt kümeleri glif bazlı tetiklenir, EN sayfalarda ASCII "Istanbul" adres varyantı kullanılıyor (hotelInfo.addressEn). **How to apply:** EN içeriğine Türkçe karakter eklerken bunu hatırla.
+- Kritik latin font preload'ları build sırasında hash'li dosya adları bulunarak template'e enjekte ediliyor (script/build.ts prerender).
+
 # Yerel Lighthouse ölçümü
 
 - Chrome yok. Geçici çöz: `installSystemDependencies({packages:["chromium"]})`, ölçüm sonrası uninstall et.

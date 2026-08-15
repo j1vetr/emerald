@@ -72,7 +72,7 @@ export default function Location() {
                   </div>
                   <div>
                     <h3 className="text-xs uppercase tracking-widest text-white/50 mb-2">{hotelInfo.fullName}</h3>
-                    <p className="text-white/80 leading-relaxed font-light">{hotelInfo.address}</p>
+                    <p className="text-white/80 leading-relaxed font-light">{isEn ? hotelInfo.addressEn : hotelInfo.address}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-6">

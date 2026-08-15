@@ -86,7 +86,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="text-xs uppercase tracking-widest text-white/50 mb-2">{t('footer.address')}</h3>
-                      <p className="text-white/80 leading-relaxed font-light">{hotelInfo.address}</p>
+                      <p className="text-white/80 leading-relaxed font-light">{lang === 'en' ? hotelInfo.addressEn : hotelInfo.address}</p>
                     </div>
                 </div>
                 

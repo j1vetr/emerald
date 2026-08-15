@@ -49,6 +49,9 @@ export const hotelInfo = {
   fullName: "Emerald Mansion Hotel",
   location: "Sultanahmet, İstanbul",
   address: "Binbirdirek Mah. Boyacı Ahmet Sk. No: 8, Sultanahmet / Fatih / İstanbul",
+  // ASCII "Istanbul" on English pages keeps the big latin-ext font subset
+  // out of the English critical path (İ is a latin-ext glyph).
+  addressEn: "Binbirdirek Mah. Boyaci Ahmet Sk. No: 8, Sultanahmet / Fatih / Istanbul",
   streetAddress: "Binbirdirek Mah. Boyacı Ahmet Sk. No: 8",
   addressLocality: "Fatih",
   addressRegion: "İstanbul",

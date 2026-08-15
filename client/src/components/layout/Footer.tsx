@@ -79,7 +79,7 @@ export function Footer() {
                <div>
                  <p className="text-white/60 text-xs uppercase mb-2">{t('footer.address')}</p>
                  <address className="text-white/60 font-light leading-relaxed not-italic">
-                   {hotelInfo.address}
+                   {lang === "en" ? hotelInfo.addressEn : hotelInfo.address}
                  </address>
                  <a
                    href={hotelInfo.mapsUrl}

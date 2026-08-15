@@ -1,6 +1,6 @@
 import { build as esbuild } from "esbuild";
 import { build as viteBuild } from "vite";
-import { rm, readFile, writeFile, mkdir } from "fs/promises";
+import { rm, readFile, writeFile, mkdir, readdir } from "fs/promises";
 import path from "path";
 import { pathToFileURL } from "url";
 import {
@@ -52,7 +52,27 @@ const SSR_DIR = path.resolve("dist/ssr");
 
 async function prerender() {
   console.log("prerendering pages...");
-  const template = await readFile(path.join(PUBLIC_DIR, "index.html"), "utf-8");
+  let template = await readFile(path.join(PUBLIC_DIR, "index.html"), "utf-8");
+
+  // Preload the latin font files the above-the-fold hero text uses so they
+  // start downloading with the HTML instead of after the CSS arrives.
+  const criticalFonts = [
+    "montserrat-latin-wght-normal",
+    "playfair-display-latin-wght-normal",
+    "playfair-display-latin-wght-italic",
+  ];
+  const assetFiles = await readdir(path.join(PUBLIC_DIR, "assets"));
+  const fontPreloads = criticalFonts
+    .map((name) => assetFiles.find((f) => f.startsWith(name) && f.endsWith(".woff2")))
+    .filter((f): f is string => Boolean(f))
+    .map(
+      (f) =>
+        `<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/${f}" />`,
+    )
+    .join("\n    ");
+  if (fontPreloads) {
+    template = template.replace("<!--head-tags-->", `<!--head-tags-->\n    ${fontPreloads}`);
+  }
   if (!template.includes("<!--head-tags-->") || !template.includes("<!--app-html-->")) {
     throw new Error("index.html is missing the prerender placeholders");
   }

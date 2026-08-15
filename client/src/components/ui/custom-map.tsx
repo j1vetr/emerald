@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 export function CustomMap() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const addr = i18n.language === "en" ? hotelInfo.addressEn : hotelInfo.address;
   
   // We'll use a custom styled Google Map embed
   // Using a dark mode style via parameters
@@ -34,10 +35,10 @@ export function CustomMap() {
         <h3 className="font-serif text-2xl text-white mb-2">Emerald Mansion</h3>
         <p className="text-gold-500 text-xs uppercase tracking-widest mb-6">Sultanahmet, Istanbul</p>
         <p className="text-white/60 font-light text-sm leading-relaxed mb-6">
-          {hotelInfo.address}
+          {addr}
         </p>
         <a 
-          href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(hotelInfo.address)}`}
+          href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(addr)}`}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center text-xs uppercase tracking-widest text-white hover:text-gold-500 transition-colors border-b border-white/20 pb-1 hover:border-gold-500"

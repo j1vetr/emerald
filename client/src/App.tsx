@@ -1,5 +1,5 @@
 
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Switch, Route, Redirect, useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
@@ -9,19 +9,23 @@ import { SmoothScroll } from "@/components/ui/smooth-scroll";
 import { SeoHead, LanguageSync } from "@/components/seo-head";
 import { Analytics } from "@/lib/analytics";
 import { findRedirect } from "@/lib/seo";
-import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
-import Rooms from "@/pages/Rooms";
-import RoomDetail from "@/pages/RoomDetail";
-import About from "@/pages/About";
-import Attractions from "@/pages/Attractions";
-import Gallery from "@/pages/Gallery";
-import Contact from "@/pages/Contact";
-import Location from "@/pages/Location";
-import Sultanahmet from "@/pages/Sultanahmet";
-import AttractionGuide from "@/pages/AttractionGuide";
-import Privacy from "@/pages/Privacy";
-import Terms from "@/pages/Terms";
+
+// Route level code splitting: every page except Home is loaded on demand so
+// the initial bundle stays small. The build prerenders each page via
+// renderToPipeableStream, which waits for lazy chunks before emitting HTML.
+const NotFound = lazy(() => import("@/pages/not-found"));
+const Rooms = lazy(() => import("@/pages/Rooms"));
+const RoomDetail = lazy(() => import("@/pages/RoomDetail"));
+const About = lazy(() => import("@/pages/About"));
+const Attractions = lazy(() => import("@/pages/Attractions"));
+const Gallery = lazy(() => import("@/pages/Gallery"));
+const Contact = lazy(() => import("@/pages/Contact"));
+const Location = lazy(() => import("@/pages/Location"));
+const Sultanahmet = lazy(() => import("@/pages/Sultanahmet"));
+const AttractionGuide = lazy(() => import("@/pages/AttractionGuide"));
+const Privacy = lazy(() => import("@/pages/Privacy"));
+const Terms = lazy(() => import("@/pages/Terms"));
 
 /**
  * Client-side fallback for the root URL. In production the server issues
@@ -53,6 +57,7 @@ function LegacyOrNotFound() {
 
 function Router() {
   return (
+    <Suspense fallback={null}>
     <Switch>
       <Route path="/" component={RootRedirect} />
 
@@ -100,6 +105,7 @@ function Router() {
 
       <Route component={LegacyOrNotFound} />
     </Switch>
+    </Suspense>
   );
 }
 

@@ -91,6 +91,8 @@ export function Header() {
                  <img 
                    src="/assets/logo.svg" 
                    alt="Emerald Mansion" 
+                   width={444}
+                   height={177}
                    className="h-16 w-auto drop-shadow-xl transition-transform duration-500 group-hover:scale-105"
                  />
                </div>
@@ -191,7 +193,7 @@ export function Header() {
             style={{ top: 0, minHeight: "100vh" }} 
           >
              {/* Background texture or image could go here */}
-             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+             <div className="absolute inset-0 bg-[url('/assets/textures/cubes.png')] opacity-5"></div>
 
              <nav className="flex flex-col items-center gap-8 relative z-10">
               {navLinks.map((link, i) => (

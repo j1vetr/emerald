@@ -3,6 +3,7 @@ import { ArrowRight, Wifi, Coffee, Car, Star, ChevronDown, Play } from "lucide-r
 import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
+import { LazyYouTube } from "@/components/ui/lazy-youtube";
 import { JsonLd } from "@/components/json-ld";
 import { buildHotelSchema } from "@/lib/schema";
 import { rooms, hotelInfo, attractions } from "@/lib/constants";
@@ -87,70 +88,49 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black z-10" />
           
           <div className="absolute inset-0 overflow-hidden">
-             <iframe 
-               className="absolute top-1/2 left-1/2 w-[300%] h-[300%] md:w-[180%] md:h-[180%] -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-60 object-cover"
-               src="https://www.youtube.com/embed/eV6lTEY95yY?autoplay=1&mute=1&controls=0&loop=1&playlist=eV6lTEY95yY&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&modestbranding=1"
-               allow="autoplay; encrypted-media"
+             <LazyYouTube
+               videoId="eV6lTEY95yY"
                title="Hero Video"
+               strategy="interaction"
+               className="absolute top-1/2 left-1/2 w-[300%] h-[300%] md:w-[180%] md:h-[180%] -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-60 object-cover"
              />
           </div>
         </motion.div>
 
-        {/* Hero Content */}
+        {/* Hero Content.
+            Entrance animations are pure CSS so the prerendered text paints
+            immediately without waiting for JS (keeps LCP fast). */}
         <div className="relative z-20 container mx-auto px-6 flex flex-col items-center text-center">
-           <motion.div
-             initial="hidden"
-             animate="visible"
-             variants={staggerContainer}
-             className="space-y-8"
-           >
-             <motion.div variants={fadeInUp}>
+           <div className="space-y-8">
+             <div className="hero-fade-up">
                 <h1 className="inline-block border border-white/20 px-4 py-2 text-xs uppercase tracking-[0.3em] text-white/80 backdrop-blur-sm font-sans font-normal">
                   {t('home.heroSubtitle')}
                 </h1>
-             </motion.div>
+             </div>
              
              <div className="overflow-hidden">
-               <motion.div 
-                 initial={{ y: "100%" }}
-                 animate={{ y: 0 }}
-                 transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-                 className="display-huge text-white mix-blend-difference"
-               >
+               <div className="hero-slide-up display-huge text-white mix-blend-difference" style={{ animationDelay: "0.2s" }}>
                  EMERALD
-               </motion.div>
+               </div>
              </div>
              
              <div className="overflow-hidden -mt-4 md:-mt-8">
-                <motion.div 
-                 initial={{ y: "100%" }}
-                 animate={{ y: 0 }}
-                 transition={{ duration: 1.2, ease: "easeOut", delay: 0.4 }}
-                 className="font-serif text-4xl md:text-6xl lg:text-8xl italic text-gold-500"
-               >
+                <div className="hero-slide-up font-serif text-4xl md:text-6xl lg:text-8xl italic text-gold-500" style={{ animationDelay: "0.4s" }}>
                  Mansion
-               </motion.div>
+               </div>
              </div>
 
-             <motion.p 
-               variants={fadeInUp}
-               className="max-w-md mx-auto text-white/70 font-light leading-relaxed pt-8 border-t border-white/10 mt-8"
-             >
+             <p className="hero-fade-up max-w-md mx-auto text-white/70 font-light leading-relaxed pt-8 border-t border-white/10 mt-8" style={{ animationDelay: "0.15s" }}>
                {t('home.heroDesc')}
-             </motion.p>
-           </motion.div>
+             </p>
+           </div>
         </div>
 
         {/* Scroll Indicator */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2, duration: 1 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-white/50"
-        >
+        <div className="hero-fade-in absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-white/50" style={{ animationDelay: "2s" }}>
           <span className="text-[10px] uppercase tracking-widest">{t('home.exploreRooms')}</span>
           <ChevronDown className="animate-bounce w-4 h-4" />
-        </motion.div>
+        </div>
       </section>
 
       {/* INTRO SECTION - Dark Luxury */}
@@ -285,7 +265,7 @@ export default function Home() {
       {/* SERVICES - Minimal & Iconographic */}
       <section className="py-32 bg-emerald-950 relative overflow-hidden">
         {/* Pattern overlay */}
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('/assets/textures/stardust.png')] opacity-10"></div>
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-24">
@@ -358,12 +338,11 @@ export default function Home() {
       {/* CTA / FOOTER PRELUDE */}
       <section className="h-[80vh] relative flex items-center justify-center bg-black overflow-hidden">
          <div className="absolute inset-0 opacity-40 pointer-events-none overflow-hidden">
-           <iframe 
-              className="absolute top-1/2 left-1/2 w-[180%] h-[180%] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-              src="https://www.youtube.com/embed/K6hfpqiGyOg?autoplay=1&mute=1&controls=0&loop=1&playlist=K6hfpqiGyOg&showinfo=0&rel=0&iv_load_policy=3&disablekb=1&modestbranding=1"
-              allow="autoplay; encrypted-media"
-              loading="lazy"
+           <LazyYouTube
+              videoId="K6hfpqiGyOg"
               title="Istanbul Video"
+              strategy="visible"
+              className="absolute top-1/2 left-1/2 w-[180%] h-[180%] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
             />
          </div>
          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/80" />

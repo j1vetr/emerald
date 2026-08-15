@@ -343,7 +343,7 @@ export default function RoomDetail({ slug }: { slug: string }) {
               <Link key={r.id} href={getRoomPath(r.slug, lang)} className="group block cursor-pointer">
                 <div className="aspect-[3/4] overflow-hidden relative mb-6 border border-white/10">
                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
-                   <img src={r.coverImage} alt={isEn ? r.nameEn : r.name} loading="lazy" className="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" />
+                   <img src={r.coverImage} alt={isEn ? r.nameEn : r.name} width={1024} height={683} loading="lazy" className="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" />
                 </div>
                 <h4 className="font-serif text-2xl text-white mb-2 group-hover:text-gold-500 transition-colors">{isEn ? r.shortNameEn : r.shortName}</h4>
                 <p className="text-xs uppercase tracking-widest text-white/40">

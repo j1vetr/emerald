@@ -58,6 +58,8 @@ export default function AttractionGuide({
           <img
             src={guide.image}
             alt={copy.heroAlt}
+            width={1280}
+            height={853}
             className="w-full h-full object-cover opacity-70"
             fetchPriority="high"
           />
@@ -205,6 +207,8 @@ export default function AttractionGuide({
                     <img
                       src={g.image}
                       alt={g.copy[lang].heroAlt}
+                      width={1280}
+                      height={853}
                       loading="lazy"
                       className="w-full h-full object-cover grayscale-[40%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                     />

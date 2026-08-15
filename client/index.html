@@ -5,20 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <!--head-tags-->
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preload" as="image" href="/assets/logo.svg" fetchpriority="high" />
 
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W9DZFSBWCD"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-W9DZFSBWCD', { send_page_view: false });
-    </script>
-
-    <!-- Fonts: Playfair Display (Headings) & Montserrat (Body) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!-- Fonts are self hosted via @fontsource-variable and bundled in CSS. -->
+    <!-- Google Analytics loads lazily from src/lib/analytics.ts after the page is interactive. -->
   </head>
   <body>
     <div id="root"><!--app-html--></div>

@@ -58,7 +58,16 @@ export function WeatherWidget() {
       }
     };
 
-    fetchWeather();
+    // Defer the weather request until the browser is idle so it stays out
+    // of the critical loading path.
+    let idleId: number | undefined;
+    let idleTimer: ReturnType<typeof setTimeout> | undefined;
+    if (typeof window !== "undefined" && "requestIdleCallback" in window) {
+      idleId = (window as Window & { requestIdleCallback: (cb: () => void, o?: { timeout: number }) => number })
+        .requestIdleCallback(fetchWeather, { timeout: 4000 });
+    } else {
+      idleTimer = setTimeout(fetchWeather, 2500);
+    }
     // Refresh weather every 30 mins
     const weatherInterval = setInterval(fetchWeather, 1000 * 60 * 30);
 
@@ -79,6 +88,10 @@ export function WeatherWidget() {
     const timeInterval = setInterval(updateTime, 1000 * 60);
 
     return () => {
+      if (idleId !== undefined && "cancelIdleCallback" in window) {
+        (window as Window & { cancelIdleCallback: (id: number) => void }).cancelIdleCallback(idleId);
+      }
+      if (idleTimer) clearTimeout(idleTimer);
       clearInterval(weatherInterval);
       clearInterval(timeInterval);
     };

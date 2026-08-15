@@ -14,7 +14,7 @@ export default function NotFound() {
     <Layout>
       <div className="min-h-[80vh] w-full flex items-center justify-center bg-black relative overflow-hidden">
         {/* Background Texture */}
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('/assets/textures/stardust.png')] opacity-20"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black pointer-events-none"></div>
 
         <div className="container mx-auto px-6 text-center relative z-10">

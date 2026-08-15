@@ -37,7 +37,7 @@ export default function Location() {
 
       {/* Header */}
       <div className="bg-black text-white pt-40 pb-24 text-center relative">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('/assets/textures/stardust.png')] opacity-20"></div>
         <div className="container mx-auto px-4 relative z-10">
           <span className="text-gold-500 text-xs uppercase tracking-[0.4em] mb-6 block">{c.eyebrow}</span>
           <h1 className="font-serif text-5xl md:text-7xl mb-8">{c.h1}</h1>
@@ -130,7 +130,7 @@ export default function Location() {
 
       {/* About Sultanahmet */}
       <section className="bg-emerald-950 py-24 border-t border-white/10 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('/assets/textures/stardust.png')] opacity-10"></div>
         <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-4xl">
           <h2 className="font-serif text-4xl mb-8">{c.aboutTitle}</h2>
           <div className="space-y-6 text-white/70 font-light leading-loose text-lg">
@@ -203,7 +203,7 @@ export default function Location() {
 
       {/* FAQ */}
       <section className="bg-emerald-950 py-24 border-t border-white/10 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('/assets/textures/stardust.png')] opacity-10"></div>
         <div className="container mx-auto px-6 md:px-12 relative z-10 max-w-4xl">
           <h2 className="font-serif text-4xl mb-12">{c.faqTitle}</h2>
           <div className="space-y-8">

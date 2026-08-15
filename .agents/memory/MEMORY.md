@@ -1,1 +1,2 @@
 - [Post-merge kurulumu](post-merge-setup.md) — Birleşme sonrası npm ci ve production build scripts/post-merge.sh üzerinden çalıştırılıyor.
+- [Performans mimarisi](performance-architecture.md) — Hero animasyonları CSS olmalı, YouTube facade, lazy rotalar prerender'da streaming ister, compression şart, yerel Lighthouse yöntemi.
